@@ -652,8 +652,8 @@ html:not(.motion-ok) .hdr .hdr__cta, html:not(.motion-ok) .hdr.cta-on .hdr__cta 
 .tt__day th { display: block; padding: 22px 0 10px; text-align: left; font-weight: 800; text-transform: uppercase; font-size: 1.0625rem; letter-spacing: .01em; border-bottom: 2px solid var(--black); }
 .tt a.rbtn { display: inline-flex; align-items: center; justify-content: center; text-decoration: none; }
 .js .tt__day { display: none; }
-.js.dow-1 .tt tbody:not([data-dow="1"]), .js.dow-2 .tt tbody:not([data-dow="2"]), .js.dow-3 .tt tbody:not([data-dow="3"]), .js.dow-4 .tt tbody:not([data-dow="4"]),
-.js.dow-5 .tt tbody:not([data-dow="5"]), .js.dow-6 .tt tbody:not([data-dow="6"]), .js.dow-7 .tt tbody:not([data-dow="7"]) { display: none; }
+.js.dow-1 .tt:not(.is-enhanced) tbody:not([data-dow="1"]), .js.dow-2 .tt:not(.is-enhanced) tbody:not([data-dow="2"]), .js.dow-3 .tt:not(.is-enhanced) tbody:not([data-dow="3"]), .js.dow-4 .tt:not(.is-enhanced) tbody:not([data-dow="4"]),
+.js.dow-5 .tt:not(.is-enhanced) tbody:not([data-dow="5"]), .js.dow-6 .tt:not(.is-enhanced) tbody:not([data-dow="6"]), .js.dow-7 .tt:not(.is-enhanced) tbody:not([data-dow="7"]) { display: none; }
 .js .tt.is-enhanced tbody { display: block; }
 .js .tt.is-enhanced tbody[hidden] { display: none; }
 .js.tt-all .tt tbody, .js.tt-all .tt__day { display: block; }
