@@ -135,21 +135,33 @@ function roll(el, n) {
 }
 
 /* ---------- fast scroll flag ---------- */
-var lastY = 0, lastT = 0, ticking = false, fastTimer = 0, scrollWired = false;
+/* Handover v2 (motion forced-layout, 29 Oct): no timer clears m-fast any more; the class is set and cleared only here, inside rAF,
+   and the frame re-queues itself while the class is on. The position is read once, before any write, from a ScrollTimeline snapshot
+   (no style or layout read) where the browser has one; elsewhere from pageYOffset. The scroll range for the snapshot is cached by a
+   ResizeObserver (delivered after layout, so that read is clean too). */
+var lastY = 0, lastT = 0, ticking = false, fastUntil = 0, scrollWired = false, stl = null, stlRange = 0;
+function scrollPos() {
+  if (stl) { var c = stl.currentTime; return (c && stlRange > 0) ? c.value / 100 * stlRange : 0; }
+  return w.pageYOffset || 0;
+}
 function measureScroll() {
   ticking = false;
-  var y = w.pageYOffset || root.scrollTop || 0, t = now(), dt = t - lastT;
-  if (dt > 0 && lastT && Math.abs(y - lastY) / dt > FAST_PX_MS) {
-    root.classList.add('m-fast');
-    w.clearTimeout(fastTimer);
-    fastTimer = w.setTimeout(function () { root.classList.remove('m-fast'); }, FAST_HOLD);
-  }
+  var y = scrollPos(), t = now(), dt = t - lastT;
+  if (dt > 0 && lastT && Math.abs(y - lastY) / dt > FAST_PX_MS) { fastUntil = t + FAST_HOLD; root.classList.add('m-fast'); }
+  else if (fastUntil && t > fastUntil) { fastUntil = 0; root.classList.remove('m-fast'); }
   lastY = y; lastT = t;
+  if (fastUntil && active && !ticking) { ticking = true; raf(guard(measureScroll)); }
 }
 function wireScroll() {
   if (scrollWired) { return; }
   scrollWired = true;
-  lastY = w.pageYOffset || 0; lastT = now();
+  try {
+    if (w.ScrollTimeline && w.ResizeObserver) {
+      stl = new w.ScrollTimeline({ source: d.scrollingElement || root, axis: 'block' });
+      new w.ResizeObserver(function () { stlRange = Math.max(0, root.scrollHeight - w.innerHeight); }).observe(root);
+    }
+  } catch (e) { stl = null; }
+  lastY = stl ? 0 : (w.pageYOffset || 0); lastT = now();
   w.addEventListener('scroll', function () { if (!active || ticking) { return; } ticking = true; raf(guard(measureScroll)); }, { passive: true });
 }
 

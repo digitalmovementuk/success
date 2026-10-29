@@ -434,6 +434,8 @@ function initBars() {
   }
   var blockers = [['offer', qs('#plus-one')], ['footer', qs('#footer')]];
   /* every hero mark (Book, rating, quote, desktop trust badge) is above the screen or not shown at this width; the +1 offer or the footer is not on screen */
+  var stl = null, docRange = 0;   /* handover v2 (forced layout): the header reads a ScrollTimeline snapshot in scroll frames, not pageYOffset */
+  try { if (w.ScrollTimeline && w.ResizeObserver) { stl = new w.ScrollTimeline({ source: d.scrollingElement || d.documentElement, axis: 'block' }); new w.ResizeObserver(function () { docRange = Math.max(0, d.documentElement.scrollHeight - w.innerHeight); }).observe(d.documentElement); } } catch (e) { stl = null; }
   function measure() {
     var vh = w.innerHeight || d.documentElement.clientHeight;
     st.pastHero = marks.length > 0 && marks.every(function (m) { var r = m.getBoundingClientRect(); return (!r.width && !r.height) || r.bottom <= 0; });
@@ -441,9 +443,17 @@ function initBars() {
     apply();
   }
   if ('IntersectionObserver' in w) {
-    var mio = new IntersectionObserver(function () { measure(); });
+    /* handover v2 (forced layout): observer callbacks use the rects the observer hands over, never a fresh read (a read after another
+       callback's class write forced a style pass in the scroll trace); load, resize and hashchange still measure fresh */
+    var keep = function (list) { list.forEach(function (e) { e.target.__barR = e.boundingClientRect; e.target.__barIn = e.isIntersecting; }); };
+    var fromIO = function () {
+      st.pastHero = marks.length > 0 && marks.every(function (m) { var r = m.__barR; return !!r && ((!r.width && !r.height) || r.bottom <= 0); });
+      blockers.forEach(function (b2) { st.blocked[b2[0]] = !!b2[1] && !!b2[1].__barIn; });
+      apply();
+    };
+    var mio = new IntersectionObserver(function (list) { keep(list); fromIO(); });
     marks.forEach(function (m) { mio.observe(m); });
-    blockers.forEach(function (b2) { if (b2[1]) { new IntersectionObserver(function () { measure(); }, { rootMargin: '0px 0px -60px 0px' }).observe(b2[1]); } });
+    blockers.forEach(function (b2) { if (b2[1]) { new IntersectionObserver(function (list) { keep(list); fromIO(); }, { rootMargin: '0px 0px -60px 0px' }).observe(b2[1]); } });
   }
   w.addEventListener('load', measure);
   w.addEventListener('hashchange', function () { w.requestAnimationFrame(measure); });
@@ -455,7 +465,7 @@ function initBars() {
   w.addEventListener('scroll', function () {
     if (ticking) { return; }
     ticking = true;
-    w.requestAnimationFrame(function () { ticking = false; if (hdr) { hdr.classList.toggle('is-scrolled', (w.pageYOffset || 0) > 4); } });   /* motion pass: no geometry reads in scroll frames; the observers, load and hashchange re-read */
+    w.requestAnimationFrame(function () { ticking = false; if (hdr) { var c = stl && stl.currentTime; hdr.classList.toggle('is-scrolled', stl ? !!(c && c.value / 100 * docRange > 4) : (w.pageYOffset || 0) > 4); } });   /* motion pass: no geometry reads in scroll frames; the observers, load and hashchange re-read */
   }, { passive: true });
   measure();
 }

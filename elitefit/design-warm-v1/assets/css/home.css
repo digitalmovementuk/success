@@ -216,7 +216,7 @@ button { font: inherit; color: inherit; }
 .chap { position: relative; }
 .chap__media { position: relative; overflow: hidden; aspect-ratio: 1 / 1; background: var(--grey); }
 .chap__media .media__poster, .chap__media video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: var(--focus, 50% 50%); transform-origin: 50% 0%; }
-#family-conditioning .chap__media .media__poster, #family-conditioning .chap__media video { inset: 0 0 auto auto; width: 114%; height: 114%; transform-origin: 100% 0%; }
+/* handover v2: the 114 % right-anchored crop for the v1 conditioning clip is gone; conditioning-warm.mp4 is already cut on the left, and the extra crop pushed the lunge head out at the bottom from 1024 px */
 .chap--wide .chap__media { aspect-ratio: 16 / 9; }
 .chap--wide .pause { right: auto; left: 14px; }
 .chap__card { margin: -32px var(--gutter) 0; z-index: 2; padding-bottom: 20px; }
@@ -403,7 +403,6 @@ video[data-clip].is-playing { opacity: 1; }
 .story__card { padding-bottom: 80px; }
 .story__card .h3 { margin-bottom: 12px; }
 .story__card p { color: var(--b-72); }
-.story__joke { margin-top: 10px; font-weight: 700; color: var(--black) !important; }
 .story__price { margin: 10px 0 4px; }
 .story__price strong { color: var(--black); font-weight: 800; }
 @media (min-width: 768px) {
@@ -503,7 +502,7 @@ video[data-clip].is-playing { opacity: 1; }
 .dock { position: fixed; left: 12px; right: 12px; bottom: calc(12px + env(safe-area-inset-bottom, 0px)); z-index: var(--z-bar); display: flex; align-items: center; gap: 12px; padding: 10px 10px 10px 14px; border-radius: 24px; background: var(--white); border: 1px solid var(--b-14); visibility: hidden; translate: 0 calc(100% + 30px); transition: translate .5s var(--spring), visibility 0s .5s; }
 .dock.is-on { visibility: visible; translate: none; transition: translate .55s var(--spring), visibility 0s; }
 .dock__faces { display: flex; flex: none; padding-left: 4px; }
-.dock__faces img { width: 34px; height: 34px; border-radius: 50%; object-fit: cover; border: 2px solid var(--white); margin-left: -10px; }
+.dock__faces img { width: 34px; height: 34px; border-radius: 50%; object-fit: cover; border: 2px solid var(--white); margin-left: -5px; }   /* RULINGS #54: the neighbour may cover the circle's edge, never the face: the face box ends at <= 78 % of 34 px, + 2 px clear, so at most 5.5 px of overlap (15 % of the circle at any size) */
 .dock__faces img:first-child { margin-left: 0; }
 .dock__btn { flex: 1 1 auto; min-width: 0; }
 @media (max-width: 359.98px) { .dock__faces { display: none; } }
@@ -1149,3 +1148,10 @@ html.dow-7 #schedule .tt tbody[data-dow="6"] { --col: 6; }
 }
 /* 3. The phone day heading ("Tomorrow, Friday 30 October") balances its two lines, so no word stands alone */
 .sched__date { text-wrap: balance; }
+
+/* ---------- handover QA v2 (29 Oct) ---------- */
+#recharge .story__card .link-t { margin-top: 12px; }   /* D3f: logo clear space >= 1x logo height (29 px) to the text above; the mark is absolute, so the link row (and the mark beside it) moves down 12 px instead of a margin on the mark, which would lift it into the text */
+.ftr__forget { font-weight: 700; }                               /* D3g: buttons are Gilroy Bold */
+@media (prefers-reduced-motion: reduce) {                        /* rm no-loops: the blanket reset the other concepts carry */
+  *, *::before, *::after { animation: none !important; transition-duration: .01ms !important; scroll-behavior: auto !important; }
+}
