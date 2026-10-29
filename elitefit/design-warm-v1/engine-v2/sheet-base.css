@@ -1,0 +1,270 @@
+/* Elite Fit group fitness · engine-v2 · sheet-base.css · v1.1 (29 Oct 2026; v1.1 adds the class finder: FINDER-SPEC v1.1 7.9)
+   Structure and behaviour only: every skin needs these. No colours, fonts, radii, shadows or motion; those are the concept's skin.
+   Exception (FINDER-SPEC v1.1 7.9): the finder's look defaults read --find-* tokens whose fallbacks are Home v2's colours.
+   Load it BEFORE the concept's sheet skin. Two layers:
+   1. Layout defaults inside :where() (zero specificity). Any skin rule wins, so skins tune sizes and spacing freely.
+   2. State and behaviour rules with normal specificity (hidden states, keyboard, typing, non-modal panel, strip cap, error
+      visibility). A skin's plain "display" rule does not switch these off by accident.
+   Engine-set custom properties: --kb (keyboard height, px), --vvh (visual viewport height, px), --s (seat index).
+   Tokens read here with fallbacks: --z-sheet, --gutter. Mirrors variants/s3-home-v2/assets/css/sheet.css (Home v2 final). */
+
+/* ===================== 1. layout defaults (zero specificity) ===================== */
+
+/* box model: every size below is a border-box size (the 56 px strip, 52 px inputs, 76 px tiles) */
+:where(.sheet, .sheet *, .sheet *::before, .sheet *::after) { box-sizing: border-box; }
+
+/* frame: bottom sheet below 1024 px */
+:where(.sheet) { position: fixed; inset: 0; z-index: var(--z-sheet, 60); }
+:where(.sheet__scrim) { position: absolute; inset: 0; }
+:where(.sheet__panel) { position: absolute; left: 0; right: 0; bottom: 0; display: flex; flex-direction: column; max-height: 94vh; max-height: 94svh; max-height: 94dvh; outline: none; }
+:where(.sheet--tall .sheet__panel) { height: 94vh; height: 94svh; height: 94dvh; }
+:where(.sheet[data-mode="step1"] .sheet__panel) { height: auto; max-height: 94svh; }   /* step 1 hugs its content; placeReview measures against it */
+:where(.sheet__bar) { position: relative; display: flex; align-items: center; gap: 12px; padding: 18px var(--gutter, 20px) 10px; touch-action: none; }
+:where(.sheet__step) { flex: 1; margin: 0; text-align: center; }
+:where(.sheet__body) { flex: 1 1 auto; min-height: 0; overflow-y: auto; overscroll-behavior: contain; -webkit-overflow-scrolling: touch; padding: 8px var(--gutter, 20px) 24px; }
+:where(.sheet__foot) { flex: none; display: grid; gap: 10px; padding: 12px var(--gutter, 20px) calc(14px + env(safe-area-inset-bottom, 0px)); }
+:where(.sheet__foot .btn) { width: 100%; }
+:where(.sheet__handle) { position: absolute; left: 50%; top: 7px; width: 44px; height: 5px; margin-left: -22px; }
+
+/* frame: non-modal side panel from 1024 px (P7: <=560 px wide, the timetable stays visible) */
+@media (min-width: 1024px) {
+  :where(.sheet__panel) { left: auto; top: 12px; bottom: 12px; right: 12px; width: min(540px, 42vw); max-height: none; height: auto; }
+  :where(.sheet--tall .sheet__panel) { height: auto; }
+  :where(.sheet__bar) { padding-top: 20px; touch-action: auto; }
+}
+
+/* step 1: coach header (RULINGS #26: 112x140 at phone width, 96x120 .is-compact floor, 148x185 from 1024 px) */
+:where(.view--step1) { display: grid; gap: 16px; padding-bottom: 6px; }
+:where(.coachwrap) { display: grid; gap: 10px; }
+:where(.coachhead) { display: grid; grid-template-columns: 112px minmax(0, 1fr); column-gap: 16px; align-items: end; }
+:where(.coachhead__photo) { display: block; width: 112px; height: 140px; overflow: hidden; }
+:where(.view--step1.is-compact .coachhead) { grid-template-columns: 96px minmax(0, 1fr); column-gap: 14px; }
+:where(.view--step1.is-compact .coachhead__photo) { width: 96px; height: 120px; }
+/* portrait crop: head to mid-torso, never a tight face crop (faces gate). Per-coach focus as in Home v2. */
+:where(.coachhead__photo img) { display: block; width: 100%; height: 100%; object-fit: cover; transform: scale(1.7); transform-origin: 50% 6%; }
+:where(.coachhead__photo[data-coach="ain"] img) { transform-origin: 50% 0%; }
+:where(.coachhead__photo[data-coach="icha"] img) { transform-origin: 50% 2%; }
+:where(.coachhead__photo[data-coach="tinos"] img) { transform: scale(1.5); transform-origin: 50% 22%; }
+:where(.coachhead__say, .coachhead__rev, .coachhead__text) { margin: 0; }
+:where(.coachhead__cite) { display: flex; align-items: center; gap: 6px; }
+:where(.coachhead__cite .gmark) { width: 16px; height: 16px; flex: none; }   /* P9: G >= 16 px */
+@media (min-width: 1024px) {
+  :where(.coachhead), :where(.view--step1.is-compact .coachhead) { grid-template-columns: 148px minmax(0, 1fr); }
+  :where(.coachhead__photo), :where(.view--step1.is-compact .coachhead__photo) { width: 148px; height: 185px; }
+  :where(.view--step1) { gap: 20px; }
+}
+
+/* step 1: four tiles, 2x2 (P10: >=72 px tall, >=8 px apart); the "Most chosen" pill sits on the top edge, top-left */
+:where(.jtiles) { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 10px; }
+:where(.jtile) { position: relative; display: grid; align-content: center; gap: 4px; min-height: 76px; padding: 12px 26px 12px 14px; font: inherit; text-align: left; cursor: pointer; }
+:where(.jtile--hl) { padding-top: 18px; }
+:where(.jtile--wide) { width: 100%; }
+:where(.jtile__go) { position: absolute; right: 10px; top: 50%; translate: 0 -50%; line-height: 1; }
+:where(.jtile__badge) { position: absolute; top: -2px; left: 12px; translate: 0 -50%; white-space: nowrap; pointer-events: none; line-height: 1; }
+:where(.joining .group__legend) { margin: 0 0 18px; }   /* keeps the pill clear of the legend */
+:where(.jtile:disabled) { cursor: not-allowed; }
+
+/* step 2: strip, tiers, fields, pay pair */
+:where(.view--step2) { display: grid; gap: 14px; }
+:where(.strip) { display: grid; grid-template-columns: 32px minmax(0, 1fr) auto; column-gap: 10px; align-items: center; min-height: 56px; padding: 6px 4px 6px 12px; }
+:where(.strip__photo) { display: block; width: 32px; height: 32px; overflow: hidden; }
+:where(.strip__photo img) { display: block; width: 100%; height: 100%; object-fit: cover; }
+:where(.group) { margin: 0; padding: 0; border: 0; min-width: 0; }
+:where(.group__legend) { margin: 0 0 8px; }
+:where(.tiers) { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 10px; }
+:where(.tiers .err) { grid-column: 1 / -1; }
+:where(.ttile) { display: grid; align-content: start; gap: 2px; min-height: 72px; padding: 10px 12px; font: inherit; text-align: left; cursor: pointer; }
+:where(.details) { display: grid; gap: 12px; }
+:where(.field) { display: grid; gap: 6px; }
+:where(.sheet .input, .sheet .select) { width: 100%; min-height: 52px; padding: 0 14px; font: inherit; font-size: max(16px, 1.0625rem); }   /* P11: >=16 px (no zoom on focus), >=52 px tall */
+:where(.sheet .select) { appearance: none; -webkit-appearance: none; padding-right: 36px; }
+:where(.selectwrap, .cc) { position: relative; }
+:where(.phone) { display: grid; grid-template-columns: minmax(9.5rem, 46%) minmax(0, 1fr); gap: 8px; }
+:where(.phone--cc) { grid-template-columns: 96px minmax(0, 1fr); }   /* P11: the code picker is a 96 px column */
+:where(.cc__shown) { position: absolute; left: 14px; top: 50%; translate: 0 -50%; pointer-events: none; }
+:where(.paybtns) { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 10px; }
+:where(.paybtn) { position: relative; display: block; cursor: pointer; }
+:where(.paybtn__face) { display: grid; place-items: center; min-height: 56px; padding: 0 10px; text-align: center; }   /* the pair is the same component: equal by construction */
+:where(.err--group) { margin-top: 8px; }
+
+/* waitlist, other times, Confirmed, coach view */
+:where(.sh-others) { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+:where(.chipbtn) { min-height: 44px; padding: 0 1rem; font: inherit; cursor: pointer; }
+:where(.done-mark) { width: 64px; height: 64px; }
+:where(.done-links) { display: flex; flex-wrap: wrap; gap: 0 20px; }
+:where(.done-links .link-t) { min-height: 44px; display: inline-flex; align-items: center; }
+:where(.summary) { margin: 0; }
+:where(.summary div) { display: flex; justify-content: space-between; gap: 16px; }
+:where(.summary dd) { margin: 0; text-align: right; }
+:where(.payload pre) { max-height: 240px; overflow: auto; white-space: pre-wrap; word-break: break-all; }
+:where(.csheet__top) { display: flex; align-items: flex-end; gap: 16px; }
+:where(.csheet__top .csheet__photo) { flex: none; width: 128px; }
+:where(.csheet__photo) { aspect-ratio: 4 / 5; overflow: hidden; }
+:where(.csheet__photo img) { display: block; width: 100%; height: 100%; object-fit: cover; object-position: 50% 22%; }
+:where(.mrows) { list-style: none; margin: 8px 0 0; padding: 0; }
+:where(.mrow) { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 12px; align-items: center; }
+@media (min-width: 1024px) { :where(.csheet__top .csheet__photo) { width: 180px; } }
+
+/* seat row (EF.seats markup): mechanics only; dot looks are the skin's */
+:where(.seatrow) { display: inline-flex; align-items: center; flex-wrap: nowrap; gap: 6px; }
+:where(.seats) { display: inline-flex; flex-wrap: wrap; align-items: center; gap: 3px; }
+:where(.seat) { display: inline-block; flex: none; }
+
+/* ===================== class finder (RULINGS #30, #36, #37, #40, #41; FINDER-SPEC v1.1 section 7.9) =====================
+   1a. LOOK: zero-specificity defaults drawn from --find-* tokens (fallbacks = Home v2's white sheet). A skin sets the tokens on
+       .sheet / #sheet / :root, or styles the classes. Never terracotta in a --find-* token.
+   1b. CORE (normal specificity, further down in section 2): sizes, gaps, text floors, wrapping, chip grid, focus, media box. */
+:where(.sheet__body) { container-type: inline-size; }   /* Show week: 2 chip columns, 3 from a 420 px body (every 1440 panel, never a phone or the 1024 panel) */
+:where(.view--finder, .view--fday, .view--fweek, .view--fclass, .view--fsessions) { display: grid; gap: 16px; align-content: start; }
+:where(.find-modes, .find-list, .find-chips) { list-style: none; margin: 0; padding: 0; }
+:where(.find-modes, .find-list, .find-types, .find-groups, .find-week, .find-daybox) { display: grid; align-content: start; }
+:where(.find-types, .find-groups, .find-week) { gap: 20px; }
+:where(.find-type, .find-group, .find-wday) { display: grid; gap: 10px; }
+:where(.find-mode, .find-next, .find-row, .find-chip, .find-cls, .find-day) {
+  font: inherit; text-align: left; cursor: pointer;
+  background: var(--find-surface, #FCFCFA); color: var(--find-ink, #1B1B1B);
+  border: var(--find-line-w, 2px) solid var(--find-line, #1B1B1B); border-radius: var(--find-radius, 16px);
+}
+:where(.find-day) { border-radius: calc(var(--find-radius, 16px) * .6); text-align: center; }
+:where(.find-day[aria-selected="true"]) { background: var(--find-sel-bg, #1B1B1B); color: var(--find-sel-ink, #FCFCFA); border-color: var(--find-sel-bg, #1B1B1B); }
+:where(.find-day.is-done:not([aria-selected="true"])) { color: var(--find-ink-soft, rgba(27, 27, 27, .72)); }
+:where(.find-row--full, .find-chip--full) { border-color: var(--find-full-line, rgba(27, 27, 27, .24)); color: var(--find-full-ink, rgba(27, 27, 27, .8)); }
+:where(.find-row--booked, .find-chip--booked) { border-width: calc(var(--find-line-w, 2px) + 1px); }
+:where(.find-row[aria-disabled="true"], .find-chip[aria-disabled="true"]) { cursor: not-allowed; opacity: .55; }
+@media (hover: hover) { :where(.find-mode, .find-next, .find-row, .find-chip, .find-cls, .find-day):not([aria-disabled="true"]):not([aria-selected="true"]):hover { border-color: var(--find-line-hover, #1B1B1B); } }
+html.motion-ok :where(.find-mode, .find-next, .find-row, .find-chip, .find-cls) { transition: transform var(--find-dur, .2s) var(--find-ease, ease-out), border-color var(--find-dur, .2s) var(--find-ease, ease-out); }
+html.motion-ok :where(.find-mode, .find-next, .find-row, .find-chip, .find-cls):not([aria-disabled="true"]):active { transform: scale(var(--find-press-scale, .98)); }
+:where(.find-mode, .find-next, .find-row, .find-chip, .find-cls, .find-day):focus-visible { outline: 3px solid var(--find-focus, #1B1B1B); outline-offset: 2px; }
+:where(.find-mode__name, .find-cls__name, .find-row__name, .find-row__time, .find-chip__time, .find-cls__time, .find-next__k) { font-weight: 700; }
+:where(.find-mode__sub, .find-cls__line, .find-row__who, .find-chip__seats, .find-cls__day, .find-sub, .find-note) { color: var(--find-ink-soft, rgba(27, 27, 27, .72)); }
+:where(.find-mode__last) { padding: 2px 8px; border: 1px solid currentColor; border-radius: 999px; }
+:where(.find-sep) { margin: 0; border: 0; border-top: 1px solid var(--find-full-line, rgba(27, 27, 27, .14)); }
+:where(.find-type__media) { border-radius: var(--find-media-radius, 10px); background: var(--find-ink, #1B1B1B); }
+:where(.find-type__stock) { padding: 1px 6px; border: 1px solid currentColor; border-radius: 4px; }
+:where(.find-empty) { margin: 0; font-weight: 600; }
+:where(.find-note, .find-sub, .find-dayline, .find-wday__h, .find-group__h) { margin: 0; }
+/* layout of each control */
+:where(.find-mode) { position: relative; display: grid; grid-template-columns: 40px minmax(0, 1fr) auto; grid-template-rows: auto auto; column-gap: 14px; align-items: center; width: 100%; padding: 10px 14px; }
+:where(.find-mode__glyph) { grid-column: 1; grid-row: 1 / span 2; display: grid; place-items: center; width: 40px; height: 40px; }
+:where(.find-mode__glyph svg) { display: block; width: 32px; height: 32px; }
+:where(.find-mode__name) { grid-column: 2; grid-row: 1; align-self: end; }
+:where(.find-mode__sub) { grid-column: 2; grid-row: 2; align-self: start; }
+:where(.find-mode__go) { grid-column: 3; grid-row: 1 / span 2; line-height: 1; }
+:where(.find-mode__last) { position: absolute; top: 8px; right: 36px; white-space: nowrap; pointer-events: none; }
+:where(.find-next) { display: grid; grid-template-columns: minmax(0, 1fr) auto; row-gap: 4px; column-gap: 12px; align-items: center; width: 100%; padding: 10px 14px; }
+:where(.find-next__k, .find-next__seats) { grid-column: 1; min-width: 0; }
+:where(.find-next__go) { grid-column: 2; grid-row: 1 / span 2; white-space: nowrap; }
+:where(.find-days) { display: grid; grid-template-columns: repeat(7, minmax(44px, 1fr)); }
+:where(.find-day) { display: grid; place-items: center; align-content: center; padding: 4px 0; }
+:where(.find-row) { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; grid-template-areas: "t n g" "w s g"; column-gap: 10px; row-gap: 4px; align-items: center; width: 100%; padding: 10px 12px; }
+:where(.view--fsessions .find-row) { grid-template-areas: "t t g" "w s g"; }
+:where(.find-row__time) { grid-area: t; white-space: nowrap; }
+:where(.find-row__name) { grid-area: n; min-width: 0; }
+:where(.find-row__who) { grid-area: w; display: inline-flex; align-items: center; gap: 6px; }
+:where(.find-row__who img) { width: 24px; height: 24px; object-fit: cover; flex: none; border-radius: 50%; }
+:where(.find-row__seats) { grid-area: s; min-width: 0; }
+:where(.find-row__seats .seatrow) { flex-wrap: wrap; }
+:where(.find-row__go, .find-cls__go) { grid-area: g; line-height: 1; }
+:where(.find-chips) { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+@container (min-width: 420px) { :where(.find-chips) { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+:where(.find-chip) { display: grid; align-content: start; gap: 2px; width: 100%; padding: 8px 10px; }
+:where(.find-chip__l) { display: block; }
+:where(.find-type__head) { display: flex; align-items: center; gap: 12px; margin: 0; }
+:where(.find-type__media) { position: relative; flex: none; display: block; width: 64px; aspect-ratio: 4 / 3; overflow: hidden; }
+:where(.find-type__media img, .find-type__media video) { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+:where(.find-type__media video) { opacity: 0; }
+:where(.find-type__media video.is-playing) { opacity: 1; }
+:where(.find-type__icon:empty) { display: none; }
+:where(.find-cls) { display: grid; grid-template-columns: minmax(0, 1fr) auto auto; grid-template-areas: "n x g" "l x g"; column-gap: 12px; row-gap: 2px; align-items: center; width: 100%; padding: 10px 12px; }
+:where(.find-cls__name) { grid-area: n; min-width: 0; }
+:where(.find-cls__line) { grid-area: l; min-width: 0; }
+:where(.find-cls__next) { grid-area: x; display: grid; justify-items: end; text-align: right; }
+@media (min-width: 1024px) { :where(.find-type__media) { width: 96px; } }
+
+/* ===================== 2. states and behaviour (normal specificity) ===================== */
+
+.sheet[hidden] { display: none; }
+.sheet .sheet__progress[hidden], .sheet [data-sheet-progress][hidden] { display: none; }   /* the engine hides the progress bar: two steps, no bar (P7) */
+.sheet [data-step-numeral] { display: none; }   /* stepNumerals: parser text only, never shown */
+#sheet-title:focus { outline: none; }   /* programmatic focus target (tabindex=-1); real controls keep their rings */
+.sheet__foot:empty { display: none; }
+.sheet__panel.is-drag { transition: none; }
+
+/* desktop: the panel is non-modal, so the page behind stays usable (RULINGS #20) */
+@media (min-width: 1024px) {
+  .sheet.is-panel { pointer-events: none; }
+  .sheet.is-panel .sheet__panel { pointer-events: auto; }
+  .sheet.is-panel .sheet__scrim { display: none; }
+  .sheet .sheet__handle { display: none; }
+  .sheet.is-panel .sheet__panel { margin-top: var(--sheet-top, 0px); }   /* RULINGS #38: below a sticky Now bar; the skin's own top stays */
+}
+
+/* phones: the panel rides on the on-screen keyboard (--kb); the chrome folds so the field, the pay pair and Confirm stay in view */
+@media (max-width: 1023.98px) {
+  .sheet .sheet__panel { bottom: var(--kb, 0px); max-height: calc(94vh - var(--kb, 0px)); max-height: calc(94svh - var(--kb, 0px)); max-height: calc(94dvh - var(--kb, 0px)); }
+  .sheet.sheet--tall .sheet__panel { height: calc(94vh - var(--kb, 0px)); height: calc(94svh - var(--kb, 0px)); height: calc(94dvh - var(--kb, 0px)); }
+  .sheet.has-kb .sheet__panel { max-height: min(calc(94dvh - var(--kb, 0px)), var(--vvh, 100dvh)); }   /* never taller than the visible viewport */
+  .sheet.has-kb .sheet__handle, .sheet.has-kb .sheet__progress, .sheet.has-kb .sheet__step,
+  .sheet.has-kb .sh-privacy, .sheet.has-kb .sh-remember, .sheet.has-kb .sh-lead { display: none; }
+  .sheet.has-kb .sheet__bar { padding-top: 6px; padding-bottom: 0; }
+  .sheet.has-kb .sheet__foot { padding-top: 8px; padding-bottom: 8px; gap: 6px; }
+}
+
+/* a field has focus: the foot is Confirm only, step 2 tightens, so the pay pair stays in view (keepPayInView) */
+.sheet.is-typing .sh-total, .sheet.is-typing .sh-privacy { display: none; }
+.sheet.is-typing .view--step2 { gap: 8px; }
+
+/* the step-2 strip is one line, <=56 px, always (RULINGS #16) */
+.sheet .strip { box-sizing: border-box; max-height: 56px; }
+.sheet .strip__h { min-width: 0; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+.sheet .strip__change { min-height: 44px; }
+
+/* the compact code picker: the select keeps the country names for the list, the overlay shows "+62" */
+.sheet .cc .select { color: transparent; }
+.sheet .cc .select option { color: initial; }
+
+/* the pay radios are visually hidden; the face is the control */
+.sheet .paybtn input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+
+/* errors and hidden bits */
+.sheet .err { display: none; }
+.sheet .err:not(:empty), .sheet .field.is-bad .err { display: block; }
+.sheet .err-summary[hidden], .sheet .sh-total[hidden] { display: none; }
+
+/* class finder CORE (FINDER-SPEC v1.1 7.9; skins don't override it): targets, gaps, text floors (RULINGS #41: content >=14 px,
+   names >=17 px, meta >=12 px: seat labels, Sample chips, day-of-week abbreviations, Last used), wrapping, focus, no sticky headings */
+.sheet .find-mode { min-height: 76px; }
+.sheet .find-cls { min-height: 60px; }
+.sheet .find-row, .sheet .find-chip, .sheet .find-next { min-height: 56px; }
+.sheet .find-day { min-width: 44px; min-height: 44px; }
+.sheet .find-modes, .sheet .find-list, .sheet .find-chips { gap: max(8px, var(--find-gap, 10px)); }
+.sheet .find-days { gap: 8px; }
+@media (max-width: 419.98px) { .sheet .find-days { margin-inline: min(0px, calc(16px - var(--gutter, 20px))); } }   /* 7 x 44 + 6 x 8 needs 356 px: 16 px insets */
+@media (max-width: 375px) { .sheet .find-days { gap: 2px; margin-inline: 0; } }   /* RULINGS #40 */
+.sheet .find-day:focus-visible { outline-offset: -3px; }   /* never clipped by the scrolling body */
+.sheet [class*="find-"] { font-size: max(14px, var(--find-sub-size, .9375rem)); text-overflow: clip; -webkit-line-clamp: none; }
+.sheet .find-mode__name, .sheet .find-cls__name, .sheet .find-row__name, .sheet .find-row__time, .sheet .find-next__k { font-size: max(17px, var(--find-name-size, 1.125rem)); }
+.sheet .find-chip__time, .sheet .find-cls__time { font-size: max(16px, var(--find-time-size, 1rem)); }
+.sheet .find-day__dow, .sheet .find-chip__seats, .sheet .find-chip__l, .sheet .find-mode__last, .sheet .find-type__stock,
+.sheet [class*="find-"] .seatrow__lbl, .sheet [class*="find-"] .sample { font-size: max(12px, var(--find-meta-size, .8125rem)); }
+.sheet .find-day__num { font-size: max(14px, var(--find-sub-size, .9375rem)); }
+.sheet .find-title, .sheet [class*="find-"] .find-title { font-size: max(17px, var(--find-title-size, 1.75rem)); }
+.sheet[data-step="0"] #sheet-title, .sheet .find-wday__h, .sheet .find-group__h, .sheet .find-type__head { text-wrap: balance; }
+.sheet .find-row__name, .sheet .find-cls__name, .sheet .find-cls__line, .sheet .find-chip__name, .sheet .find-row__who, .sheet .find-mode__sub { white-space: normal; overflow: visible; overflow-wrap: anywhere; }
+.sheet .find-wday__h, .sheet .find-group__h, .sheet .find-type__head { position: static; }
+.sheet .find-type__media { aspect-ratio: 4 / 3; }
+.sheet .find-row__seats, .sheet .find-next__seats, .sheet .find-cls__name, .sheet .find-cls__line { min-width: 0; }
+.sheet .find-row__seats .seatrow, .sheet .find-row__seats .seats { flex-wrap: wrap; }   /* the seat row and its Sample chip wrap inside the row, whatever the skin's .seatrow says */
+
+/* RULINGS #41 meta floor for every Sample chip in the sheet (visual audit ENG-2); an id selector so skin class rules can't undercut it.
+   A skin that wants it larger sets --sample-size. */
+#sheet .sample { font-size: max(12px, var(--sample-size, .75rem)); }
+
+/* busy Confirm */
+.btn.is-busy { position: relative; }
+.btn.is-busy .btn__label, .btn.is-busy .arr { visibility: hidden; }
+.btn.is-busy::after { content: "\2022 \2022 \2022"; position: absolute; inset: 0; display: grid; place-items: center; letter-spacing: .2em; }
+
+/* screen-reader-only text (seat rows, stars, coach name details, finder names) */
+/* engine-v2 1.2.1: only the engine's own hidden text (.ef-vh); the page's .vh stays the page's */
+.ef-vh { position: absolute !important; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap; border: 0; }

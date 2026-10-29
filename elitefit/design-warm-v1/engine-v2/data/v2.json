@@ -1,0 +1,306 @@
+{
+ "_meta": {
+  "version": "engine-v2 shared overlay 1.2.1",
+  "date": "2026-10-29",
+  "about": "Shared data for engine-v2, merged over ../../v1/assets/data/groupfitness.json by engine-v2/api.js (overlay wins; objects merge, arrays replace). Copied from variants/s3-home-v2/assets/data/v2.json (28 Oct 2026, 13:54) without the Home v2 page-only keys (nextup_media). The shared v1 file is never edited.",
+  "rulings": "RULINGS v1.0: 4.7 from 497 Google reviews (#23); hero quotes are verbatim cuts of 12 words or fewer (#2); the full class label 'Full · Join waitlist' lives in booking.js (#25).",
+  "paths": "srcset paths are relative to THIS file (engine-v2/data/).",
+  "sources": {
+   "prices": "elitefitbali.com /membership/ and /promo-duo/, re-read 28 Oct 2026 (FACTS.md F2-PRC)",
+   "rating": "Google knowledge panel, read 28 Oct 2026 (F2-REV-01)",
+   "address": "Google listing (F2-ADR-01)",
+   "drive": "Google Maps, Wed 28 Oct 2026 ~9:20am WITA (F2-DRV-01)",
+   "capacity": "Sample (no source; the club publishes no capacity)",
+   "hero_quotes": "Google reviews; swap list from REVIEWS.md when ready",
+   "reviews": "Google Maps reviews via Firecrawl, 28 Oct 2026 (172 of 497 read); reviews.json"
+  },
+  "changelog": [
+   "1.0 (28 Oct 2026): first release, from Home v2 v2.json.",
+   "1.1 (29 Oct 2026): finder.lines, finder.template and nextup_media for the class finder (FINDER-SPEC v1.1).",
+   "1.2.1 (29 Oct 2026): nextup_media thumb_pos, face-safe crops for the finder thumbnails (conditioning 92 %, sculpt 6 %, boxing 100 % no-people crop, mobility y 2 % with 8 px headroom)."
+  ]
+ },
+ "club": {
+  "address_gbp": "Jl. Sempol No.26, Pererenan, Kec. Mengwi, Kabupaten Badung, Bali 80351",
+  "address_short": "Jl. Sempol No.26, Pererenan",
+  "rating": {
+   "value": 4.7,
+   "count": 497,
+   "as_of": "2026-10-28",
+   "source": "Google"
+  },
+  "hours": {
+   "perform": "06:00 to 22:00, every day",
+   "recharge": "06:30 to 22:00, every day"
+  },
+  "drive": {
+   "from": "Pantai Berawa",
+   "motorbike_min": 12,
+   "motorbike_km": 4.4,
+   "car_min": 27,
+   "car_km": 6.7,
+   "read": "2026-10-28"
+  },
+  "geo": {
+   "lat": -8.6389587,
+   "lng": 115.1378823,
+   "source": "club map link, re-check against the Google Business Profile pin"
+  },
+  "maps_url": "https://maps.app.goo.gl/4qwxZzF3nnM1jeh36",
+  "privacy_url": null,
+  "address": "Jl. Sempol No.26, Pererenan, Kec. Mengwi, Kabupaten Badung, Bali 80351"
+ },
+ "passes": {
+  "order": [
+   "member",
+   "class-1",
+   "membership",
+   "duo"
+  ],
+  "includes": {
+   "class-1": {
+    "classes": 1,
+    "gym": false,
+    "recharge": false
+   },
+   "duo": {
+    "classes": "all",
+    "gym": true,
+    "recharge": true
+   },
+   "perform-4w": {
+    "classes": "unlimited",
+    "gym": true,
+    "recharge": false
+   },
+   "elite-4w": {
+    "classes": "unlimited",
+    "gym": true,
+    "recharge": true
+   }
+  }
+ },
+ "payload": {
+  "schema_version": "ef-booking-1",
+  "privacy_notice_version": "2026-10-28",
+  "source_page": "https://elitefitbali.com/class-schedule/"
+ },
+ "timetable": {
+  "capacity_sample": true,
+  "capacity_note": "The club publishes no class capacity. These per-class capacities are Sample numbers for the free-spots graphic; free spots = min(capacity, the stable sample hash) minus demo bookings.",
+  "capacity": {
+   "hyrox-conditioning": 16,
+   "off-court-training": 12,
+   "boxercise-beginner": 12,
+   "boxercise-advanced": 10,
+   "booty-and-core": 14,
+   "body-sculpt": 14,
+   "booty": 12,
+   "stretching": 16,
+   "mobility": 12,
+   "injury-prevention-mobility": 10
+  }
+ },
+ "coach_lines": {
+  "hyrox-conditioning": "I built this hour on the HYROX race format: HIIT, functional moves, endurance. Join me at {time}.",
+  "off-court-training": "I designed this hour for performance and injury prevention. Racket player or not, join me at {time}.",
+  "boxercise-beginner": "I teach boxing with no contact, for strength and speed. New is fine; start with me at {time}.",
+  "boxercise-advanced": "My no-contact boxing at the advanced level, for agility and endurance. Come box with me at {time}.",
+  "booty-and-core": "Every level is welcome here, beginners too. We work on strength and flexibility. Join me at {time}.",
+  "body-sculpt": "I mix strength and cardio in one full-body hour. Come work through it with me at {time}.",
+  "booty": "It's Booty with me, one hour at {time}. Come along; I'd love to have you there.",
+  "stretching": "An hour of stretching with me at {time}. I'll save you a spot.",
+  "mobility": "An hour of mobility with me at {time}. I'd be glad to see you there.",
+  "injury-prevention-mobility": "My new class works on injury prevention and mobility. I'd love you to join me at {time}."
+ },
+ "coach_lines_note": "COPY.md v1.3 SHEET.coach.<class-id>; {time} is the class start time; Sample until each coach approves the line.",
+ "reviews": [
+  {
+   "id": "R01",
+   "text": "…a great variety of classes to suit everyone…",
+   "by": "Sonal P., Google review",
+   "tags": {
+    "hero": true
+   },
+   "review_id": "Ci9DQUlRQUNvZENodHljRjlvT25ZeFpHRlFXR2hUV21aMVdERTFSbGhRY2twamNGRRAB"
+  },
+  {
+   "id": "R02",
+   "text": "Amazing facilities and great classes.",
+   "by": "Alex F., Google review",
+   "tags": {
+    "hero": true
+   },
+   "review_id": "Ci9DQUlRQUNvZENodHljRjlvT2pKUlVUZDZha2RuWkZrelgyRkNZVXd3YW1OTVVuYxAB"
+  },
+  {
+   "id": "R03",
+   "text": "Excellent gym with top-level equipment…",
+   "by": "Tom H., Google review",
+   "tags": {
+    "hero": true
+   },
+   "review_id": "Ci9DQUlRQUNvZENodHljRjlvT2tOVllXdzVaR1pvYUZsUkxWQm9ObVZyVDBGVGVVRRAB"
+  },
+  {
+   "id": "R04",
+   "text": "…The trainers are absolute experts…",
+   "by": "Edi H., Google review",
+   "tags": {
+    "hero": true
+   },
+   "review_id": "ChZDSUhNMG9nS0VJQ0FnSUMza09xVUpBEAE"
+  },
+  {
+   "id": "R05",
+   "text": "Awesome gym and amazing spa area.",
+   "by": "Kieran H., Google review",
+   "tags": {
+    "hero": true
+   },
+   "review_id": "ChZDSUhNMG9nS0VJQ0FnSURyNElUUUtREAE"
+  },
+  {
+   "id": "R08",
+   "text": "…I joined the boxercise class 3x a week with Rey who is brilliant.",
+   "by": "Alexandra H., Google review",
+   "tags": {
+    "coach": "rey",
+    "classes": [
+     "boxercise-beginner",
+     "boxercise-advanced"
+    ]
+   },
+   "full": [
+    "I joined this gym for 4 weeks during my stay. Loved it! The kit is great for weightlifting. They have classes and I joined the boxercise class 3x a week with Rey who is brilliant. All the staff are so friendly and Tio on the front desk has been a star. Great protein shakes too. Highly recommend!"
+   ],
+   "full_words": 57,
+   "review_id": "Ci9DQUlRQUNvZENodHljRjlvT25oaFdVNXRVRVJNYjNFMGNYZFJWVTk1VVhjMGNWRRAB"
+  },
+  {
+   "id": "R09a",
+   "text": "…classes are great, tinos’ mobility sorted me out…",
+   "by": "Conor B., Google review",
+   "tags": {
+    "coach": "tinos",
+    "classes": [
+     "injury-prevention-mobility"
+    ]
+   },
+   "full": [
+    "best gym in bali by far. classes are great, tinos’ mobility sorted me out and rey’s hyrox conditioning class is a monster. so good.",
+    "definitely get the full package with recharge, it’s so worth it. sometimes would end up accidentally spending 4 hours there. incredible"
+   ],
+   "full_words": 45,
+   "review_id": "ChZDSUhNMG9nS0VJQ0FnSUNMMjdLWVN3EAE"
+  },
+  {
+   "id": "R09b",
+   "text": "…rey’s hyrox conditioning class is a monster.",
+   "by": "Conor B., Google review",
+   "tags": {
+    "coach": "rey",
+    "classes": [
+     "hyrox-conditioning"
+    ]
+   },
+   "full": [
+    "best gym in bali by far. classes are great, tinos’ mobility sorted me out and rey’s hyrox conditioning class is a monster. so good.",
+    "definitely get the full package with recharge, it’s so worth it. sometimes would end up accidentally spending 4 hours there. incredible"
+   ],
+   "full_words": 45,
+   "review_id": "ChZDSUhNMG9nS0VJQ0FnSUNMMjdLWVN3EAE"
+  },
+  {
+   "id": "R06",
+   "text": "…Ray delivered the lesson at a very high level with terrific dedication.",
+   "by": "Shanti P., Google review",
+   "tags": {
+    "coach": "rey",
+    "classes": [
+     "boxercise-beginner",
+     "boxercise-advanced"
+    ]
+   },
+   "full": [
+    "I really enjoyed the boxing class ⭐️⭐️⭐️⭐️⭐️",
+    "In one class I learned about several patterns that I should have corrected years ago. That's a lot of progress and a tremendous credit to the coach 👍 Ray sees the student very well and is very clear about the points that need to be corrected.",
+    "Ray delivered the lesson at a very high level with terrific dedication. He enjoys teaching and imparts his knowledge with passion. It's a very comfy class environment and I was impressed for a long time after the class. I've been going to a gym for over 20 years as a customer and over 10 years as a trainer, have studied and worked in a lot of holding companies, so I can say very clearly that a trainer who combines all the necessary qualities is very rare. Bravo! My wife also has over 15 years of teaching experience and she also commented on how great the class was because of trainer great work. This is very rare, very very rare, so I decided to share what I see. Really appreciate professional work of the highest caliber in any field. Thank you for the class! That is why this place is called Elit Fit 🏆"
+   ],
+   "full_words": 206,
+   "review_id": "ChdDSUhNMG9nS0VJQ0FnSUNKenJYN3J3RRAB"
+  },
+  {
+   "id": "R10",
+   "text": "…the energy of the coaches - Icha, Rey, Tinos - that just really makes you want to work harder!",
+   "by": "Rue A., Google review",
+   "tags": {
+    "coach": "icha",
+    "classes": []
+   },
+   "full": [
+    "I would give this gym 10 stars if that was possible! I did try a few of the gym's around Canggu before committing to Elite fit and it was the best addition to my life in Bali.",
+    "I love that the weight training area is so extensive with so much space for everyone. I don't think I ever wasted any time having to wait for a machine because someone else was using it. I also really enjoyed the workout classes. What really made it so fun was the energy of the coaches - Icha, Rey, Tinos - that just really makes you want to work harder!",
+    "My goal for Bali was focusing on my fitness journey. During my first week I took a Mobility class with Martijn and he was the FIRST trainer EVER to notice that I'm hypermobile. So I instantly signed up for 10 PT sessions with him and it was the best money I spent. I asked him a million questions and he was basically my fitness encyclopedia. He also has the best hacks for upper body days - my back day has forever been changed for the better! My body scan also showed that I increased my skeletal muscle mass from 22.3 to 23 and genuinely by the time I left, I felt so much more stronger and like I wasn't training blindly anymore. I'm so grateful for everything I learned from him!",
+    "The recovery area - I basically lived there! It's so aesthetically pleasing, I never felt like it's overcrowded and depending on the time of day you may even have it all to yourself which is the most conducive for relaxing and recovery. I loved that the cafe right upstairs has a nice view so you can do your workout, go for recovery and then move upstairs to grab a bite to eat while you work on your laptop.",
+    "And finally, THE STAFF - I can't say it enough but they were the highlight for me. Being a digital nomad and living abroad can be isolating sometimes and the gym being a constant in my routine, it's the staff that I saw EVERY DAY and they really went above and beyond from just being hospitable and polite. I genuinely felt so cared for by every single person there. From Gede & Made smiling ear to ear when they greet me (even if it's 7am it's the best way to start the day seeing such happy people), to the babes at the front desk (Yuni, Dea, Tio, Tata, Asri, Diana, Mei) who greet me when I enter and genuinely converse with me about how I'm doing. They're always so bubbly and happy and it never feels forced or obligatory chit chat. Then there's the amazing guys at the cafe (Timmy, Gunter, Ferry, Tama, Komang + all the kitchen staff) that fed me SO WELL those two months, from making my preworkouts & remembering my protein shake order and making the best steak and veggies which became my usual. I genuinely was so sad when Gunther made my last protein shake haha Then there's the lovely people at the recovery area and cafe (Ratih, Putu, Willy, Nova, Widya, Artha, Rey) they were always so kind, so polite, so conversational in the best ways! There's so many more people I'm sure I haven't mentioned but overall everyone was so funny, so friendly, so genuine and it really made me feel at home.",
+    "I know first hand that the work culture is not set from the bottom up but from the top down so I truly give so much credit to Putu for the environment he's created at his gym for the members and for his staff. I went up to him the first week itself and was like \"I love your gym\" and I didn't even know at the time how much more I would come to love it over time.",
+    "To sum up - the gym alone with the equipment/space already makes the place top tier and great for your workout. The recovery area is high quality. The food is great + very reasonably priced. But the PEOPLE that work there just change the whole game because they don't treat you like you're just another member & it's their job to be nice to you but they treat you like you're an actual person and try to get to know you over time. That's such a personal experience that is just unmatched compared to the other places. I can't wait to go back next year!",
+    "Anyway, thank you for coming to my ted talk..."
+   ],
+   "full_words": 768,
+   "review_id": "Ci9DQUlRQUNvZENodHljRjlvT2tzNFVYRkhUazFrY2xOVFZYb3lSWGRwTkhCV1MzYxAB"
+  }
+ ],
+ "reviews_note": "REAL Google reviews, verbatim (typos, lowercase and … kept): Google Maps reviews read via Firecrawl on 28 Oct 2026, 172 of 497 reviews (REVIEWS.md v1.1). tags.hero = the hero rotator, in file order; tags.coach/classes = the booking sheet (class match first, then coach). The two sets never overlap.",
+ "srcset": {
+  "coach-rey.webp": "../img/r/coach-rey-240.webp 240w, ../img/r/coach-rey-320.webp 320w, ../img/r/coach-rey-360.webp 360w, ../img/r/coach-rey-480.webp 480w, ../../v1/assets/img/coach-rey.webp 600w",
+  "coach-tinos.webp": "../img/r/coach-tinos-240.webp 240w, ../img/r/coach-tinos-320.webp 320w, ../img/r/coach-tinos-360.webp 360w, ../img/r/coach-tinos-480.webp 480w, ../../v1/assets/img/coach-tinos.webp 600w",
+  "coach-ain.webp": "../img/r/coach-ain-240.webp 240w, ../img/r/coach-ain-320.webp 320w, ../img/r/coach-ain-360.webp 360w, ../img/r/coach-ain-480.webp 480w, ../../v1/assets/img/coach-ain.webp 600w",
+  "coach-icha.webp": "../img/r/coach-icha-240.webp 240w, ../img/r/coach-icha-320.webp 320w, ../img/r/coach-icha-360.webp 360w, ../img/r/coach-icha-480.webp 480w, ../../v1/assets/img/coach-icha.webp 600w",
+  "avatar-rey.webp": "../img/r/avatar-rey-48.webp 48w, ../img/r/avatar-rey-64.webp 64w, ../../v1/assets/img/avatar-rey.webp 96w",
+  "avatar-tinos.webp": "../img/r/avatar-tinos-48.webp 48w, ../img/r/avatar-tinos-64.webp 64w, ../../v1/assets/img/avatar-tinos.webp 96w",
+  "avatar-ain.webp": "../img/r/avatar-ain-48.webp 48w, ../img/r/avatar-ain-64.webp 64w, ../../v1/assets/img/avatar-ain.webp 96w",
+  "avatar-icha.webp": "../img/r/avatar-icha-48.webp 48w, ../img/r/avatar-icha-64.webp 64w, ../../v1/assets/img/avatar-icha.webp 96w"
+ },
+ "nextup_media": {
+  "conditioning": {
+   "video": "../media/nextup-conditioning.mp4",
+   "poster": "../media/nextup-conditioning.webp",
+   "pos": "50% 50%",
+   "source": "Elite Fit header film (landscape master): rowers, hex-drill feet, ladder feet. Copied from variants/s3-home-v2/assets (29 Oct 2026).",
+   "thumb_pos": "92% 50%"
+  },
+  "sculpt": {
+   "video": "../media/nextup-sculpt.mp4",
+   "poster": "../media/nextup-sculpt.webp",
+   "pos": "50% 50%",
+   "source": "Elite Fit header film: seated core twist, leg raises. Copied from variants/s3-home-v2/assets (29 Oct 2026).",
+   "thumb_pos": "6% 50%"
+  },
+  "boxing": {
+   "still": "../media/nextup-boxing.webp",
+   "pos": "50% 50%",
+   "source": "Elite Fit 'Better together' film still (s2-editorial boxing-bag-720.webp): shoulder, glove and bag. Copied from variants/s3-home-v2/assets (29 Oct 2026).",
+   "thumb_pos": "100% 50%",
+   "thumb_note": "No-people crop (glove and forearm). At 50% the rounded shoulder fills the top edge and reads as a head cut by the top at 64x48 (visual audit ENG-1); YuNet finds no face in this still."
+  },
+  "mobility": {
+   "thumb_pos": "50% 2%",
+   "source": "No club footage: the finder uses the v1 family clip (assets/video/mobility.mp4, Pexels, stock) with the \"Stock clip\" label; this entry only sets its face-safe thumbnail crop."
+  }
+ },
+ "nextup_media_note": "One still or clip per class type for the finder's By class headers (FINDER-SPEC v1.1 2.3, RULINGS #28). Mobility & Stretch has no club footage: the engine uses the v1 family clip and labels it \"Stock clip\". Paths are relative to this file. thumb_pos (optional) is the face-safe object-position of the finder's 4:3 thumbnail; pos stays for other uses (cards). Values measured 29 Oct 2026 with YuNet at 0.1 s over every frame and the poster: conditioning safe 75-100 % (92 % used), sculpt 0-16 % (6 %), boxing any, mobility (portrait) y 0-20 % with 8 px head headroom (2 % used); boxing still: no face, the 100 % crop shows glove and forearm only.",
+ "finder": {
+  "lines": {
+   "boxercise-beginner": "No-contact boxing for beginners",
+   "boxercise-advanced": "Advanced no-contact boxing",
+   "hyrox-conditioning": "HIIT on the HYROX format",
+   "off-court-training": "Strength and explosive moves",
+   "booty-and-core": "Glutes and abs, every level",
+   "body-sculpt": "Full-body strength with cardio"
+  },
+  "template": "{coach}, {n} times a week",
+  "note": "FINDER-SPEC v1.1 7.3: short lines from FACTS F2-CLS-01 to -06; the four classes without a published description use the template (coach and weekly count only)."
+ }
+}

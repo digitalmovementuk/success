@@ -1,0 +1,80 @@
+{
+ "_meta": {
+  "version": "Home v2 overlay 1.3",
+  "date": "2026-10-29",
+  "about": "Home v2 only: merged by engine-v2/api.js AFTER the shared engine-v2/data/v2.json (data-overlay on the api.js tag; overlay wins, objects merge, arrays replace). Paths in srcset and nextup_media are relative to THIS file (the engine resolves them here); nowbar_media paths are page-relative (only page.js reads them). Passes, payload, timetable capacities, coach lines and the reviews come from the shared engine overlay (one copy).",
+  "sources": {
+   "prices": "elitefitbali.com /membership/ and /promo-duo/, re-read 28 Oct 2026 (FACTS.md F2-PRC)",
+   "rating": "Google knowledge panel, read 28 Oct 2026 (F2-REV-01)",
+   "address": "Google listing (F2-ADR-01)",
+   "drive": "Google Maps, Wed 28 Oct 2026 ~9:20am WITA (F2-DRV-01)",
+   "capacity": "Sample (no source; the club publishes no capacity)",
+   "hero_quotes": "Google reviews; swap list from REVIEWS.md when ready",
+   "reviews": "Google Maps reviews via Firecrawl, 28 Oct 2026 (172 of 497 read); reviews.json"
+  }
+ },
+ "club": {
+  "address": "Jalan Sempol No. 26, Pererenan, Bali"
+ },
+ "nextup_media": {
+  "conditioning": {
+   "video": "../video/nextup-conditioning.mp4",
+   "poster": "../img/nextup-conditioning.webp",
+   "pos": "92% 50%",
+   "source": "Elite Fit header film (landscape master): rowers, hex-drill feet, ladder feet",
+   "card_pos": "50% 50%"
+  },
+  "sculpt": {
+   "video": "../video/nextup-sculpt.mp4",
+   "poster": "../img/nextup-sculpt.webp",
+   "pos": "6% 50%",
+   "source": "Elite Fit header film: seated core twist, leg raises",
+   "card_pos": "50% 50%"
+  },
+  "boxing": {
+   "still": "../img/nextup-boxing.webp",
+   "pos": "50% 50%",
+   "source": "Elite Fit 'Better together' film still (s2-editorial boxing-bag-720.webp): shoulder, glove and bag"
+  }
+ },
+ "srcset": {
+  "coach-rey.webp": "../img/r/coach-rey-240.webp 240w, ../img/r/coach-rey-320.webp 320w, ../img/r/coach-rey-360.webp 360w, ../img/r/coach-rey-480.webp 480w, ../../v1/assets/img/coach-rey.webp 600w",
+  "coach-tinos.webp": "../img/r/coach-tinos-240.webp 240w, ../img/r/coach-tinos-320.webp 320w, ../img/r/coach-tinos-360.webp 360w, ../img/r/coach-tinos-480.webp 480w, ../../v1/assets/img/coach-tinos.webp 600w",
+  "coach-ain.webp": "../img/r/coach-ain-240.webp 240w, ../img/r/coach-ain-320.webp 320w, ../img/r/coach-ain-360.webp 360w, ../img/r/coach-ain-480.webp 480w, ../../v1/assets/img/coach-ain.webp 600w",
+  "coach-icha.webp": "../img/r/coach-icha-240.webp 240w, ../img/r/coach-icha-320.webp 320w, ../img/r/coach-icha-360.webp 360w, ../img/r/coach-icha-480.webp 480w, ../../v1/assets/img/coach-icha.webp 600w",
+  "avatar-rey.webp": "../img/r/avatar-rey-48.webp 48w, ../img/r/avatar-rey-64.webp 64w, ../../v1/assets/img/avatar-rey.webp 96w",
+  "avatar-tinos.webp": "../img/r/avatar-tinos-48.webp 48w, ../img/r/avatar-tinos-64.webp 64w, ../../v1/assets/img/avatar-tinos.webp 96w",
+  "avatar-ain.webp": "../img/r/avatar-ain-48.webp 48w, ../img/r/avatar-ain-64.webp 64w, ../../v1/assets/img/avatar-ain.webp 96w",
+  "avatar-icha.webp": "../img/r/avatar-icha-48.webp 48w, ../img/r/avatar-icha-64.webp 64w, ../../v1/assets/img/avatar-icha.webp 96w"
+ },
+ "nowbar_media": {
+  "conditioning": {
+   "video": "assets/video/nowbar-conditioning.mp4",
+   "poster": "assets/img/nowbar-conditioning.webp",
+   "note": "nextup-conditioning.mp4 (club header film), 320x150, Gaussian blur sigma 12: no face recognisable"
+  },
+  "sculpt": {
+   "video": "assets/video/nowbar-sculpt.mp4",
+   "poster": "assets/img/nowbar-sculpt.webp",
+   "note": "nextup-sculpt.mp4 (club header film), blurred the same way"
+  },
+  "boxing": {
+   "poster": "assets/img/nowbar-boxing.webp",
+   "note": "the club still (boxing-bag), blurred; a slow CSS pan"
+  },
+  "mobility": {
+   "video": "assets/video/nowbar-mobility.mp4",
+   "poster": "assets/img/nowbar-mobility.webp",
+   "note": "the stock mobility clip above, Gaussian-blurred to abstract colour (RULINGS #33: no on-bar label; README and GO-LIVE list it)"
+  }
+ },
+ "nextup_media_page": {
+  "mobility": {
+   "video": "assets/video/nextup-mobility.mp4",
+   "poster": "assets/img/nextup-mobility.webp",
+   "pos": "50% 50%",
+   "stock": true,
+   "source": "STOCK: Pexels video 6326792 'Women Stretching on a Mat' by Pavel Danilyuk (Pexels License), via ../s1-stage/assets/video/mobility-wide.mp4; hands and legs only, no head in frame; replace with club footage"
+  }
+ }
+}

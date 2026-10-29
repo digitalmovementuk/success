@@ -1,0 +1,1140 @@
+/* Elite Fit Group Fitness · Home · home.css (27 Oct 2026)
+   Handbook p. 20, 22, 23: white cards on warm photos, tilted photo cards with "together" chips, names everywhere.
+   Four brand colours only, flat, plus opacity. Gilroy only (the club's files, shared from v1). No gradients, no blur shadows.
+   Mobile first (390), then 768 and 1024. Motion lives in the last block and only runs under html.motion-ok. */
+
+@font-face { font-family: "Gilroy"; src: url("../../v1/assets/fonts/gilroy-regular.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Gilroy"; src: url("../../v1/assets/fonts/gilroy-semibold.woff2") format("woff2"); font-weight: 600; font-style: normal; font-display: swap; }
+@font-face { font-family: "Gilroy"; src: url("../../v1/assets/fonts/gilroy-bold.woff2") format("woff2"); font-weight: 700; font-style: normal; font-display: swap; }
+@font-face { font-family: "Gilroy"; src: url("../../v1/assets/fonts/gilroy-extrabold.woff2") format("woff2"); font-weight: 800; font-style: normal; font-display: swap; }
+
+:root {
+  /* colour, 45 / 40 / 10 / 5 */
+  --black: #1B1B1B;
+  --white: #FCFCFA;
+  --grey: #353535;
+  --terra: #E94A2B;
+  --w-80: rgba(252, 252, 250, .8);
+  --w-72: rgba(252, 252, 250, .72);
+  --w-60: rgba(252, 252, 250, .6);
+  --w-24: rgba(252, 252, 250, .24);
+  --w-14: rgba(252, 252, 250, .14);
+  --b-72: rgba(27, 27, 27, .72);
+  --b-60: rgba(27, 27, 27, .6);
+  --b-24: rgba(27, 27, 27, .24);
+  --b-14: rgba(27, 27, 27, .14);
+  --b-07: rgba(27, 27, 27, .07);
+  --scrim: rgba(27, 27, 27, .62);
+
+  /* type */
+  --font: "Gilroy", "Hanken Grotesk", Arial, sans-serif;
+  --fs-h1: clamp(2.5rem, 1.55rem + 4.2vw, 4.75rem);
+  --fs-h2: clamp(2rem, 1.4rem + 2.6vw, 4rem);
+  --fs-h3: clamp(1.75rem, 1.4rem + 1.4vw, 2.75rem);
+  --fs-h4: clamp(1.1875rem, 1.1rem + .3vw, 1.375rem);
+  --fs-lead: clamp(1.125rem, 1.05rem + .35vw, 1.3125rem);
+  --fs-body: clamp(1.0625rem, 1.03rem + .2vw, 1.1875rem);
+  --fs-btn: 1.1875rem;
+  --lh-head: 1;
+  --lh-body: 1.55;
+  --track: .16em;
+
+  /* space and shape */
+  --gutter: clamp(1.25rem, 4.4vw, 3.5rem);
+  --maxw: 84rem;
+  --sec-y: clamp(4rem, 2.8rem + 5vw, 8rem);
+  --r-card: 22px;
+  --r-photo: 20px;
+  --r-pill: 999px;
+  --hdr-h: 60px;
+  --gap: 14px;
+
+  /* motion: damped springs sampled into linear() (settle 0.49 s / 0.53 s / 0.60 s) */
+  --spring: linear(0, 0.0526, 0.182, 0.3505, 0.5289, 0.6964, 0.84, 0.9531, 1.0345, 1.0862, 1.1127, 1.1196, 1.1124, 1.0964, 1.0761, 1.0547, 1.0349, 1.018, 1.0047, 0.9953, 0.9893, 0.9864, 0.9857, 0.9867, 0.9886, 0.9911, 0.9936, 0.996, 1);
+  --spring-soft: linear(0, 0.0345, 0.1187, 0.2295, 0.3503, 0.4698, 0.5807, 0.6789, 0.7628, 0.832, 0.8873, 0.9301, 0.9621, 0.9851, 1.0009, 1.011, 1.0168, 1.0194, 1.0199, 1.0189, 1.017, 1.0148, 1.0123, 1.01, 1.0078, 1.0059, 1.0044, 1.003, 1);
+  --spring-pop: linear(0, 0.1109, 0.365, 0.658, 0.9153, 1.0968, 1.1925, 1.2138, 1.1833, 1.126, 1.0635, 1.0106, 0.9746, 0.957, 0.9546, 0.9624, 0.9752, 0.9884, 0.9993, 1.0063, 1.0095, 1.0096, 1.0077, 1.0048, 1.0021, 0.9999, 0.9985, 0.9979, 1);
+  --ease-out: cubic-bezier(.16, 1, .3, 1);
+  --ease: cubic-bezier(.4, 0, .2, 1);
+  --t-reveal: .55s;
+
+  --z-hdr: 50; --z-bar: 60; --z-sheet: 100; --z-toast: 120;
+}
+@media (min-width: 1024px) { :root { --hdr-h: 76px; --gap: 28px; } }
+
+/* ---------- base ---------- */
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; scroll-padding-top: 12px; scroll-padding-bottom: 112px; background: var(--black); }
+@media (min-width: 1024px) { html { scroll-padding-top: calc(var(--hdr-h) + 12px); scroll-padding-bottom: 12px; } }
+body { margin: 0; font-family: var(--font); font-size: var(--fs-body); line-height: var(--lh-body); color: var(--white); background: var(--black); font-weight: 400; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; overflow-x: clip; }
+img, video { display: block; max-width: 100%; }
+picture { display: contents; }
+p, h1, h2, h3, h4, dl, dd, ul, ol, figure, blockquote { margin: 0; }
+ul, ol { padding: 0; list-style: none; }
+a { color: inherit; }
+button { font: inherit; color: inherit; }
+:focus-visible { outline: 3px solid currentColor; outline-offset: 3px; }
+.sec--white :focus-visible, .wcard :focus-visible, .pass :focus-visible { outline-color: var(--black); }
+.vh { position: absolute !important; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+.skip { position: absolute; left: 12px; top: -100px; z-index: 200; padding: 12px 18px; border-radius: var(--r-pill); background: var(--white); color: var(--black); font-weight: 700; text-decoration: none; }
+.skip:focus { top: 12px; }
+.page { overflow-x: clip; }
+.wrap { width: 100%; max-width: var(--maxw); margin: 0 auto; padding: 0 var(--gutter); }
+.num { font-variant-numeric: tabular-nums; }
+
+/* type roles: ExtraBold caps headlines, SemiBold caps eyebrows, Bold buttons, Regular body */
+.eyebrow { font-weight: 600; font-size: .8125rem; line-height: 1.3; letter-spacing: var(--track); text-transform: uppercase; color: var(--w-72); margin-bottom: 14px; }
+.sec--white .eyebrow, .wcard .eyebrow { color: var(--b-72); }
+.h1, .h2, .h3, .h4 { font-weight: 800; text-transform: uppercase; letter-spacing: -.01em; line-height: var(--lh-head); }
+.h1 { font-size: var(--fs-h1); line-height: .96; }
+.h2 { font-size: var(--fs-h2); }
+.h3 { font-size: var(--fs-h3); }
+.h4 { font-size: var(--fs-h4); line-height: 1.12; letter-spacing: 0; }
+.t { color: var(--terra); }
+.lead { font-size: var(--fs-lead); line-height: 1.5; color: var(--w-80); }
+.sec--white .lead, .wcard .lead { color: var(--b-72); }
+
+/* chips and the Sample tag (12 px and up) */
+.chip { display: inline-flex; align-items: center; gap: .4em; min-height: 32px; padding: .3rem .8rem; border-radius: var(--r-pill); border: 1.5px solid var(--b-24); font-weight: 600; font-size: .875rem; line-height: 1.2; color: var(--black); }
+.sec--black .chip { border-color: var(--w-24); color: var(--white); }
+.wcard .chip { border-color: var(--b-24); color: var(--black); }
+.sample { display: inline-block; vertical-align: .08em; padding: .12rem .45rem; border-radius: 6px; border: 1.5px dashed currentColor; font-weight: 600; font-size: .75rem; line-height: 1.2; letter-spacing: .06em; text-transform: uppercase; white-space: nowrap; }
+
+/* ---------- buttons ---------- */
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: .5em; min-height: 52px; padding: 0 1.5rem; border-radius: var(--r-pill); border: 2px solid transparent; font-weight: 700; font-size: var(--fs-btn); line-height: 1; text-decoration: none; cursor: pointer; white-space: nowrap; transition: background-color .2s var(--ease), border-color .2s var(--ease), translate .45s var(--spring), scale .45s var(--spring); }
+.btn:active { scale: .97; }
+.btn--primary { background: var(--terra); color: var(--white); }
+@media (hover: hover) { .btn--primary:hover, .btn--white:hover { translate: 0 -2px; } }
+.btn--ghost-dark { border-color: var(--black); color: var(--black); background: transparent; }
+@media (hover: hover) { .btn--ghost-dark:hover { background: var(--black); color: var(--white); } }
+.btn--ghost-light { border-color: var(--white); color: var(--white); background: transparent; }
+@media (hover: hover) { .btn--ghost-light:hover { background: var(--white); color: var(--black); } }
+.btn--white { background: var(--white); color: var(--black); }
+.btn--sm { min-height: 44px; padding: 0 1.1rem; font-size: 1rem; }
+.btn--primary.btn--sm { font-size: 1.1875rem; }
+.arr { display: inline-block; transition: translate .45s var(--spring); }
+@media (hover: hover) { .btn:hover .arr, .link-t:hover .arr { translate: 4px 0; } }
+.link-t { display: inline-flex; align-items: center; gap: .4em; min-height: 44px; padding: 0; border: 0; background: none; color: var(--terra); font-weight: 700; font-size: 1.1875rem; text-decoration: none; cursor: pointer; }
+.link-t > span:first-child { text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 5px; }
+.iconbtn { display: inline-grid; place-items: center; width: 44px; height: 44px; border-radius: 50%; border: 1.5px solid var(--b-24); background: transparent; color: var(--black); font-size: 1.375rem; line-height: 1; cursor: pointer; flex: none; }
+.pill { min-height: 44px; padding: 0 1.1rem; border-radius: var(--r-pill); border: 2px solid var(--black); background: transparent; color: var(--black); font-weight: 700; font-size: 1rem; cursor: pointer; transition: background-color .2s var(--ease), scale .45s var(--spring); }
+.pill[aria-pressed="true"] { background: var(--black); color: var(--white); }
+.pill:active { scale: .95; }
+.actions { display: flex; flex-wrap: wrap; gap: 10px; }
+
+/* ---------- concept bar and header ---------- */
+.conceptbar { display: flex; flex-wrap: nowrap; white-space: nowrap; justify-content: center; align-items: center; column-gap: .55em; margin: 0; padding: 0 var(--gutter); min-height: 44px; background: var(--black); color: var(--w-72); font-weight: 600; font-size: .8125rem; letter-spacing: .05em; text-align: center; border-bottom: 1px solid var(--w-14); }
+.conceptbar__link { display: inline-flex; align-items: center; gap: .35em; min-height: 44px; color: var(--white); text-decoration: underline; text-decoration-thickness: 1.5px; text-underline-offset: 4px; }
+.conceptbar__long { display: none; }
+@media (min-width: 640px) { .conceptbar__long { display: inline; } .conceptbar__short { display: none; } }
+.hdr { position: relative; top: 0; z-index: var(--z-hdr); background: var(--black); border-bottom: 1px solid transparent; transition: border-color .2s; }
+.hdr.is-scrolled { border-bottom-color: var(--w-14); }
+.hdr__in { display: flex; align-items: center; gap: 24px; height: var(--hdr-h); }
+.brand { display: inline-flex; align-items: center; gap: 14px; min-height: 44px; padding: 8px 0; text-decoration: none; }
+.brand__type { width: 152px; height: auto; }
+.brand__focus { padding-left: 14px; border-left: 1px solid var(--w-24); font-weight: 600; font-size: .8125rem; letter-spacing: var(--track); color: var(--w-72); }
+.hdr__nav { display: none; }
+.hdr__cta { display: none; }
+@media (min-width: 1024px) {
+  .hdr { position: sticky; }
+  .hdr__nav { display: flex; gap: 6px; margin-left: auto; }
+  .hdr__nav a { display: inline-flex; align-items: center; min-height: 44px; padding: 0 12px; border-radius: var(--r-pill); font-weight: 600; font-size: 1rem; text-decoration: none; color: var(--w-80); transition: background-color .2s; }
+  @media (hover: hover) { .hdr__nav a:hover { color: var(--white); background: var(--w-14); } }
+  .hdr__cta { display: inline-flex; visibility: hidden; opacity: 0; translate: 0 -8px; transition: opacity .2s var(--ease), translate .5s var(--spring), visibility 0s .2s, background-color .2s; }
+  .hdr.cta-on .hdr__cta { visibility: visible; opacity: 1; translate: none; transition: opacity .2s var(--ease), translate .5s var(--spring), visibility 0s, background-color .2s; }
+}
+
+/* ---------- 1. hero: white card on a warm class clip (real Elite Fit footage, poster first) ---------- */
+.hero { position: relative; background: var(--black); padding-bottom: 28px; }
+.hero__photo { position: relative; overflow: hidden; aspect-ratio: 960 / 1080; background: var(--grey); }
+.hero__photo .media__poster, .hero__photo video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 18%; transform-origin: 50% 100%; }
+.hero__wrap { position: relative; z-index: 2; margin-top: -64px; }
+.wcard { position: relative; background: var(--white); color: var(--black); border-radius: var(--r-card); padding: 26px 22px 24px; }
+.wcard__mark { position: absolute; right: 26px; bottom: 26px; width: 48px; height: auto; }
+.hero__card .eyebrow { margin-bottom: 12px; }
+.hero__lead { margin: 16px 0 22px; max-width: 34ch; }
+.hero__card .actions { flex-direction: column; align-items: stretch; }
+.hero__card .actions .btn { width: 100%; }
+.hero__card { padding-bottom: 78px; }
+@media (min-width: 560px) {
+  .hero__card .actions { flex-direction: row; align-items: center; padding-right: 64px; }
+  .hero__card .actions .btn { width: auto; }
+  .hero__card { padding-bottom: 26px; }
+}
+@media (min-width: 600px) and (max-width: 899.98px) { .hero__photo { aspect-ratio: 1 / 1; } .hero__card { max-width: 640px; } }
+/* from 900 px: the clip bleeds off the right edge, the white card floats over its left edge (which shows only wall and turf) */
+@media (min-width: 900px) {
+  .hero { --cardw: min(600px, 44vw); --photow: min(980px, calc(100vw - var(--gutter) - var(--cardw) + 72px)); height: clamp(560px, 76svh, 760px); padding: 0; }
+  .hero__photo { position: absolute; top: 0; bottom: 0; right: 0; width: var(--photow); aspect-ratio: auto; }
+  .hero__wrap { position: absolute; inset: 0; max-width: none; margin: 0; padding: 0; }
+  .hero__card { position: absolute; top: 0; bottom: 0; right: calc(var(--photow) - 72px); width: var(--cardw); height: fit-content; margin: auto 0; padding: 32px 34px; }
+  .hero .h1 { font-size: clamp(2.75rem, 1rem + 3.4vw, 4.5rem); }
+  /* the logogram moves to the card's top left, clear of the clip by more than its own height */
+  .hero__card { padding-top: 92px; }
+  .hero__card .wcard__mark { top: 32px; left: 34px; right: auto; bottom: auto; }
+  .hero__card .actions { padding-right: 0; }
+}
+
+/* ---------- sections ---------- */
+.sec { padding: var(--sec-y) 0; position: relative; }
+.sec--black { background: var(--black); color: var(--white); }
+.sec--white { background: var(--white); color: var(--black); }
+.sec--terra { background: var(--terra); color: var(--white); }
+.sec__head { display: grid; gap: 18px; margin-bottom: clamp(28px, 4vw, 56px); }
+.sec__lead { max-width: 40ch; }
+@media (min-width: 1024px) {
+  .sec__head { grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); align-items: end; gap: 48px; }
+  .sec__head .sec__lead, .sec__side { justify-self: end; }
+}
+.footnote { margin-top: 28px; font-size: 1rem; color: var(--w-72); }
+
+/* ---------- 2. next up ---------- */
+.sec__side { display: grid; gap: 22px; }
+.visitor { display: grid; gap: 12px; }
+.visitor__pills { display: flex; gap: 8px; flex-wrap: wrap; }
+.visitor__note { min-height: 1.6em; font-size: 1.0625rem; color: var(--b-72); }
+.nextup { display: grid; gap: var(--gap); }
+@media (min-width: 900px) { .nextup { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+.nextup__loading { padding: 22px; border-radius: var(--r-card); border: 1.5px dashed var(--b-24); color: var(--b-72); }
+.ncard { position: relative; display: grid; gap: 6px; width: 100%; padding: 22px 22px 20px; border-radius: var(--r-card); border: 0; background: var(--grey); color: var(--white); text-align: left; cursor: pointer; transition: translate .5s var(--spring), background-color .2s; }
+@media (hover: hover) { .ncard:hover { translate: 0 -4px; } }
+.ncard:focus-visible { outline: 3px solid var(--black); outline-offset: 3px; }
+.ncard__when { font-weight: 600; font-size: .8125rem; letter-spacing: var(--track); text-transform: uppercase; color: var(--w-72); }
+.ncard__time { font-weight: 800; font-size: 2.75rem; line-height: 1; font-variant-numeric: tabular-nums; }
+.ncard__name { font-weight: 800; text-transform: uppercase; font-size: 1.25rem; line-height: 1.1; }
+.who-line { display: flex; align-items: center; gap: 10px; margin-top: 6px; font-size: 1rem; color: var(--w-80); }
+.who-line img { width: 40px; height: 40px; border-radius: 50%; object-fit: cover; border: 2px solid var(--white); }
+.who-line b { color: var(--white); font-weight: 700; }
+.ncard__meta { font-size: 1rem; color: var(--w-72); }
+.ncard__foot { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 12px; padding-top: 14px; border-top: 1px solid var(--w-14); }
+.spots { font-weight: 700; font-size: 1rem; }
+.spots .sample { margin-left: .35em; }
+.fauxbtn { display: inline-flex; align-items: center; gap: .4em; min-height: 44px; padding: 0 1rem; border-radius: var(--r-pill); background: var(--white); color: var(--black); font-weight: 700; font-size: 1rem; flex: none; }
+
+/* ---------- 3. classes: warm clips with white cards over their edge ---------- */
+.sec--classes { padding-bottom: calc(var(--sec-y) - 12px); }
+.chaps { display: grid; gap: 56px; }
+.chap { position: relative; }
+.chap__media { position: relative; overflow: hidden; aspect-ratio: 1 / 1; background: var(--grey); }
+.chap__media .media__poster, .chap__media video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: var(--focus, 50% 50%); transform-origin: 50% 0%; }
+#family-conditioning .chap__media .media__poster, #family-conditioning .chap__media video { inset: 0 0 auto auto; width: 114%; height: 114%; transform-origin: 100% 0%; }
+.chap--wide .chap__media { aspect-ratio: 16 / 9; }
+.chap--wide .pause { right: auto; left: 14px; }
+.chap__card { margin: -32px var(--gutter) 0; z-index: 2; padding-bottom: 20px; }
+.chap__label { display: flex; gap: .7em; font-weight: 600; font-size: .8125rem; letter-spacing: var(--track); text-transform: uppercase; color: var(--b-72); margin-bottom: 10px; }
+.chap__title { font-weight: 800; text-transform: uppercase; font-size: var(--fs-h3); line-height: 1; letter-spacing: -.01em; }
+.chap__feel { margin: 12px 0 14px; font-size: var(--fs-lead); line-height: 1.45; color: var(--b-72); }
+.chap__chips { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; }
+.flist { border-top: 1px solid var(--b-14); margin-bottom: 8px; }
+.frow { display: grid; grid-template-columns: 40px minmax(0, 1fr) auto; gap: 4px 12px; align-items: center; width: 100%; min-height: 64px; padding: 10px 0; border: 0; border-bottom: 1px solid var(--b-14); background: none; color: var(--black); text-align: left; cursor: pointer; }
+.frow img { width: 40px; height: 40px; border-radius: 50%; object-fit: cover; grid-row: 1 / 3; }
+.frow__name { font-weight: 700; font-size: 1.0625rem; line-height: 1.2; }
+.frow__meta { grid-column: 2; font-size: 1rem; color: var(--b-72); line-height: 1.35; }
+.frow__go { grid-column: 3; grid-row: 1 / 3; display: inline-flex; align-items: center; gap: .3em; min-height: 44px; padding: 0 .9rem; border-radius: var(--r-pill); border: 2px solid var(--black); font-weight: 700; font-size: 1rem; transition: background-color .2s; }
+@media (hover: hover) { .frow:hover .frow__go { background: var(--black); color: var(--white); } }
+.frow .sample { margin-left: .4em; }
+@media (min-width: 1024px) {
+  .chaps { gap: 120px; max-width: var(--maxw); margin: 0 auto; padding: 0 var(--gutter); }
+  .chap { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); align-items: end; }
+  .chap__media { grid-column: 1 / 9; grid-row: 1; aspect-ratio: 4 / 3; border-radius: 28px; }
+  .chap__card { grid-column: 8 / 13; grid-row: 1; margin: 0 0 -56px; padding: 34px 34px 26px; }
+  .chap--flip .chap__media { grid-column: 5 / 13; }
+  .chap--flip .chap__card { grid-column: 1 / 6; }
+  /* sculpt: the wide shared clip; the card only touches its bottom-right corner (turf and mats in both shots) */
+  .chap--wide { align-items: start; }
+  .chap--wide .chap__media { grid-column: 1 / 10; aspect-ratio: 16 / 9; }
+  .chap--wide .chap__card { grid-column: 9 / 13; align-self: start; margin: 91% 0 0; }
+}
+
+/* media helpers: poster first, clip fades in over it (media.js adds .is-playing) */
+.media__poster { background: var(--grey); }
+video[data-clip] { opacity: 0; transition: opacity .4s var(--ease); }
+video[data-clip].is-playing { opacity: 1; }
+.chip--media { position: absolute; left: 14px; top: 14px; z-index: 3; margin: 0; border: 0; background: var(--scrim); color: var(--white); font-size: .8125rem; min-height: 28px; }
+.pause { position: absolute; right: 14px; top: 14px; z-index: 3; display: none; place-items: center; width: 44px; height: 44px; padding: 0; border-radius: 50%; border: 0; background: var(--scrim); color: var(--white); cursor: pointer; }
+.motion-ok .pause, .media-manual .pause { display: inline-grid; }
+.pause__icon { position: relative; width: 14px; height: 16px; }
+.pause__icon::before, .pause__icon::after { content: ""; position: absolute; top: 0; width: 4px; height: 16px; border-radius: 2px; background: currentColor; }
+.pause__icon::before { left: 1px; } .pause__icon::after { right: 1px; }
+.pause[aria-pressed="true"] .pause__icon::before { left: 2px; width: 0; height: 0; border-radius: 0; background: none; border-style: solid; border-width: 8px 0 8px 13px; border-color: transparent transparent transparent currentColor; }
+.pause[aria-pressed="true"] .pause__icon::after { display: none; }
+@media (min-width: 1024px) { .chip--media { left: 18px; top: 18px; } .pause { right: 18px; top: 18px; } }
+
+/* ---------- 4. schedule ---------- */
+.duo-note { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 22px; padding: 14px 14px 14px 18px; border-radius: 16px; background: var(--grey); color: var(--white); }
+.duo-note[hidden] { display: none; }
+.duo-note .iconbtn { border-color: var(--w-24); color: var(--white); }
+.days { position: relative; display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 3px; padding: 3px; border-radius: 20px; background: var(--b-07); }
+.days__ind { position: absolute; left: 0; top: 3px; bottom: 3px; width: 0; border-radius: 16px; background: var(--black); pointer-events: none; }
+.motion-ok .days__ind { transition: left .5s var(--spring), width .5s var(--spring); }
+.day { position: relative; z-index: 1; display: grid; justify-items: center; align-content: center; gap: 2px; min-width: 0; min-height: 64px; padding: 6px 0; border: 0; border-radius: 16px; background: transparent; color: var(--black); cursor: pointer; transition: none; }
+.day[aria-selected="true"] { color: var(--white); }
+.day__dow { font-weight: 600; font-size: .75rem; letter-spacing: .08em; text-transform: uppercase; }
+.day__num { font-weight: 800; font-size: 1.25rem; line-height: 1; font-variant-numeric: tabular-nums; }
+.day__dot { width: 5px; height: 5px; border-radius: 50%; background: currentColor; opacity: 0; }
+.day.has-booking .day__dot { opacity: 1; }
+@media (min-width: 768px) { .days { gap: 6px; } .day { min-height: 72px; } .day__dow { font-size: .8125rem; } .day__num { font-size: 1.5rem; } }
+
+.who { margin: 28px 0 22px; }
+.who__q { font-weight: 800; text-transform: uppercase; font-size: clamp(1.5rem, 1.2rem + 1.2vw, 2.25rem); line-height: 1.02; letter-spacing: -.005em; }
+.who__hint { margin: 6px 0 14px; font-size: 1rem; color: var(--b-72); }
+.who__faces { display: flex; flex-wrap: wrap; gap: 10px 14px; }
+.face { display: grid; justify-items: center; gap: 6px; min-width: 72px; padding: 8px 6px 10px; border: 0; border-radius: 18px; background: transparent; color: var(--black); cursor: pointer; transition: background-color .2s; }
+.face img { width: 60px; height: 60px; border-radius: 50%; object-fit: cover; border: 3px solid transparent; outline: 2px solid var(--b-14); transition: border-color .2s, outline-color .2s, scale .45s var(--spring); }
+.face b { font-weight: 700; font-size: 1rem; line-height: 1.1; }
+.face small { font-size: .8125rem; color: var(--b-72); line-height: 1.1; }
+@media (hover: hover) { .face:hover img { scale: 1.06; } }
+.face[aria-pressed="true"] { background: var(--black); color: var(--white); }
+.face[aria-pressed="true"] img { border-color: var(--black); outline-color: var(--white); }
+.face[aria-pressed="true"] small { color: var(--w-72); }
+
+.sched__tools { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin-bottom: 22px; }
+.fchips { display: flex; flex-wrap: wrap; gap: 8px; flex: 1 1 auto; }
+.fchip { min-height: 44px; padding: 0 1rem; border-radius: var(--r-pill); border: 1.5px solid var(--b-24); background: transparent; color: var(--black); font-weight: 700; font-size: 1rem; cursor: pointer; transition: background-color .2s, border-color .2s, scale .4s var(--spring); }
+.fchip[aria-pressed="true"] { background: var(--black); border-color: var(--black); color: var(--white); }
+.fchip:active { scale: .95; }
+.filters-btn { gap: .5em; }
+.badge { display: inline-grid; place-items: center; min-width: 24px; height: 24px; padding: 0 6px; border-radius: 12px; background: var(--black); color: var(--white); font-size: .8125rem; font-weight: 800; }
+@media (hover: hover) { .filters-btn:hover .badge { background: var(--white); color: var(--black); } }
+.badge[hidden] { display: none; }
+.badge.is-pop { animation: pop .45s var(--spring-pop); }
+@keyframes pop { from { scale: .5; } to { scale: 1; } }
+.sched__day { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; padding-bottom: 10px; border-bottom: 2px solid var(--black); }
+.sched__date { font-weight: 800; text-transform: uppercase; font-size: 1.0625rem; letter-spacing: .01em; }
+.sched__count { font-size: 1rem; color: var(--b-72); white-space: nowrap; }
+.sched__done { margin: 16px 0 0; padding: 14px 16px; border-radius: 14px; background: var(--b-07); font-weight: 600; }
+.sched__done[hidden], .sched__empty[hidden] { display: none; }
+.rows { margin: 0; transition: opacity .16s linear; }
+.rows.is-swapping { opacity: 0; }
+.rows__static { padding: 18px 0; color: var(--b-72); }
+.row { position: relative; display: grid; grid-template-columns: 48px minmax(0, 1fr) auto; gap: 2px 14px; align-items: center; padding: 16px 0; border-bottom: 1px solid var(--b-14); }
+.row__hit { position: absolute; inset: 0; z-index: 1; width: 100%; border: 0; background: transparent; cursor: pointer; border-radius: 12px; }
+.row__face { grid-column: 1; grid-row: 1 / 3; align-self: start; }
+.row__face img { width: 48px; height: 48px; border-radius: 50%; object-fit: cover; transition: scale .45s var(--spring); }
+@media (hover: hover) { .row:hover .row__face img { scale: 1.07; } }
+.row__time { grid-column: 2; grid-row: 1; font-weight: 800; font-size: 1.375rem; line-height: 1.05; font-variant-numeric: tabular-nums; }
+.row__main { grid-column: 2; grid-row: 2; min-width: 0; }
+.row__name { font-weight: 700; font-size: 1.0625rem; line-height: 1.25; }
+.row__by { font-size: 1rem; color: var(--b-72); line-height: 1.4; }
+.row__by b { color: var(--black); font-weight: 700; }
+.row__act { position: relative; z-index: 2; grid-column: 3; grid-row: 1 / 3; }
+.rbtn { min-height: 48px; min-width: 76px; padding: 0 1rem; border-radius: var(--r-pill); border: 2px solid var(--black); background: transparent; color: var(--black); font-weight: 700; font-size: 1rem; cursor: pointer; transition: background-color .2s, scale .4s var(--spring); }
+@media (hover: hover) { .rbtn:hover { background: var(--black); color: var(--white); } }
+.rbtn:active { scale: .95; }
+.rbtn--booked { background: var(--black); color: var(--white); }
+.row__label { font-weight: 600; font-size: .9375rem; color: var(--b-60); }
+.row.is-past .row__time, .row.is-past .row__name, .row.is-past .row__by, .row.is-past .row__by b { color: var(--b-60); }
+.row.is-enter { animation: rowIn .5s var(--spring-soft) both; animation-delay: calc(var(--i, 0) * 40ms); }
+@keyframes rowIn { from { translate: 0 14px; } to { translate: 0 0; } }
+@media (min-width: 768px) {
+  .row { grid-template-columns: 56px 96px minmax(0, 1fr) auto; padding: 18px 8px; }
+  .row__face, .row__time, .row__main, .row__act { grid-row: 1; }
+  .row__face { align-self: center; }
+  .row__face img { width: 52px; height: 52px; }
+  .row__time { grid-column: 2; font-size: 1.625rem; }
+  .row__main { grid-column: 3; }
+  .row__act { grid-column: 4; }
+}
+.sched__empty { display: grid; justify-items: start; gap: 12px; padding: 22px 0; }
+.sched__note { margin-top: 14px; font-size: 1rem; color: var(--b-72); }
+.sched__note .sample { margin-right: .4em; color: var(--black); }
+
+/* ---------- 5. coaches: portrait cards with name tags ---------- */
+.coaches { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 34px 16px; }
+@media (min-width: 1024px) { .coaches { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 32px; } }
+.coachcard { min-width: 0; }
+.coach { display: block; width: 100%; padding: 0; border: 0; background: none; color: inherit; text-align: left; cursor: pointer; }
+.coach__photo { display: block; overflow: hidden; aspect-ratio: 4 / 5; border-radius: var(--r-photo); background: var(--grey); rotate: var(--rot, 0deg); transition: rotate .5s var(--spring), transform .35s var(--ease-out); }
+.coach__photo img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 22%; }
+@media (hover: hover) { .coach:hover .coach__photo { rotate: 0deg; } }
+.tag { position: relative; z-index: 2; display: grid; gap: 4px; width: 88%; margin: -30px 0 0 6%; padding: 0 14px 14px; border-radius: 14px; background: var(--white); color: var(--black); rotate: var(--tag, 0deg); transform-origin: 50% 0; transition: rotate .6s var(--spring-pop); }
+.tag::before { content: ""; position: absolute; z-index: 1; left: 50%; top: 8px; width: 11px; height: 11px; margin-left: -5.5px; border-radius: 50%; border: 2.5px solid var(--white); }
+.tag__hello { display: block; margin: 0 -14px 8px; padding: 25px 14px 7px; border-radius: 14px 14px 0 0; background: var(--black); color: var(--white); font-weight: 600; font-size: .75rem; line-height: 1.2; letter-spacing: var(--track); text-transform: uppercase; }
+.tag__name { font-weight: 800; text-transform: uppercase; font-size: clamp(1.75rem, 1.4rem + 1.2vw, 2.5rem); line-height: 1; letter-spacing: -.01em; }
+.tag__role { display: none; font-size: 1rem; line-height: 1.35; color: var(--b-72); }
+.tag__count { font-size: 1rem; font-weight: 700; line-height: 1.25; }
+.tag__count .num { display: block; font-weight: 800; font-size: 1.625rem; line-height: 1; margin-top: 4px; }
+.tag__link { display: inline-flex; align-items: center; gap: .35em; min-height: 32px; font-weight: 700; font-size: 1rem; }
+.tag__link > span:first-child { text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 4px; }
+@media (hover: hover) { .coach:hover .tag { rotate: 0deg; } }
+@media (hover: hover) { .coach:hover .tag__link .arr { translate: 4px 0; } }
+.coach:focus-visible { outline: none; }
+.coach:focus-visible .tag { outline: 3px solid var(--white); outline-offset: 3px; }
+@media (min-width: 768px) { .tag__role { display: block; } .tag { padding: 0 18px 18px; } .tag__hello { margin: 0 -18px 10px; padding: 27px 18px 8px; } }
+
+/* ---------- 6. after class: the deck, the list, the Recharge story ---------- */
+.deckwrap { margin: 0 0 clamp(36px, 5vw, 64px); }
+.deck { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--gap); padding: 8px 4px; --px: calc((0.5 - var(--c)) * (100% + var(--gap))); --py: calc((0.5 - var(--r)) * (100% + var(--gap))); }
+.deck__card { position: relative; aspect-ratio: 4 / 5; rotate: var(--rot); --px: calc((0.5 - var(--c)) * (100% + var(--gap))); --py: calc((0.5 - var(--r)) * (100% + var(--gap))); }
+@media (min-width: 900px) {
+  .deck { grid-template-columns: repeat(4, minmax(0, 1fr)); padding: 10px 2%; }
+  .deck__card { --px: calc((1.5 - var(--i)) * (100% + var(--gap))); --py: 0px; }
+}
+.deck__float { position: relative; display: block; width: 100%; height: 100%; overflow: hidden; border-radius: var(--r-photo); background: var(--grey); transition: translate .5s var(--spring); }
+.deck__float img { width: 100%; height: 100%; object-fit: cover; }
+@media (hover: hover) { .deck__card:hover .deck__float { translate: 0 -8px; } }
+.tchips { position: absolute; left: 10px; top: 10px; display: flex; gap: 5px; }
+.tchip { padding: .22rem .6rem; border-radius: var(--r-pill); border: 1.5px solid var(--white); color: var(--white); background: rgba(27, 27, 27, .34); font-weight: 600; font-size: .75rem; line-height: 1.2; }
+.tchip--w { background: var(--white); color: var(--black); }
+.deck__cap { margin-top: 22px; font-weight: 700; font-size: 1.1875rem; text-align: center; }
+.band { position: relative; margin-top: var(--sec-y); background: var(--black); padding-bottom: 28px; }
+.band__photo { position: relative; overflow: hidden; aspect-ratio: 900 / 818; background: var(--grey); }
+.band__photo img { width: 100%; height: 100%; object-fit: cover; transform-origin: 50% 0%; }
+.band__wrap { position: relative; z-index: 2; margin-top: -64px; }
+.band__card { padding: 8px 22px 10px; }
+.afterlist { display: grid; gap: 0; }
+.afterlist div { display: grid; gap: 4px; padding: 16px 0; border-bottom: 1px solid var(--b-14); }
+.afterlist div:last-child { border-bottom: 0; }
+.afterlist dt { font-weight: 800; text-transform: uppercase; font-size: 1.0625rem; }
+.afterlist dd { color: var(--b-72); }
+@media (min-width: 560px) { .afterlist { grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 32px; } .afterlist div:nth-last-child(2) { border-bottom: 0; } }
+@media (min-width: 768px) { .band__photo { aspect-ratio: 3 / 2; } .band__wrap { margin-top: -88px; } .band__card { max-width: 760px; padding: 14px 32px 14px; } }
+@media (min-width: 1200px) {
+  .band { padding: 0; height: max(560px, 46vw); }
+  .band__photo { position: absolute; inset: 0; aspect-ratio: auto; }
+  .band__photo img { object-position: 50% 80%; }
+  .band__wrap { position: absolute; left: 0; right: 0; bottom: 48px; margin: 0 auto; }
+  .band__card { width: min(760px, 58vw); }
+}
+.band + .story { margin-top: 0; }
+.story { position: relative; margin-top: var(--sec-y); margin-bottom: calc(var(--sec-y) * -1); background: var(--black); padding-bottom: 28px; }
+.story__photo { position: relative; overflow: hidden; aspect-ratio: 4 / 5; background: var(--grey); }
+.story__photo img { width: 100%; height: 100%; object-fit: cover; transform-origin: 50% 40%; }
+.story__wrap { position: relative; z-index: 2; margin-top: -120px; }
+.story__card { padding-bottom: 80px; }
+.story__card .h3 { margin-bottom: 12px; }
+.story__card p { color: var(--b-72); }
+.story__joke { margin-top: 10px; font-weight: 700; color: var(--black) !important; }
+.story__price { margin: 10px 0 4px; }
+.story__price strong { color: var(--black); font-weight: 800; }
+@media (min-width: 768px) {
+  .story { padding: 0; height: min(86svh, 760px); min-height: 560px; }
+  .story__photo { position: absolute; inset: 0; aspect-ratio: auto; }
+  .story__wrap { position: absolute; left: 0; right: 0; bottom: 48px; margin: 0 auto; }
+  .story__card { width: min(480px, 56vw); padding: 32px 34px 30px; }
+}
+
+/* ---------- 7. the one offer: Bring your +1 (all text on terracotta is white, large) ---------- */
+.offer { display: grid; gap: 40px; align-items: center; }
+.offer__title { font-size: clamp(2.5rem, 1.5rem + 4.4vw, 5.5rem); }
+.plus { display: inline-block; }
+.offer__deal { margin: 14px 0 26px; font-weight: 700; font-size: clamp(1.375rem, 1.2rem + .8vw, 1.875rem); line-height: 1.25; }
+.offer__table { position: relative; display: grid; padding: 6px 4px 12px; }
+.offer__photo { position: relative; overflow: hidden; width: 88%; aspect-ratio: 911 / 608; border-radius: var(--r-photo); background: var(--grey); rotate: var(--rot); }
+.offer__photo img { width: 100%; height: 100%; object-fit: cover; }
+.pass { position: relative; z-index: 2; width: 84%; margin: -56px 0 0 12%; padding: 24px 22px 22px; border-radius: var(--r-card); background: var(--white); color: var(--black); }
+.pass__kicker { font-weight: 800; text-transform: uppercase; font-size: 1.5rem; line-height: 1; }
+.pass__body { margin: 10px 0 12px; font-size: 1rem; line-height: 1.45; color: var(--b-72); }
+.pass__price { display: flex; align-items: baseline; gap: 12px; font-weight: 800; }
+.pass__price s { color: var(--b-60); font-weight: 700; font-size: 1.25rem; }
+.pass__price strong { color: var(--terra); font-size: 2.25rem; line-height: 1; font-weight: 800; }
+.pass__price small { font-size: 1.1875rem; font-weight: 700; }
+.pass__fine { margin-top: 10px; padding-right: 92px; font-size: 1rem; line-height: 1.4; color: var(--b-72); }
+.pass .wcard__mark { right: 22px; bottom: 22px; }
+@media (min-width: 1024px) {
+  .offer { grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 56px; }
+  .offer__table { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); align-items: center; gap: 0; }
+  .offer__photo { grid-column: 1 / 2; grid-row: 1; width: 104%; z-index: 1; }
+  .pass { grid-column: 2 / 3; grid-row: 1; width: 100%; margin: 60px 0 0 0; padding: 30px 30px 28px; }
+}
+
+/* ---------- 8. first class ---------- */
+.steps { display: grid; gap: var(--gap); margin-bottom: clamp(36px, 5vw, 64px); }
+@media (min-width: 900px) { .steps { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+.steps li { position: relative; display: grid; gap: 10px; align-content: start; padding: 24px 22px 26px; border-radius: var(--r-card); background: var(--grey); color: var(--white); }
+.steps__n { display: grid; place-items: center; width: 44px; height: 44px; border-radius: 50%; background: var(--white); color: var(--black); font-weight: 800; font-size: 1.25rem; margin-bottom: 6px; }
+.steps p { color: var(--w-80); }
+.firstgrid { display: grid; gap: 48px; }
+@media (min-width: 1024px) { .firstgrid { grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 72px; align-items: start; } }
+.bring { display: grid; gap: 26px; align-content: start; }
+@media (min-width: 560px) and (max-width: 1023.98px) { .bring { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); align-items: center; } }
+.bring__photo { position: relative; overflow: hidden; width: 82%; aspect-ratio: 4 / 5; border-radius: var(--r-photo); background: var(--grey); rotate: var(--rot); }
+.bring__photo img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 30%; }
+.bring .h4 { margin-bottom: 12px; }
+.ticks li { position: relative; padding: 8px 0 8px 32px; border-bottom: 1px solid var(--b-14); }
+.ticks li::before { content: ""; position: absolute; left: 4px; top: 16px; width: 13px; height: 7px; border-left: 2.5px solid var(--black); border-bottom: 2.5px solid var(--black); rotate: -45deg; }
+.faq .h3 { margin-bottom: 14px; }
+.faq details { border-bottom: 1px solid var(--b-14); }
+.faq details:first-of-type { border-top: 2px solid var(--black); }
+.faq summary { position: relative; display: flex; align-items: center; min-height: 60px; padding: 12px 48px 12px 0; font-weight: 700; font-size: 1.125rem; line-height: 1.3; cursor: pointer; list-style: none; }
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after, .faq summary::before { content: ""; position: absolute; right: 12px; top: 50%; width: 16px; height: 2.5px; margin-top: -1px; border-radius: 2px; background: var(--black); transition: rotate .5s var(--spring); }
+.faq summary::before { rotate: 90deg; }
+.faq details[open] summary::before { rotate: 0deg; }
+.faq details p { padding: 0 48px 18px 0; color: var(--b-72); }
+
+/* ---------- 9. visit ---------- */
+.sec--visit { padding: 0 0 var(--sec-y); }
+.visit__photo { position: relative; overflow: hidden; aspect-ratio: 4 / 5; background: var(--grey); }
+.visit__photo img { width: 100%; height: 100%; object-fit: cover; transform-origin: 50% 40%; }
+.visit { position: relative; z-index: 2; display: grid; gap: 22px; margin-top: -110px; }
+.visit__card .h2 { font-size: clamp(2rem, 1.5rem + 2.2vw, 3.5rem); }
+.visit__card .lead { margin: 12px 0 18px; }
+.facts { display: grid; margin-bottom: 20px; border-top: 2px solid var(--black); }
+.facts div { display: grid; grid-template-columns: minmax(0, 8.5rem) minmax(0, 1fr); gap: 12px; padding: 10px 0; border-bottom: 1px solid var(--b-14); font-size: 1rem; }
+.facts dt { color: var(--b-72); }
+.facts dd { font-weight: 700; overflow-wrap: anywhere; }
+.facts__link { display: inline-flex; align-items: center; min-height: 44px; margin: -12px 0; }
+.visit__card .actions { margin-top: 4px; }
+.visit__card .actions .btn { flex: 1 1 auto; }
+.quote { padding: 24px 22px; border-radius: var(--r-card); background: var(--grey); color: var(--white); }
+.quote__stars { letter-spacing: .14em; font-size: 1.125rem; margin-bottom: 8px; color: var(--white); }
+.quote blockquote p { font-size: var(--fs-lead); line-height: 1.45; }
+.quote figcaption { margin-top: 12px; font-size: 1rem; color: var(--w-72); }
+@media (min-width: 1024px) {
+  .sec--visit { padding: 0; min-height: min(92svh, 860px); display: grid; align-items: end; }
+  .visit__photo { position: absolute; inset: 0; aspect-ratio: auto; }
+  .visit { grid-template-columns: minmax(0, 6fr) minmax(0, 5fr); align-items: end; gap: 32px; margin: 0 auto; padding-top: 200px; padding-bottom: 56px; }
+  .visit__card { padding: 36px 36px 32px; }
+  .quote { align-self: end; padding: 28px 30px; }
+}
+
+/* ---------- footer ---------- */
+.ftr { padding: clamp(56px, 6vw, 96px) 0 calc(48px + env(safe-area-inset-bottom, 0px)); background: var(--black); color: var(--white); }
+.ftr__logo { width: min(301px, 70vw); height: auto; margin-bottom: 40px; }
+.ftr__cols { display: grid; gap: 26px; margin-bottom: 36px; }
+.ftr__cols p { color: var(--w-72); }
+.ftr__cols a { display: inline-flex; align-items: center; min-height: 44px; text-decoration: none; color: var(--w-80); }
+@media (hover: hover) { .ftr__cols a:hover { color: var(--white); text-decoration: underline; } }
+.ftr__note { max-width: 70ch; font-size: 1rem; color: var(--w-60); }
+@media (min-width: 768px) { .ftr__cols { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (max-width: 1023.98px) { .ftr { padding-bottom: calc(120px + env(safe-area-inset-bottom, 0px)); } }
+
+/* ---------- sticky dock (phones and tablets) ---------- */
+.dock { position: fixed; left: 12px; right: 12px; bottom: calc(12px + env(safe-area-inset-bottom, 0px)); z-index: var(--z-bar); display: flex; align-items: center; gap: 12px; padding: 10px 10px 10px 14px; border-radius: 24px; background: var(--white); border: 1px solid var(--b-14); visibility: hidden; translate: 0 calc(100% + 30px); transition: translate .5s var(--spring), visibility 0s .5s; }
+.dock.is-on { visibility: visible; translate: none; transition: translate .55s var(--spring), visibility 0s; }
+.dock__faces { display: flex; flex: none; padding-left: 4px; }
+.dock__faces img { width: 34px; height: 34px; border-radius: 50%; object-fit: cover; border: 2px solid var(--white); margin-left: -10px; }
+.dock__faces img:first-child { margin-left: 0; }
+.dock__btn { flex: 1 1 auto; min-width: 0; }
+@media (max-width: 359.98px) { .dock__faces { display: none; } }
+@media (min-width: 1024px) { .dock { display: none; } }
+
+.toast { position: fixed; left: 0; right: 0; bottom: calc(100px + env(safe-area-inset-bottom, 0px)); z-index: var(--z-toast); width: max-content; max-width: calc(100vw - 32px); margin: 0 auto; padding: 12px 20px; border-radius: var(--r-pill); background: var(--black); color: var(--white); font-weight: 700; font-size: 1rem; border: 1px solid var(--w-24); }
+.toast[hidden] { display: none; }
+.motion-ok .toast:not([hidden]) { animation: toastIn .45s var(--spring); }
+@keyframes toastIn { from { translate: 0 24px; } to { translate: 0 0; } }
+
+/* =====================================================================
+   MOTION. Only under html.motion-ok (set inline: no reduced motion, no Save-Data).
+   Reveals: time-based springs, triggered by IntersectionObserver (motion.js adds .m-ready, then .m-in). Words never fade out.
+   Scroll effects: CSS scroll-driven animations under html.sda; without it, the IO fallback runs the same end state as a spring.
+   ===================================================================== */
+
+/* hero: card floats up on load, photo settles */
+.motion-ok .hero__card { animation: cardIn .55s var(--spring) .05s both; }
+.motion-ok .hero__photo img, .motion-ok .hero__photo video { animation: settle .6s var(--ease-out) both; }
+@keyframes cardIn { from { translate: 0 36px; } to { translate: 0 0; } }
+@keyframes settle { from { scale: 1.06; } to { scale: 1; } }
+
+/* reveals (IO): rise = headlines, lift = white cards, stagger = children, swing = name tags, pop = the +1 */
+.m-ready [data-motion~="rise"]:not(.m-in) { translate: 0 18px; }
+.m-ready [data-motion~="rise"] { transition: translate var(--t-reveal) var(--spring); }
+.m-ready [data-motion~="lift"]:not(.m-in) { translate: 0 44px; }
+.m-ready [data-motion~="lift"] { transition: translate var(--t-reveal) var(--spring); }
+.m-ready [data-motion~="stagger"]:not(.m-in) > * { translate: 0 22px; }
+.m-ready [data-motion~="stagger"] > * { transition: translate var(--t-reveal) var(--spring); transition-delay: calc(var(--i, 0) * 60ms); }
+.m-ready [data-motion~="swing"]:not(.m-in) { rotate: calc(var(--tag, 0deg) - 8deg); }
+.m-ready [data-motion~="swing"].m-in { transition: rotate .6s var(--spring-pop) calc(var(--i, 0) * 70ms); }
+.m-ready [data-motion~="pop"]:not(.m-in) { scale: .55; }
+.m-ready [data-motion~="pop"] { transition: scale .6s var(--spring-pop) .12s; }
+.m-ready .hero__card[data-motion~="lift"] { translate: none; transition: none; }
+.m-fast [data-motion] , .m-fast [data-motion] > * { transition-duration: .18s !important; transition-delay: 0s !important; }
+
+/* offer: the photo and the pass are dealt in and fan apart */
+.m-ready [data-deal]:not(.m-in) > * { translate: 0 70px; }
+.m-ready [data-deal]:not(.m-in) > .offer__photo { rotate: var(--from); }
+.m-ready [data-deal] > * { transition: translate .6s var(--spring), rotate .6s var(--spring); }
+.m-ready [data-deal] > :nth-child(2) { transition-delay: .08s; }
+
+/* the deck: scroll-driven fan-out (Chrome, Safari 26+) on one shared view timeline */
+.motion-ok.sda .deck { view-timeline: --deck block; }
+.motion-ok.sda .deck__card { animation: deal linear both; animation-timing-function: var(--spring); animation-timeline: --deck; animation-range: entry 20% cover 48%; }
+.motion-ok.sda .deck__card:nth-child(2) { animation-range: entry 26% cover 51%; }
+.motion-ok.sda .deck__card:nth-child(3) { animation-range: entry 32% cover 54%; }
+.motion-ok.sda .deck__card:nth-child(4) { animation-range: entry 38% cover 57%; }
+@keyframes deal {
+  from { translate: var(--px) var(--py); rotate: var(--pile); scale: .9; }
+  to { translate: 0 0; rotate: var(--rot); scale: 1; }
+}
+/* fallback (no scroll timelines): the same deal as a spring, once, when the deck is in view */
+.motion-ok:not(.sda) .m-ready .deck:not(.m-in) .deck__card { translate: var(--px) var(--py); rotate: var(--pile); scale: .9; }
+.motion-ok:not(.sda) .m-ready .deck .deck__card { transition: translate .6s var(--spring), rotate .6s var(--spring), scale .6s var(--spring); transition-delay: calc(var(--i) * 70ms); }
+
+/* depth: photos settle as they come in (scroll-driven); the hero photo drifts slower than the page */
+.motion-ok.sda [data-depth] img, .motion-ok.sda [data-depth] video { animation: depthIn linear both; animation-timeline: view(); animation-range: entry 0% cover 50%; }
+@keyframes depthIn { from { scale: 1.1; } to { scale: 1; } }
+.motion-ok.sda .hero__photo img, .motion-ok.sda .hero__photo video { transform-origin: 50% 100%; animation: drift linear both; animation-timeline: scroll(root block); animation-range: 0px 560px; }
+@keyframes drift { from { translate: 0 0; scale: 1; } to { translate: 0 5%; scale: 1.1; } }
+
+/* small physical moments */
+.motion-ok .face.is-new { animation: facePop .6s var(--spring-pop) both; animation-delay: calc(var(--i, 0) * 55ms); }
+@keyframes facePop { from { scale: .55; } to { scale: 1; } }
+.motion-ok .visitor__note.is-swap { animation: noteIn .5s var(--spring-soft); }
+@keyframes noteIn { from { translate: 0 8px; } to { translate: 0 0; } }
+.motion-ok .is-bump { display: inline-block; animation: bump .5s var(--spring-pop); }
+@keyframes bump { 0% { scale: 1; } 30% { scale: 1.25; } 100% { scale: 1; } }
+
+/* sheet-open: freeze ambient motion behind the dialog */
+
+/* =====================================================================
+   NO MOTION (reduced motion, Save-Data, JS off): nothing translates or scales, transitions are fades and colours only.
+   ===================================================================== */
+html:not(.motion-ok) *, html:not(.motion-ok) *::before, html:not(.motion-ok) *::after { transition-property: opacity, color, background-color, border-color, visibility !important; }
+html:not(.motion-ok) .coach__photo { rotate: none; transform: rotate(var(--rot, 0deg)); }
+html:not(.motion-ok) .tag { rotate: none; transform: rotate(var(--tag, 0deg)); }
+html:not(.motion-ok) .deck__card, html:not(.motion-ok) .offer__photo, html:not(.motion-ok) .bring__photo { rotate: none; transform: rotate(var(--rot, 0deg)); }
+html:not(.motion-ok) .faq summary::after, html:not(.motion-ok) .faq summary::before { rotate: none; }
+html:not(.motion-ok) .faq summary::before { transform: rotate(90deg); }
+html:not(.motion-ok) .faq details[open] summary::before { transform: none; }
+html:not(.motion-ok) .ticks li::before { rotate: none; transform: rotate(-45deg); }
+html:not(.motion-ok) .dock { translate: none; opacity: 0; }
+html:not(.motion-ok) .dock.is-on { opacity: 1; }
+html:not(.motion-ok) .hdr .hdr__cta, html:not(.motion-ok) .hdr.cta-on .hdr__cta { translate: none; }
+
+/* =====================================================================
+   HOME V2 ADDITIONS · v1.1, 28 Oct 2026. Everything above is s3-home v1.2, unchanged (the design master).
+   These rules only add what Raoul's 28 Oct decisions and SEO-SPEC need, in s3-home's own visual language.
+   ===================================================================== */
+/* the SEO focus phrase lives inside the H1 / first H2 as s3's eyebrow line (same look as the eyebrow it replaces) */
+.h1__eyebrow, .h2__eyebrow { display: block; font-weight: 600; font-size: .8125rem; line-height: 1.3; letter-spacing: var(--track); text-transform: uppercase; margin-bottom: 14px; }
+.hero__card .h1__eyebrow { margin-bottom: 12px; }
+.sec--white .h2__eyebrow { color: var(--b-72); }
+
+/* Google rating line ([G] 4.7, stars drawn to 4.7, count). The G is Google's official mark (Raoul's exception). */
+.grate { display: inline-flex; align-items: center; gap: 6px; white-space: nowrap; font-size: .875rem; line-height: 1.2; color: inherit; }
+.gmark { width: 16px; height: 16px; flex: none; }
+.grate__num { font-weight: 700; font-size: .9375rem; }
+.grate__stars { width: 70px; height: 13px; flex: none; fill: currentColor; }
+.grate__base, .grate__fill { fill: currentColor; }
+.grate__base path { fill: currentColor; fill-opacity: .24; }
+.grate__fill path { fill: currentColor; }
+.grate__src { font-weight: 600; }
+.trust { display: inline-flex; align-items: center; min-height: 44px; margin-top: 12px; color: var(--black); text-decoration: none; }
+.trust .grate__src { text-decoration: underline; text-decoration-thickness: 1.5px; text-underline-offset: 3px; }
+/* the rotating quote: plain text under the rating, small, at most 2 lines (quotes that need more are skipped at that width) */
+.hq { position: relative; padding-right: 40px; }
+.hq__slides { display: grid; }
+.hq__slide { grid-area: 1 / 1; margin: 0; opacity: 0; visibility: hidden; transition: opacity .4s linear, visibility 0s .4s; }
+.hq__slide.is-on { opacity: 1; visibility: visible; transition: opacity .4s linear; }
+.hq__slide.is-skip { display: none; }
+.hq blockquote p { font-size: .9375rem; line-height: 1.45; color: var(--b-72); }
+.hq figcaption { margin-top: 2px; font-size: .8125rem; font-weight: 600; color: var(--b-72); }
+.hq__pause { position: absolute; right: -8px; top: -6px; display: grid; place-items: center; width: 44px; height: 44px; padding: 0; border: 0; border-radius: 50%; background: transparent; color: var(--black); cursor: pointer; }
+.hq__pause[hidden] { display: none; }
+.hq__pause .pause__icon { scale: .8; }
+.hq__pause[aria-pressed="true"] .pause__icon::before { left: 2px; width: 0; height: 0; border-radius: 0; background: none; border-style: solid; border-width: 8px 0 8px 13px; border-color: transparent transparent transparent currentColor; }
+.hq__pause[aria-pressed="true"] .pause__icon::after { display: none; }
+
+/* the free-spots seat row: one dot per place, free dots solid and first, taken dots as rings, always with the label */
+.seatrow { display: inline-flex; align-items: center; flex-wrap: wrap; gap: 2px 6px; vertical-align: middle; line-height: 1.2; }
+.seats { display: inline-flex; align-items: center; gap: 2px; flex: none; }
+.seat { display: inline-block; width: 6px; height: 6px; border-radius: 50%; border: 1.25px solid currentColor; opacity: .4; box-sizing: border-box; transition: background-color .3s var(--ease), opacity .3s var(--ease); }
+.seat--free { background: currentColor; opacity: 1; }
+.seat-gap { display: inline-block; width: 3px; }
+.seatrow__lbl { font-weight: 700; font-size: .875rem; white-space: nowrap; }
+.seatrow__lbl b { font-weight: 800; }
+.row__by .seatrow { display: flex; flex-wrap: nowrap; margin-top: 4px; }
+.ncard__when .sample { margin-left: .5em; }
+.ncard__foot .seatrow { color: var(--white); }
+.legend { white-space: nowrap; }
+.legend .seat { width: 7px; height: 7px; margin: 0 2px; vertical-align: .05em; opacity: 1; }
+.legend .seat:not(.seat--free) { opacity: .5; }
+.motion-ok .seat--free { animation: seatIn .25s var(--ease-out) both; animation-delay: calc(var(--s, 0) * 10ms); }
+@keyframes seatIn { from { scale: .2; } to { scale: 1; } }
+.seat--mine { opacity: 1; background: transparent; border-width: 2px; }
+
+/* the timetable: s3's rows, now as a crawlable table in the raw HTML (roles kept explicit) */
+.tt { display: block; width: 100%; border-collapse: collapse; }
+.tt tbody { display: block; }
+.tt td { display: block; padding: 0; }
+.tt .row[hidden], .tt tbody[hidden] { display: none; }
+.tt__day { display: block; }
+.tt__day th { display: block; padding: 22px 0 10px; text-align: left; font-weight: 800; text-transform: uppercase; font-size: 1.0625rem; letter-spacing: .01em; border-bottom: 2px solid var(--black); }
+.tt a.rbtn { display: inline-flex; align-items: center; justify-content: center; text-decoration: none; }
+.js .tt__day { display: none; }
+.js.dow-1 .tt tbody:not([data-dow="1"]), .js.dow-2 .tt tbody:not([data-dow="2"]), .js.dow-3 .tt tbody:not([data-dow="3"]), .js.dow-4 .tt tbody:not([data-dow="4"]),
+.js.dow-5 .tt tbody:not([data-dow="5"]), .js.dow-6 .tt tbody:not([data-dow="6"]), .js.dow-7 .tt tbody:not([data-dow="7"]) { display: none; }
+.js .tt.is-enhanced tbody { display: block; }
+.js .tt.is-enhanced tbody[hidden] { display: none; }
+.js.tt-all .tt tbody, .js.tt-all .tt__day { display: block; }
+
+/* prices: s3's dark Next-up cards on black */
+.prices { margin: 0; }
+.sec--prices .ncard:focus-visible { outline-color: var(--white); }
+.ncard__time small { font-size: 1.25rem; font-weight: 700; }
+.prices .spots { font-weight: 600; color: var(--w-72); }
+.prices__member { margin-top: 24px; }
+.footnote__link { color: var(--white); font-weight: 700; display: inline-flex; align-items: center; min-height: 44px; text-decoration-thickness: 1.5px; text-underline-offset: 4px; }
+
+/* the FAQ questions are headings inside s3's summary, with the summary's own look */
+.faq__q { margin: 0; font: inherit; text-transform: none; letter-spacing: inherit; }
+
+/* footer additions */
+.ftr__forget { display: inline-flex; align-items: center; min-height: 44px; padding: 0; border: 0; background: none; color: var(--w-80); font: inherit; cursor: pointer; }
+
+/* sticky bars: the dock gets the Google rating line (+22 px); the desktop header shows it beside its CTA */
+.dock { flex-direction: column; align-items: stretch; gap: 4px; padding: 10px 10px 8px 14px; }
+.dock__row { display: flex; align-items: center; gap: 12px; }
+.dock__rate { display: flex; justify-content: center; margin: 0; color: var(--black); }
+.hdr__rate { display: none; }
+@media (min-width: 1200px) {
+  .hdr__rate { display: inline-flex; color: var(--white); visibility: hidden; opacity: 0; transition: opacity .2s var(--ease), visibility 0s .2s; }
+  .hdr.cta-on .hdr__rate { visibility: visible; opacity: 1; transition: opacity .2s var(--ease), visibility 0s; }
+  .hdr__rate .grate__src { color: var(--w-80); }
+}
+
+/* desktop: the non-modal side panel (s3's floating panel); the page makes room, one terracotta button per screen */
+@media (min-width: 1024px) {
+  html.has-panel .page { margin-right: calc(min(540px, 42vw) + 24px); transition: margin-right .36s var(--ease-out); }
+  html.has-panel #page .btn--primary { background: transparent; color: inherit; border-color: currentColor; }
+  html.has-panel .hdr__cta, html.has-panel .hdr__rate { display: none; }
+}
+/* with the panel open the header is only 570-835 px wide below 1400 px: the logo, the PERFORM tag and the anchor links no longer fit
+   (the tag ran into "Classes", "After class" wrapped), so the anchor links step aside until the panel closes (v1 rev 7, 29 Oct 2026) */
+@media (min-width: 1024px) and (max-width: 1399.98px) { html.has-panel .hdr__nav { display: none; } }
+html:not(.motion-ok) .hq__slide { transition: none; }
+.tt td.row__hitcell { position: absolute; inset: 0; z-index: 1; }
+.tt td.row__hitcell .row__hit { position: absolute; inset: 0; }
+/* s3's desktop hero is sized from 100vw; while the side panel is open the page is narrower, so size it from the page width */
+@media (min-width: 900px) {
+  .hero { --pw: 100vw; --cardw: min(600px, calc(var(--pw) * .44)); --photow: min(980px, calc(var(--pw) - var(--gutter) - var(--cardw) + 72px)); }
+}
+@media (min-width: 1024px) { html.has-panel .hero { --pw: calc(100vw - min(540px, 42vw) - 24px); } }
+/* v1.1 SEO-gate fixes in s3's language */
+.ncard--price { cursor: default; }
+.ncard--price p { margin: 0; }
+.ncard--price .fauxbtn { border: 0; cursor: pointer; font: inherit; font-weight: 700; font-size: 1rem; }
+.ncard--price data { font: inherit; }
+/* WCAG: s3's past rows at 60 % ink fall below 4.5:1; 72 % keeps the "finished" look and passes */
+.row.is-past .row__time, .row.is-past .row__name, .row.is-past .row__by, .row.is-past .row__by b { color: var(--b-72); }
+.row__label { color: var(--b-72); } /* LH colour-contrast: s3's 60% ink fails on the off-white page */
+.tt .row__main .row__hit { position: absolute; inset: 0; }
+@media (min-width: 1024px) { html.has-panel #page .btn--primary { transition: none; } }
+
+/* ---------- HOME V2 ADDITIONS · v1.1: the sticky bar on desktop too, and its terracotta pulse (Raoul 28 Oct: "add bottom sticky bar to desktop as well.
+   Both gently but noticeably pulsing in terracotta pulses"). Same component as the phone dock; it replaces the header CTA from 1024 px so a screen
+   never shows two terracotta buttons. Same show/hide rule (page.js initBars): after the hero's Book has left the screen, never over the +1 offer,
+   the footer or an open sheet / side panel. ---------- */
+@media (min-width: 1024px) {
+  .dock { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; grid-template-rows: auto auto; column-gap: 16px; row-gap: 3px; align-items: center;
+    left: 0; right: 0; width: min(620px, calc(100vw - 48px)); margin-inline: auto; bottom: 20px; padding: 10px 10px 10px 16px; }
+  .dock__row { display: contents; }
+  .dock__faces { grid-column: 1; grid-row: 1 / span 2; padding-left: 0; }
+  .dock__btn { grid-column: 3; grid-row: 1 / span 2; flex: none; }
+  .dock__quote { grid-column: 2; grid-row: 1; align-self: end; margin: 0; text-align: left; font-size: .9375rem; line-height: 1.3; }
+  .dock__rate { grid-column: 2; grid-row: 2; align-self: start; justify-content: flex-start; }
+  .hdr__cta, .hdr__rate { display: none; }
+  html { scroll-padding-bottom: 112px; }
+}
+/* the pulse: a terracotta ring that grows about 11 px from the button edge and fades to nothing, once every 2.3 s (0.43 per second).
+   box-shadow only, no blur, so no layout shift and the button and its text never move. Off under reduced motion, on hover and focus, and while the bar is hidden. */
+/* MOTION-BRIEF rule 7: the ring is a pseudo-element on transform + opacity (no box-shadow animation); same 2.3 s rhythm, same rules */
+.dock__btn { position: relative; isolation: isolate; }
+.dock__btn::after { content: ""; position: absolute; inset: 0; z-index: -1; border-radius: inherit; background: var(--terra); opacity: 0; pointer-events: none; }
+@keyframes ef-pulse { 0% { opacity: .5; transform: scale(1); } 70% { opacity: 0; transform: scale(var(--ring-x, 1.1), var(--ring-y, 1.4)); } 100% { opacity: 0; transform: scale(var(--ring-x, 1.1), var(--ring-y, 1.4)); } }
+.dock.is-on .dock__btn::after { animation: ef-pulse 2.3s cubic-bezier(.2, .6, .35, 1) .8s infinite; }
+.dock .dock__btn:hover::after, .dock .dock__btn:focus::after, .dock .dock__btn:focus-visible::after { animation: none; opacity: 0; }
+html:not(.motion-ok) .dock .dock__btn::after { animation: none; }
+@media (prefers-reduced-motion: reduce) { .dock .dock__btn::after { animation: none; } }
+
+/* ---------- HOME V2 ADDITIONS · v1.1 (28 Oct, Raoul): the hero ----------
+   - a new 8.2 s cut of the club's own header film, full-bleed on desktop (the dark left panel goes), a phone crop below 900 px
+   - on phones the Book, the Google rating and the full quote are on screen on load (HARD at 390x664 and 360x640): the stack is
+     H1, Book, rating, quote, then the lead and "See the schedule"; the photo block takes the height that is left (min 180 px)
+   - quotes 20 px semibold at 390 (19 px under 375, 26 px from 1024), attribution with the Google G on its own line, a reserved box
+   - from 1024 px the hero's rating line moves to the trust row under the hero (one rating per screen) */
+.conceptbar, .conceptbar__link { min-height: 32px; }
+.hero__vid { position: absolute; inset: 0; }
+.hero__vid--d { display: none; }
+.hero__photo .media__poster, .hero__photo video { object-position: 50% 50%; }
+@media (max-width: 899.98px) {
+  .hero__photo { aspect-ratio: auto; height: clamp(176px, calc(100svh - 378px), 112.5vw); }   /* 378 = the 44 px Now bar, header, card stack to the quote, 8 px margin */
+}
+@media (min-width: 900px) {
+  .hero__vid--m { display: none; }
+  .hero__vid--d { display: block; }
+  .hero__photo { left: 0; width: auto; }
+  .hero__photo .media__poster, .hero__photo video { object-position: 60% 65%; }   /* the re-cut loop: every head at 0.557-0.851 of the frame width; passes every frame at 900-1920 */
+}
+@media (max-width: 559.98px) {
+  .hero__card { display: flex; flex-direction: column; }
+  .hero__card > .actions { display: contents; }
+  .hero__card .actions .btn--primary { order: 1; margin-top: 14px; }
+  .hero__card > .trust { order: 2; align-self: flex-start; margin-top: 4px; }
+  .hero__card > .hq { order: 3; }
+  .hero__card > .hero__lead { order: 4; margin: 18px 0 14px; }
+  .hero__card .actions .btn--ghost-dark { order: 5; }
+}
+@media (min-width: 1024px) { .hero__card > .trust { display: none; } .hero__card > .hq { margin-top: 20px; } }
+.hq { padding-right: 0; --hq-fs: 1.25rem; }
+.hq blockquote p { font-size: var(--hq-fs); line-height: 1.3; font-weight: 600; color: var(--black); }
+.hq figcaption { display: flex; align-items: center; gap: 6px; min-height: 24px; margin-top: 4px; padding-right: 48px; font-size: .9375rem; font-weight: 600; color: var(--black); }
+.hq figcaption .gmark { width: 16px; height: 16px; flex: none; }
+.hq__slides { min-height: calc(var(--hq-fs) * 2.6 + 28px); }
+.hq__pause { top: auto; bottom: -10px; right: -10px; }
+@media (max-width: 374.98px) { .hq { --hq-fs: 1.1875rem; } }
+@media (min-width: 1024px) { .hq { --hq-fs: 1.625rem; } }
+
+/* Next up, from 1024 px (Raoul 28 Oct, images/16.png): a trust row in the empty top left of the head, verified facts only
+   (FACTS F2-REV-01, F2-CLB-03, F2-HRS-01, F2-CLB-02); the Google badge is the hero widget a step larger; text chips, no terracotta */
+.trustrow { display: none; }
+@media (min-width: 1024px) {
+  .trustrow { grid-column: 1 / -1; display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin: 0 0 6px; padding: 0; list-style: none; }
+  .trustrow__g { display: inline-flex; align-items: center; min-height: 48px; padding: 0 18px; border-radius: var(--r-pill); border: 1.5px solid var(--b-24); color: var(--black); text-decoration: none; transition: border-color .2s; }
+  .trustrow__g .grate { gap: 8px; font-size: 1rem; }
+  .trustrow__g .gmark { width: 20px; height: 20px; }
+  .trustrow__g .grate__num { font-size: 1.125rem; }
+  .trustrow__g .grate__stars { width: 88px; height: 16px; }
+  .trustrow .chip { min-height: 48px; padding: 0 18px; font-size: .9375rem; }
+  #today { padding-top: 32px; }   /* tighter head: the trust row is on screen on load at 1280x800, 1440x900 and 1920x1080 */
+}
+@media (hover: hover) and (min-width: 1024px) { .trustrow__g:hover { border-color: var(--black); } }
+
+/* the sticky bar's quote (Raoul 28 Oct): one line, s3's quote weight, a step smaller where the bar is narrow; scroll padding = bar + gap */
+.dock__quote { margin: 2px 4px 0; color: var(--black); font-weight: 400; font-size: min(.9375rem, calc((100vw - 52px) / 22.5)); line-height: 1.35; text-align: center; white-space: nowrap; }
+html { scroll-padding-bottom: 150px; }
+@media (min-width: 1024px) {
+  .dock { width: min(700px, calc(100vw - 48px)); }
+  .dock__quote { font-size: .9375rem; text-align: center; }
+  .dock__rate { justify-content: center; }
+  html { scroll-padding-bottom: 110px; }
+}
+
+/* Next up (Raoul 28 Oct, images/15.png): a small media top on each card, inside its rounded corners; no overlay, chip or text on it.
+   Cards without real footage (Mobility & Stretch) keep s3's card; in a desktop row their text sits level with the others. */
+.ncard__media { position: relative; display: block; height: 120px; margin: -22px -22px 8px; border-radius: var(--r-card) var(--r-card) 0 0; overflow: hidden; background: var(--grey); }
+.ncard__media img, .ncard__media video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+@media (min-width: 900px) {
+  .ncard__media { height: 156px; }
+  .nextup .ncard:not(.has-media) { align-content: end; }
+}
+/* a 16-place class (HYROX) made a phone card wider than the page: the card column may shrink and the seat row wraps */
+.nextup { grid-template-columns: minmax(0, 1fr); }
+@media (min-width: 900px) { .nextup { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+.ncard__foot > .spots { min-width: 0; }
+.ncard__foot .seatrow { flex-wrap: wrap; row-gap: 4px; }
+
+/* ---------- HOME V2 ADDITIONS · v1.1 (29 Oct, Raoul): the week schedule is section 1 ----------
+   "Add the schedule in section 1 immediately, well visible and easy to understand what classes take place on what day."
+   Phones: s3's day selector and rows (one decision per screen: the coach faces and the Filters drawer go, the light type chips stay).
+   From 1024 px the same <table> is the week at a glance: 7 columns starting today, today outlined in black (never terracotta),
+   each class a compact chip (time, class, a small free-spots cue); a tap anywhere on the chip opens the booking sheet. */
+#schedule .who, #schedule .filters-btn { display: none; }
+#today .sec__head { grid-template-columns: minmax(0, 1fr); }
+@media (min-width: 1024px) {
+  #schedule { padding-top: 32px; }
+  #schedule .sec__head { margin-bottom: 22px; }
+  #schedule .days, #schedule .sched__day, #schedule .sched__done { display: none; }
+  #schedule .sched__tools { margin-bottom: 14px; }
+  #schedule .tt { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 8px; align-items: start; }
+  html.js #schedule .tt tbody, html.js #schedule .tt tbody[hidden], #schedule .tt tbody { display: flex; flex-direction: column; gap: 6px; min-width: 0; padding: 8px; border: 2px solid transparent; border-radius: 18px; background: var(--b-07); }
+  #schedule .tt .tt__day { display: block; padding: 2px 4px 4px; border: 0; }
+  #schedule .tt .tt__day th { display: block; min-height: 2.5em; font-weight: 800; font-size: .8125rem; letter-spacing: var(--track); text-transform: uppercase; text-align: left; color: var(--black); }
+  #schedule .tt .row { display: grid; grid-template-columns: minmax(0, 1fr); gap: 0; padding: 6px 9px 7px; border: 1.5px solid var(--b-14); border-radius: 12px; background: var(--white); align-items: start; }
+  #schedule .tt .row[hidden] { display: none; }
+  #schedule .tt .row__face { display: none; }
+  #schedule .tt .row__time, #schedule .tt .row__main, #schedule .tt .row__act { grid-column: 1; grid-row: auto; }
+  #schedule .tt .row__time { font-size: 1rem; line-height: 1.15; }
+  #schedule .tt .row__name { font-size: .9375rem; line-height: 1.15; }
+  #schedule .tt .row__by { font-size: 0; line-height: 0; }
+  #schedule .tt .row__by .row__spots { display: block; margin-top: 3px; font-size: .8125rem; line-height: 1.25; color: var(--b-72); }
+  #schedule .tt .row__spots .seats { display: none; }
+  #schedule .tt .row__spots .seatrow { gap: 0; }
+  #schedule .tt .row__act { position: absolute; inset: 0; z-index: 2; }
+  #schedule .tt .row__act .rbtn { position: absolute; inset: 0; width: 100%; height: 100%; min-height: 0; min-width: 0; padding: 0 9px 8px; border: 0; border-radius: 12px; background: transparent; color: transparent; display: flex; align-items: flex-end; justify-content: flex-end; font-size: .8125rem; }
+  #schedule .tt .row__act .rbtn--booked { color: var(--black); font-weight: 800; }
+  #schedule .tt .row__act .rbtn:focus-visible { outline: 3px solid var(--black); outline-offset: 2px; }
+  @media (hover: hover) { #schedule .tt .row:hover { border-color: var(--black); } #schedule .tt .row__act .rbtn:hover { background: transparent; color: transparent; } #schedule .tt .row__act .rbtn--booked:hover { color: var(--black); } }
+  #schedule .tt .row__label { position: absolute; right: 9px; bottom: 8px; font-size: .8125rem; }
+  #schedule .tt .row.is-past { background: transparent; }
+  #schedule .tt .row.is-booked { border-color: var(--black); }
+  html.dow-1 #schedule .tt tbody[data-dow="1"], html.dow-2 #schedule .tt tbody[data-dow="2"], html.dow-3 #schedule .tt tbody[data-dow="3"], html.dow-4 #schedule .tt tbody[data-dow="4"],
+  html.dow-5 #schedule .tt tbody[data-dow="5"], html.dow-6 #schedule .tt tbody[data-dow="6"], html.dow-7 #schedule .tt tbody[data-dow="7"] { border-color: var(--black); background: var(--white); }
+  html.dow-1 #schedule tbody[data-dow="1"] .tt__day th::after, html.dow-2 #schedule tbody[data-dow="2"] .tt__day th::after, html.dow-3 #schedule tbody[data-dow="3"] .tt__day th::after, html.dow-4 #schedule tbody[data-dow="4"] .tt__day th::after,
+  html.dow-5 #schedule tbody[data-dow="5"] .tt__day th::after, html.dow-6 #schedule tbody[data-dow="6"] .tt__day th::after, html.dow-7 #schedule tbody[data-dow="7"] .tt__day th::after { content: "Today"; display: block; color: var(--black); }
+  html.dow-1 #schedule .tt tbody[data-dow="2"] { order: 1; }
+  html.dow-1 #schedule .tt tbody[data-dow="3"] { order: 2; }
+  html.dow-1 #schedule .tt tbody[data-dow="4"] { order: 3; }
+  html.dow-1 #schedule .tt tbody[data-dow="5"] { order: 4; }
+  html.dow-1 #schedule .tt tbody[data-dow="6"] { order: 5; }
+  html.dow-1 #schedule .tt tbody[data-dow="7"] { order: 6; }
+  html.dow-2 #schedule .tt tbody[data-dow="1"] { order: 6; }
+  html.dow-2 #schedule .tt tbody[data-dow="3"] { order: 1; }
+  html.dow-2 #schedule .tt tbody[data-dow="4"] { order: 2; }
+  html.dow-2 #schedule .tt tbody[data-dow="5"] { order: 3; }
+  html.dow-2 #schedule .tt tbody[data-dow="6"] { order: 4; }
+  html.dow-2 #schedule .tt tbody[data-dow="7"] { order: 5; }
+  html.dow-3 #schedule .tt tbody[data-dow="1"] { order: 5; }
+  html.dow-3 #schedule .tt tbody[data-dow="2"] { order: 6; }
+  html.dow-3 #schedule .tt tbody[data-dow="4"] { order: 1; }
+  html.dow-3 #schedule .tt tbody[data-dow="5"] { order: 2; }
+  html.dow-3 #schedule .tt tbody[data-dow="6"] { order: 3; }
+  html.dow-3 #schedule .tt tbody[data-dow="7"] { order: 4; }
+  html.dow-4 #schedule .tt tbody[data-dow="1"] { order: 4; }
+  html.dow-4 #schedule .tt tbody[data-dow="2"] { order: 5; }
+  html.dow-4 #schedule .tt tbody[data-dow="3"] { order: 6; }
+  html.dow-4 #schedule .tt tbody[data-dow="5"] { order: 1; }
+  html.dow-4 #schedule .tt tbody[data-dow="6"] { order: 2; }
+  html.dow-4 #schedule .tt tbody[data-dow="7"] { order: 3; }
+  html.dow-5 #schedule .tt tbody[data-dow="1"] { order: 3; }
+  html.dow-5 #schedule .tt tbody[data-dow="2"] { order: 4; }
+  html.dow-5 #schedule .tt tbody[data-dow="3"] { order: 5; }
+  html.dow-5 #schedule .tt tbody[data-dow="4"] { order: 6; }
+  html.dow-5 #schedule .tt tbody[data-dow="6"] { order: 1; }
+  html.dow-5 #schedule .tt tbody[data-dow="7"] { order: 2; }
+  html.dow-6 #schedule .tt tbody[data-dow="1"] { order: 2; }
+  html.dow-6 #schedule .tt tbody[data-dow="2"] { order: 3; }
+  html.dow-6 #schedule .tt tbody[data-dow="3"] { order: 4; }
+  html.dow-6 #schedule .tt tbody[data-dow="4"] { order: 5; }
+  html.dow-6 #schedule .tt tbody[data-dow="5"] { order: 6; }
+  html.dow-6 #schedule .tt tbody[data-dow="7"] { order: 1; }
+  html.dow-7 #schedule .tt tbody[data-dow="1"] { order: 1; }
+  html.dow-7 #schedule .tt tbody[data-dow="2"] { order: 2; }
+  html.dow-7 #schedule .tt tbody[data-dow="3"] { order: 3; }
+  html.dow-7 #schedule .tt tbody[data-dow="4"] { order: 4; }
+  html.dow-7 #schedule .tt tbody[data-dow="5"] { order: 5; }
+  html.dow-7 #schedule .tt tbody[data-dow="6"] { order: 6; }
+}
+
+/* ---------- HOME V2 ADDITIONS · v1.1 (29 Oct, RULINGS #31 / P23): the live "Now / Next" bar, in the demo banner's place ----------
+   44 px (a full tap target); white text on a slow blurred clip of that class under a 72 % #1B1B1B layer (>= 4.5:1 on any frame);
+   no terracotta; posters only under reduced motion or Save-Data (media.js), the countdown keeps ticking. */
+.nowbar { position: relative; overflow: hidden; isolation: isolate; gap: 12px; min-height: 44px; color: var(--white); background: var(--black); }
+.nowbar::before { content: ""; position: absolute; inset: 0; z-index: -1; background: rgba(27, 27, 27, .72); }
+.nowbar__surface { position: absolute; inset: 0; z-index: -2; overflow: hidden; }
+.nowbar__surface img, .nowbar__surface video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.nowbar__fallback { color: var(--w-72); }
+.nowbar.is-live .nowbar__fallback { display: none; }
+.nowbar__live { flex: 1 1 auto; min-width: 0; display: flex; align-items: center; justify-content: center; gap: 8px; min-height: 44px; padding: 0; border: 0; background: transparent; color: var(--white); font: inherit; font-weight: 600; font-size: .8125rem; letter-spacing: 0; white-space: nowrap; cursor: pointer; }
+.nowbar__live[hidden] { display: none; }
+.nowbar__state { font-weight: 800; letter-spacing: var(--track); text-transform: uppercase; }
+.nowbar__icon { display: inline-grid; flex: none; }
+.nowbar__icon svg { display: block; width: 18px; height: 18px; color: var(--white); }
+.nowbar__cls { min-width: 0; overflow: hidden; text-overflow: ellipsis; font-weight: 700; }
+.nowbar__who { display: inline-flex; flex: none; align-items: center; gap: 6px; }
+.nowbar__who img { width: 20px; height: 20px; border-radius: 50%; object-fit: cover; }
+.nowbar__time { flex: none; font-variant-numeric: tabular-nums; }
+.nowbar__cd { font-weight: 800; }
+.nowbar__live:focus-visible { outline: 2px solid var(--white); outline-offset: -5px; border-radius: 8px; }
+@media (hover: hover) { .nowbar__live:hover .nowbar__cls { text-decoration: underline; text-underline-offset: 3px; } }
+.nowbar__concepts { flex: none; }
+.ftr__concepts { color: inherit; font-weight: 700; }
+@media (max-width: 639.98px) {
+  .nowbar { padding: 0 12px; }
+  .nowbar__live { gap: 7px; }
+}
+@media (min-width: 1024px) { .nowbar, .nowbar__live { min-height: 44px; } .nowbar__live { font-size: .875rem; gap: 10px; } }
+@keyframes nb-pan { from { transform: scale(1.2) translateX(-4%); } to { transform: scale(1.2) translateX(4%); } }
+@keyframes nb-breathe { from { opacity: .25; } to { opacity: .6; } }
+.nowbar[data-family="mobility"] .nowbar__surface { background: var(--grey); opacity: .4; }
+.motion-ok .nowbar[data-family="boxing"] .nowbar__surface img { animation: nb-pan 16s ease-in-out infinite alternate; }
+.motion-ok .nowbar[data-family="mobility"] .nowbar__surface { animation: nb-breathe 6s ease-in-out infinite alternate; }
+@media (prefers-reduced-motion: reduce) { .nowbar__surface, .nowbar__surface img { animation: none !important; } }
+/* 900-1279 px: the bigger quote made the hero card taller than the hero; a tighter card keeps it inside (the logogram keeps its 15 px clearance) */
+@media (min-width: 900px) and (max-width: 1279.98px) {
+  .hero__card { padding-top: 76px; padding-bottom: 24px; }
+  .hero .h1 { font-size: clamp(2.5rem, .6rem + 3.4vw, 3.6rem); }
+  .hero__lead { margin: 12px 0 18px; }
+}
+@media (min-width: 1024px) and (max-width: 1279.98px) { .hq { --hq-fs: 1.375rem; } }
+@media (min-width: 900px) and (max-width: 1023.98px) { .hero { height: clamp(600px, 76svh, 760px); } }
+/* Raoul 29 Oct (images/19.png): from 1024 px the last family card hangs 100 px below its clip and covered the section's footnote (its dashed
+   Sample chip showed at the card's corner). The footnote now clears it by 28 px at every width. s3-home has the same overlap. */
+@media (min-width: 1024px) { #classes .footnote { margin-top: 128px; } }
+@media (min-width: 1024px) { #schedule .tt .row__hit { display: none; } }   /* the chip's Book overlay is its one control (no stacked buttons) */
+@media (min-width: 1024px) { #schedule .tt .row__label { display: none; } }   /* a finished chip says "Finished" once, in its spots line */
+
+/* ---------- RULINGS #38 (Raoul 29 Oct: "top slim bar with current class is sticky on desktop and mobile") ----------
+   The Now bar stays pinned at the top (sticky: no layout shift on load or when it sticks). Phones: only the bar (44 px) is pinned, the header
+   scrolls away. Desktop: the sticky header stacks under it, 44 + 76 = 120 px of chrome. Every anchor target clears the pinned chrome. */
+:root { --chrome: 44px; }
+.nowbar { position: sticky; top: 0; z-index: calc(var(--z-hdr) + 1); padding-top: env(safe-area-inset-top, 0px); border-bottom: 0; }
+html { scroll-padding-top: 0; }
+[id] { scroll-margin-top: calc(var(--chrome) + 12px); }
+@media (min-width: 1024px) {
+  :root { --chrome: 120px; }
+  .hdr { top: 44px; }
+  .hdr__in { height: calc(var(--hdr-h) - 1px); }
+}
+/* tablets (600-899 px): Next-up cards two to a row, so the clip boxes keep the aspect the faces were checked at */
+@media (min-width: 600px) and (max-width: 899.98px) { [data-nextup] { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+
+/* ---------- RULINGS #40 (day-selector gaps) and #41 (text floor: content >= 14 px, meta >= 12 px) ---------- */
+@media (min-width: 375.02px) and (max-width: 767.98px) { #schedule .days { gap: 8px; margin-inline: -12px; } }   /* above 375 px: 8 px gaps, every day still >= 44 px wide */
+@media (min-width: 768px) { #schedule .days { gap: 8px; } }
+/* phones: the Now bar in two short lines so the class name is 14 px and never cut: "NEXT · starts in 29:58" / "[icon] class [avatar]" */
+@media (max-width: 639.98px) {
+  .nowbar__live { flex-wrap: wrap; align-content: center; row-gap: 1px; column-gap: 6px; padding: 3px 0; font-size: .875rem; line-height: 1.15; }
+  .nowbar__state { order: 1; font-size: .75rem; }
+  .nowbar__time { order: 2; }
+  .nowbar__lbl { font-size: .75rem; font-weight: 600; }
+  .nowbar__cd { font-size: .875rem; }
+  .nowbar__live::after { content: ""; order: 3; flex-basis: 100%; height: 0; }
+  .nowbar__icon { order: 4; }
+  .nowbar__icon svg { width: 16px; height: 16px; }
+  .nowbar__cls { order: 5; overflow: visible; text-overflow: clip; }
+  .nowbar__who { order: 6; }
+  .nowbar__who img { width: 18px; height: 18px; }
+}
+@media (max-width: 374.98px) { .dock { padding-left: 8px; padding-right: 8px; } .dock__quote { font-size: .875rem; letter-spacing: -.01em; margin-inline: 0; } }
+
+/* VISUAL-AUDIT-v1 V2-3 / RULINGS #43: the trainer's name at every width; no other line in the bar below 1024 px (All concepts is in the footer note) */
+@media (max-width: 1023.98px) { .nowbar.is-live .nowbar__concepts { display: none; } }
+.nowbar__lbl:empty { display: none; }
+@media (max-width: 374.98px) { .nowbar__live { font-size: .8125rem; } .nowbar__cd { font-size: .8125rem; } }   /* 13 px at <= 375 px, as #43 allows, so line 2 fits */
+
+
+/* ---------- HOME V2 ADDITIONS · v1.2 motion pass (Raoul 29 Oct; RULINGS #39, MOTION-BRIEF): warm and human, the approved design unchanged ----------
+   Native scroll only; reveals use s3's own system (motion.js adds .m-in once; translate only, so content is never hidden); <= .6 s each,
+   a group done <= .9 s after its first item; compositor-only properties; reduced motion and no motion-ok give the final state at once. */
+/* the week at a glance: the seven columns settle in, today first (their order already runs from today) */
+@media (min-width: 1024px) {
+  .m-ready #schedule .tt[data-motion~="rise"]:not(.m-in) tbody { translate: 0 18px; }
+  .m-ready #schedule .tt[data-motion~="rise"] tbody { transition: translate .5s var(--ease-out); transition-delay: calc(var(--col, 0) * 45ms); }
+  .m-ready #schedule .tt[data-motion~="rise"] { translate: none; transition: none; }
+}
+html.dow-1 #schedule .tt tbody[data-dow="1"], html.dow-2 #schedule .tt tbody[data-dow="2"], html.dow-3 #schedule .tt tbody[data-dow="3"], html.dow-4 #schedule .tt tbody[data-dow="4"], html.dow-5 #schedule .tt tbody[data-dow="5"], html.dow-6 #schedule .tt tbody[data-dow="6"], html.dow-7 #schedule .tt tbody[data-dow="7"] { --col: 0; }
+html.dow-1 #schedule .tt tbody[data-dow="2"] { --col: 1; }
+html.dow-1 #schedule .tt tbody[data-dow="3"] { --col: 2; }
+html.dow-1 #schedule .tt tbody[data-dow="4"] { --col: 3; }
+html.dow-1 #schedule .tt tbody[data-dow="5"] { --col: 4; }
+html.dow-1 #schedule .tt tbody[data-dow="6"] { --col: 5; }
+html.dow-1 #schedule .tt tbody[data-dow="7"] { --col: 6; }
+html.dow-2 #schedule .tt tbody[data-dow="1"] { --col: 6; }
+html.dow-2 #schedule .tt tbody[data-dow="3"] { --col: 1; }
+html.dow-2 #schedule .tt tbody[data-dow="4"] { --col: 2; }
+html.dow-2 #schedule .tt tbody[data-dow="5"] { --col: 3; }
+html.dow-2 #schedule .tt tbody[data-dow="6"] { --col: 4; }
+html.dow-2 #schedule .tt tbody[data-dow="7"] { --col: 5; }
+html.dow-3 #schedule .tt tbody[data-dow="1"] { --col: 5; }
+html.dow-3 #schedule .tt tbody[data-dow="2"] { --col: 6; }
+html.dow-3 #schedule .tt tbody[data-dow="4"] { --col: 1; }
+html.dow-3 #schedule .tt tbody[data-dow="5"] { --col: 2; }
+html.dow-3 #schedule .tt tbody[data-dow="6"] { --col: 3; }
+html.dow-3 #schedule .tt tbody[data-dow="7"] { --col: 4; }
+html.dow-4 #schedule .tt tbody[data-dow="1"] { --col: 4; }
+html.dow-4 #schedule .tt tbody[data-dow="2"] { --col: 5; }
+html.dow-4 #schedule .tt tbody[data-dow="3"] { --col: 6; }
+html.dow-4 #schedule .tt tbody[data-dow="5"] { --col: 1; }
+html.dow-4 #schedule .tt tbody[data-dow="6"] { --col: 2; }
+html.dow-4 #schedule .tt tbody[data-dow="7"] { --col: 3; }
+html.dow-5 #schedule .tt tbody[data-dow="1"] { --col: 3; }
+html.dow-5 #schedule .tt tbody[data-dow="2"] { --col: 4; }
+html.dow-5 #schedule .tt tbody[data-dow="3"] { --col: 5; }
+html.dow-5 #schedule .tt tbody[data-dow="4"] { --col: 6; }
+html.dow-5 #schedule .tt tbody[data-dow="6"] { --col: 1; }
+html.dow-5 #schedule .tt tbody[data-dow="7"] { --col: 2; }
+html.dow-6 #schedule .tt tbody[data-dow="1"] { --col: 2; }
+html.dow-6 #schedule .tt tbody[data-dow="2"] { --col: 3; }
+html.dow-6 #schedule .tt tbody[data-dow="3"] { --col: 4; }
+html.dow-6 #schedule .tt tbody[data-dow="4"] { --col: 5; }
+html.dow-6 #schedule .tt tbody[data-dow="5"] { --col: 6; }
+html.dow-6 #schedule .tt tbody[data-dow="7"] { --col: 1; }
+html.dow-7 #schedule .tt tbody[data-dow="1"] { --col: 1; }
+html.dow-7 #schedule .tt tbody[data-dow="2"] { --col: 2; }
+html.dow-7 #schedule .tt tbody[data-dow="3"] { --col: 3; }
+html.dow-7 #schedule .tt tbody[data-dow="4"] { --col: 4; }
+html.dow-7 #schedule .tt tbody[data-dow="5"] { --col: 5; }
+html.dow-7 #schedule .tt tbody[data-dow="6"] { --col: 6; }
+/* seat dots fill in sequence when a Next-up card comes in (scale on 7 px dots: compositor only) */
+.m-ready [data-nextup]:not(.m-in) .seat--free { scale: 0; }
+.m-ready [data-nextup] .seat--free { transition: scale .35s var(--spring); transition-delay: calc(var(--i, 0) * 60ms + var(--sd, 0ms)); }
+[data-nextup] .seat:nth-child(1) { --sd: 142ms; }
+[data-nextup] .seat:nth-child(2) { --sd: 164ms; }
+[data-nextup] .seat:nth-child(3) { --sd: 186ms; }
+[data-nextup] .seat:nth-child(4) { --sd: 208ms; }
+[data-nextup] .seat:nth-child(5) { --sd: 230ms; }
+[data-nextup] .seat:nth-child(6) { --sd: 252ms; }
+[data-nextup] .seat:nth-child(7) { --sd: 274ms; }
+[data-nextup] .seat:nth-child(8) { --sd: 296ms; }
+[data-nextup] .seat:nth-child(9) { --sd: 318ms; }
+[data-nextup] .seat:nth-child(10) { --sd: 340ms; }
+[data-nextup] .seat:nth-child(11) { --sd: 362ms; }
+[data-nextup] .seat:nth-child(12) { --sd: 384ms; }
+[data-nextup] .seat:nth-child(13) { --sd: 406ms; }
+[data-nextup] .seat:nth-child(14) { --sd: 428ms; }
+[data-nextup] .seat:nth-child(15) { --sd: 450ms; }
+[data-nextup] .seat:nth-child(16) { --sd: 472ms; }
+/* name tags: a short slide with s3's swing */
+.m-ready [data-motion~="swing"]:not(.m-in) { translate: 0 14px; }
+.m-ready [data-motion~="swing"].m-in { transition: rotate .6s var(--spring-pop) calc(var(--i, 0) * 70ms), translate .5s var(--ease-out) calc(var(--i, 0) * 70ms); }
+/* the warm photos settle once as they come in (scale 1.04 -> 1, .6 s; one-shot from an observer, no scroll-linked animation: the trace
+   showed scroll-driven scaling cost 11 % of frames). 1.04 crops 2 % a side; the motion faces check passes at 390 and 1440. */
+.motion-ok [data-depth]:not(.is-settled) img, .motion-ok [data-depth]:not(.is-settled) video { scale: 1.04; }
+.motion-ok [data-depth] img, .motion-ok [data-depth] video { transition: scale .6s var(--ease-out); }
+/* press: a soft .97 on the main buttons (the hover lift is s3's 2 px) */
+.motion-ok .btn:active { scale: .97; }
+@media (prefers-reduced-motion: reduce) { [data-depth] img, [data-depth] video { scale: none !important; transition: none !important; } .m-ready [data-nextup] .seat--free { scale: none !important; } }
+/* faces through the motion (MOTION-BRIEF rule 4): from 900 px the +1 photo's dealt swing brought a face 4 px under the pass card's edge for a frame; it now lands without the swing (the pass card still rises) */
+@media (min-width: 900px) { .m-ready [data-deal]:not(.m-in) > .offer__photo { rotate: var(--rot); } }
+
+/* =====================================================================
+   HOME V2 ADDITIONS v1.3 (29 Oct 2026): depth, back on the compositor (Raoul: "butter smooth and ultra premium... more immersive";
+   MOTION-BRIEF depth; RULINGS #39, #45). s3's scroll-linked depth returns as CSS scroll-driven animations only: a translate on photo
+   FRAMES, never on text, no script, no scroll listener. Only inside @supports (animation-timeline: view()) and under html.motion-ok
+   (no reduced motion, no Save-Data); elsewhere every photo rests where the approved design puts it.
+   Frame drift: the frame itself moves 5 % slower than the white card on it (-2.5 % to +2.5 % of its height over its pass through the
+   screen); the photo or clip never moves inside its frame, so every head keeps its approved margin:
+     the Mobility chapter (every width), Recharge and Visit (phones, where they are framed photos), After class (768-1199 px).
+   Tried and dropped (qa/switch/old/trace-var*.json, 4x CPU at 390 and 1440): a pan of the photo inside its frame (88 % frames on
+   time, with or without zoom), the hero photo sliding under its card (93.6 % at 1440); the frame drift alone keeps 98.8-99.3 %.
+   FACES (HARD, MOTION-BRIEF rule 4): only frames whose heads keep >= 10 % of the frame at rest move (qa/switch/depthfaces.js). The
+   hero photo is final on first paint (s3's load zoom goes: rule 2, and it took a head to 3 % of the edge), and the v1.2 one-shot
+   settle (1.04 -> 1) stays only on the photos that pass: Recharge, Visit, and After class from 768 px.
+   ===================================================================== */
+.motion-ok .hero__photo .media__poster, .motion-ok .hero__photo video { animation: none; }
+.motion-ok [data-depth].hero__photo img, .motion-ok [data-depth].hero__photo video,
+.motion-ok [data-depth].chap__media img, .motion-ok [data-depth].chap__media video { scale: none; transition: none; }
+@media (max-width: 767.98px) { .motion-ok [data-depth].band__photo img { scale: none; transition: none; } }
+@supports (animation-timeline: view()) {
+  .motion-ok #family-mobility .chap__media { animation: frameDrift linear both; animation-timeline: view(); animation-range: cover 0% cover 100%; will-change: transform; }
+  @media (max-width: 767.98px) { .motion-ok .story__photo, .motion-ok .visit__photo { animation: frameDrift linear both; animation-timeline: view(); animation-range: cover 0% cover 100%; will-change: transform; } }
+  @media (min-width: 768px) and (max-width: 1199.98px) { .motion-ok .band__photo { animation: frameDrift linear both; animation-timeline: view(); animation-range: cover 0% cover 100%; will-change: transform; } }
+}
+@keyframes frameDrift { from { transform: translateY(-2.5%); } to { transform: translateY(2.5%); } }
+
+/* =====================================================================
+   HOME V2 ADDITIONS v1.3: layout gate v1 fixes (LAYOUT-GATE-v1.md, s3-home-v2). The look stays the approved one.
+   ===================================================================== */
+/* P0, 1024 px+: each chapter card overlaps one of its clip's 8 grid columns (12.5 %); the clip's pause button (card on the right) and its
+   "Stock clip" chip (card on the left) move out of that column, so neither sits on the card's label or text */
+@media (min-width: 1024px) {
+  .chap:not(.chap--flip):not(.chap--wide) .chap__media .pause { right: calc(12.5% + 18px); }
+  .chap--flip .chap__media .chip--media { left: calc(12.5% + 18px); }
+}
+/* P0, below 375 px: the two "together" chips fit their deck card (the second was cut by the card edge at 360 px) */
+@media (max-width: 374.98px) { .tchips { gap: 4px; } .tchip { padding-inline: .45rem; } }
+/* P1 tap targets: at 375 px and below s3's day selector reaches 8 px into the gutters, so every day is >= 44 px wide (its 3 px gaps
+   stay, RULINGS #40); the class chips sit 8 px below the days at every phone and tablet width */
+@media (max-width: 375px) { #schedule .days { margin-inline: -8px; } }
+@media (max-width: 1023.98px) { #schedule .fchips { margin-top: 5px; } }
+/* P1 the Now bar's "All concepts" link: a 44 px tall target without growing the bar, 14 px text from 1024 px (RULINGS #43) */
+.nowbar__concepts { min-height: 44px; margin-block: -6px; }
+@media (min-width: 1024px) { .nowbar__concepts, .nowbar__concepts * { font-size: .875rem; } }
+/* P1 focus: the coach cards show a ring on keyboard focus (white on the dark Coaches band); the Now bar's ring sits inside the bar */
+.coach:focus-visible { outline: 3px solid var(--white); outline-offset: 4px; }
+.nowbar { overflow: visible; }   /* its surface clips itself (.nowbar__surface) */
+/* the bar sits at the very top of the screen, so its focus rings are drawn as shadows inside the bar (same look as s3's inset ring) */
+.nowbar__live:focus-visible { outline: none; box-shadow: inset 0 0 0 5px var(--black), inset 0 0 0 7px var(--white); }
+.nowbar__concepts:focus-visible { outline: none; border-radius: 6px; box-shadow: 0 0 0 3px var(--white); }
+@media (forced-colors: active) { .nowbar__live:focus-visible, .nowbar__concepts:focus-visible { outline: 2px solid CanvasText; outline-offset: -4px; } }
+/* P1 small text: the week grid's transparent Book tap area carries 14 px (its label is read out, not shown; RULINGS #41) */
+@media (min-width: 1024px) { #schedule .tt .row__act .rbtn { font-size: .875rem; } }
+/* P1 heading widows at 360-414 px: balanced lines, the words unchanged; where the last word would still stand alone, the last two
+   words stay together on phones (index.html .nw: the H1, Meet your coaches., See it for yourself.). "Bring your +1." keeps s3's
+   break with the +1 on its own line: three words on two lines always leave one word alone at that size. */
+@media (max-width: 414px) { .h2 { text-wrap: balance; } .nw { white-space: nowrap; } }
+/* P1 from 768 px the schedule heading is on, or right at, the first screen: it renders final, with no rise (skim-first) */
+@media (min-width: 768px) { .m-ready #schedule-title[data-motion~="rise"] { translate: none; transition: none; } }
+/* v1.3 fix (29 Oct, found at 1440 after a booking): from 1024 px the week chip's Book is a transparent tap area over the whole chip,
+   and its "Booked", "Waitlist" and "In panel" labels were drawn over the chip's own lines ("· You're booked" sat under "Booked").
+   The chip now shows one state: its black outline and its own line; the tap area stays a transparent button with its full name. */
+@media (min-width: 1024px) {
+  #schedule .tt .row__act .rbtn--booked, #schedule .tt .row__act .rbtn--booked:hover { color: transparent; }
+  #schedule .tt .row:has(.rbtn[aria-label$="open in the panel"]) { border-color: var(--black); }
+}
+/* VISUAL-AUDIT-v2 W-2 (RULINGS #43): every Now bar text, labels included ("Now", "Next", "in", "left"), is 14 px, and 13 px below
+   376 px; it was 12 px for the labels on phones and 13 px for the class, coach and countdown from 640 to 1023 px. Same wording,
+   no ellipsis; the phone bar stays two lines, <= 48 px (#38). */
+.nowbar__live, .nowbar__live * { font-size: .875rem; }
+@media (max-width: 375.98px) { .nowbar__live, .nowbar__live * { font-size: .8125rem; } }
