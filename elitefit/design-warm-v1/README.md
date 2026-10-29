@@ -52,4 +52,4 @@ Useful links on top of the page address:
 | Version | Date | Change |
 | --- | --- | --- |
 | 1.1 | 29 Oct 2026 | Synced with later source changes: every day of the week shows its classes on phones, the week grid wraps instead of cutting text while the booking panel is open, the Booked tick shows at once, the day heading never leaves one word alone, and all coach avatars come from this folder. |
-| 1.0 | 29 Oct 2026 | First snapshot of Warm v1.3 as a self-contained folder: the page, the shared engine and brand files, the thumbnails and the build notes. All paths relative. |
+| 1.0 | 29 Oct 2026 | First snapshot of Warm v1.3 as a self-contained folder: the page, the shared engine and brand files and the thumbnails. All paths relative. |
