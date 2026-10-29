@@ -438,3 +438,6 @@ html:not(.motion-ok) .sheet .find-mode__go, html:not(.motion-ok) .sheet .find-cl
 @keyframes stepIn { from { opacity: .9; transform: translateX(28px); } 30% { opacity: 1; } to { opacity: 1; transform: none; } }
 @keyframes stepBack { from { opacity: .9; transform: translateX(-28px); } 30% { opacity: 1; } to { opacity: 1; transform: none; } }
 @keyframes fade { from { opacity: .9; } to { opacity: 1; } }
+/* v1.3 visual pass 3 (29 Oct, live check): on Booked the tick drew in after a .15 s delay, so a screen caught in the first moment showed
+   an empty black circle. The tick now arrives with the circle's own pop (no separate draw). */
+.motion-ok .done-mark path { animation: none; }

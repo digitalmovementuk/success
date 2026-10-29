@@ -62,6 +62,8 @@ function whenLabel(o) {
   return EF.api.dateLong(o.ymd);
 }
 var nextKey = '';
+/* every avatar the page draws comes from its own assets/img/r/ files (RULINGS #53a); the v1 96 px file is no longer requested */
+function avR(src) { var m = /avatar-([a-z]+)\.webp/.exec(String(src || '')); return m ? 'assets/img/r/avatar-' + m[1] + '-96.webp' : src; }
 function ssAttr(src, px) { var m = (DATA && DATA.srcset) || {}, v = m[String(src || '').split('/').pop()]; return v ? ' srcset="' + v + '" sizes="' + px + 'px"' : ''; }
 function renderNext(roll) {
   if (!nextBox) {
@@ -93,7 +95,7 @@ function renderNext(roll) {
       '<span class="ncard__when">' + esc(whenLabel(o)) + (i === 0 ? CHIP : '') + '</span>' +
       '<span class="ncard__time">' + esc(o.time) + '</span>' +
       '<span class="ncard__name">' + esc(o.cls.name) + '</span>' +
-      '<span class="who-line"><img src="' + esc(o.coach.avatar) + '"' + ssAttr(o.coach.avatar, 40) + ' alt="" width="40" height="40" loading="lazy"><span>with <b>' + esc(o.coach.name) + '</b></span></span>' +
+      '<span class="who-line"><img src="' + esc(avR(o.coach.avatar)) + '"' + ssAttr(o.coach.avatar, 40) + ' alt="" width="40" height="40" loading="lazy"><span>with <b>' + esc(o.coach.name) + '</b></span></span>' +
       '<span class="ncard__meta">' + o.cls.length_min + ' min · ' + esc(o.cls.level) + ((NM[o.cls.family] && NM[o.cls.family].stock) ? ' · Stock clip' : '') + '</span>' +
       '<span class="ncard__foot"><span class="spots" data-spots="' + esc(o.id) + '">' + seats(o.spotsLeft, o.capacity) + '</span>' +
       '<span class="fauxbtn">Book <span class="arr" aria-hidden="true">→</span></span></span>' +
@@ -118,7 +120,7 @@ function renderChapters() {
       weekly += slots.length;
       var when = next ? 'Next: ' + dayPhrase(next) + ' at ' + next.time : '';
       return '<li><button class="frow" type="button" data-open-occ="' + esc(next ? next.id : '') + '"' + (next ? '' : ' disabled') + '>' +
-        (co ? '<img src="' + esc(co.avatar) + '" alt="" width="40" height="40" loading="lazy">' : '') +
+        (co ? '<img src="' + esc(avR(co.avatar)) + '"' + ssAttr(co.avatar, 40) + ' alt="" width="40" height="40" loading="lazy">' : '') +
         '<span class="frow__name">' + esc(c.name) + '</span>' +
         '<span class="frow__meta">' + esc((co ? co.name + ' · ' : '') + daysText(slots)) + '<br>' + esc(when) + '</span>' +
         '<span class="frow__go">Book</span></button></li>';
@@ -193,7 +195,7 @@ function renderWho(pop) {
   sched.faces.innerHTML = ids.map(function (id, i) {
     var c = EF.api.coach(id), on = S.coaches.length === 1 && S.coaches[0] === id;
     return '<button class="face' + (pop && motionOn() ? ' is-new' : '') + '" type="button" data-face="' + esc(id) + '" aria-pressed="' + on + '" style="--i:' + i + '">' +
-      '<img src="' + esc(c.avatar) + '" alt="" width="60" height="60"><b>' + esc(c.name) + '</b><small>' + plural(counts[id], 'class', 'classes') + '</small><span class="vh">, show only their classes</span></button>';
+      '<img src="' + esc(avR(c.avatar)) + '"' + ssAttr(c.avatar, 60) + ' alt="" width="60" height="60"><b>' + esc(c.name) + '</b><small>' + plural(counts[id], 'class', 'classes') + '</small><span class="vh">, show only their classes</span></button>';
   }).join('');
 }
 function actHtml(o) {
@@ -264,7 +266,7 @@ function renderRows(animate) {
     });
     sched.tbl.classList.remove('is-swapping');
     sched.empty.hidden = list.length > 0;
-    sched.title.textContent = (day.isToday ? 'Today, ' : (day.i === 1 ? 'Tomorrow, ' : '')) + day.long;
+    sched.title.textContent = (day.isToday ? 'Today,\u00a0' : (day.i === 1 ? 'Tomorrow,\u00a0' : '')) + day.long.replace(/ (\S+)$/, '\u00a0$1');   /* v1.3: "Tomorrow, Friday / 30 October", never one word alone */
     sched.count.textContent = plural(list.length, 'class', 'classes');
     var left = day.occs.filter(function (o) { return !o.past; }).length;
     if (day.isToday && day.occs.length && !left) {
@@ -358,7 +360,7 @@ function registerFilters() {
       label: 'Filters', progress: null, testid: 'step-filters',
       render: function (body, foot) {
         function tog(group, id, name, on, img) {
-          return '<button class="tog" type="button" data-g="' + group + '" data-v="' + esc(id) + '" aria-pressed="' + (on ? 'true' : 'false') + '">' + (img ? '<img src="' + esc(img) + '" alt="" width="28" height="28">' : '') + esc(name) + '</button>';
+          return '<button class="tog" type="button" data-g="' + group + '" data-v="' + esc(id) + '" aria-pressed="' + (on ? 'true' : 'false') + '">' + (img ? '<img src="' + esc(avR(img)) + '"' + ssAttr(img, 28) + ' alt="" width="28" height="28">' : '') + esc(name) + '</button>';
         }
         body.innerHTML = '<div data-testid="step-filters"><h2 class="sh-title" id="sheet-title" tabindex="-1">Filters</h2>' +
           '<p class="sh-lead">For ' + esc(EF.api.week()[S.day].long) + '.</p>' +
@@ -547,7 +549,7 @@ function initNowBar() {
       el.state.textContent = p.mode === 'now' ? 'Now' : 'Next';
       el.icon.innerHTML = NB_ICON[p.o.cls.family] || '';
       el.cls.textContent = p.o.cls.name;
-      el.who.innerHTML = '<img src="' + esc(p.o.coach.avatar) + '"' + ssAttr(p.o.coach.avatar, 20) + ' alt="" width="20" height="20"><span>' + esc(p.o.coach.name) + '</span>';
+      el.who.innerHTML = '<img src="' + esc(avR(p.o.coach.avatar)) + '"' + ssAttr(p.o.coach.avatar, 20) + ' alt="" width="20" height="20"><span>' + esc(p.o.coach.name) + '</span>';
       labels(p);
       live.setAttribute('aria-describedby', 'nb-hint');   /* the visible text is the name (label-content match); the hint says what a tap does */
       live.setAttribute('data-class', p.o.classId);

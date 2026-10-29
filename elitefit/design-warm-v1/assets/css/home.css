@@ -653,7 +653,7 @@ html:not(.motion-ok) .hdr .hdr__cta, html:not(.motion-ok) .hdr.cta-on .hdr__cta 
 .tt a.rbtn { display: inline-flex; align-items: center; justify-content: center; text-decoration: none; }
 .js .tt__day { display: none; }
 .js.dow-1 .tt:not(.is-enhanced) tbody:not([data-dow="1"]), .js.dow-2 .tt:not(.is-enhanced) tbody:not([data-dow="2"]), .js.dow-3 .tt:not(.is-enhanced) tbody:not([data-dow="3"]), .js.dow-4 .tt:not(.is-enhanced) tbody:not([data-dow="4"]),
-.js.dow-5 .tt:not(.is-enhanced) tbody:not([data-dow="5"]), .js.dow-6 .tt:not(.is-enhanced) tbody:not([data-dow="6"]), .js.dow-7 .tt:not(.is-enhanced) tbody:not([data-dow="7"]) { display: none; }
+.js.dow-5 .tt:not(.is-enhanced) tbody:not([data-dow="5"]), .js.dow-6 .tt:not(.is-enhanced) tbody:not([data-dow="6"]), .js.dow-7 .tt:not(.is-enhanced) tbody:not([data-dow="7"]) { display: none; }   /* v1.3 day fix: only until page.js enhances the table; then the picked day ([hidden] off) shows */
 .js .tt.is-enhanced tbody { display: block; }
 .js .tt.is-enhanced tbody[hidden] { display: none; }
 .js.tt-all .tt tbody, .js.tt-all .tt__day { display: block; }
@@ -1138,3 +1138,14 @@ html.dow-7 #schedule .tt tbody[data-dow="6"] { --col: 6; }
    no ellipsis; the phone bar stays two lines, <= 48 px (#38). */
 .nowbar__live, .nowbar__live * { font-size: .875rem; }
 @media (max-width: 375.98px) { .nowbar__live, .nowbar__live * { font-size: .8125rem; } }
+/* v1.3 visual pass 3 (29 Oct, live check) */
+/* 1. Booked tick: in sheet.css (v1.3 visual pass 3) */
+/* 2. From 1024 px with the desktop sheet open the page makes room (about 570-1360 px wide), so seven week columns got 60-110 px and the
+      chips' text spilled or was cut. While the sheet is open the days wrap onto more rows instead: each column is at least 150 px
+      (3-5 per row at 1024-1440, all 7 at 1920), still today first, and a chip's line may wrap. */
+@media (min-width: 1024px) {
+  html.has-panel #schedule .tt { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); }
+  #schedule .tt .row__spots .seatrow__lbl { white-space: normal; }
+}
+/* 3. The phone day heading ("Tomorrow, Friday 30 October") balances its two lines, so no word stands alone */
+.sched__date { text-wrap: balance; }

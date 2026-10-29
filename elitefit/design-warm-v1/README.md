@@ -2,10 +2,10 @@
 
 | | |
 | --- | --- |
-| Version | **1.0** |
+| Version | **1.1** |
 | Date | 29 Oct 2026 |
 | Concept | Warm v1.3 (class-schedule booking page for Elite Fit Bali) |
-| Snapshot | Taken 29 Oct 2026 at 17:38 (Bali time). The newest source file in it was saved at 17:00 the same day. |
+| Snapshot | Re-synced 29 Oct 2026 at 18:29 (Bali time). The newest source file in it was saved at 18:11 the same day. |
 
 ## What this is
 
@@ -51,4 +51,5 @@ Useful links on top of the page address:
 
 | Version | Date | Change |
 | --- | --- | --- |
+| 1.1 | 29 Oct 2026 | Synced with later source changes: every day of the week shows its classes on phones, the week grid wraps instead of cutting text while the booking panel is open, the Booked tick shows at once, the day heading never leaves one word alone, and all coach avatars come from this folder. |
 | 1.0 | 29 Oct 2026 | First snapshot of Warm v1.3 as a self-contained folder: the page, the shared engine and brand files, the thumbnails and the build notes. All paths relative. |
