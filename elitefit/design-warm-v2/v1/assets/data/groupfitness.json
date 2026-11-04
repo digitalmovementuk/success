@@ -1,0 +1,565 @@
+{
+ "_meta": {
+  "version": "v1",
+  "date": "2026-10-27",
+  "about": "All class, coach, schedule and price data for the Group Fitness concept. Times are Bali time (Asia/Makassar, UTC+8). Prices in IDR. Anything with \"sample\": true (or listed in \"sample_fields\") is a placeholder and is marked Sample on the page.",
+  "sources": {
+   "timetable": "elitefitbali.com/class-schedule/, 27 Oct 2026 (33 classes a week)",
+   "prices": "elitefitbali.com/promo-duo/ and /membership/, 27 Oct 2026; class passes from /membership/, 2 Oct 2026",
+   "classes": "elitefitbali.com/schedule/<class>/ pages, 1 Oct 2026; descriptions rewritten in the club's voice, facts unchanged",
+   "coaches": "elitefitbali.com/perform/ trainer grid and /trainers/<name>/, 27 Oct 2026"
+  }
+ },
+ "club": {
+  "name": "Elite Fit Bali",
+  "address": "Jalan Sempol No. 26, Pererenan, Bali",
+  "maps_url": "https://www.google.com/maps/search/?api=1&query=Elite+Fit+Bali+Jalan+Sempol+26+Pererenan",
+  "hours": {
+   "perform": "06:00 to 22:00, every day",
+   "recharge": "from 06:30"
+  },
+  "rating": {
+   "value": 4.7,
+   "count": 488,
+   "as_of": "October 2026",
+   "source": "Google"
+  },
+  "whatsapp": {
+   "number": "+62 857-2022-1101",
+   "wa": "6285720221101",
+   "source": "contact section on elitefitbali.com/membership/, /perform/, /class-schedule/ (27 Oct 2026)",
+   "open_item": "The /promo-duo/ page uses a second number, +62 851-9552-0220. Confirm which one the club wants."
+  },
+  "email": "info@elitefitbali.com",
+  "instagram": "elitefitbali",
+  "website": "https://elitefitbali.com/",
+  "recharge_url": "https://elitefitbali.com/recharge/",
+  "class_rules": [
+   "Arrive at least 10 minutes before the class.",
+   "Cancel in advance so someone else can take your spot.",
+   "If nobody has arrived 15 minutes after the start, the class is called off."
+  ],
+  "booking_today": "Members book in the GymMaster app or at the front desk. Non-members can join through ClassPass.",
+  "bring": [
+   "Your own water bottle",
+   "Towel, showers and lockers at the club",
+   "Arrive 10 minutes early"
+  ]
+ },
+ "families": [
+  {
+   "id": "boxing",
+   "name": "Boxing",
+   "label": "(.01)",
+   "feel": "Gloves on, no contact. Rey calls the rounds and the room keeps the rhythm.",
+   "level_line": "Beginner and advanced",
+   "video": "assets/video/boxing.mp4",
+   "poster": "assets/img/boxing-poster.webp",
+   "focus": "50% 40%",
+   "sample": true,
+   "sample_fields": [
+    "grouping",
+    "feel"
+   ],
+   "stock": true
+  },
+  {
+   "id": "conditioning",
+   "name": "Conditioning",
+   "label": "(.02)",
+   "feel": "HYROX-style circuits and off-court work. You'll leave out of breath and in good company.",
+   "level_line": "Open to everyone",
+   "video": "assets/video/conditioning.mp4",
+   "poster": "assets/img/conditioning-poster.webp",
+   "focus": "50% 35%",
+   "sample": true,
+   "sample_fields": [
+    "grouping",
+    "feel",
+    "level_line"
+   ],
+   "stock": true
+  },
+  {
+   "id": "sculpt",
+   "name": "Sculpt",
+   "label": "(.03)",
+   "feel": "Glutes, core and full-body strength, at a steady pace.",
+   "level_line": "All levels",
+   "video": "assets/video/sculpt.mp4",
+   "poster": "assets/img/sculpt-poster.webp",
+   "focus": "50% 55%",
+   "sample": true,
+   "sample_fields": [
+    "grouping",
+    "feel",
+    "level_line"
+   ],
+   "stock": false
+  },
+  {
+   "id": "mobility",
+   "name": "Mobility & Stretch",
+   "label": "(.04)",
+   "feel": "The slow hour your body has been asking for.",
+   "level_line": "All levels",
+   "video": "assets/video/mobility.mp4",
+   "poster": "assets/img/mobility-poster.webp",
+   "focus": "50% 50%",
+   "sample": true,
+   "sample_fields": [
+    "grouping",
+    "feel",
+    "level_line"
+   ],
+   "stock": true
+  }
+ ],
+ "classes": [
+  {
+   "id": "hyrox-conditioning",
+   "name": "HYROX Conditioning",
+   "family": "conditioning",
+   "coach": "rey",
+   "length_min": 60,
+   "level": "All levels",
+   "level_key": "all",
+   "description": "Rey's take on the HYROX race format: an hour of HIIT, functional moves and endurance work for all-round fitness.",
+   "sample_fields": [
+    "level"
+   ],
+   "source": "https://elitefitbali.com/schedule/hyrox-conditioning/",
+   "length_sample": false
+  },
+  {
+   "id": "off-court-training",
+   "name": "Off-Court Training",
+   "family": "conditioning",
+   "coach": "rey",
+   "length_min": 60,
+   "level": "All levels",
+   "level_key": "all",
+   "description": "Rey built this one for racket players, then opened it to everyone. Strength work, explosive moves and cardio to lift your game and help prevent injuries.",
+   "sample_fields": [],
+   "source": "https://elitefitbali.com/schedule/off-court-training/",
+   "length_sample": false
+  },
+  {
+   "id": "boxercise-beginner",
+   "name": "Boxercise Beginner",
+   "family": "boxing",
+   "coach": "rey",
+   "length_min": 60,
+   "level": "Beginner",
+   "level_key": "beginner",
+   "description": "Boxing training with no contact, led by Rey: strength, speed, agility and endurance. It's a fun class, open to most fitness levels and recommended from age 14.",
+   "sample_fields": [],
+   "source": "https://elitefitbali.com/schedule/boxercise-beginner/",
+   "length_sample": false
+  },
+  {
+   "id": "boxercise-advanced",
+   "name": "Boxercise Advanced",
+   "family": "boxing",
+   "coach": "rey",
+   "length_min": 60,
+   "level": "Advanced",
+   "level_key": "advanced",
+   "description": "Boxing training with no contact, led by Rey: strength, speed, agility and endurance. This is the advanced version of the class, recommended from age 14.",
+   "sample_fields": [],
+   "source": "https://elitefitbali.com/schedule/boxercise-advanced/",
+   "length_sample": false
+  },
+  {
+   "id": "booty-and-core",
+   "name": "Booty and Core",
+   "family": "sculpt",
+   "coach": "icha",
+   "length_min": 60,
+   "level": "All levels",
+   "level_key": "all",
+   "description": "Icha's hour for glutes and abs. Strength, flexibility and endurance, set up so beginners and regulars can train side by side.",
+   "sample_fields": [],
+   "source": "https://elitefitbali.com/schedule/booty-and-core/",
+   "length_sample": false
+  },
+  {
+   "id": "body-sculpt",
+   "name": "Body Sculpt",
+   "family": "sculpt",
+   "coach": "icha",
+   "length_min": 60,
+   "level": "All levels",
+   "level_key": "all",
+   "description": "A 60-minute full-body class with Icha: strength moves mixed with cardio to lift your heart rate and build muscle.",
+   "sample_fields": [
+    "level"
+   ],
+   "source": "https://elitefitbali.com/schedule/body-sculpt/",
+   "length_sample": false
+  },
+  {
+   "id": "booty",
+   "name": "Booty",
+   "family": "sculpt",
+   "coach": "ain",
+   "length_min": 60,
+   "level": "All levels",
+   "level_key": "all",
+   "description": "A lower-body hour with Ain.",
+   "sample": true,
+   "sample_fields": [
+    "level",
+    "description"
+   ],
+   "source": "https://elitefitbali.com/class-schedule/ (no own description)",
+   "length_sample": false
+  },
+  {
+   "id": "stretching",
+   "name": "Stretching",
+   "family": "mobility",
+   "coach": "ain",
+   "length_min": 60,
+   "level": "All levels",
+   "level_key": "all",
+   "description": "An hour of guided stretching with Ain.",
+   "sample": true,
+   "sample_fields": [
+    "level",
+    "description"
+   ],
+   "source": "https://elitefitbali.com/class-schedule/ (no own description)",
+   "length_sample": false
+  },
+  {
+   "id": "mobility",
+   "name": "Mobility",
+   "family": "mobility",
+   "coach": "ain",
+   "length_min": 60,
+   "level": "All levels",
+   "level_key": "all",
+   "description": "A mobility hour with Ain.",
+   "sample": true,
+   "sample_fields": [
+    "level",
+    "description"
+   ],
+   "source": "https://elitefitbali.com/class-schedule/ (no own description)",
+   "length_sample": false
+  },
+  {
+   "id": "injury-prevention-mobility",
+   "name": "Injury Prevention & Mobility",
+   "family": "mobility",
+   "coach": "tinos",
+   "length_min": 60,
+   "level": "All levels",
+   "level_key": "all",
+   "description": "Mobility work with Tinos to keep you moving well.",
+   "sample": true,
+   "sample_fields": [
+    "level",
+    "description",
+    "length"
+   ],
+   "source": "https://elitefitbali.com/class-schedule/ (new on 27 Oct, page not read)",
+   "length_sample": true,
+   "length_note": "Checked 27 Oct 2026: the live timetable prints start times only (Mon 13:00, Wed 10:00, Thu 10:00) and the class has no page yet. Every other class page says '1 hour training', so 60 min is assumed and marked Sample."
+  }
+ ],
+ "coaches": [
+  {
+   "id": "rey",
+   "name": "Rey",
+   "role": "Sports Strength & Conditioning · Weight loss · 1:1 Boxing",
+   "role_source": "elitefitbali.com trainer grid",
+   "photo": "assets/img/coach-rey.webp",
+   "avatar": "assets/img/avatar-rey.webp",
+   "bio": "Rey built the boxing, HYROX and off-court classes. Every weekday starts with one of his.",
+   "bio_sample": true
+  },
+  {
+   "id": "tinos",
+   "name": "Tinos",
+   "role": null,
+   "photo": "assets/img/coach-tinos.webp",
+   "avatar": "assets/img/avatar-tinos.webp",
+   "bio": "Tinos brings careful mobility work to the timetable three times a week.",
+   "bio_sample": true
+  },
+  {
+   "id": "ain",
+   "name": "Ain",
+   "role": null,
+   "photo": "assets/img/coach-ain.webp",
+   "avatar": "assets/img/avatar-ain.webp",
+   "bio": "If you train at the weekend, you'll train with Ain.",
+   "bio_sample": true
+  },
+  {
+   "id": "icha",
+   "name": "Icha",
+   "role": null,
+   "photo": "assets/img/coach-icha.webp",
+   "avatar": "assets/img/avatar-icha.webp",
+   "bio": "Icha's hours are built around glutes, abs and full-body strength.",
+   "bio_sample": true
+  }
+ ],
+ "coaches_not_shown": [
+  {
+   "name": "Reski",
+   "why": "Shown on handbook p. 21 and in Aldy's design, but not on the club's trainer grid or the 27 Oct timetable. Left out until the club confirms."
+  },
+  {
+   "name": "Putu",
+   "why": "On the club's trainer grid but teaches none of the timetable classes."
+  }
+ ],
+ "timetable": {
+  "source": "https://elitefitbali.com/class-schedule/",
+  "captured": "2026-10-27",
+  "weekend_note": "Weekend classes run on set dates. Check the GymMaster app or ask at the front desk.",
+  "open_item": "Thursday's first class is printed '8:00 am 8:30 am'; 08:30 follows the 1 Oct timetable.",
+  "week": {
+   "1": [
+    [
+     "08:00",
+     "hyrox-conditioning"
+    ],
+    [
+     "09:00",
+     "boxercise-beginner"
+    ],
+    [
+     "10:00",
+     "stretching"
+    ],
+    [
+     "11:00",
+     "booty-and-core"
+    ],
+    [
+     "13:00",
+     "injury-prevention-mobility"
+    ],
+    [
+     "17:00",
+     "booty"
+    ],
+    [
+     "18:00",
+     "stretching"
+    ]
+   ],
+   "2": [
+    [
+     "08:00",
+     "hyrox-conditioning"
+    ],
+    [
+     "10:00",
+     "booty"
+    ],
+    [
+     "11:00",
+     "stretching"
+    ],
+    [
+     "12:00",
+     "off-court-training"
+    ],
+    [
+     "16:30",
+     "boxercise-advanced"
+    ],
+    [
+     "18:00",
+     "stretching"
+    ]
+   ],
+   "3": [
+    [
+     "08:00",
+     "boxercise-beginner"
+    ],
+    [
+     "09:00",
+     "booty-and-core"
+    ],
+    [
+     "10:00",
+     "injury-prevention-mobility"
+    ],
+    [
+     "16:30",
+     "boxercise-advanced"
+    ]
+   ],
+   "4": [
+    [
+     "08:30",
+     "hyrox-conditioning"
+    ],
+    [
+     "10:00",
+     "injury-prevention-mobility"
+    ],
+    [
+     "12:00",
+     "off-court-training"
+    ],
+    [
+     "16:30",
+     "boxercise-advanced"
+    ]
+   ],
+   "5": [
+    [
+     "08:00",
+     "boxercise-beginner"
+    ],
+    [
+     "09:00",
+     "booty"
+    ],
+    [
+     "10:30",
+     "mobility"
+    ],
+    [
+     "11:30",
+     "stretching"
+    ],
+    [
+     "14:00",
+     "body-sculpt"
+    ],
+    [
+     "15:00",
+     "booty-and-core"
+    ],
+    [
+     "17:00",
+     "stretching"
+    ]
+   ],
+   "6": [
+    [
+     "08:00",
+     "stretching"
+    ],
+    [
+     "09:00",
+     "booty"
+    ],
+    [
+     "11:00",
+     "mobility"
+    ]
+   ],
+   "7": [
+    [
+     "16:00",
+     "mobility"
+    ],
+    [
+     "18:00",
+     "stretching"
+    ]
+   ]
+  },
+  "spots": {
+   "sample": true,
+   "capacity": 14,
+   "note": "The club publishes no capacity or spots left. The page makes stable sample numbers from the class and date; about one class in eight shows as full so the waitlist can be seen."
+  }
+ },
+ "passes": {
+  "member": {
+   "id": "member",
+   "name": "I'm a member",
+   "price_label": "Included",
+   "note": "Perform and Elite memberships include every class.",
+   "sample_fields": [
+    "sign-in"
+   ]
+  },
+  "day": {
+   "id": "day",
+   "name": "Day Pass",
+   "tier": "Perform",
+   "price_idr": 350000,
+   "note": "Every class that day, plus the gym floor and the outdoor area.",
+   "source": "https://elitefitbali.com/promo-duo/ (27 Oct 2026)"
+  },
+  "duo": {
+   "id": "duo",
+   "name": "Duo Day Pass",
+   "badge": "BRING YOUR +1",
+   "tier": "Elite",
+   "price_idr": 225000,
+   "per": "each",
+   "people": 2,
+   "old_price_idr": 450000,
+   "note": "Two Elite day passes: classes, gym, pool, ice bath, sauna and café.",
+   "credit_note": "Decide to join after? We'll credit your day pass toward your membership.",
+   "source": "https://elitefitbali.com/promo-duo/ (27 Oct 2026); handbook p. 19, 20, 22"
+  },
+  "packs": [
+   {
+    "id": "class-1",
+    "name": "Single class",
+    "price_idr": 300000,
+    "note": "Class only, no gym floor.",
+    "source": "elitefitbali.com/membership/ price popup (2 Oct 2026)",
+    "check_before_live": true
+   },
+   {
+    "id": "class-10",
+    "name": "10-class pass",
+    "price_idr": 2000000,
+    "note": "Class only, no gym floor.",
+    "source": "elitefitbali.com/membership/ price popup (2 Oct 2026)",
+    "check_before_live": true
+   },
+   {
+    "id": "perform-4w",
+    "name": "Perform, 4 weeks",
+    "price_idr": 2200000,
+    "note": "Gym, outdoor area and every class.",
+    "source": "https://elitefitbali.com/promo-duo/ (27 Oct 2026)"
+   },
+   {
+    "id": "elite-4w",
+    "name": "Elite, 4 weeks",
+    "price_idr": 2700000,
+    "badge": "MOST POPULAR",
+    "note": "Everything, including Recharge and co-working.",
+    "source": "https://elitefitbali.com/promo-duo/ (27 Oct 2026); badge from handbook p. 22 and the club's 'Most Popular' label"
+   }
+  ],
+  "recharge_day": {
+   "name": "Recharge day pass",
+   "price_idr": 300000,
+   "source": "https://elitefitbali.com/promo-duo/ (27 Oct 2026)"
+  },
+  "payment_methods": {
+   "sample": true,
+   "methods": [
+    "Card",
+    "QRIS",
+    "Pay at the front desk"
+   ],
+   "note": "Demo only. The club's tools today: GymMaster (members), ClassPass (non-members), Moka (shop)."
+  }
+ },
+ "review": {
+  "author": "Skye D.S.",
+  "stars": 5,
+  "text": "A welcoming, laid-back space with genuinely friendly people and a restaurant worth staying for. It feels less like a gym and more like a community.",
+  "source": "Google review, shown on elitefitbali.com/promo-duo/ (27 Oct 2026)"
+ }
+}
