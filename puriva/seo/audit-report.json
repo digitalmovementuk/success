@@ -1,0 +1,1359 @@
+[
+  {
+    "summary": {
+      "url": "https://puriva.id/",
+      "final_url": "https://puriva.id/",
+      "fetched": true,
+      "title": "Puriva Aesthetic Clinic in Bali | Advanced Face & Body TreatmentsWhatsApp",
+      "words": 1218,
+      "schema_types": [
+        "Article",
+        "ContactPoint",
+        "GeoCoordinates",
+        "ImageObject",
+        "Organization",
+        "Person",
+        "Place",
+        "PostalAddress",
+        "SearchAction",
+        "WebPage",
+        "WebSite"
+      ],
+      "counts": {
+        "pass": 18,
+        "warn": 2,
+        "fail": 0
+      }
+    },
+    "results": [
+      {
+        "check": "HTTPS",
+        "status": "pass",
+        "detail": "Final URL: https://puriva.id/",
+        "group": "Security"
+      },
+      {
+        "check": "Title tag",
+        "status": "warn",
+        "detail": "Puriva Aesthetic Clinic in Bali | Advanced Face & Body TreatmentsWhatsApp (73 chars; ideal \u226460)",
+        "group": "On-Page"
+      },
+      {
+        "check": "Meta description",
+        "status": "pass",
+        "detail": "Puriva Aesthetic Clinic in Bali offers wide range of skin treatments with natural results. Experienced doctors provide personal care. Book today. (145 chars; ideal \u2264155)",
+        "group": "On-Page"
+      },
+      {
+        "check": "Single H1",
+        "status": "pass",
+        "detail": "1 H1 tag(s)",
+        "group": "On-Page"
+      },
+      {
+        "check": "Canonical",
+        "status": "pass",
+        "detail": "https://puriva.id/",
+        "group": "On-Page"
+      },
+      {
+        "check": "Indexable (robots meta)",
+        "status": "pass",
+        "detail": "robots: follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large",
+        "group": "Indexability"
+      },
+      {
+        "check": "Mobile viewport",
+        "status": "pass",
+        "detail": "width=device-width, initial-scale=1, maximum-scale=5, viewport-fit=cover",
+        "group": "Mobile"
+      },
+      {
+        "check": "html lang",
+        "status": "pass",
+        "detail": "en-US",
+        "group": "Accessibility"
+      },
+      {
+        "check": "Open Graph",
+        "status": "pass",
+        "detail": "13 og: tags (og:locale, og:type, og:title, og:description, og:url)",
+        "group": "Social"
+      },
+      {
+        "check": "Schema (JSON-LD)",
+        "status": "pass",
+        "detail": "1 block(s); types: Article, ContactPoint, GeoCoordinates, ImageObject, Organization, Person, Place, PostalAddress, SearchAction, WebPage, WebSite",
+        "group": "Schema"
+      },
+      {
+        "check": "Image alt coverage",
+        "status": "pass",
+        "detail": "15/16 images have alt (94%)",
+        "group": "Accessibility"
+      },
+      {
+        "check": "Internal links",
+        "status": "pass",
+        "detail": "119 internal (unique 44)",
+        "group": "Linking"
+      },
+      {
+        "check": "External links",
+        "status": "pass",
+        "detail": "8 external",
+        "group": "Linking"
+      },
+      {
+        "check": "Word count",
+        "status": "pass",
+        "detail": "1218 words (guide floor 450)",
+        "group": "Content"
+      },
+      {
+        "check": "No mixed content",
+        "status": "pass",
+        "detail": "0 http:// resources on https page",
+        "group": "Security"
+      },
+      {
+        "check": "Analytics present",
+        "status": "pass",
+        "detail": "GA/GTM snippet found",
+        "group": "Analytics"
+      },
+      {
+        "check": "Search Console verification",
+        "status": "warn",
+        "detail": "google-site-verification meta not found (may verify via DNS)",
+        "group": "Indexability"
+      },
+      {
+        "check": "robots.txt",
+        "status": "pass",
+        "detail": "status 200; 1 Sitemap line(s)",
+        "group": "Indexability"
+      },
+      {
+        "check": "Sitemap declared in robots.txt",
+        "status": "pass",
+        "detail": "https://puriva.id/sitemap_index.xml",
+        "group": "Indexability"
+      },
+      {
+        "check": "Sitemap reachable",
+        "status": "pass",
+        "detail": "https://puriva.id/sitemap_index.xml \u2192 status 200",
+        "group": "Indexability"
+      }
+    ]
+  },
+  {
+    "summary": {
+      "url": "https://puriva.id/botox-in-bali/",
+      "final_url": "https://puriva.id/botox-in-bali/",
+      "fetched": true,
+      "title": "Botox in Bali | Natural Results at Puriva Aesthetic ClinicWhatsApp",
+      "words": 1877,
+      "schema_types": [
+        "Article",
+        "BreadcrumbList",
+        "ContactPoint",
+        "GeoCoordinates",
+        "ImageObject",
+        "ListItem",
+        "Organization",
+        "Person",
+        "Place",
+        "PostalAddress",
+        "SiteNavigationElement",
+        "WebPage",
+        "WebSite"
+      ],
+      "counts": {
+        "pass": 17,
+        "warn": 3,
+        "fail": 0
+      }
+    },
+    "results": [
+      {
+        "check": "HTTPS",
+        "status": "pass",
+        "detail": "Final URL: https://puriva.id/botox-in-bali/",
+        "group": "Security"
+      },
+      {
+        "check": "Title tag",
+        "status": "warn",
+        "detail": "Botox in Bali | Natural Results at Puriva Aesthetic ClinicWhatsApp (66 chars; ideal \u226460)",
+        "group": "On-Page"
+      },
+      {
+        "check": "Meta description",
+        "status": "warn",
+        "detail": "Botox in Bali at Puriva Aesthetic Clinic helps reduce wrinkles and refresh your look with safe, natural results by experienced doctors in a trusted setting. (156 chars; ideal \u2264155)",
+        "group": "On-Page"
+      },
+      {
+        "check": "Single H1",
+        "status": "pass",
+        "detail": "1 H1 tag(s)",
+        "group": "On-Page"
+      },
+      {
+        "check": "Canonical",
+        "status": "pass",
+        "detail": "https://puriva.id/botox-in-bali/",
+        "group": "On-Page"
+      },
+      {
+        "check": "Indexable (robots meta)",
+        "status": "pass",
+        "detail": "robots: follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large",
+        "group": "Indexability"
+      },
+      {
+        "check": "Mobile viewport",
+        "status": "pass",
+        "detail": "width=device-width, initial-scale=1, maximum-scale=5, viewport-fit=cover",
+        "group": "Mobile"
+      },
+      {
+        "check": "html lang",
+        "status": "pass",
+        "detail": "en-US",
+        "group": "Accessibility"
+      },
+      {
+        "check": "Open Graph",
+        "status": "pass",
+        "detail": "13 og: tags (og:locale, og:type, og:title, og:description, og:url)",
+        "group": "Social"
+      },
+      {
+        "check": "Schema (JSON-LD)",
+        "status": "pass",
+        "detail": "1 block(s); types: Article, BreadcrumbList, ContactPoint, GeoCoordinates, ImageObject, ListItem, Organization, Person, Place, PostalAddress, SiteNavigationElement, WebPage, WebSite",
+        "group": "Schema"
+      },
+      {
+        "check": "Image alt coverage",
+        "status": "pass",
+        "detail": "4/4 images have alt (100%)",
+        "group": "Accessibility"
+      },
+      {
+        "check": "Internal links",
+        "status": "pass",
+        "detail": "109 internal (unique 43)",
+        "group": "Linking"
+      },
+      {
+        "check": "External links",
+        "status": "pass",
+        "detail": "10 external",
+        "group": "Linking"
+      },
+      {
+        "check": "Word count",
+        "status": "pass",
+        "detail": "1877 words (guide floor 450)",
+        "group": "Content"
+      },
+      {
+        "check": "No mixed content",
+        "status": "pass",
+        "detail": "0 http:// resources on https page",
+        "group": "Security"
+      },
+      {
+        "check": "Analytics present",
+        "status": "pass",
+        "detail": "GA/GTM snippet found",
+        "group": "Analytics"
+      },
+      {
+        "check": "Search Console verification",
+        "status": "warn",
+        "detail": "google-site-verification meta not found (may verify via DNS)",
+        "group": "Indexability"
+      },
+      {
+        "check": "robots.txt",
+        "status": "pass",
+        "detail": "status 200; 1 Sitemap line(s)",
+        "group": "Indexability"
+      },
+      {
+        "check": "Sitemap declared in robots.txt",
+        "status": "pass",
+        "detail": "https://puriva.id/sitemap_index.xml",
+        "group": "Indexability"
+      },
+      {
+        "check": "Sitemap reachable",
+        "status": "pass",
+        "detail": "https://puriva.id/sitemap_index.xml \u2192 status 200",
+        "group": "Indexability"
+      }
+    ]
+  },
+  {
+    "summary": {
+      "url": "https://puriva.id/gouri-in-bali/",
+      "final_url": "https://puriva.id/gouri-in-bali/",
+      "fetched": true,
+      "title": "Gouri in Bali | Puriva Aesthetic ClinicWhatsApp",
+      "words": 1177,
+      "schema_types": [
+        "Article",
+        "BreadcrumbList",
+        "ContactPoint",
+        "GeoCoordinates",
+        "ImageObject",
+        "ListItem",
+        "Organization",
+        "Person",
+        "Place",
+        "PostalAddress",
+        "SiteNavigationElement",
+        "WebPage",
+        "WebSite"
+      ],
+      "counts": {
+        "pass": 18,
+        "warn": 2,
+        "fail": 0
+      }
+    },
+    "results": [
+      {
+        "check": "HTTPS",
+        "status": "pass",
+        "detail": "Final URL: https://puriva.id/gouri-in-bali/",
+        "group": "Security"
+      },
+      {
+        "check": "Title tag",
+        "status": "pass",
+        "detail": "Gouri in Bali | Puriva Aesthetic ClinicWhatsApp (47 chars; ideal \u226460)",
+        "group": "On-Page"
+      },
+      {
+        "check": "Meta description",
+        "status": "warn",
+        "detail": "Gouri in Bali at Puriva Aesthetic Clinic offers advanced collagen-stimulating injections to improve skin elasticity and hydration with natural, lasting results. (160 chars; ideal \u2264155)",
+        "group": "On-Page"
+      },
+      {
+        "check": "Single H1",
+        "status": "pass",
+        "detail": "1 H1 tag(s)",
+        "group": "On-Page"
+      },
+      {
+        "check": "Canonical",
+        "status": "pass",
+        "detail": "https://puriva.id/gouri-in-bali/",
+        "group": "On-Page"
+      },
+      {
+        "check": "Indexable (robots meta)",
+        "status": "pass",
+        "detail": "robots: follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large",
+        "group": "Indexability"
+      },
+      {
+        "check": "Mobile viewport",
+        "status": "pass",
+        "detail": "width=device-width, initial-scale=1, maximum-scale=5, viewport-fit=cover",
+        "group": "Mobile"
+      },
+      {
+        "check": "html lang",
+        "status": "pass",
+        "detail": "en-US",
+        "group": "Accessibility"
+      },
+      {
+        "check": "Open Graph",
+        "status": "pass",
+        "detail": "13 og: tags (og:locale, og:type, og:title, og:description, og:url)",
+        "group": "Social"
+      },
+      {
+        "check": "Schema (JSON-LD)",
+        "status": "pass",
+        "detail": "1 block(s); types: Article, BreadcrumbList, ContactPoint, GeoCoordinates, ImageObject, ListItem, Organization, Person, Place, PostalAddress, SiteNavigationElement, WebPage, WebSite",
+        "group": "Schema"
+      },
+      {
+        "check": "Image alt coverage",
+        "status": "pass",
+        "detail": "4/4 images have alt (100%)",
+        "group": "Accessibility"
+      },
+      {
+        "check": "Internal links",
+        "status": "pass",
+        "detail": "111 internal (unique 43)",
+        "group": "Linking"
+      },
+      {
+        "check": "External links",
+        "status": "pass",
+        "detail": "10 external",
+        "group": "Linking"
+      },
+      {
+        "check": "Word count",
+        "status": "pass",
+        "detail": "1177 words (guide floor 450)",
+        "group": "Content"
+      },
+      {
+        "check": "No mixed content",
+        "status": "pass",
+        "detail": "0 http:// resources on https page",
+        "group": "Security"
+      },
+      {
+        "check": "Analytics present",
+        "status": "pass",
+        "detail": "GA/GTM snippet found",
+        "group": "Analytics"
+      },
+      {
+        "check": "Search Console verification",
+        "status": "warn",
+        "detail": "google-site-verification meta not found (may verify via DNS)",
+        "group": "Indexability"
+      },
+      {
+        "check": "robots.txt",
+        "status": "pass",
+        "detail": "status 200; 1 Sitemap line(s)",
+        "group": "Indexability"
+      },
+      {
+        "check": "Sitemap declared in robots.txt",
+        "status": "pass",
+        "detail": "https://puriva.id/sitemap_index.xml",
+        "group": "Indexability"
+      },
+      {
+        "check": "Sitemap reachable",
+        "status": "pass",
+        "detail": "https://puriva.id/sitemap_index.xml \u2192 status 200",
+        "group": "Indexability"
+      }
+    ]
+  },
+  {
+    "summary": {
+      "url": "https://puriva.id/novuma-in-bali/",
+      "final_url": "https://puriva.id/novuma-in-bali/",
+      "fetched": true,
+      "title": "Novuma in Bali | Puriva Aesthetic ClinicWhatsApp",
+      "words": 1258,
+      "schema_types": [
+        "Article",
+        "BreadcrumbList",
+        "ContactPoint",
+        "GeoCoordinates",
+        "ImageObject",
+        "ListItem",
+        "Organization",
+        "Person",
+        "Place",
+        "PostalAddress",
+        "SiteNavigationElement",
+        "WebPage",
+        "WebSite"
+      ],
+      "counts": {
+        "pass": 18,
+        "warn": 2,
+        "fail": 0
+      }
+    },
+    "results": [
+      {
+        "check": "HTTPS",
+        "status": "pass",
+        "detail": "Final URL: https://puriva.id/novuma-in-bali/",
+        "group": "Security"
+      },
+      {
+        "check": "Title tag",
+        "status": "pass",
+        "detail": "Novuma in Bali | Puriva Aesthetic ClinicWhatsApp (48 chars; ideal \u226460)",
+        "group": "On-Page"
+      },
+      {
+        "check": "Meta description",
+        "status": "warn",
+        "detail": "Novuma in Bali at Puriva Aesthetic Clinic offers advanced injectable treatments to improve skin hydration, elasticity, and overall skin quality with natural results. (165 chars; ideal \u2264155)",
+        "group": "On-Page"
+      },
+      {
+        "check": "Single H1",
+        "status": "pass",
+        "detail": "1 H1 tag(s)",
+        "group": "On-Page"
+      },
+      {
+        "check": "Canonical",
+        "status": "pass",
+        "detail": "https://puriva.id/novuma-in-bali/",
+        "group": "On-Page"
+      },
+      {
+        "check": "Indexable (robots meta)",
+        "status": "pass",
+        "detail": "robots: follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large",
+        "group": "Indexability"
+      },
+      {
+        "check": "Mobile viewport",
+        "status": "pass",
+        "detail": "width=device-width, initial-scale=1, maximum-scale=5, viewport-fit=cover",
+        "group": "Mobile"
+      },
+      {
+        "check": "html lang",
+        "status": "pass",
+        "detail": "en-US",
+        "group": "Accessibility"
+      },
+      {
+        "check": "Open Graph",
+        "status": "pass",
+        "detail": "13 og: tags (og:locale, og:type, og:title, og:description, og:url)",
+        "group": "Social"
+      },
+      {
+        "check": "Schema (JSON-LD)",
+        "status": "pass",
+        "detail": "1 block(s); types: Article, BreadcrumbList, ContactPoint, GeoCoordinates, ImageObject, ListItem, Organization, Person, Place, PostalAddress, SiteNavigationElement, WebPage, WebSite",
+        "group": "Schema"
+      },
+      {
+        "check": "Image alt coverage",
+        "status": "pass",
+        "detail": "4/4 images have alt (100%)",
+        "group": "Accessibility"
+      },
+      {
+        "check": "Internal links",
+        "status": "pass",
+        "detail": "109 internal (unique 43)",
+        "group": "Linking"
+      },
+      {
+        "check": "External links",
+        "status": "pass",
+        "detail": "10 external",
+        "group": "Linking"
+      },
+      {
+        "check": "Word count",
+        "status": "pass",
+        "detail": "1258 words (guide floor 450)",
+        "group": "Content"
+      },
+      {
+        "check": "No mixed content",
+        "status": "pass",
+        "detail": "0 http:// resources on https page",
+        "group": "Security"
+      },
+      {
+        "check": "Analytics present",
+        "status": "pass",
+        "detail": "GA/GTM snippet found",
+        "group": "Analytics"
+      },
+      {
+        "check": "Search Console verification",
+        "status": "warn",
+        "detail": "google-site-verification meta not found (may verify via DNS)",
+        "group": "Indexability"
+      },
+      {
+        "check": "robots.txt",
+        "status": "pass",
+        "detail": "status 200; 1 Sitemap line(s)",
+        "group": "Indexability"
+      },
+      {
+        "check": "Sitemap declared in robots.txt",
+        "status": "pass",
+        "detail": "https://puriva.id/sitemap_index.xml",
+        "group": "Indexability"
+      },
+      {
+        "check": "Sitemap reachable",
+        "status": "pass",
+        "detail": "https://puriva.id/sitemap_index.xml \u2192 status 200",
+        "group": "Indexability"
+      }
+    ]
+  },
+  {
+    "summary": {
+      "url": "https://puriva.id/facial-in-bali/",
+      "final_url": "https://puriva.id/facial-in-bali/",
+      "fetched": true,
+      "title": "Facial in Bali | Puriva Aesthetic Clinic TreatmentsWhatsApp",
+      "words": 1338,
+      "schema_types": [
+        "Article",
+        "BreadcrumbList",
+        "ContactPoint",
+        "GeoCoordinates",
+        "ImageObject",
+        "ListItem",
+        "Organization",
+        "Person",
+        "Place",
+        "PostalAddress",
+        "SiteNavigationElement",
+        "WebPage",
+        "WebSite"
+      ],
+      "counts": {
+        "pass": 18,
+        "warn": 2,
+        "fail": 0
+      }
+    },
+    "results": [
+      {
+        "check": "HTTPS",
+        "status": "pass",
+        "detail": "Final URL: https://puriva.id/facial-in-bali/",
+        "group": "Security"
+      },
+      {
+        "check": "Title tag",
+        "status": "pass",
+        "detail": "Facial in Bali | Puriva Aesthetic Clinic TreatmentsWhatsApp (59 chars; ideal \u226460)",
+        "group": "On-Page"
+      },
+      {
+        "check": "Meta description",
+        "status": "warn",
+        "detail": "Facial in Bali at Puriva Aesthetic Clinic offers advanced skin treatments to refresh and hydrate your skin with personalized care by experienced professionals. (159 chars; ideal \u2264155)",
+        "group": "On-Page"
+      },
+      {
+        "check": "Single H1",
+        "status": "pass",
+        "detail": "1 H1 tag(s)",
+        "group": "On-Page"
+      },
+      {
+        "check": "Canonical",
+        "status": "pass",
+        "detail": "https://puriva.id/facial-in-bali/",
+        "group": "On-Page"
+      },
+      {
+        "check": "Indexable (robots meta)",
+        "status": "pass",
+        "detail": "robots: follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large",
+        "group": "Indexability"
+      },
+      {
+        "check": "Mobile viewport",
+        "status": "pass",
+        "detail": "width=device-width, initial-scale=1, maximum-scale=5, viewport-fit=cover",
+        "group": "Mobile"
+      },
+      {
+        "check": "html lang",
+        "status": "pass",
+        "detail": "en-US",
+        "group": "Accessibility"
+      },
+      {
+        "check": "Open Graph",
+        "status": "pass",
+        "detail": "13 og: tags (og:locale, og:type, og:title, og:description, og:url)",
+        "group": "Social"
+      },
+      {
+        "check": "Schema (JSON-LD)",
+        "status": "pass",
+        "detail": "1 block(s); types: Article, BreadcrumbList, ContactPoint, GeoCoordinates, ImageObject, ListItem, Organization, Person, Place, PostalAddress, SiteNavigationElement, WebPage, WebSite",
+        "group": "Schema"
+      },
+      {
+        "check": "Image alt coverage",
+        "status": "pass",
+        "detail": "7/7 images have alt (100%)",
+        "group": "Accessibility"
+      },
+      {
+        "check": "Internal links",
+        "status": "pass",
+        "detail": "109 internal (unique 43)",
+        "group": "Linking"
+      },
+      {
+        "check": "External links",
+        "status": "pass",
+        "detail": "10 external",
+        "group": "Linking"
+      },
+      {
+        "check": "Word count",
+        "status": "pass",
+        "detail": "1338 words (guide floor 450)",
+        "group": "Content"
+      },
+      {
+        "check": "No mixed content",
+        "status": "pass",
+        "detail": "0 http:// resources on https page",
+        "group": "Security"
+      },
+      {
+        "check": "Analytics present",
+        "status": "pass",
+        "detail": "GA/GTM snippet found",
+        "group": "Analytics"
+      },
+      {
+        "check": "Search Console verification",
+        "status": "warn",
+        "detail": "google-site-verification meta not found (may verify via DNS)",
+        "group": "Indexability"
+      },
+      {
+        "check": "robots.txt",
+        "status": "pass",
+        "detail": "status 200; 1 Sitemap line(s)",
+        "group": "Indexability"
+      },
+      {
+        "check": "Sitemap declared in robots.txt",
+        "status": "pass",
+        "detail": "https://puriva.id/sitemap_index.xml",
+        "group": "Indexability"
+      },
+      {
+        "check": "Sitemap reachable",
+        "status": "pass",
+        "detail": "https://puriva.id/sitemap_index.xml \u2192 status 200",
+        "group": "Indexability"
+      }
+    ]
+  },
+  {
+    "summary": {
+      "url": "https://puriva.id/profhilo-in-bali/",
+      "final_url": "https://puriva.id/profhilo-in-bali/",
+      "fetched": true,
+      "title": "Profhilo in Bali | Puriva Aesthetic ClinicWhatsApp",
+      "words": 1438,
+      "schema_types": [
+        "Article",
+        "BreadcrumbList",
+        "ContactPoint",
+        "GeoCoordinates",
+        "ImageObject",
+        "ListItem",
+        "Organization",
+        "Person",
+        "Place",
+        "PostalAddress",
+        "SiteNavigationElement",
+        "WebPage",
+        "WebSite"
+      ],
+      "counts": {
+        "pass": 18,
+        "warn": 2,
+        "fail": 0
+      }
+    },
+    "results": [
+      {
+        "check": "HTTPS",
+        "status": "pass",
+        "detail": "Final URL: https://puriva.id/profhilo-in-bali/",
+        "group": "Security"
+      },
+      {
+        "check": "Title tag",
+        "status": "pass",
+        "detail": "Profhilo in Bali | Puriva Aesthetic ClinicWhatsApp (50 chars; ideal \u226460)",
+        "group": "On-Page"
+      },
+      {
+        "check": "Meta description",
+        "status": "warn",
+        "detail": "Profhilo in Bali at Puriva Aesthetic Clinic offers advanced injectable skin hydration and bio-remodeling treatments to improve elasticity and rejuvenate skin. (158 chars; ideal \u2264155)",
+        "group": "On-Page"
+      },
+      {
+        "check": "Single H1",
+        "status": "pass",
+        "detail": "1 H1 tag(s)",
+        "group": "On-Page"
+      },
+      {
+        "check": "Canonical",
+        "status": "pass",
+        "detail": "https://puriva.id/profhilo-in-bali/",
+        "group": "On-Page"
+      },
+      {
+        "check": "Indexable (robots meta)",
+        "status": "pass",
+        "detail": "robots: follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large",
+        "group": "Indexability"
+      },
+      {
+        "check": "Mobile viewport",
+        "status": "pass",
+        "detail": "width=device-width, initial-scale=1, maximum-scale=5, viewport-fit=cover",
+        "group": "Mobile"
+      },
+      {
+        "check": "html lang",
+        "status": "pass",
+        "detail": "en-US",
+        "group": "Accessibility"
+      },
+      {
+        "check": "Open Graph",
+        "status": "pass",
+        "detail": "13 og: tags (og:locale, og:type, og:title, og:description, og:url)",
+        "group": "Social"
+      },
+      {
+        "check": "Schema (JSON-LD)",
+        "status": "pass",
+        "detail": "1 block(s); types: Article, BreadcrumbList, ContactPoint, GeoCoordinates, ImageObject, ListItem, Organization, Person, Place, PostalAddress, SiteNavigationElement, WebPage, WebSite",
+        "group": "Schema"
+      },
+      {
+        "check": "Image alt coverage",
+        "status": "pass",
+        "detail": "4/4 images have alt (100%)",
+        "group": "Accessibility"
+      },
+      {
+        "check": "Internal links",
+        "status": "pass",
+        "detail": "108 internal (unique 43)",
+        "group": "Linking"
+      },
+      {
+        "check": "External links",
+        "status": "pass",
+        "detail": "10 external",
+        "group": "Linking"
+      },
+      {
+        "check": "Word count",
+        "status": "pass",
+        "detail": "1438 words (guide floor 450)",
+        "group": "Content"
+      },
+      {
+        "check": "No mixed content",
+        "status": "pass",
+        "detail": "0 http:// resources on https page",
+        "group": "Security"
+      },
+      {
+        "check": "Analytics present",
+        "status": "pass",
+        "detail": "GA/GTM snippet found",
+        "group": "Analytics"
+      },
+      {
+        "check": "Search Console verification",
+        "status": "warn",
+        "detail": "google-site-verification meta not found (may verify via DNS)",
+        "group": "Indexability"
+      },
+      {
+        "check": "robots.txt",
+        "status": "pass",
+        "detail": "status 200; 1 Sitemap line(s)",
+        "group": "Indexability"
+      },
+      {
+        "check": "Sitemap declared in robots.txt",
+        "status": "pass",
+        "detail": "https://puriva.id/sitemap_index.xml",
+        "group": "Indexability"
+      },
+      {
+        "check": "Sitemap reachable",
+        "status": "pass",
+        "detail": "https://puriva.id/sitemap_index.xml \u2192 status 200",
+        "group": "Indexability"
+      }
+    ]
+  },
+  {
+    "summary": {
+      "url": "https://puriva.id/mesostem-in-bali/",
+      "final_url": "https://puriva.id/mesostem-in-bali/",
+      "fetched": true,
+      "title": "Mesostem in Bali | Puriva Aesthetic ClinicWhatsApp",
+      "words": 1301,
+      "schema_types": [
+        "Article",
+        "BreadcrumbList",
+        "ContactPoint",
+        "GeoCoordinates",
+        "ImageObject",
+        "ListItem",
+        "Organization",
+        "Person",
+        "Place",
+        "PostalAddress",
+        "SiteNavigationElement",
+        "WebPage",
+        "WebSite"
+      ],
+      "counts": {
+        "pass": 18,
+        "warn": 2,
+        "fail": 0
+      }
+    },
+    "results": [
+      {
+        "check": "HTTPS",
+        "status": "pass",
+        "detail": "Final URL: https://puriva.id/mesostem-in-bali/",
+        "group": "Security"
+      },
+      {
+        "check": "Title tag",
+        "status": "pass",
+        "detail": "Mesostem in Bali | Puriva Aesthetic ClinicWhatsApp (50 chars; ideal \u226460)",
+        "group": "On-Page"
+      },
+      {
+        "check": "Meta description",
+        "status": "warn",
+        "detail": "Mesostem in Bali at Puriva Aesthetic Clinic offers regenerative skin treatments to improve texture, hydration, and skin health using advanced mesotherapy methods. (162 chars; ideal \u2264155)",
+        "group": "On-Page"
+      },
+      {
+        "check": "Single H1",
+        "status": "pass",
+        "detail": "1 H1 tag(s)",
+        "group": "On-Page"
+      },
+      {
+        "check": "Canonical",
+        "status": "pass",
+        "detail": "https://puriva.id/mesostem-in-bali/",
+        "group": "On-Page"
+      },
+      {
+        "check": "Indexable (robots meta)",
+        "status": "pass",
+        "detail": "robots: follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large",
+        "group": "Indexability"
+      },
+      {
+        "check": "Mobile viewport",
+        "status": "pass",
+        "detail": "width=device-width, initial-scale=1, maximum-scale=5, viewport-fit=cover",
+        "group": "Mobile"
+      },
+      {
+        "check": "html lang",
+        "status": "pass",
+        "detail": "en-US",
+        "group": "Accessibility"
+      },
+      {
+        "check": "Open Graph",
+        "status": "pass",
+        "detail": "13 og: tags (og:locale, og:type, og:title, og:description, og:url)",
+        "group": "Social"
+      },
+      {
+        "check": "Schema (JSON-LD)",
+        "status": "pass",
+        "detail": "1 block(s); types: Article, BreadcrumbList, ContactPoint, GeoCoordinates, ImageObject, ListItem, Organization, Person, Place, PostalAddress, SiteNavigationElement, WebPage, WebSite",
+        "group": "Schema"
+      },
+      {
+        "check": "Image alt coverage",
+        "status": "pass",
+        "detail": "4/4 images have alt (100%)",
+        "group": "Accessibility"
+      },
+      {
+        "check": "Internal links",
+        "status": "pass",
+        "detail": "108 internal (unique 43)",
+        "group": "Linking"
+      },
+      {
+        "check": "External links",
+        "status": "pass",
+        "detail": "9 external",
+        "group": "Linking"
+      },
+      {
+        "check": "Word count",
+        "status": "pass",
+        "detail": "1301 words (guide floor 450)",
+        "group": "Content"
+      },
+      {
+        "check": "No mixed content",
+        "status": "pass",
+        "detail": "0 http:// resources on https page",
+        "group": "Security"
+      },
+      {
+        "check": "Analytics present",
+        "status": "pass",
+        "detail": "GA/GTM snippet found",
+        "group": "Analytics"
+      },
+      {
+        "check": "Search Console verification",
+        "status": "warn",
+        "detail": "google-site-verification meta not found (may verify via DNS)",
+        "group": "Indexability"
+      },
+      {
+        "check": "robots.txt",
+        "status": "pass",
+        "detail": "status 200; 1 Sitemap line(s)",
+        "group": "Indexability"
+      },
+      {
+        "check": "Sitemap declared in robots.txt",
+        "status": "pass",
+        "detail": "https://puriva.id/sitemap_index.xml",
+        "group": "Indexability"
+      },
+      {
+        "check": "Sitemap reachable",
+        "status": "pass",
+        "detail": "https://puriva.id/sitemap_index.xml \u2192 status 200",
+        "group": "Indexability"
+      }
+    ]
+  },
+  {
+    "summary": {
+      "url": "https://puriva.id/radiesse-in-bali/",
+      "final_url": "https://puriva.id/radiesse-in-bali/",
+      "fetched": true,
+      "title": "Radiesse in Bali | Puriva Aesthetic ClinicWhatsApp",
+      "words": 1163,
+      "schema_types": [
+        "Article",
+        "BreadcrumbList",
+        "ContactPoint",
+        "GeoCoordinates",
+        "ImageObject",
+        "ListItem",
+        "Organization",
+        "Person",
+        "Place",
+        "PostalAddress",
+        "SiteNavigationElement",
+        "WebPage",
+        "WebSite"
+      ],
+      "counts": {
+        "pass": 18,
+        "warn": 2,
+        "fail": 0
+      }
+    },
+    "results": [
+      {
+        "check": "HTTPS",
+        "status": "pass",
+        "detail": "Final URL: https://puriva.id/radiesse-in-bali/",
+        "group": "Security"
+      },
+      {
+        "check": "Title tag",
+        "status": "pass",
+        "detail": "Radiesse in Bali | Puriva Aesthetic ClinicWhatsApp (50 chars; ideal \u226460)",
+        "group": "On-Page"
+      },
+      {
+        "check": "Meta description",
+        "status": "warn",
+        "detail": "Radiesse in Bali at Puriva Aesthetic Clinic offers advanced dermal filler treatments to restore volume, improve contours, and support natural skin rejuvenation. (160 chars; ideal \u2264155)",
+        "group": "On-Page"
+      },
+      {
+        "check": "Single H1",
+        "status": "pass",
+        "detail": "1 H1 tag(s)",
+        "group": "On-Page"
+      },
+      {
+        "check": "Canonical",
+        "status": "pass",
+        "detail": "https://puriva.id/radiesse-in-bali/",
+        "group": "On-Page"
+      },
+      {
+        "check": "Indexable (robots meta)",
+        "status": "pass",
+        "detail": "robots: follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large",
+        "group": "Indexability"
+      },
+      {
+        "check": "Mobile viewport",
+        "status": "pass",
+        "detail": "width=device-width, initial-scale=1, maximum-scale=5, viewport-fit=cover",
+        "group": "Mobile"
+      },
+      {
+        "check": "html lang",
+        "status": "pass",
+        "detail": "en-US",
+        "group": "Accessibility"
+      },
+      {
+        "check": "Open Graph",
+        "status": "pass",
+        "detail": "13 og: tags (og:locale, og:type, og:title, og:description, og:url)",
+        "group": "Social"
+      },
+      {
+        "check": "Schema (JSON-LD)",
+        "status": "pass",
+        "detail": "1 block(s); types: Article, BreadcrumbList, ContactPoint, GeoCoordinates, ImageObject, ListItem, Organization, Person, Place, PostalAddress, SiteNavigationElement, WebPage, WebSite",
+        "group": "Schema"
+      },
+      {
+        "check": "Image alt coverage",
+        "status": "pass",
+        "detail": "6/6 images have alt (100%)",
+        "group": "Accessibility"
+      },
+      {
+        "check": "Internal links",
+        "status": "pass",
+        "detail": "108 internal (unique 43)",
+        "group": "Linking"
+      },
+      {
+        "check": "External links",
+        "status": "pass",
+        "detail": "10 external",
+        "group": "Linking"
+      },
+      {
+        "check": "Word count",
+        "status": "pass",
+        "detail": "1163 words (guide floor 450)",
+        "group": "Content"
+      },
+      {
+        "check": "No mixed content",
+        "status": "pass",
+        "detail": "0 http:// resources on https page",
+        "group": "Security"
+      },
+      {
+        "check": "Analytics present",
+        "status": "pass",
+        "detail": "GA/GTM snippet found",
+        "group": "Analytics"
+      },
+      {
+        "check": "Search Console verification",
+        "status": "warn",
+        "detail": "google-site-verification meta not found (may verify via DNS)",
+        "group": "Indexability"
+      },
+      {
+        "check": "robots.txt",
+        "status": "pass",
+        "detail": "status 200; 1 Sitemap line(s)",
+        "group": "Indexability"
+      },
+      {
+        "check": "Sitemap declared in robots.txt",
+        "status": "pass",
+        "detail": "https://puriva.id/sitemap_index.xml",
+        "group": "Indexability"
+      },
+      {
+        "check": "Sitemap reachable",
+        "status": "pass",
+        "detail": "https://puriva.id/sitemap_index.xml \u2192 status 200",
+        "group": "Indexability"
+      }
+    ]
+  },
+  {
+    "summary": {
+      "url": "https://puriva.id/sylfirm-x-in-bali/",
+      "final_url": "https://puriva.id/sylfirm-x-in-bali/",
+      "fetched": true,
+      "title": "Sylfirm X in Bali | Puriva Aesthetic ClinicWhatsApp",
+      "words": 1271,
+      "schema_types": [
+        "Article",
+        "BreadcrumbList",
+        "ContactPoint",
+        "GeoCoordinates",
+        "ImageObject",
+        "ListItem",
+        "Organization",
+        "Person",
+        "Place",
+        "PostalAddress",
+        "SiteNavigationElement",
+        "WebPage",
+        "WebSite"
+      ],
+      "counts": {
+        "pass": 18,
+        "warn": 2,
+        "fail": 0
+      }
+    },
+    "results": [
+      {
+        "check": "HTTPS",
+        "status": "pass",
+        "detail": "Final URL: https://puriva.id/sylfirm-x-in-bali/",
+        "group": "Security"
+      },
+      {
+        "check": "Title tag",
+        "status": "pass",
+        "detail": "Sylfirm X in Bali | Puriva Aesthetic ClinicWhatsApp (51 chars; ideal \u226460)",
+        "group": "On-Page"
+      },
+      {
+        "check": "Meta description",
+        "status": "warn",
+        "detail": "Sylfirm X in Bali at Puriva Aesthetic Clinic offers advanced RF microneedling for skin rejuvenation, improving texture, firmness, and reducing pigmentation safely. (163 chars; ideal \u2264155)",
+        "group": "On-Page"
+      },
+      {
+        "check": "Single H1",
+        "status": "pass",
+        "detail": "1 H1 tag(s)",
+        "group": "On-Page"
+      },
+      {
+        "check": "Canonical",
+        "status": "pass",
+        "detail": "https://puriva.id/sylfirm-x-in-bali/",
+        "group": "On-Page"
+      },
+      {
+        "check": "Indexable (robots meta)",
+        "status": "pass",
+        "detail": "robots: follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large",
+        "group": "Indexability"
+      },
+      {
+        "check": "Mobile viewport",
+        "status": "pass",
+        "detail": "width=device-width, initial-scale=1, maximum-scale=5, viewport-fit=cover",
+        "group": "Mobile"
+      },
+      {
+        "check": "html lang",
+        "status": "pass",
+        "detail": "en-US",
+        "group": "Accessibility"
+      },
+      {
+        "check": "Open Graph",
+        "status": "pass",
+        "detail": "13 og: tags (og:locale, og:type, og:title, og:description, og:url)",
+        "group": "Social"
+      },
+      {
+        "check": "Schema (JSON-LD)",
+        "status": "pass",
+        "detail": "1 block(s); types: Article, BreadcrumbList, ContactPoint, GeoCoordinates, ImageObject, ListItem, Organization, Person, Place, PostalAddress, SiteNavigationElement, WebPage, WebSite",
+        "group": "Schema"
+      },
+      {
+        "check": "Image alt coverage",
+        "status": "pass",
+        "detail": "6/6 images have alt (100%)",
+        "group": "Accessibility"
+      },
+      {
+        "check": "Internal links",
+        "status": "pass",
+        "detail": "108 internal (unique 43)",
+        "group": "Linking"
+      },
+      {
+        "check": "External links",
+        "status": "pass",
+        "detail": "10 external",
+        "group": "Linking"
+      },
+      {
+        "check": "Word count",
+        "status": "pass",
+        "detail": "1271 words (guide floor 450)",
+        "group": "Content"
+      },
+      {
+        "check": "No mixed content",
+        "status": "pass",
+        "detail": "0 http:// resources on https page",
+        "group": "Security"
+      },
+      {
+        "check": "Analytics present",
+        "status": "pass",
+        "detail": "GA/GTM snippet found",
+        "group": "Analytics"
+      },
+      {
+        "check": "Search Console verification",
+        "status": "warn",
+        "detail": "google-site-verification meta not found (may verify via DNS)",
+        "group": "Indexability"
+      },
+      {
+        "check": "robots.txt",
+        "status": "pass",
+        "detail": "status 200; 1 Sitemap line(s)",
+        "group": "Indexability"
+      },
+      {
+        "check": "Sitemap declared in robots.txt",
+        "status": "pass",
+        "detail": "https://puriva.id/sitemap_index.xml",
+        "group": "Indexability"
+      },
+      {
+        "check": "Sitemap reachable",
+        "status": "pass",
+        "detail": "https://puriva.id/sitemap_index.xml \u2192 status 200",
+        "group": "Indexability"
+      }
+    ]
+  }
+]

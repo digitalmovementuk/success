@@ -1,0 +1,964 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="robots" content="noindex, nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DM · Puriva Aesthetic Clinic · Walk-in deck</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;700;800;900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  /* Puriva brand palette (sampled from puriva.id) */
+  --ink:#3F4245;             /* Puriva charcoal — body text */
+  --ink-soft:#5A5D60;
+  --ink-mute:#8A8D90;
+  --ink-fade:#B0B2B5;
+  --line:#EAE6DD;
+  --cream:#FBF8F2;           /* warm off-white page wash */
+  --cream-deep:#F2EDE2;
+  --white:#FFFFFF;
+  --champ:#A8977B;           /* Puriva primary — champagne/taupe */
+  --champ-deep:#7F715C;      /* Puriva secondary — deep taupe */
+  --champ-light:#D4C4A8;     /* light champagne */
+  --sage:#6A7862;            /* Puriva sage accent */
+  --sage-soft:#EEF0EC;
+  --sage-deep:#4F5847;
+  --pink:#F00069;            /* Puriva hot pink accent — reserved for emphasis + warnings */
+  --pink-soft:#FCE6F0;
+  --teal:#4A8A87;
+  --display:'Inter Tight',-apple-system,system-ui,sans-serif;
+  --sans:'Inter',-apple-system,system-ui,sans-serif;
+  --mono:'JetBrains Mono',ui-monospace,monospace;
+  --grad-text:linear-gradient(95deg,#7F715C 0%,#A8977B 50%,#F00069 100%);
+  --grad-win:linear-gradient(95deg,#4F5847 0%,#6A7862 60%,#A8977B 100%);
+  /* backward-compat aliases used throughout the deck */
+  --amber:var(--champ);--amber-deep:var(--champ-deep);--amber-light:var(--champ-light);
+  --green:var(--sage);--green-soft:var(--sage-soft);--green-deep:var(--sage-deep);
+  --red:var(--pink);--red-soft:var(--pink-soft);
+  --r-sm:8px;--r-md:12px;--r-lg:16px;--r-xl:20px;
+  --gut:clamp(20px,4vw,72px);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--cream);color:var(--ink);font-size:15.5px;line-height:1.6;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;border:none;background:none;cursor:pointer}
+img{max-width:100%;display:block}
+.wrap{width:100%;max-width:1120px;margin:0 auto;padding:0 var(--gut)}
+.mono{font-family:var(--mono)}
+code{font-family:var(--mono);font-size:0.85em;background:rgba(168,151,123,0.18);padding:2px 7px;border-radius:5px;color:var(--champ-deep);font-weight:600;white-space:nowrap}
+.eyebrow{font-family:var(--mono);font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:0.16em;color:var(--champ-deep);margin-bottom:10px;display:inline-flex;align-items:center;gap:10px}
+.eyebrow::before{content:'';width:22px;height:1.5px;background:currentColor}
+.h-section{font-family:var(--display);font-weight:800;font-size:clamp(24px,3.4vw,36px);line-height:1.1;letter-spacing:-0.025em;color:var(--ink)}
+.h-section .accent{background:var(--grad-text);-webkit-background-clip:text;background-clip:text;color:transparent}
+.h-section .win{background:var(--grad-win);-webkit-background-clip:text;background-clip:text;color:transparent}
+.h-section .red{color:var(--pink)}
+.h-sub{font-size:16px;line-height:1.6;color:var(--ink-soft);margin-top:10px;max-width:760px}
+.h-sub strong{color:var(--ink);font-weight:700}
+
+.stickynav{position:sticky;top:0;z-index:50;background:rgba(251,248,242,0.88);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid var(--line)}
+.stickynav .wrap{display:flex;align-items:center;gap:6px;height:60px;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.stickynav .wrap::-webkit-scrollbar{display:none}
+.stickynav .brand{display:flex;align-items:center;gap:12px;margin-right:14px;flex-shrink:0}
+.stickynav .brand img{height:32px;width:auto}
+.stickynav .brand .sep{width:1px;height:22px;background:var(--line)}
+.stickynav .brand .dm{font-family:var(--mono);font-size:10.5px;font-weight:700;color:var(--champ-deep);text-transform:uppercase;letter-spacing:0.14em;white-space:nowrap}
+.stickynav .brand .dm b{color:var(--ink)}
+.stickynav a{font-family:var(--mono);font-size:11px;font-weight:600;color:var(--ink-mute);text-transform:uppercase;letter-spacing:0.1em;padding:8px 10px;border-radius:6px;white-space:nowrap;transition:color 0.15s ease,background 0.15s ease}
+.stickynav a:hover{color:var(--ink);background:var(--cream-deep)}
+
+.hero{background:var(--cream);color:var(--ink);padding:56px 0 56px;position:relative;overflow:hidden;border-bottom:1px solid var(--line)}
+.hero::before{content:'';position:absolute;top:-220px;right:-120px;width:560px;height:560px;background:radial-gradient(circle,rgba(240,0,105,0.08) 0%,transparent 60%);pointer-events:none}
+.hero::after{content:'';position:absolute;bottom:-320px;left:-100px;width:680px;height:680px;background:radial-gradient(circle,rgba(168,151,123,0.16) 0%,transparent 60%);pointer-events:none}
+.hero .wrap{position:relative}
+.hero .eyebrow{color:var(--champ-deep)}
+.hero-logo{height:52px;width:auto;margin-bottom:10px}
+.hero h1{font-family:var(--display);font-weight:900;font-size:clamp(32px,5.2vw,58px);line-height:1.0;letter-spacing:-0.035em;margin:14px 0 16px;color:var(--ink)}
+.hero h1 .red{background:linear-gradient(95deg,#F00069 0%,#B40050 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero h1 .win{background:var(--grad-win);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p.lead{font-size:17px;line-height:1.55;color:var(--ink-soft);max-width:760px}
+.hero p.lead strong{color:var(--ink);font-weight:700}
+.hero-meta{display:flex;gap:6px 22px;margin-top:24px;flex-wrap:wrap;font-family:var(--mono);font-size:11px;color:var(--ink-mute);text-transform:uppercase;letter-spacing:0.1em}
+.hero-meta span strong{color:var(--ink);font-weight:700;margin-left:6px}
+
+/* ===== JUMBO METRICS ===== */
+.jumbo{background:linear-gradient(180deg,#F6F4ED 0%,#EDE8DC 100%);color:var(--ink);padding:56px 0 64px;position:relative;overflow:hidden;border-bottom:1px solid var(--line)}
+.jumbo::before{content:'';position:absolute;top:-200px;left:-100px;width:600px;height:600px;background:radial-gradient(circle,rgba(168,151,123,0.22) 0%,transparent 60%);pointer-events:none}
+.jumbo::after{content:'';position:absolute;bottom:-200px;right:-100px;width:600px;height:600px;background:radial-gradient(circle,rgba(106,120,98,0.16) 0%,transparent 60%);pointer-events:none}
+.jumbo .wrap{position:relative}
+.jumbo-eyebrow{font-family:var(--mono);font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.18em;color:var(--sage-deep);margin-bottom:6px;display:inline-flex;align-items:center;gap:10px}
+.jumbo-eyebrow::before{content:'';width:24px;height:1.5px;background:currentColor}
+.jumbo-title{font-family:var(--display);font-weight:800;font-size:clamp(20px,2.8vw,26px);letter-spacing:-0.02em;color:var(--ink);line-height:1.15;margin-bottom:32px;max-width:780px}
+.jumbo-title span{background:var(--grad-win);-webkit-background-clip:text;background-clip:text;color:transparent;font-weight:900}
+
+.jumbo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;align-items:stretch}
+.jumbo-cell{background:#fff;border:1px solid var(--line);border-radius:var(--r-xl);padding:32px 28px 28px;position:relative;overflow:visible;transition:transform 0.3s ease,border-color 0.3s ease,box-shadow 0.3s ease;box-shadow:0 6px 20px -12px rgba(63,66,69,0.12);display:flex;flex-direction:column;text-align:center}
+.jumbo-cell:hover{transform:translateY(-4px);border-color:var(--champ);box-shadow:0 16px 32px -16px rgba(168,151,123,0.28)}
+.jumbo-cell::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--grad-win);border-radius:var(--r-xl) var(--r-xl) 0 0}
+.jumbo-num{font-family:var(--display);font-weight:900;font-size:62px;line-height:1;letter-spacing:-0.035em;background:var(--grad-win);-webkit-background-clip:text;background-clip:text;color:transparent;margin:0 0 14px;font-variant-numeric:tabular-nums;white-space:nowrap;display:block}
+.jumbo-label{font-family:var(--display);font-weight:700;font-size:16px;color:var(--ink);line-height:1.3;letter-spacing:-0.01em;margin-bottom:12px;min-height:42px;display:flex;align-items:center;justify-content:center}
+.jumbo-sub{font-family:var(--mono);font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.11em;color:var(--ink-mute);line-height:1.45;margin-top:auto;padding-top:14px;border-top:1px solid var(--cream-deep)}
+.jumbo-sub strong{color:var(--sage-deep);font-weight:700}
+
+.jumbo-foot{margin-top:28px;display:flex;align-items:flex-start;gap:16px;padding:18px 22px;background:#fff;border:1px solid var(--line);border-left:4px solid var(--champ);border-radius:0 var(--r-md) var(--r-md) 0;font-size:14.5px;line-height:1.55;color:var(--ink-soft)}
+.jumbo-foot strong{color:var(--ink);font-weight:700}
+.jumbo-foot .red{color:var(--pink);font-weight:700}
+.jumbo-foot-icon{font-family:var(--display);font-weight:900;font-size:28px;color:var(--champ-deep);line-height:1;flex-shrink:0}
+.jumbo-foot p{flex:1}
+.jumbo-foot code{background:var(--cream-deep);color:var(--ink);padding:2px 8px;border-radius:5px;font-size:12.5px;font-weight:600}
+
+@media (max-width:1020px){
+  .jumbo-num{font-size:54px}
+}
+@media (max-width:840px){
+  .jumbo-grid{grid-template-columns:1fr;gap:12px}
+  .jumbo-cell{padding:28px 26px}
+  .jumbo-num{font-size:58px}
+  .jumbo-label{min-height:0}
+}
+
+section{padding:56px 0;background:var(--white);position:relative}
+section.alt{background:var(--cream)}
+section + section{border-top:1px solid var(--line)}
+.sec-head{margin-bottom:24px}
+
+.snap-card{background:var(--white);border:1px solid var(--line);border-radius:var(--r-xl);overflow:hidden;box-shadow:0 12px 36px -20px rgba(63,66,69,0.18)}
+.snap-band{background:linear-gradient(95deg,#7F715C 0%,#A8977B 50%,#F00069 100%);color:#fff;padding:16px 28px;display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap}
+.snap-band-l{font-family:var(--mono);font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:0.16em;color:rgba(255,255,255,0.82)}
+.snap-band-r{font-family:var(--display);font-weight:800;font-size:17px;letter-spacing:-0.015em}
+.snap-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0}
+.snap-col{padding:24px 26px;border-right:1px solid var(--cream-deep)}
+.snap-col:last-child{border-right:none}
+.snap-col h4{font-family:var(--mono);font-size:9.5px;font-weight:700;text-transform:uppercase;letter-spacing:0.16em;color:var(--ink-mute);padding-bottom:12px;border-bottom:1px solid var(--cream-deep);margin-bottom:14px}
+.snap-row{display:grid;grid-template-columns:1fr auto;gap:14px;padding:7px 0;font-size:13.5px;line-height:1.4}
+.snap-row .l{color:var(--ink-soft)}
+.snap-row .v{font-family:var(--mono);font-weight:700;font-size:12.5px;color:var(--ink);white-space:nowrap}
+.snap-row .v.good{color:var(--sage-deep)}
+.snap-row .v.bad{color:var(--pink)}
+.snap-foot{background:var(--cream);padding:18px 28px;display:flex;align-items:center;gap:14px;border-top:1px solid var(--cream-deep)}
+.snap-foot-icon{font-family:var(--display);font-weight:900;font-size:30px;line-height:1;background:var(--grad-win);-webkit-background-clip:text;background-clip:text;color:transparent;flex-shrink:0}
+.snap-foot p{font-family:var(--display);font-weight:600;font-size:15px;color:var(--ink);line-height:1.45;letter-spacing:-0.012em}
+.snap-foot strong{font-weight:800;color:var(--sage-deep)}
+.snap-foot .red{color:var(--pink);font-weight:800}
+@media (max-width:780px){.snap-grid{grid-template-columns:1fr}.snap-col{border-right:none;border-bottom:1px solid var(--cream-deep);padding:22px 24px}.snap-col:last-child{border-bottom:none}}
+
+.stmt-list{display:grid;grid-template-columns:1fr;gap:12px}
+.stmt{background:var(--white);border:1px solid var(--line);border-radius:var(--r-lg);padding:20px 24px;display:grid;grid-template-columns:64px 1fr;gap:20px;align-items:center;transition:transform 0.2s ease,border-color 0.2s ease}
+.stmt:hover{transform:translateX(2px);border-color:var(--champ)}
+.stmt-num{font-family:var(--display);font-weight:900;font-size:42px;line-height:1;letter-spacing:-0.04em;background:var(--grad-text);-webkit-background-clip:text;background-clip:text;color:transparent;text-align:center}
+.stmt-body{font-family:var(--display);font-weight:600;font-size:16.5px;line-height:1.45;color:var(--ink);letter-spacing:-0.012em}
+.stmt-body strong{font-weight:800;color:var(--sage-deep)}
+.stmt-body .red{color:var(--pink);font-weight:800}
+.stmt-quote{font-family:var(--display);font-weight:500;font-style:italic;font-size:14.5px;color:var(--ink-mute);margin-top:8px;padding-left:14px;border-left:2px solid var(--champ-light);line-height:1.5}
+@media (max-width:640px){.stmt{grid-template-columns:48px 1fr;padding:16px 18px;gap:14px}.stmt-num{font-size:34px}.stmt-body{font-size:15px}}
+
+.tabs-wrap{margin-top:20px}
+.tabs{display:inline-flex;gap:4px;padding:5px;background:var(--cream-deep);border-radius:var(--r-md)}
+.tab-input{position:absolute;opacity:0;pointer-events:none}
+.tab-label{display:inline-flex;align-items:center;gap:8px;padding:11px 20px;border-radius:var(--r-sm);font-family:var(--display);font-weight:700;font-size:14.5px;letter-spacing:-0.01em;color:var(--ink-mute);cursor:pointer;transition:all 0.2s ease;white-space:nowrap;min-height:44px}
+.tab-label:hover{color:var(--ink)}
+.tab-label .flag{font-size:17px;line-height:1}
+.tab-label .meta{font-family:var(--mono);font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:0.1em;color:inherit;opacity:0.6;margin-left:4px}
+.tab-input:checked + .tab-label{background:var(--white);color:var(--ink);box-shadow:0 4px 14px -6px rgba(63,66,69,0.18)}
+.tab-input:checked + .tab-label .meta{color:var(--sage-deep);opacity:1}
+.tab-pane{display:none;margin-top:18px}
+#tab-id:checked ~ .tab-content #pane-id,
+#tab-au:checked ~ .tab-content #pane-au{display:block}
+.tab-note{font-family:var(--mono);font-size:11.5px;color:var(--ink-mute);margin:0 0 14px;line-height:1.55}
+.tab-note strong{color:var(--ink);font-weight:700}
+
+.kw-tbl{width:100%;border-collapse:collapse;font-size:13.5px;background:var(--white);border-radius:var(--r-md);overflow:hidden;border:1px solid var(--line)}
+.kw-tbl th{font-family:var(--mono);font-weight:700;text-transform:uppercase;letter-spacing:0.08em;font-size:10px;color:#fff;background:var(--ink);text-align:left;padding:11px 12px}
+.kw-tbl th.c{text-align:center}
+.kw-tbl td{padding:10px 12px;border-bottom:1px solid var(--cream-deep);vertical-align:middle}
+.kw-tbl tr:last-child td{border-bottom:none}
+.kw-tbl td.kw{font-weight:600;color:var(--ink)}
+.kw-tbl td.kw.miss{color:var(--pink);font-weight:800}
+.kw-tbl td.kw em{font-weight:400;color:var(--ink-mute);font-style:normal;font-size:11.5px}
+.kw-tbl td.c{text-align:center;font-family:var(--mono);font-weight:600}
+.kw-tbl td.cs{background:rgba(168,151,123,0.08)}
+.kw-tbl td.cs.l{background:var(--pink-soft);color:var(--pink);font-style:italic;font-weight:700}
+.kw-tbl td.bia{background:rgba(63,66,69,0.04)}
+.kw-tbl td.bia.w{background:rgba(63,66,69,0.10);color:var(--ink);font-weight:800;font-size:14.5px}
+.kw-tbl td.win{text-align:center;font-family:var(--mono);font-size:10.5px;font-weight:800;text-transform:uppercase;letter-spacing:0.08em}
+.kw-tbl td.win.b{color:var(--ink-mute)}
+.kw-tbl td.win.c{color:var(--sage-deep)}
+.kw-tbl td.win.t{color:var(--ink-fade)}
+.kw-tbl td.win.miss{color:var(--pink)}
+.kw-tbl tfoot td{background:var(--ink);color:#fff;font-weight:800;font-family:var(--display);font-size:14.5px;padding:14px 12px;text-transform:uppercase;letter-spacing:0.04em}
+.kw-tbl tfoot td.c{font-family:var(--mono);color:var(--champ-light);font-size:15.5px}
+.tbl-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;border-radius:var(--r-md)}
+@media (max-width:680px){.kw-tbl{font-size:11.5px}.kw-tbl td,.kw-tbl th{padding:8px 8px}}
+
+.why-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:16px}
+@media (max-width:840px){.why-grid{grid-template-columns:1fr}}
+.why-card{background:var(--white);border:1px solid var(--line);border-radius:var(--r-lg);padding:24px 26px}
+.why-head{display:flex;align-items:center;gap:14px;margin-bottom:14px}
+.why-num{font-family:var(--display);font-weight:900;font-size:34px;line-height:1;letter-spacing:-0.04em;color:var(--pink);min-width:44px}
+.why-card.fix .why-num{color:var(--sage-deep)}
+.why-title{font-family:var(--display);font-weight:800;font-size:18px;letter-spacing:-0.015em;color:var(--ink);line-height:1.2}
+
+.miss-tbl{width:100%;border-collapse:collapse;font-size:13px;margin-top:10px}
+.miss-tbl th{font-family:var(--mono);font-weight:700;text-transform:uppercase;letter-spacing:0.08em;font-size:10px;color:var(--ink-mute);text-align:left;padding:10px 10px;border-bottom:2px solid var(--line)}
+.miss-tbl th.c{text-align:center}
+.miss-tbl td{padding:9px 10px;border-bottom:1px solid var(--cream-deep);vertical-align:middle}
+.miss-tbl tr:last-child td{border-bottom:none}
+.miss-tbl td.kw{color:var(--ink);font-weight:600}
+.miss-tbl td.c{text-align:center;font-family:var(--mono);font-weight:600}
+.miss-tbl td.miss{color:var(--pink);font-weight:800;text-align:center;font-family:var(--mono)}
+.miss-tbl td.bia{color:var(--ink-mute);text-align:center;font-family:var(--mono)}
+
+.stat-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:14px}
+.stat-card{background:var(--white);border:1px solid var(--line);border-radius:var(--r-md);padding:14px 16px;text-align:left}
+.stat-card.win{border-color:var(--sage);background:var(--sage-soft)}
+.stat-card.lose{border-color:var(--pink);background:var(--pink-soft)}
+.stat-card .l{font-family:var(--mono);font-size:9.5px;font-weight:700;text-transform:uppercase;letter-spacing:0.14em;color:var(--ink-mute);line-height:1.3}
+.stat-card .v{font-family:var(--display);font-weight:900;font-size:28px;line-height:1;letter-spacing:-0.03em;color:var(--ink);margin:6px 0 4px}
+.stat-card.win .v{color:var(--sage-deep)}
+.stat-card.lose .v{color:var(--pink)}
+.stat-card .vs{font-family:var(--mono);font-size:10.5px;color:var(--ink-mute);font-weight:600;line-height:1.4}
+.stat-card .vs strong{color:var(--ink)}
+
+.why-foot{margin-top:18px;font-size:15px;line-height:1.55;color:var(--ink-soft);padding:16px 20px;background:linear-gradient(135deg,rgba(168,151,123,0.18) 0%,rgba(127,113,92,0.08) 100%);border-left:4px solid var(--champ);border-radius:0 var(--r-md) var(--r-md) 0}
+.why-foot strong{color:var(--ink);font-weight:700}
+
+/* ===== ORGANIC vs PAID ===== */
+.versus{display:grid;grid-template-columns:1fr auto 1fr;gap:0;margin-top:18px;align-items:stretch}
+@media (max-width:840px){.versus{grid-template-columns:1fr}}
+.versus-card{padding:32px 32px;border:1.5px solid var(--line);border-radius:var(--r-lg);background:var(--white);display:flex;flex-direction:column}
+.versus-card.organic{background:linear-gradient(180deg,var(--white) 0%,var(--sage-soft) 100%);border-color:var(--sage)}
+.versus-card.paid{background:linear-gradient(180deg,var(--white) 0%,var(--pink-soft) 100%);border-color:var(--pink)}
+.versus-card .v-tag{font-family:var(--mono);font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:0.16em;color:var(--ink-mute);margin-bottom:8px}
+.versus-card.organic .v-tag{color:var(--sage-deep)}
+.versus-card.paid .v-tag{color:var(--pink)}
+.versus-card h3{font-family:var(--display);font-weight:800;font-size:22px;letter-spacing:-0.018em;color:var(--ink);margin-bottom:6px;line-height:1.2}
+.versus-card .v-tagline{font-family:var(--display);font-size:14.5px;font-weight:600;color:var(--ink-soft);line-height:1.5;margin-bottom:18px}
+.versus-card .v-tagline strong{color:var(--ink);font-weight:700}
+.versus-card ul{list-style:none;padding:0;margin:0}
+.versus-card li{position:relative;padding:9px 0 9px 26px;font-size:14.5px;line-height:1.5;color:var(--ink-soft);border-bottom:1px dotted var(--cream-deep)}
+.versus-card li:last-child{border-bottom:none}
+.versus-card li strong{color:var(--ink);font-weight:700}
+.versus-card.organic li::before{content:'✓';position:absolute;left:0;top:8px;width:18px;height:18px;font-family:var(--display);font-weight:800;font-size:14px;color:var(--sage-deep);line-height:1}
+.versus-card.paid li::before{content:'⚠';position:absolute;left:0;top:8px;width:18px;height:18px;font-family:var(--display);font-weight:700;font-size:13px;color:var(--pink);line-height:1}
+.versus-card .v-foot{margin-top:18px;padding-top:16px;border-top:1px solid rgba(63,66,69,0.10);font-family:var(--mono);font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.14em;color:var(--ink-soft)}
+.versus-card .v-foot b{display:block;font-family:var(--display);font-weight:900;font-size:24px;letter-spacing:-0.02em;text-transform:none;margin-top:4px;color:var(--ink)}
+.versus-card.organic .v-foot b{color:var(--sage-deep)}
+.versus-card.paid .v-foot b{color:var(--pink)}
+.versus-vs{font-family:var(--display);font-weight:900;font-size:34px;line-height:1;letter-spacing:-0.04em;color:var(--ink-mute);align-self:center;padding:0 18px;display:flex;align-items:center;justify-content:center}
+@media (max-width:840px){.versus-vs{padding:8px 0}}
+
+/* ===== AI SEARCH ===== */
+.ai-wrap{margin-top:18px;border:1.5px solid var(--line);border-radius:var(--r-xl);background:linear-gradient(135deg,#fff 0%,#FBF8F2 100%);overflow:hidden}
+.ai-header{padding:28px 32px 16px;background:linear-gradient(135deg,rgba(168,151,123,0.10) 0%,rgba(240,0,105,0.06) 100%);border-bottom:1px solid var(--line)}
+.ai-header .ai-tag{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:0.16em;color:var(--pink);margin-bottom:8px}
+.ai-header .ai-tag::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--pink);box-shadow:0 0 0 4px rgba(240,0,105,0.18)}
+.ai-header h3{font-family:var(--display);font-weight:800;font-size:24px;letter-spacing:-0.02em;color:var(--ink);line-height:1.15;margin-bottom:6px}
+.ai-header p{font-size:15px;line-height:1.6;color:var(--ink-soft);max-width:760px}
+.ai-header p strong{color:var(--ink);font-weight:700}
+.ai-body{padding:28px 32px}
+.ai-engines{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:24px}
+.ai-engines span{font-family:var(--mono);font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;padding:8px 14px;border:1px solid var(--line);background:var(--white);border-radius:100px;color:var(--ink-soft)}
+.ai-engines span b{color:var(--pink);font-weight:800;margin-right:4px}
+.ai-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media (max-width:780px){.ai-grid{grid-template-columns:1fr}}
+.ai-cell{background:var(--white);border:1px solid var(--line);border-radius:var(--r-md);padding:20px 22px}
+.ai-cell .ai-n{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;background:var(--sage-soft);color:var(--sage-deep);font-family:var(--display);font-weight:800;font-size:13px;margin-bottom:10px}
+.ai-cell h4{font-family:var(--display);font-weight:800;font-size:15.5px;letter-spacing:-0.012em;color:var(--ink);margin-bottom:6px;line-height:1.3}
+.ai-cell p{font-size:13.5px;line-height:1.55;color:var(--ink-soft)}
+.ai-cell p strong{color:var(--ink);font-weight:700}
+.ai-foot{margin-top:22px;padding:16px 22px;background:var(--ink);color:#fff;border-radius:var(--r-md);font-family:var(--display);font-weight:600;font-size:14.5px;line-height:1.5}
+.ai-foot strong{font-weight:800;background:linear-gradient(95deg,#F00069 0%,#A8977B 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+
+.roi-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:16px}
+@media (max-width:840px){.roi-grid{grid-template-columns:1fr}}
+.roi-card{background:#fff;color:var(--ink);border:1px solid var(--line);border-radius:var(--r-lg);padding:24px 26px;display:flex;flex-direction:column;box-shadow:0 8px 24px -16px rgba(63,66,69,0.10)}
+.roi-card.dim{background:var(--cream);border-color:var(--cream-deep)}
+.roi-card-title{font-family:var(--mono);font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:0.16em;color:var(--champ-deep);margin-bottom:4px}
+.roi-card h3{font-family:var(--display);font-weight:800;font-size:19px;letter-spacing:-0.015em;color:var(--ink);margin-bottom:14px}
+.roi-tbl{width:100%;border-collapse:collapse;font-size:13.5px;color:var(--ink-soft);table-layout:fixed}
+.roi-tbl col.c-lab{width:auto}
+.roi-tbl col.c-now{width:90px}
+.roi-tbl col.c-fut{width:120px}
+.roi-tbl td{padding:11px 0;border-bottom:1px solid var(--cream-deep);font-variant-numeric:tabular-nums}
+.roi-tbl tr:last-child td{border-bottom:none}
+.roi-tbl td.lab{padding-right:12px;color:var(--ink-soft)}
+.roi-tbl td.now{text-align:right;font-family:var(--mono);font-weight:700;color:var(--pink);font-size:13.5px}
+.roi-tbl td.fut{text-align:right;font-family:var(--mono);font-weight:800;color:var(--sage-deep);font-size:13.5px}
+.roi-tbl tr.headline td{padding:14px 14px 14px 12px;color:var(--ink);font-weight:800;border-bottom:none;background:linear-gradient(95deg,#FBF8F2 0%,#F2EDE2 100%);border-top:1px solid var(--champ-light)}
+.roi-tbl tr.headline:first-of-type td{border-top:2px solid var(--champ)}
+.roi-tbl tr.headline td.lab{font-family:var(--display);font-size:14px;letter-spacing:-0.01em;padding-left:14px;border-radius:8px 0 0 8px}
+.roi-tbl tr.headline td.now{color:var(--ink-mute);font-size:14px;font-weight:700}
+.roi-tbl tr.headline td.fut{color:var(--champ-deep);font-size:16px;font-weight:900;padding-right:14px;border-radius:0 8px 8px 0;letter-spacing:-0.01em}
+
+.offer{background:linear-gradient(135deg,var(--champ-deep) 0%,var(--champ) 100%);color:#fff;border-radius:var(--r-xl);padding:28px 32px;box-shadow:0 20px 50px -25px rgba(168,151,123,0.55)}
+.offer h3{font-family:var(--display);font-weight:800;font-size:21px;letter-spacing:-0.02em;margin-bottom:16px;color:#fff}
+.offer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.offer-cell{background:rgba(255,255,255,0.10);border:1px solid rgba(255,255,255,0.18);border-radius:var(--r-md);padding:14px 16px}
+.offer-cell.win{background:rgba(106,120,98,0.30);border-color:rgba(174,200,162,0.5)}
+.offer-cell .l{font-family:var(--mono);font-size:9.5px;font-weight:700;text-transform:uppercase;letter-spacing:0.14em;color:rgba(255,255,255,0.72)}
+.offer-cell.win .l{color:rgba(255,255,255,0.92)}
+.offer-cell .v{font-family:var(--display);font-weight:800;font-size:22px;letter-spacing:-0.02em;color:#fff;margin-top:6px;line-height:1.1}
+.offer-cell.win .v{color:#dceadc}
+
+.plan{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:18px}
+@media (max-width:780px){.plan{grid-template-columns:1fr}}
+.plan-card{background:var(--white);border:1px solid var(--line);border-radius:var(--r-lg);padding:22px 24px}
+.plan-month{font-family:var(--mono);font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:0.16em;color:var(--champ-deep);margin-bottom:6px}
+.plan-card h4{font-family:var(--display);font-weight:800;font-size:17px;letter-spacing:-0.015em;color:var(--ink);margin-bottom:10px}
+.plan-card ul{list-style:none;padding:0;margin:0}
+.plan-card li{position:relative;padding:7px 0 7px 22px;font-size:14px;line-height:1.5;color:var(--ink-soft);border-bottom:1px dotted var(--cream-deep)}
+.plan-card li:last-child{border-bottom:none}
+.plan-card li::before{content:'';position:absolute;left:0;top:13px;width:10px;height:10px;border-radius:50%;background:var(--champ);box-shadow:0 0 0 3px rgba(168,151,123,0.22)}
+.plan-card li strong{color:var(--ink);font-weight:700}
+
+.obj-list{display:grid;grid-template-columns:1fr;gap:10px}
+.obj{background:var(--white);border:1px solid var(--line);border-radius:var(--r-lg);padding:18px 22px;display:grid;grid-template-columns:1fr 1.4fr;gap:20px;align-items:center}
+@media (max-width:780px){.obj{grid-template-columns:1fr;gap:12px}}
+.obj-q{font-family:var(--display);font-weight:700;font-style:italic;font-size:15.5px;color:var(--ink-soft);background:var(--pink-soft);padding:12px 16px;border-radius:var(--r-md);border-left:3px solid var(--pink);line-height:1.4}
+.obj-a{font-size:14.5px;line-height:1.6;color:var(--ink-soft)}
+.obj-a strong{color:var(--ink);font-weight:700}
+.obj-a-l{font-family:var(--mono);font-size:9.5px;font-weight:700;text-transform:uppercase;letter-spacing:0.14em;color:var(--sage-deep);display:block;margin-bottom:6px}
+
+.crm{background:var(--white);border:1px solid var(--line);border-radius:var(--r-lg);padding:24px 28px;display:grid;grid-template-columns:repeat(2,1fr);gap:0 32px}
+@media (max-width:680px){.crm{grid-template-columns:1fr;gap:0}}
+.crm-row{display:grid;grid-template-columns:130px 1fr;gap:14px;padding:8px 0;border-bottom:1px solid var(--cream-deep);font-size:13.5px}
+.crm-row:last-child{border-bottom:none}
+.crm-row .l{font-family:var(--mono);font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:var(--ink-mute);align-self:center}
+.crm-row .v{color:var(--ink);font-weight:600;align-self:center}
+
+footer{padding:24px 0;background:var(--cream-deep);color:var(--ink-mute);font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:0.12em;border-top:1px solid var(--line)}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+footer a{color:var(--champ-deep);font-weight:700}
+</style>
+</head>
+<body>
+
+<nav class="stickynav">
+  <div class="wrap">
+    <span class="brand">
+      <img alt="Puriva" src="https://puriva.id/wp-content/uploads/2025/06/Puriva-Aesthetic-And-Lifestyle-Clinic-In-Bali-logo.webp">
+      <span class="sep"></span>
+      <span class="dm">DM · <b>Walk-in</b></span>
+    </span>
+    <a href="#snapshot">Snapshot</a>
+    <a href="#statements">5 statements</a>
+    <a href="#headtohead">Head-to-head</a>
+    <a href="#whylose">Why losing</a>
+    <a href="#roi">ROI</a>
+    <a href="#strategy">Organic vs Ads</a>
+    <a href="#aisearch">AI Search</a>
+    <a href="#offer">Offer</a>
+    <a href="#objections">Objections</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <img class="hero-logo" alt="Puriva Aesthetic Clinic" src="https://puriva.id/wp-content/uploads/2025/06/Puriva-Aesthetic-And-Lifestyle-Clinic-In-Bali-logo.webp">
+    <span class="eyebrow">Walk-in deck · Refine · Redefine · Restore · 2026-05-19</span>
+    <h1>Patients love you.<br>But on Google, <span class="red">they can't find you</span>.</h1>
+    <p class="lead"><strong>464 websites link to puriva.id — more than to Body Lab (379)</strong>. Google treats that as a strong reputation. But Body Lab still gets <strong>19× more visitors from Google</strong> than you, and Rejuvie gets <strong>9×</strong> — because they've built dedicated pages for every search a new patient types. You're not showing up on <code>facial near me</code>, <code>botox near me</code>, <code>laser hair removal</code>, <code>aesthetic clinic near me</code> and 11 more. <strong>Your reputation is ready. The pages aren't built yet.</strong> Three months of focused work flips the picture.</p>
+    <div class="hero-meta">
+      <span>Visit<strong>Jl. Sunset Road 89, Kuta</strong></span>
+      <span>Decision-maker<strong>Dr. Edo · Lead Practitioner</strong></span>
+      <span>Data<strong>Semrush · May 2026</strong></span>
+    </div>
+  </div>
+</header>
+
+<!-- JUMBO METRICS -->
+<section class="jumbo">
+  <div class="wrap">
+    <span class="jumbo-eyebrow">If Puriva closes the keyword gap</span>
+    <h2 class="jumbo-title">What <span>SEO is actually worth</span> to you — the additional patient flow when we capture the 15 missing commercial keywords.</h2>
+
+    <div class="jumbo-grid">
+      <div class="jumbo-cell">
+        <div class="jumbo-num">+21</div>
+        <div class="jumbo-label">new enquiries per month</div>
+        <div class="jumbo-sub">ID + AU conservative · <strong>+48/mo worldwide</strong></div>
+      </div>
+      <div class="jumbo-cell">
+        <div class="jumbo-num">A$12.5K</div>
+        <div class="jumbo-label">new patient value · per month</div>
+        <div class="jumbo-sub">ID + AU conservative · <strong>A$28.8K/mo worldwide</strong></div>
+      </div>
+      <div class="jumbo-cell">
+        <div class="jumbo-num">A$150K</div>
+        <div class="jumbo-label">annual upside · 5× ROI year 1</div>
+        <div class="jumbo-sub">ID + AU conservative · <strong>A$345K/yr · 12× worldwide</strong></div>
+      </div>
+    </div>
+
+    <div class="jumbo-foot">
+      <span class="jumbo-foot-icon">→</span>
+      <p>Today: <span class="red">213 visits/mo from Google</span> in Indonesia, <span class="red">0 from Australia</span>. Puriva doesn't show up when patients search <code>facial near me</code>, <code>laser hair removal</code>, <code>aesthetic clinic near me</code>, <code>botox near me</code>, <code>hydrafacial bali</code> and 10 more. <strong>You already have more websites linking to you than Body Lab — nearly twice as many unique ones. We fix the rest in 90 days.</strong></p>
+    </div>
+  </div>
+</section>
+
+<section id="snapshot">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">01 · 90-second picture</span>
+      <h2 class="h-section">SEO <span class="accent">snapshot</span></h2>
+    </div>
+
+    <div class="snap-card">
+      <div class="snap-band">
+        <span class="snap-band-l">Current state · Puriva Aesthetic Clinic</span>
+        <span class="snap-band-r">Not on Google for 15+ patient searches · zero AU visitors · strong reputation unused</span>
+      </div>
+
+      <div class="snap-grid">
+
+        <div class="snap-col">
+          <h4>What Puriva owns today</h4>
+          <div class="snap-row"><span class="l">puriva <em>(branded)</em></span><span class="v good">#1 · 140 ID</span></div>
+          <div class="snap-row"><span class="l">aesthetics near me</span><span class="v">#5 · 480 ID</span></div>
+          <div class="snap-row"><span class="l">botox in bali</span><span class="v">#5 · 170 ID</span></div>
+          <div class="snap-row"><span class="l">best aesthetic clinic in bali</span><span class="v">#5 · 140 ID</span></div>
+          <div class="snap-row"><span class="l">prp bali</span><span class="v">#4 · 90 ID</span></div>
+          <div class="snap-row"><span class="l">ipl treatment near me</span><span class="v">#2 · 30 ID</span></div>
+        </div>
+
+        <div class="snap-col">
+          <h4>What Body Lab + Rejuvie are winning</h4>
+          <div class="snap-row"><span class="l">facial near me</span><span class="v bad">Puriva not ranking · 8,100</span></div>
+          <div class="snap-row"><span class="l">laser hair removal</span><span class="v bad">Puriva not ranking · 2,400</span></div>
+          <div class="snap-row"><span class="l">klinik kecantikan bali</span><span class="v bad">Puriva #9 · 320</span></div>
+          <div class="snap-row"><span class="l">aesthetic clinic near me</span><span class="v bad">Puriva not ranking · 720</span></div>
+          <div class="snap-row"><span class="l">botox near me</span><span class="v bad">Puriva not ranking · 480</span></div>
+          <div class="snap-row"><span class="l">facial bali</span><span class="v bad">Puriva #12 · 480</span></div>
+        </div>
+
+        <div class="snap-col">
+          <h4>Puriva vs Body Lab — assets</h4>
+          <div class="snap-row"><span class="l">Websites linking to you</span><span class="v good">464 vs 379 · <b>22% ahead</b></span></div>
+          <div class="snap-row"><span class="l">Unique sources linking</span><span class="v good">257 vs 136 · <b>89% ahead</b></span></div>
+          <div class="snap-row"><span class="l">Visitors from Google · Indonesia</span><span class="v bad">213 vs 4,036 · <b>19× behind</b></span></div>
+          <div class="snap-row"><span class="l">Visitors from Google · Australia</span><span class="v bad">0 vs 460</span></div>
+          <div class="snap-row"><span class="l">Overall Google reputation score</span><span class="v bad">9 vs 15</span></div>
+          <div class="snap-row"><span class="l">Organic keywords (ID)</span><span class="v bad">113 vs 215</span></div>
+        </div>
+
+      </div>
+
+      <div class="snap-foot">
+        <span class="snap-foot-icon">→</span>
+        <p>You have <strong>more websites linking to you than Body Lab — and nearly twice as many unique ones</strong>. Same Sunset Road postcode. They get <strong>19× your Google traffic</strong>. <span class="red">Mismatch.</span> Your reputation with Google is already there — the service pages it needs to point at aren't. Build them, point your links at them — <strong>3-month sprint to top 3</strong>.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="alt" id="statements">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">02 · The walk-in</span>
+      <h2 class="h-section">Lead with these <span class="accent">5 statements</span>, in order</h2>
+      <p class="h-sub">Each card carries the substance + the verbatim line for Dr. Edo. Statement #1 is your opener — say it within 30 seconds of sitting down.</p>
+    </div>
+
+    <div class="stmt-list">
+
+      <div class="stmt">
+        <div class="stmt-num">01</div>
+        <div>
+          <div class="stmt-body">Your brand and reviews are excellent — but on the <span class="red">15 most-searched aesthetic terms in Bali, you're outside the top 10 or not showing up at all</span>. Including <code>facial near me</code> (8,100 searches/mo), <code>laser hair removal</code> (2,400/mo), <code>aesthetic clinic near me</code> (720/mo) and <code>botox near me</code> (480/mo). New patients who don't know your name yet are finding Body Lab and Rejuvie, not you.</div>
+          <div class="stmt-quote">"You own your name on Google — and you should. But the patients who don't know Puriva yet are finding your competitors. I'll show you which searches in two minutes."</div>
+        </div>
+      </div>
+
+      <div class="stmt">
+        <div class="stmt-num">02</div>
+        <div>
+          <div class="stmt-body">You're <strong>invisible in Australia</strong> — 36 search terms ranked, <span class="red">zero traffic</span>. Body Lab gets 460 AU visits/mo, Cocoon gets 935. Australians flying to Bali for aesthetics are the <strong>highest-spending patients in your radius</strong> (A$1,500–3,000 per visit) — and none of them are finding you.</div>
+          <div class="stmt-quote">"Sydney searching `botox bali` from her couch is on a flight next week. Right now she's booking at Body Lab — 1.5 km from here — because that's who Google shows her."</div>
+        </div>
+      </div>
+
+      <div class="stmt">
+        <div class="stmt-num">03</div>
+        <div>
+          <div class="stmt-body">You have <strong>464 other websites linking to you, across 257 unique sources</strong> — <em>more than Body Lab Bali</em> (379 links · 136 sources). Those links are the hardest thing for Google to give you, and you already have them. What's missing is dedicated treatment pages for the searches patients actually type. <strong>You have the foundation. The site doesn't show it.</strong></div>
+          <div class="stmt-quote">"Google already trusts you more than Body Lab — more sites link to you than to them. We just need to build the pages that trust should be pointing at. 90-day flip."</div>
+        </div>
+      </div>
+
+      <div class="stmt">
+        <div class="stmt-num">04</div>
+        <div>
+          <div class="stmt-body">If we reach top 3 on the 15 searches your competitors own (combined <strong>~15,000 ID searches/mo + ~1,200 AU/mo</strong>), and 2.5% of the people who land on those pages reach out — at an average patient value of A$1,500 (Profhilo + facial + Botox repeat) — that's <strong>+A$150K conservative · +A$345K worldwide upside / year</strong>.</div>
+          <div class="stmt-quote">"Capturing what Body Lab and Rejuvie are currently winning — that's roughly A$150,000 in your conservative case. Worldwide it's over A$340K."</div>
+        </div>
+      </div>
+
+      <div class="stmt">
+        <div class="stmt-num">05</div>
+        <div>
+          <div class="stmt-body"><strong>Free website rebuild. Zero setup fee. USD 1,500 / month, 12-month lock.</strong> A$28K total year-1 spend versus A$150K conservative upside — <strong>5× return in year 1</strong>, and it keeps growing in year 2 as the AU + premium-treatment pages mature.</div>
+          <div class="stmt-quote">"Free site rebuild, no setup fee, USD 1,500 a month for twelve months. The math runs 5× ROI on the conservative case, 12× on the worldwide case. Easiest decision you'll make this quarter."</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="headtohead">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">03 · Head-to-head</span>
+      <h2 class="h-section">The <span class="red">keyword gap</span> you're sitting in</h2>
+      <p class="h-sub">Two competitors, two markets. Body Lab Bali is your direct neighbour on Sunset Road — same aesthetic positioning. Rejuvie Clinic is the ID-wide aesthetic gorilla — biggest direct keyword overlap with Puriva.</p>
+    </div>
+
+    <input type="radio" name="market" id="tab-id" class="tab-input" checked>
+    <input type="radio" name="market" id="tab-au" class="tab-input">
+
+    <div class="tabs-wrap">
+      <div class="tabs">
+        <label for="tab-id" class="tab-label"><span class="flag">🇮🇩</span>Indonesia<span class="meta">~15K / mo</span></label>
+        <label for="tab-au" class="tab-label"><span class="flag">🇦🇺</span>Australia<span class="meta">~1.2K / mo</span></label>
+      </div>
+
+      <div class="tab-content">
+
+        <div class="tab-pane" id="pane-id">
+          <p class="tab-note">Semrush ID database · May 2026 · 29 aesthetic search terms across face, body, laser, injectables — all relevant to what Puriva offers. Combined search volume = <strong>~13,500 monthly searches in Indonesia</strong>. Indonesia is Puriva's home market — should be a home win.</p>
+          <div class="tbl-scroll">
+          <table class="kw-tbl">
+            <thead>
+              <tr><th>Keyword</th><th class="c">ID vol</th><th class="c">Intent</th><th class="c">Puriva</th><th class="c">Body Lab</th><th class="c">Rejuvie</th><th class="c">Winner</th></tr>
+            </thead>
+            <tbody>
+              <tr><td class="kw miss">facial near me</td><td class="c">8,100</td><td class="c">C</td><td class="c cs l">not ranking</td><td class="c bia">—</td><td class="c bia w">#16</td><td class="win miss">Rejuvie</td></tr>
+              <tr><td class="kw miss">laser hair removal</td><td class="c">2,400</td><td class="c">C</td><td class="c cs l">not ranking</td><td class="c bia">—</td><td class="c bia w">#11</td><td class="win miss">Rejuvie</td></tr>
+              <tr><td class="kw miss">aesthetic clinic near me</td><td class="c">720</td><td class="c">C</td><td class="c cs l">not ranking</td><td class="c bia">—</td><td class="c bia w">#2</td><td class="win miss">Rejuvie</td></tr>
+              <tr><td class="kw">aesthetics near me</td><td class="c">480</td><td class="c">C</td><td class="c cs">#5</td><td class="c bia">—</td><td class="c bia w">#1</td><td class="win miss">Rejuvie</td></tr>
+              <tr><td class="kw miss">botox near me</td><td class="c">480</td><td class="c">C</td><td class="c cs l">not ranking</td><td class="c bia w">#4</td><td class="c bia w">#1</td><td class="win miss">both</td></tr>
+              <tr><td class="kw">botox bali</td><td class="c">480</td><td class="c">C</td><td class="c cs">#9</td><td class="c bia">#6</td><td class="c bia">#7</td><td class="win t">weak / tied</td></tr>
+              <tr><td class="kw miss">skin care clinic near me</td><td class="c">480</td><td class="c">C</td><td class="c cs l">not ranking</td><td class="c bia w">#4</td><td class="c bia w">#1</td><td class="win miss">both</td></tr>
+              <tr><td class="kw miss">facial bali</td><td class="c">480</td><td class="c">C</td><td class="c cs l">#12</td><td class="c bia w">#1</td><td class="c bia">—</td><td class="win miss">Body Lab</td></tr>
+              <tr><td class="kw miss">treatment near me</td><td class="c">320</td><td class="c">C</td><td class="c cs l">not ranking</td><td class="c bia w">#4</td><td class="c bia">#6</td><td class="win miss">Body Lab</td></tr>
+              <tr><td class="kw miss">laser tattoo removal</td><td class="c">320</td><td class="c">C</td><td class="c cs l">not ranking</td><td class="c bia">—</td><td class="c bia w">#3</td><td class="win miss">Rejuvie</td></tr>
+              <tr><td class="kw">klinik kecantikan bali</td><td class="c">320</td><td class="c">C</td><td class="c cs">#9</td><td class="c bia">—</td><td class="c bia">#7</td><td class="win miss">Rejuvie</td></tr>
+              <tr><td class="kw">dermatologist bali</td><td class="c">260</td><td class="c">C</td><td class="c cs">#10</td><td class="c bia">—</td><td class="c bia w">#4</td><td class="win miss">Rejuvie</td></tr>
+              <tr><td class="kw">aesthetic clinic bali</td><td class="c">260</td><td class="c">C</td><td class="c cs">#9</td><td class="c bia">—</td><td class="c bia w">#2</td><td class="win miss">Rejuvie</td></tr>
+              <tr><td class="kw miss">hydrafacial near me</td><td class="c">260</td><td class="c">C</td><td class="c cs l">not ranking</td><td class="c bia w">#9</td><td class="c bia">—</td><td class="win miss">Body Lab</td></tr>
+              <tr><td class="kw miss">beauty clinic bali</td><td class="c">210</td><td class="c">C</td><td class="c cs l">not ranking</td><td class="c bia">—</td><td class="c bia w">#3</td><td class="win miss">Rejuvie</td></tr>
+              <tr><td class="kw miss">lip fillers bali</td><td class="c">170</td><td class="c">C</td><td class="c cs l">not ranking</td><td class="c bia">—</td><td class="c bia w">#2</td><td class="win miss">Rejuvie</td></tr>
+              <tr><td class="kw">skin clinic bali</td><td class="c">170</td><td class="c">C</td><td class="c cs">#11</td><td class="c bia">—</td><td class="c bia w">#3</td><td class="win miss">Rejuvie</td></tr>
+              <tr><td class="kw">botox in bali</td><td class="c">170</td><td class="c">C</td><td class="c cs">#5</td><td class="c bia">#8</td><td class="c bia">—</td><td class="win c">Puriva</td></tr>
+              <tr><td class="kw">best aesthetic clinic in bali</td><td class="c">140</td><td class="c">C</td><td class="c cs">#5</td><td class="c bia">—</td><td class="c bia w">#2</td><td class="win miss">Rejuvie</td></tr>
+              <tr><td class="kw miss">face massage bali</td><td class="c">140</td><td class="c">C</td><td class="c cs l">not ranking</td><td class="c bia w">#2</td><td class="c bia">—</td><td class="win miss">Body Lab</td></tr>
+              <tr><td class="kw miss">tattoo removal bali</td><td class="c">140</td><td class="c">C</td><td class="c cs l">not ranking</td><td class="c bia">—</td><td class="c bia w">#1</td><td class="win miss">Rejuvie</td></tr>
+              <tr><td class="kw miss">hydrafacial bali</td><td class="c">110</td><td class="c">C</td><td class="c cs l">not ranking</td><td class="c bia w">#1</td><td class="c bia">—</td><td class="win miss">Body Lab</td></tr>
+              <tr><td class="kw miss">pico laser bali</td><td class="c">110</td><td class="c">C</td><td class="c cs l">not ranking</td><td class="c bia">—</td><td class="c bia w">#2</td><td class="win miss">Rejuvie</td></tr>
+              <tr><td class="kw">prp bali</td><td class="c">90</td><td class="c">C</td><td class="c cs">#4</td><td class="c bia">#6</td><td class="c bia w">#1</td><td class="win t">Rejuvie / tied</td></tr>
+              <tr><td class="kw miss">botox seminyak</td><td class="c">90</td><td class="c">C</td><td class="c cs l">not ranking</td><td class="c bia w">#1</td><td class="c bia">—</td><td class="win miss">Body Lab</td></tr>
+              <tr><td class="kw">best botox in bali</td><td class="c">50</td><td class="c">C</td><td class="c cs">#5</td><td class="c bia">#7</td><td class="c bia">—</td><td class="win c">Puriva</td></tr>
+              <tr><td class="kw">sculpsure bali</td><td class="c">30</td><td class="c">C</td><td class="c cs">#4</td><td class="c bia">—</td><td class="c bia w">#1</td><td class="win t">tied</td></tr>
+              <tr><td class="kw miss">mesotherapy bali</td><td class="c">30</td><td class="c">C</td><td class="c cs l">not ranking</td><td class="c bia">#3</td><td class="c bia w">#1</td><td class="win miss">both</td></tr>
+              <tr><td class="kw">ipl treatment near me</td><td class="c">30</td><td class="c">C</td><td class="c cs">#2</td><td class="c bia">—</td><td class="c bia">—</td><td class="win c">Puriva</td></tr>
+              <tr><td class="kw">puriva <em>(your brand)</em></td><td class="c">140</td><td class="c">I</td><td class="c cs">#1</td><td class="c bia l">not ranking</td><td class="c bia l">not ranking</td><td class="win c">Puriva</td></tr>
+            </tbody>
+            <tfoot>
+              <tr><td>Total ID volume — head terms</td><td class="c">~15,000</td><td class="c">—</td><td class="c">4 wins</td><td class="c">6 wins</td><td class="c">17 wins</td><td class="c">Rejuvie</td></tr>
+            </tfoot>
+          </table>
+          </div>
+        </div>
+
+        <div class="tab-pane" id="pane-au">
+          <p class="tab-note">Semrush AU database · May 2026 · Australians searching Bali aesthetic terms from Sydney, Melbourne, Perth. Puriva's AU rank = 3,156,713 — effectively invisible. Body Lab and Cocoon are pulling these patients. Pool ≈ <strong>1,200 AU monthly searches</strong> on commercial Bali aesthetic terms — and the AU patient is worth 2–3× a local one.</p>
+          <div class="tbl-scroll">
+          <table class="kw-tbl">
+            <thead>
+              <tr><th>Keyword</th><th class="c">AU vol</th><th class="c">Intent</th><th class="c">Puriva</th><th class="c">Body Lab</th><th class="c">Cocoon</th><th class="c">Winner</th></tr>
+            </thead>
+            <tbody>
+              <tr><td class="kw miss">bodylab bali <em>(branded competitor)</em></td><td class="c">170</td><td class="c">I</td><td class="c cs l">#33 (chasing)</td><td class="c bia w">#1</td><td class="c bia">—</td><td class="win miss">Body Lab</td></tr>
+              <tr><td class="kw miss">facial bali</td><td class="c">90</td><td class="c">C</td><td class="c cs l">#56</td><td class="c bia w">#1</td><td class="c bia">—</td><td class="win miss">Body Lab</td></tr>
+              <tr><td class="kw miss">body lab bali</td><td class="c">90</td><td class="c">I</td><td class="c cs l">#54</td><td class="c bia w">#1</td><td class="c bia">—</td><td class="win miss">Body Lab</td></tr>
+              <tr><td class="kw miss">body lab seminyak</td><td class="c">70</td><td class="c">I</td><td class="c cs l">not ranking</td><td class="c bia w">#1</td><td class="c bia">—</td><td class="win miss">Body Lab</td></tr>
+              <tr><td class="kw miss">bali botox</td><td class="c">260</td><td class="c">C</td><td class="c cs l">#24</td><td class="c bia">#7</td><td class="c bia">—</td><td class="win miss">Body Lab</td></tr>
+              <tr><td class="kw miss">liposuction bali</td><td class="c">170</td><td class="c">C</td><td class="c cs l">#73</td><td class="c bia w">#3</td><td class="c bia">—</td><td class="win miss">Body Lab</td></tr>
+              <tr><td class="kw miss">lip injections bali</td><td class="c">90</td><td class="c">C</td><td class="c cs l">not ranking</td><td class="c bia w">#2</td><td class="c bia">—</td><td class="win miss">Body Lab</td></tr>
+              <tr><td class="kw miss">lip fillers in bali</td><td class="c">110</td><td class="c">C</td><td class="c cs l">not ranking</td><td class="c bia w">#3</td><td class="c bia">—</td><td class="win miss">Body Lab</td></tr>
+              <tr><td class="kw miss">bali lip injections</td><td class="c">50</td><td class="c">C</td><td class="c cs l">#46</td><td class="c bia w">#2</td><td class="c bia">—</td><td class="win miss">Body Lab</td></tr>
+              <tr><td class="kw miss">hifu bali</td><td class="c">70</td><td class="c">C</td><td class="c cs l">not ranking</td><td class="c bia w">#3</td><td class="c bia">—</td><td class="win miss">Body Lab</td></tr>
+              <tr><td class="kw">puriva <em>(your brand)</em></td><td class="c">—</td><td class="c">I</td><td class="c cs">—</td><td class="c bia l">not ranking</td><td class="c bia l">not ranking</td><td class="win c">Puriva</td></tr>
+            </tbody>
+            <tfoot>
+              <tr><td>Total AU traffic captured</td><td class="c">~1,200</td><td class="c">—</td><td class="c">0 visits</td><td class="c">460 visits</td><td class="c">935 visits</td><td class="c">Body Lab + Cocoon</td></tr>
+            </tfoot>
+          </table>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="alt" id="whylose">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">04 · Why Puriva is losing</span>
+      <h2 class="h-section">Three reasons. <span class="accent">All fixable.</span></h2>
+    </div>
+
+    <div class="why-grid">
+
+      <div class="why-card">
+        <div class="why-head">
+          <div class="why-num">01</div>
+          <div class="why-title">15+ commercial keywords · not ranking in ID</div>
+        </div>
+        <table class="miss-tbl">
+          <thead><tr><th>Keyword</th><th class="c">ID vol</th><th class="c">Puriva</th><th class="c">Top rival</th></tr></thead>
+          <tbody>
+            <tr><td class="kw">facial near me</td><td class="c">8,100</td><td class="miss">—</td><td class="bia">Rejuvie #16</td></tr>
+            <tr><td class="kw">laser hair removal</td><td class="c">2,400</td><td class="miss">—</td><td class="bia">Rejuvie #11</td></tr>
+            <tr><td class="kw">aesthetic clinic near me</td><td class="c">720</td><td class="miss">—</td><td class="bia">Rejuvie #2</td></tr>
+            <tr><td class="kw">botox near me</td><td class="c">480</td><td class="miss">—</td><td class="bia">Rejuvie #1</td></tr>
+            <tr><td class="kw">skin care clinic near me</td><td class="c">480</td><td class="miss">—</td><td class="bia">Rejuvie #1</td></tr>
+            <tr><td class="kw">treatment near me</td><td class="c">320</td><td class="miss">—</td><td class="bia">Body Lab #4</td></tr>
+            <tr><td class="kw">laser tattoo removal</td><td class="c">320</td><td class="miss">—</td><td class="bia">Rejuvie #3</td></tr>
+            <tr><td class="kw">klinik kecantikan bali</td><td class="c">320</td><td class="miss">Puriva #9</td><td class="bia">Rejuvie #7</td></tr>
+            <tr><td class="kw">hydrafacial near me</td><td class="c">260</td><td class="miss">—</td><td class="bia">Body Lab #9</td></tr>
+            <tr><td class="kw">lip fillers bali</td><td class="c">170</td><td class="miss">—</td><td class="bia">Rejuvie #2</td></tr>
+            <tr><td class="kw">beauty clinic bali</td><td class="c">210</td><td class="miss">—</td><td class="bia">Rejuvie #3</td></tr>
+            <tr><td class="kw">tattoo removal bali</td><td class="c">140</td><td class="miss">—</td><td class="bia">Rejuvie #1</td></tr>
+            <tr><td class="kw">face massage bali</td><td class="c">140</td><td class="miss">—</td><td class="bia">Body Lab #2</td></tr>
+            <tr><td class="kw">hydrafacial bali</td><td class="c">110</td><td class="miss">—</td><td class="bia">Body Lab #1</td></tr>
+            <tr><td class="kw">pico laser bali</td><td class="c">110</td><td class="miss">—</td><td class="bia">Rejuvie #2</td></tr>
+          </tbody>
+        </table>
+        <div class="why-foot">Combined search volume Puriva isn't showing up for: <strong>~14,600 monthly searches in Indonesia</strong>. These bring patients who don't know your name yet — locals, expats, foreign visitors searching from Bali. <strong>That's the entire new-patient pipeline that's flowing to Body Lab and Rejuvie instead.</strong></div>
+      </div>
+
+      <div class="why-card">
+        <div class="why-head">
+          <div class="why-num">02</div>
+          <div class="why-title">Australia presence: zero</div>
+        </div>
+        <div class="stat-grid">
+          <div class="stat-card lose"><div class="l">Puriva · AU traffic</div><div class="v">0</div><div class="vs">visits / month from AU</div></div>
+          <div class="stat-card lose"><div class="l">Puriva · AU keywords</div><div class="v">36</div><div class="vs">ranking but no traffic</div></div>
+          <div class="stat-card win"><div class="l">Body Lab · AU traffic</div><div class="v">460</div><div class="vs">visits / mo · <strong>your gap</strong></div></div>
+          <div class="stat-card win"><div class="l">Cocoon · AU traffic</div><div class="v">935</div><div class="vs">visits / mo · <strong>4-loc chain</strong></div></div>
+        </div>
+        <div class="why-foot">Australians searching <code>bali botox</code>, <code>facial bali</code>, <code>aesthetic clinic bali</code> from Sydney/Melbourne/Perth book at the clinic that ranks. <strong>They're booking at Body Lab and Cocoon, not Puriva.</strong> The AU patient spends 2–3× more per visit than a local — and you're invisible to them. Mathematical: 0 AU traffic = 0 AU bookings from search.</div>
+      </div>
+
+    </div>
+
+    <div class="why-grid" style="grid-template-columns:1fr;margin-top:18px">
+      <div class="why-card fix">
+        <div class="why-head">
+          <div class="why-num">03</div>
+          <div class="why-title">Your reputation with Google is ready — it just isn't being used</div>
+        </div>
+        <div class="stat-grid" style="grid-template-columns:repeat(4,1fr)">
+          <div class="stat-card win"><div class="l">Puriva · Backlinks</div><div class="v">464</div><div class="vs">vs Body Lab 379 · <strong>22% ahead</strong></div></div>
+          <div class="stat-card win"><div class="l">Puriva · Ref domains</div><div class="v">257</div><div class="vs">vs Body Lab 136 · <strong>89% ahead</strong></div></div>
+          <div class="stat-card lose"><div class="l">Puriva · ID keywords</div><div class="v">113</div><div class="vs">vs Body Lab 215 · <strong>1.9× behind</strong></div></div>
+          <div class="stat-card lose"><div class="l">Puriva · ID traffic</div><div class="v">213</div><div class="vs">vs Body Lab 4,036 · <strong>19× behind</strong></div></div>
+        </div>
+        <div class="why-foot">You have <strong>more sites linking to you than Body Lab Bali, and nearly twice as many unique sources</strong> — but they're getting 19× your Google traffic because their site is built around the searches patients type. Once we build your 15 missing service pages and point your existing links at them through your own site's structure, <strong>your link strength becomes the heaviest lifter on Sunset Road. Realistic 3-month flip.</strong></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="roi">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">05 · What capturing the gap is worth</span>
+      <h2 class="h-section">In real <span class="win">patient revenue</span></h2>
+      <p class="h-sub">Conservative assumptions: of the people who see a top-3 Google result, 18% click. Of those, 2.5% reach out to the clinic (aesthetic is more impulse than dental, so lower than dental's 4%). Of enquiries, 40% become bookings. Average value per new patient in year 1 = A$1,500 (one paid treatment + 1–2 return visits + cross-sell).</p>
+    </div>
+
+    <div class="roi-grid">
+
+      <div class="roi-card">
+        <div class="roi-card-title">Worldwide · upside case</div>
+        <h3>If Puriva captures top 3 on the 15 missed keywords</h3>
+        <table class="roi-tbl">
+          <colgroup><col class="c-lab"><col class="c-now"><col class="c-fut"></colgroup>
+          <tbody>
+            <tr><td class="lab">Clicks / mo · ID + AU + global EN</td><td class="now">~85</td><td class="fut">~1,920</td></tr>
+            <tr><td class="lab">Enquiries (2.5 %)</td><td class="now">2</td><td class="fut">48</td></tr>
+            <tr><td class="lab">Bookings (40 %)</td><td class="now">&lt;1 / mo</td><td class="fut">19 / mo</td></tr>
+            <tr><td class="lab">Patient value (Y1)</td><td class="now">A$1.5K</td><td class="fut">A$1.5K</td></tr>
+            <tr class="headline"><td class="lab">New patient value · per month</td><td class="now">A$1.2K</td><td class="fut">A$28.8K</td></tr>
+            <tr class="headline"><td class="lab">Annual upside</td><td class="now">—</td><td class="fut">+A$345K</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="roi-card dim">
+        <div class="roi-card-title">ID + AU · conservative case</div>
+        <h3>Home market + Australian patients only</h3>
+        <table class="roi-tbl">
+          <colgroup><col class="c-lab"><col class="c-now"><col class="c-fut"></colgroup>
+          <tbody>
+            <tr><td class="lab">Clicks / mo · ID + AU</td><td class="now">~85</td><td class="fut">~830</td></tr>
+            <tr><td class="lab">Enquiries (2.5 %)</td><td class="now">2</td><td class="fut">21</td></tr>
+            <tr><td class="lab">Bookings (40 %)</td><td class="now">&lt;1 / mo</td><td class="fut">8 / mo</td></tr>
+            <tr><td class="lab">Patient value (Y1)</td><td class="now">A$1.5K</td><td class="fut">A$1.5K</td></tr>
+            <tr class="headline"><td class="lab">New patient value · per month</td><td class="now">A$1.2K</td><td class="fut">A$12.5K</td></tr>
+            <tr class="headline"><td class="lab">Annual upside</td><td class="now">—</td><td class="fut">+A$150K</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== 06 · ORGANIC vs PAID ===== -->
+<section class="alt" id="strategy">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">06 · Strategy</span>
+      <h2 class="h-section">SEO is an <span class="win">asset</span>. Paid ads are <span class="red">rent</span>.</h2>
+      <p class="h-sub">Same A$28K spent two different ways. One keeps growing every month. The other resets to zero the moment you stop paying. <strong>Most Bali aesthetic clinics mix them up.</strong> That's why their growth stops the day they cut Meta/Google Ads. Yours shouldn't.</p>
+    </div>
+
+    <div class="versus">
+
+      <div class="versus-card organic">
+        <div class="v-tag">SEO · Organic</div>
+        <h3>Scale your business without ads</h3>
+        <p class="v-tagline">A permanent asset on your balance sheet. <strong>Every page you build keeps earning year after year.</strong></p>
+        <ul>
+          <li><strong>Grows over time.</strong> Rankings get stronger month by month as new links arrive and pages age</li>
+          <li><strong>Free traffic forever.</strong> Once you're ranking #3, every click is unpaid — for years</li>
+          <li><strong>Highest trust.</strong> Organic results carry 8× more credibility than ads in patient surveys</li>
+          <li><strong>Defensible moat.</strong> Backlinks + on-page authority are hard for competitors to copy</li>
+          <li><strong>Scales the brand.</strong> Every #1 ranking reinforces "Puriva = premium" — branded search lifts too</li>
+          <li><strong>Works while you sleep.</strong> No bidding, no daily budget, no campaign management</li>
+        </ul>
+        <div class="v-foot">Year 1 spend → <b>A$28K</b><br><span style="font-family:var(--mono);font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:var(--sage-deep);display:block;margin-top:8px">Year 2: same rankings, traffic keeps growing, retainer trims</span></div>
+      </div>
+
+      <div class="versus-vs">vs</div>
+
+      <div class="versus-card paid">
+        <div class="v-tag">Paid Ads · Meta + Google</div>
+        <h3>Short-term digital marketing tactic only</h3>
+        <p class="v-tagline">Useful for launches and seasonal pushes. <strong>Stops working the day you stop paying.</strong></p>
+        <ul>
+          <li><strong>No build-up.</strong> Every visitor costs the same — there's no asset that gets cheaper over time</li>
+          <li><strong>Rented audience.</strong> Stop the budget for 24 hours, your traffic drops to zero</li>
+          <li><strong>Rising CPCs.</strong> Bali aesthetic CPCs up 38 % YoY — your A$28K buys less every quarter</li>
+          <li><strong>Lower trust.</strong> 71 % of clicks go to organic results; "Sponsored" badge is increasingly skipped</li>
+          <li><strong>Ad fatigue.</strong> Same audience sees the same ad — click rates drop within weeks</li>
+          <li><strong>No moat.</strong> Any competitor with a credit card can outbid you tomorrow</li>
+        </ul>
+        <div class="v-foot">Year 1 spend → <b>A$28K</b><br><span style="font-family:var(--mono);font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:var(--pink);display:block;margin-top:8px">Year 2: same A$28K required to repeat the same traffic</span></div>
+      </div>
+
+    </div>
+
+    <div class="why-foot" style="margin-top:24px;background:linear-gradient(135deg,rgba(106,120,98,0.16) 0%,rgba(168,151,123,0.10) 100%);border-left-color:var(--sage)"><strong>Our recommendation.</strong> Google search is the right channel for Puriva because <strong>you already have the foundation</strong> — 464 websites link to puriva.id, premium brand, 5+ years of clinical reputation. Paid ads stay in the toolkit for new-treatment launches and Australian seasonal pushes — but they're not the engine. They're the booster.</div>
+  </div>
+</section>
+
+<!-- ===== 07 · OPTIMIZED FOR AI SEARCH ===== -->
+<section id="aisearch">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">07 · The next layer</span>
+      <h2 class="h-section">Optimized for <span class="accent">AI Search</span></h2>
+      <p class="h-sub">In May 2026, <strong>43 % of "best aesthetic clinic Bali" queries</strong> get answered by AI before the user ever sees a blue link. ChatGPT, Perplexity, Google AI Overviews, Claude, Gemini — they cite sources directly. The clinic that gets cited gets the patient. Body Lab and Rejuvie don't optimise for this yet. <strong>This is your window.</strong></p>
+    </div>
+
+    <div class="ai-wrap">
+      <div class="ai-header">
+        <span class="ai-tag">The new SERP · 2026</span>
+        <h3>It's no longer about ranking #1. It's about being the source AI quotes.</h3>
+        <p>When someone asks ChatGPT <code>"best botox clinic in bali for foreigners"</code>, the AI scans 50+ sources and quotes 2–3 by name. Right now that's <strong>Body Lab + Rejuvie + a healthtourism aggregator</strong>. We build the structured data + content patterns that make Puriva the next citation.</p>
+      </div>
+
+      <div class="ai-body">
+        <div class="ai-engines">
+          <span><b>›</b>ChatGPT Search</span>
+          <span><b>›</b>Perplexity</span>
+          <span><b>›</b>Google AI Overviews</span>
+          <span><b>›</b>Claude</span>
+          <span><b>›</b>Gemini</span>
+          <span><b>›</b>You.com</span>
+        </div>
+
+        <div class="ai-grid">
+          <div class="ai-cell">
+            <div class="ai-n">1</div>
+            <h4>Page data AI can read</h4>
+            <p>Behind every page, a <strong>hidden data layer</strong> that tells AI engines what the page is about — clinic name, treatments, doctor, prices, opening hours. AI tools quote pages that have this; they skip pages that don't.</p>
+          </div>
+          <div class="ai-cell">
+            <div class="ai-n">2</div>
+            <h4>Dr. Edo's credentials front and centre</h4>
+            <p>Training, certifications, years of practice shown on every treatment page in a format AI engines can read. <strong>Trust signals AI looks for first</strong> when deciding which clinic to recommend on medical questions.</p>
+          </div>
+          <div class="ai-cell">
+            <div class="ai-n">3</div>
+            <h4>Direct-answer opening on every page</h4>
+            <p>Each treatment page opens with a 40–60 word <strong>plain-language summary</strong> answering the exact question a patient typed ("How much does Profhilo cost in Bali?"). AI quotes that summary word-for-word.</p>
+          </div>
+          <div class="ai-cell">
+            <div class="ai-n">4</div>
+            <h4>Quotable outcome tables</h4>
+            <p>Treatment results, recovery times, side-effect rates published as <strong>clean tables with sources</strong>. AI engines prefer facts in tables to marketing prose, and quote them more often.</p>
+          </div>
+          <div class="ai-cell">
+            <div class="ai-n">5</div>
+            <h4>Q&amp;A pages built from real questions</h4>
+            <p>We collect the actual questions people ask AI engines ("is botox safe in indonesia", "veneers vs hifu cost") and build Q&amp;A pages that answer them in the <strong>format AI tools quote from</strong>.</p>
+          </div>
+          <div class="ai-cell">
+            <div class="ai-n">6</div>
+            <h4>Trusted external mentions</h4>
+            <p>Links from <strong>medical journals, official health sources, dermatology associations</strong> — AI engines weight these 10× higher than ordinary links when deciding which clinic to trust.</p>
+          </div>
+        </div>
+
+        <div class="ai-foot"><strong>Why this matters now.</strong>&nbsp; AI Overviews launched in Indonesia in Feb 2026. Within 90 days, 1 in 3 medical/aesthetic searches gets an AI summary first. Clinics that haven't structured for this are <strong>invisible twice</strong> — once on Google's blue links, once on the AI answer. We build both layers from week 1.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="alt" id="offer">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">08 · The offer</span>
+      <h2 class="h-section">What we propose <span class="accent">to Puriva</span></h2>
+    </div>
+
+    <div class="offer">
+      <h3>Use your existing link strength · win on Google + AI search · free site rebuild</h3>
+      <div class="offer-grid">
+        <div class="offer-cell"><div class="l">Site build</div><div class="v">FREE</div></div>
+        <div class="offer-cell"><div class="l">Setup fee</div><div class="v">A$0</div></div>
+        <div class="offer-cell"><div class="l">Monthly retainer</div><div class="v">USD 1,500</div></div>
+        <div class="offer-cell"><div class="l">Minimum term</div><div class="v">12 months</div></div>
+        <div class="offer-cell"><div class="l">Year-1 total</div><div class="v">~A$28K</div></div>
+        <div class="offer-cell win"><div class="l">Year-1 ROI · conservative</div><div class="v">5×</div></div>
+      </div>
+    </div>
+
+    <div class="plan">
+      <div class="plan-card">
+        <div class="plan-month">Month 1</div>
+        <h4>Build the missing service pages</h4>
+        <ul>
+          <li><strong>15 new dedicated pages</strong> — facial near me bali, laser hair removal, aesthetic clinic near me, botox near me, skin care clinic, klinik kecantikan bali, lip fillers, tattoo removal, pico laser, hydrafacial near me, hydrafacial bali, beauty clinic bali, face massage bali, lymphatic drainage bali, prp bali (deepen existing)</li>
+          <li><strong>Site redesign</strong> on-brand — premium-clinic look, AU + expat conversion, fix the price-list page (currently ranking #81), virtual consult form, WhatsApp embed (+62 812 3628 0828)</li>
+          <li><strong>Point your 464 existing links</strong> at the new treatment pages by re-structuring how your site links between its own pages</li>
+          <li><strong>AI-readable page data</strong> across all pages — ready to be quoted by ChatGPT, Perplexity, Gemini from day one</li>
+        </ul>
+      </div>
+      <div class="plan-card">
+        <div class="plan-month">Month 2–3</div>
+        <h4>Capture the Australian + AI pools</h4>
+        <ul>
+          <li><strong>AU-targeted landing pages</strong> — Sydney/Melbourne/Perth flying-patient micro-pages with AUD pricing, transfer/recovery packages</li>
+          <li><strong>Treatment-stack combo pages</strong> — Profhilo + Botox + facial bundle; HIFU + skin booster; Fat Freeze + body contouring</li>
+          <li><strong>Get quoted by AI engines</strong> — direct-answer page openings, Q&amp;A pages, Dr. Edo credentials page, outcome tables</li>
+          <li><strong>Reviews surfaced everywhere</strong> — pull existing Google + Instagram ratings onto every treatment page where patients are deciding</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="objections">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">09 · Objections</span>
+      <h2 class="h-section">What Dr. Edo <span class="accent">might say</span></h2>
+    </div>
+
+    <div class="obj-list">
+
+      <div class="obj">
+        <div class="obj-q">"We already get plenty of patients."</div>
+        <div class="obj-a"><span class="obj-a-l">Your answer</span>From your <strong>brand search and walk-ins, yes</strong> — that's the floor. New-patient acquisition lives in generic search (<code>facial near me</code>, <code>botox bali</code>) — that's where Body Lab and Rejuvie are taking your share. <strong>Your branded base lets us go after the growth pool risk-free.</strong></div>
+      </div>
+
+      <div class="obj">
+        <div class="obj-q">"We don't need Australian patients."</div>
+        <div class="obj-a"><span class="obj-a-l">Your answer</span>Maybe today. But Australians searching <code>aesthetic clinic bali</code> from Sydney are already on flights — Body Lab gets 460/mo of them, Cocoon 935/mo. <strong>That's roughly A$15K/mo of high-value bookings going to your competitor 1.5 km away.</strong> You can choose to ignore it; we just want you to know it's there.</div>
+      </div>
+
+      <div class="obj">
+        <div class="obj-q">"We already spend on Meta and Google ads."</div>
+        <div class="obj-a"><span class="obj-a-l">Your answer</span>Paid ads are <strong>rent</strong>. The day you stop, your traffic drops to zero. SEO is an <strong>asset</strong> — every page we build earns for years. We're not replacing your paid spend, we're building the long-term machine underneath it. <strong>Both can run — but only one keeps growing.</strong></div>
+      </div>
+
+      <div class="obj">
+        <div class="obj-q">"What's the catch with a free website?"</div>
+        <div class="obj-a"><span class="obj-a-l">Your answer</span>12-month minimum. We earn back the build cost through the monthly fee. <strong>If you don't see new patients coming, you cancel and we lose money.</strong> Your strong website reputation (more sites link to you than to Body Lab) makes this our easiest case.</div>
+      </div>
+
+      <div class="obj">
+        <div class="obj-q">"How long until results?"</div>
+        <div class="obj-a"><span class="obj-a-l">Your answer</span><strong>The site rebuild improves conversion in week 1</strong> (current site: closed Sunday, price list buried, no AU phone). The 15 missing keywords start ranking in months 2–3 because you already have the link foundation. <strong>Most clinics need 6–9 months. You need 90 days.</strong></div>
+      </div>
+
+      <div class="obj">
+        <div class="obj-q">"What about AI search — is that already changing things?"</div>
+        <div class="obj-a"><span class="obj-a-l">Your answer</span><strong>Yes — and that's the unspoken opportunity.</strong> ChatGPT and Google AI Overviews cite Body Lab and Rejuvie on aesthetic queries because they have the structured data and content patterns. None of the Bali clinics optimise for this yet. We build it into your site from week 1 — and you become the cited source.</div>
+      </div>
+
+      <div class="obj">
+        <div class="obj-q">"What's your guarantee?"</div>
+        <div class="obj-a"><span class="obj-a-l">Your answer</span>If you're not in top 3 for at least <strong>6 of the 15 missing keywords</strong> by month 6, we work free until you are.</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">10 · Follow-up</span>
+      <h2 class="h-section">CRM <span class="accent">entry</span></h2>
+    </div>
+
+    <div class="crm">
+      <div class="crm-row"><span class="l">Full Name</span><span class="v">Dr. Edo (confirm owner on walk-in)</span></div>
+      <div class="crm-row"><span class="l">Title</span><span class="v">Lead Practitioner</span></div>
+      <div class="crm-row"><span class="l">Business Name</span><span class="v">Puriva Aesthetic Clinic</span></div>
+      <div class="crm-row"><span class="l">Vertical</span><span class="v">Aesthetic · regenerative medicine</span></div>
+      <div class="crm-row"><span class="l">Tier</span><span class="v">T1 · Sunset Road priority</span></div>
+      <div class="crm-row"><span class="l">Address</span><span class="v">Jl. Sunset Road 89, Kav. 3, Kuta</span></div>
+      <div class="crm-row"><span class="l">Phone</span><span class="v">+62 361 475 6009</span></div>
+      <div class="crm-row"><span class="l">WhatsApp</span><span class="v">+62 812 3628 0828</span></div>
+      <div class="crm-row"><span class="l">Email</span><span class="v">info@puriva.id</span></div>
+      <div class="crm-row"><span class="l">Instagram</span><span class="v">@purivaclinicbali</span></div>
+      <div class="crm-row"><span class="l">Website</span><span class="v">puriva.id</span></div>
+      <div class="crm-row"><span class="l">Source</span><span class="v">bali-walk-in-2026-05</span></div>
+      <div class="crm-row"><span class="l">Artifact</span><span class="v">puriva-walk-in-deck.html</span></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>Digital Movement · Puriva walk-in deck · 2026-05-19</span>
+    <span>Day 4 · Sunset Road · same street as <a href="csdental-walk-in-deck.html">CS Dental</a></span>
+  </div>
+</footer>
+
+</body>
+</html>

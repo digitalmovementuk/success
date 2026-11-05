@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Puriva × Digital Movement — A First Look</title>
+<meta name="description" content="A short, plain-language first look at what Puriva Aesthetic Clinic could gain from Google — by Digital Movement, a global digital marketing agency.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" type="image/webp" href="assets/icon.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200;0,6..12,300;0,6..12,400;0,6..12,600;0,6..12,700;0,6..12,800;1,6..12,300&display=swap" rel="stylesheet">
+<style>
+:root{
+  --gold:#a8977b;--gold-deep:#7f715c;--gold-soft:#c8b99c;--gold-pale:#ece4d6;
+  --ink:#1a1510;--ink-2:#3a332b;--muted:#7b7264;--cream:#faf7f1;--cream-2:#f3ede2;
+  --line:#e7ded0;--white:#fff;
+  --dm:#321f4f;--dm-2:#4a1e70;
+  --shadow-sm:0 4px 20px rgba(40,30,15,.06);--shadow-md:0 18px 50px rgba(40,30,15,.10);--shadow-lg:0 34px 80px rgba(40,30,15,.18);
+  --ease:cubic-bezier(.22,1,.36,1);--maxw:1280px;--space:clamp(84px,13vh,150px);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:"Nunito Sans",system-ui,-apple-system,sans-serif;color:var(--ink);background:var(--cream);
+  line-height:1.7;font-size:20px;font-weight:400;-webkit-font-smoothing:antialiased;overflow-x:hidden;text-align:center}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit;text-decoration:none}
+::selection{background:var(--gold);color:#fff}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 clamp(24px,6vw,56px)}
+section{padding-block:var(--space);position:relative}
+h1,h2,h3{font-weight:200;letter-spacing:-.03em;line-height:1.08;color:var(--ink)}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.3em;text-transform:uppercase;color:var(--gold-deep);
+  display:inline-flex;align-items:center;justify-content:center;gap:12px;margin-bottom:24px}
+.eyebrow::before,.eyebrow::after{content:"";width:28px;height:1px;background:var(--gold)}
+.display{font-size:clamp(40px,6.6vw,80px);font-weight:200;letter-spacing:-.035em;line-height:1.04}
+.display b{font-weight:700}
+.h2{font-size:clamp(31px,4.8vw,56px);font-weight:200;letter-spacing:-.03em;line-height:1.08}
+.h2 b{font-weight:700}
+.lead{font-size:clamp(19px,2.1vw,25px);font-weight:300;color:var(--ink-2);line-height:1.6;max-width:46ch;margin-inline:auto}
+.shead{max-width:54ch;margin:0 auto 46px}
+.shead .h2{margin-top:6px}
+
+#bar{position:fixed;top:0;left:0;height:3px;width:0;z-index:200;background:linear-gradient(90deg,var(--gold-deep),var(--gold),var(--gold-soft))}
+
+/* gentle "best on desktop" notice (mobile only) */
+.mload{position:fixed;inset:0;z-index:3000;display:none;align-items:center;justify-content:center;text-align:center;padding:36px;
+  background:rgba(18,12,7,.8);backdrop-filter:blur(5px);-webkit-backdrop-filter:blur(5px);
+  animation:mloadOut 2.4s var(--ease) forwards;will-change:opacity}
+.mload .msg{max-width:300px}
+.mload .msg .ic{width:46px;height:46px;margin:0 auto 18px;color:var(--gold-soft)}
+.mload .msg .ic svg{width:100%;height:100%;fill:none;stroke:currentColor;stroke-width:1.6}
+.mload .msg h4{font-weight:200;font-size:25px;letter-spacing:-.02em;color:#fff;margin-bottom:10px;line-height:1.15}
+.mload .msg p{font-size:14.5px;color:rgba(255,255,255,.82);line-height:1.55;font-weight:300}
+@keyframes mloadOut{0%{opacity:0}12%{opacity:1}52%{opacity:1}100%{opacity:0;visibility:hidden}}
+@media(max-width:760px){.mload{display:flex}}
+
+/* ====== FULL DM HEADER ====== */
+header{position:sticky;top:0;z-index:100}
+.util{background:var(--dm);color:#e9e2f2}
+.util .wrap{display:flex;align-items:center;justify-content:space-between;gap:18px;min-height:38px;flex-wrap:wrap;padding-block:7px}
+.util .tagline{font-size:12px;letter-spacing:.04em;color:#c9bfe0;display:inline-flex;align-items:center;gap:9px}
+.util .tagline .dot{width:6px;height:6px;border-radius:50%;background:#FFD24A;flex-shrink:0}
+.offices{display:flex;align-items:center;gap:6px;flex-wrap:wrap;justify-content:center}
+.offices .lbl{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#9a8db8;font-weight:700;margin-right:4px}
+.offices a{font-size:12px;color:#e9e2f2;display:inline-flex;align-items:center;gap:5px;padding:3px 9px;border-radius:50px;transition:background .3s,color .3s}
+.offices a:hover{background:rgba(255,255,255,.12)}
+.offices a b{font-weight:800;letter-spacing:.04em}
+.offices .sep{color:#6f6191}
+.langtoggle{display:inline-flex;align-items:center;gap:3px;background:rgba(255,255,255,.1);border-radius:50px;padding:3px}
+.langtoggle button{display:inline-flex;align-items:center;gap:6px;border:none;background:transparent;color:#cdc2e4;cursor:pointer;
+  font-family:inherit;font-size:11.5px;font-weight:800;letter-spacing:.06em;padding:5px 12px;border-radius:50px;transition:background .3s,color .3s}
+.langtoggle button .flag{width:18px;height:12px;border-radius:2px;overflow:hidden;display:block;box-shadow:0 0 0 1px rgba(255,255,255,.25)}
+.langtoggle button.on{background:#fff;color:var(--dm)}
+/* main bar */
+.mainbar{background:rgba(250,247,241,.9);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.mainbar .wrap{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;padding-block:16px}
+.cobrand{display:flex;align-items:center;gap:22px}
+.cobrand img.dm{height:34px;width:auto;display:block}
+.cobrand img.pl{height:38px;width:auto;display:block}
+.cobrand .x{color:var(--gold);font-size:20px;font-weight:200;line-height:1}
+.hlabel{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);font-weight:700}
+
+/* ====== GOOGLE REVIEWS CREDIBILITY BAR ====== */
+.revbar{background:#fff;border-bottom:1px solid var(--line)}
+.revbar .wrap{display:flex;align-items:center;gap:26px;min-height:54px;padding-block:9px}
+.gwidget{display:inline-flex;align-items:center;gap:11px;flex-shrink:0;white-space:nowrap}
+.gwidget .g-logo svg{width:24px;height:24px;display:block}
+.gwidget .stars{color:#FBBC05;letter-spacing:1px;font-size:16px;line-height:1}
+.gwidget .rate{font-weight:800;color:var(--ink);font-size:16px}
+.gwidget .cnt{font-size:13px;color:var(--muted);font-weight:700;border-left:1px solid var(--line);padding-left:11px}
+.gwidget .cnt b{color:var(--ink);font-weight:800}
+.revmarquee{flex:1;min-width:0;overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent);mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent)}
+.revtrack{display:flex;gap:36px;width:max-content;animation:revscroll 46s linear infinite}
+.revbar:hover .revtrack{animation-play-state:paused}
+.ri{display:inline-flex;align-items:center;gap:9px;font-size:14px;color:var(--ink-2);white-space:nowrap}
+.ri .s{color:#FBBC05;letter-spacing:.5px;font-size:12px;flex-shrink:0}
+.ri .q{font-weight:300}
+.ri .tag{font-size:10px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+@keyframes revscroll{to{transform:translateX(-50%)}}
+
+/* ====== FOUNDER SECTION (re-skinned CEx account-manager) ====== */
+.am-wrap{background:#fff;border:1px solid var(--line);border-radius:26px;padding:clamp(30px,4vw,52px);position:relative;overflow:hidden;
+  display:grid;grid-template-columns:1fr;gap:clamp(28px,4vw,50px);align-items:center;max-width:980px;margin:46px auto 0;text-align:left}
+@media(min-width:760px){.am-wrap{grid-template-columns:auto 1fr}}
+.am-wrap::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--gold),var(--gold-soft),transparent)}
+.am-photo-wrap{position:relative;width:clamp(180px,24vw,240px);aspect-ratio:4/5;margin:0 auto;flex-shrink:0}
+.am-photo-wrap::before{content:'';position:absolute;inset:-12px;border-radius:24px;background:linear-gradient(135deg,var(--gold),var(--gold-deep));opacity:.18;filter:blur(22px);z-index:0}
+.am-photo{position:relative;width:100%;height:100%;border-radius:22px;overflow:hidden;border:4px solid #fff;box-shadow:0 18px 50px -16px rgba(40,30,15,.35);z-index:1}
+.am-photo img{width:100%;height:100%;object-fit:cover;display:block}
+.am-body{flex:1}
+.am-eyebrow{font-size:11px;text-transform:uppercase;letter-spacing:.2em;color:var(--gold-deep);font-weight:800;margin-bottom:10px}
+.am-name{font-weight:700;font-size:clamp(28px,3.6vw,40px);letter-spacing:-.025em;line-height:1;color:var(--ink);margin-bottom:6px}
+.am-role{font-size:15px;font-weight:600;color:var(--muted);margin-bottom:22px}
+.am-channels{display:grid;grid-template-columns:1fr;gap:1px;background:var(--line);border-radius:14px;overflow:hidden;border:1px solid var(--line)}
+@media(min-width:560px){.am-channels{grid-template-columns:1.4fr 1fr}}
+.am-ch{background:#fff;padding:15px 18px;text-decoration:none;color:inherit;display:flex;flex-direction:column;gap:4px;transition:background .3s,transform .3s var(--ease)}
+.am-ch:hover{background:var(--cream);transform:translateY(-2px)}
+.am-ch-label{font-size:10px;text-transform:uppercase;letter-spacing:.16em;color:var(--muted);font-weight:700}
+.am-ch-val{font-weight:700;font-size:14px;color:var(--ink);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.am-note{margin:22px 0 24px;font-size:14.5px;line-height:1.6;color:var(--muted);max-width:520px}
+
+/* ====== CASE STUDIES SLIDER ====== */
+.cs-slider{position:relative;max-width:940px;margin:46px auto 0}
+.cs-viewport{overflow:hidden;border-radius:var(--r-lg);padding:2px}
+.cs-track{display:flex;transition:transform .6s var(--ease)}
+.cs-slide{flex:0 0 100%;padding:4px 6px;box-sizing:border-box}
+.cs-card{background:#fff;border:1px solid var(--line);border-radius:24px;padding:clamp(28px,4vw,46px);box-shadow:var(--shadow-md);text-align:left;position:relative;overflow:hidden}
+.cs-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--gold),var(--gold-soft),transparent)}
+.cs-cover{height:172px;margin:calc(-1*clamp(28px,4vw,46px)) calc(-1*clamp(28px,4vw,46px)) 26px;position:relative;overflow:hidden;background:var(--cream-2)}
+.cs-cover img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.cs-cover::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(18,12,7,.1),rgba(18,12,7,.48))}
+.cs-cover .cap{position:absolute;z-index:2;top:14px;left:16px;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:#fff;font-weight:800;background:rgba(18,12,7,.42);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);padding:5px 13px;border-radius:50px}
+.cs-industry{font-size:11px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-deep)}
+.cs-name{font-size:clamp(27px,3.2vw,38px);font-weight:200;letter-spacing:-.02em;margin:8px 0 0}
+.cs-name b{font-weight:700}
+.cs-p{font-size:17px;color:var(--muted);line-height:1.6;margin:14px 0 30px}
+.cs-charts{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+.cs-clabel{font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-2);margin-bottom:16px;display:flex;justify-content:space-between;align-items:baseline;gap:10px}
+.cs-grow{color:var(--gold-deep);font-size:13px;font-weight:800;white-space:nowrap}
+.cs-bar{display:flex;align-items:center;gap:10px;margin-bottom:11px}
+.cs-bl{font-size:10.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--muted);width:46px;flex-shrink:0;text-align:left}
+.cs-track2{flex:1;height:22px;border-radius:6px;background:var(--cream-2);overflow:hidden}
+.cs-fill{height:100%;border-radius:6px;transform-origin:left;transform:scaleX(0);transition:transform 1.1s var(--ease)}
+.cs-fill.before{background:#d8cdba}
+.cs-fill.after{background:linear-gradient(90deg,var(--gold),var(--gold-deep))}
+.cs-bv{font-size:14px;font-weight:800;color:var(--ink);width:34px;flex-shrink:0;text-align:right}
+.cs-nav{position:absolute;top:46%;transform:translateY(-50%);width:44px;height:44px;border-radius:50%;background:#fff;border:1px solid var(--line);box-shadow:var(--shadow-md);cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:3;color:var(--ink);transition:all .4s var(--ease)}
+.cs-nav:hover{background:var(--ink);color:#fff;border-color:var(--ink)}
+.cs-nav svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2}
+.cs-nav.prev{left:-20px}.cs-nav.next{right:-20px}
+.cs-dots{display:flex;gap:9px;justify-content:center;margin-top:24px}
+.cs-dot{width:9px;height:9px;border-radius:50%;background:var(--line);border:none;cursor:pointer;transition:all .4s var(--ease);padding:0}
+.cs-dot.active{background:var(--gold-deep);width:26px;border-radius:5px}
+@media(max-width:600px){.cs-nav.prev{left:-2px}.cs-nav.next{right:-2px}.cs-nav{width:38px;height:38px}}
+
+/* buttons */
+.btn{position:relative;display:inline-flex;align-items:center;gap:10px;font-weight:700;font-size:14px;letter-spacing:.04em;
+  padding:17px 32px;border-radius:50px;cursor:pointer;border:1.5px solid transparent;overflow:hidden;z-index:0;
+  transition:transform .5s var(--ease),box-shadow .5s var(--ease),color .4s,background .4s}
+.btn svg{width:17px;height:17px;transition:transform .5s var(--ease)}
+.btn-gold{background:var(--ink);color:#fff}
+.btn-gold::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(120deg,var(--gold),var(--gold-deep));transform:translateY(101%);transition:transform .5s var(--ease)}
+.btn-gold:hover{transform:translateY(-3px);box-shadow:var(--shadow-md)}.btn-gold:hover::before{transform:translateY(0)}.btn-gold:hover svg{transform:translateX(5px)}
+.btn-wa{background:#25D366;color:#fff}.btn-wa:hover{transform:translateY(-3px);box-shadow:0 14px 36px rgba(37,211,102,.34)}
+.btn-wa svg{width:19px;height:19px;fill:#fff}
+
+/* hero */
+.hero{padding-top:clamp(56px,8vh,96px);padding-bottom:clamp(56px,8vh,100px);overflow:hidden}
+.hero .blob{position:absolute;border-radius:50%;filter:blur(80px);opacity:.6;pointer-events:none;z-index:0}
+.hero .arcs{position:absolute;top:2%;left:50%;transform:translateX(-50%);width:280px;opacity:.22;pointer-events:none}
+.hero .arc{fill:none;stroke:var(--gold);stroke-width:1.4}
+.hero .wrap{position:relative;z-index:2}
+.hero h1{margin:6px auto 26px;max-width:17ch}
+.hero .sub{font-size:clamp(19px,2.2vw,25px);font-weight:300;color:var(--ink-2);max-width:44ch;margin-inline:auto;line-height:1.6}
+.hero .cue{margin-top:42px;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);display:inline-flex;align-items:center;gap:12px}
+.hero .cue::before{content:"";width:34px;height:1px;background:var(--gold)}
+
+/* compare */
+.compare{display:grid;gap:20px;max-width:900px;margin-inline:auto}
+.crow{background:#fff;border:1px solid var(--line);border-radius:20px;padding:26px 30px;box-shadow:var(--shadow-sm)}
+.crow .clabel{font-size:14px;font-weight:700;color:var(--muted);letter-spacing:.02em;margin-bottom:16px}
+.cbars{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.cbar .who{font-size:13px;font-weight:700;letter-spacing:.02em;margin-bottom:8px;display:flex;justify-content:space-between;align-items:baseline;gap:10px;text-align:left}
+.cbar .who .n{font-size:23px;font-weight:200;letter-spacing:-.02em}
+.cbar .track{height:10px;border-radius:6px;background:var(--cream-2);overflow:hidden}
+.cbar .fill{height:100%;border-radius:6px;transform-origin:left;transform:scaleX(0);transition:transform 1.2s var(--ease)}
+.cbar.them .fill{background:linear-gradient(90deg,#d3cdc3,#bfb8ad)}
+.cbar.you .fill{background:linear-gradient(90deg,var(--gold),var(--gold-deep))}
+.cbar.you .who .n{color:var(--gold-deep)}
+.compare .punch{font-size:clamp(20px,2.6vw,28px);font-weight:200;letter-spacing:-.02em;color:var(--ink);margin-top:8px}
+.compare .punch b{font-weight:700}
+
+/* why */
+.why{background:linear-gradient(180deg,var(--cream),var(--cream-2))}
+.why .big{font-size:clamp(26px,3.6vw,42px);font-weight:200;letter-spacing:-.03em;line-height:1.18;max-width:22ch;margin:0 auto}
+.why .big b{font-weight:700;color:var(--gold-deep)}
+.why .note{margin:28px auto 0;font-size:18px;color:var(--muted);max-width:48ch}
+
+/* worth */
+.nums{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;margin-bottom:34px}
+.num .v{font-size:clamp(44px,6vw,76px);font-weight:200;letter-spacing:-.04em;line-height:1;
+  background:linear-gradient(135deg,var(--gold-deep),var(--gold));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.num .k{font-size:15px;color:var(--muted);margin:16px auto 0;line-height:1.5;max-width:26ch}
+.worth .money{font-size:clamp(19px,2.2vw,24px);font-weight:300;color:var(--ink);max-width:44ch;margin:0 auto;border-top:2px solid var(--gold);padding-top:22px}
+
+/* moves */
+.moves{display:grid;gap:22px;max-width:900px;margin-inline:auto}
+.move{background:#fff;border:1px solid var(--line);border-radius:22px;padding:34px;box-shadow:var(--shadow-sm);
+  transition:transform .5s var(--ease),box-shadow .5s}
+.move:hover{transform:translateY(-4px);box-shadow:var(--shadow-md)}
+.move .no{font-size:30px;font-weight:200;color:var(--gold);line-height:1;margin-bottom:14px}
+.move h3{font-size:25px;font-weight:700;letter-spacing:-.01em;margin-bottom:10px}
+.move p{font-size:18px;color:var(--muted);line-height:1.6;max-width:54ch;margin-inline:auto}
+.move .inc{display:inline-block;margin-left:10px;font-size:11px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:#fff;background:var(--gold-deep);padding:3px 11px;border-radius:50px;vertical-align:middle}
+
+/* ====== 12-MONTH VALUE CURVE (re-skinned from DM project plan) ====== */
+.bv-wrap{background:var(--ink);color:#f1e9dd;border-radius:28px;padding:clamp(30px,5vw,56px);position:relative;overflow:hidden;max-width:1080px;margin:0 auto;text-align:center}
+.bv-wrap::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 520px 320px at 16% 18%,rgba(200,185,156,.18) 0%,transparent 64%),radial-gradient(ellipse 600px 400px at 88% 84%,rgba(168,151,123,.22) 0%,transparent 64%);pointer-events:none}
+.bv-wrap>*{position:relative;z-index:2}
+.bv-eyebrow{font-size:11px;text-transform:uppercase;letter-spacing:.22em;color:var(--gold-soft);font-weight:800;margin-bottom:14px}
+.bv-title{font-weight:200;font-size:clamp(27px,3.6vw,44px);letter-spacing:-.03em;line-height:1.1;color:#fff;margin:0 auto 14px;max-width:20ch}
+.bv-title b{font-weight:700}
+.bv-deck{font-size:17px;line-height:1.6;color:rgba(255,255,255,.84);max-width:60ch;margin:0 auto 30px}
+.bv-chart{margin:18px 0 28px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:18px;padding:24px 18px 12px;overflow:hidden}
+.bv-chart svg{width:100%;height:auto;display:block}
+.bv-curve{fill:none;stroke:url(#bv-grad);stroke-width:3.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1400;stroke-dashoffset:1400;transition:stroke-dashoffset 2.6s var(--ease)}
+.bv-chart.in .bv-curve{stroke-dashoffset:0}
+.bv-fill{fill:url(#bv-fill-grad);opacity:0;transition:opacity 1.2s var(--ease) 1.4s}
+.bv-chart.in .bv-fill{opacity:.5}
+.bv-dot{fill:#f1d9a8;opacity:0;transition:opacity .4s var(--ease)}
+.bv-chart.in .bv-dot{opacity:1}
+.bv-chart.in .bv-dot.d1{transition-delay:.5s}.bv-chart.in .bv-dot.d2{transition-delay:1s}.bv-chart.in .bv-dot.d3{transition-delay:1.5s}.bv-chart.in .bv-dot.d4{transition-delay:2s}
+.bv-phase-line{stroke:rgba(255,255,255,.16);stroke-width:1;stroke-dasharray:2 4}
+.bv-axis{font-family:inherit;font-size:10px;fill:rgba(255,255,255,.55);letter-spacing:.08em;text-transform:uppercase;font-weight:700}
+.bv-axis.bv-date{font-size:9px;fill:var(--gold-soft);opacity:.8}
+.bv-phase-label{font-family:inherit;font-size:11px;font-weight:800;letter-spacing:.14em;fill:rgba(255,255,255,.72);text-transform:uppercase}
+.bv-phases{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:8px}
+@media(min-width:860px){.bv-phases{grid-template-columns:repeat(4,1fr)}}
+.bv-phase{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:14px;padding:22px;transition:transform .4s var(--ease),background .4s var(--ease)}
+.bv-phase:hover{transform:translateY(-3px);background:rgba(255,255,255,.1)}
+.bv-phase-num{font-size:10px;font-weight:800;letter-spacing:.2em;color:var(--gold-soft);text-transform:uppercase;margin-bottom:8px}
+.bv-phase-h{font-weight:700;font-size:17px;letter-spacing:-.01em;line-height:1.15;margin-bottom:6px;color:#fff}
+.bv-phase-range{font-size:12px;color:rgba(255,255,255,.65);margin-bottom:10px;letter-spacing:.04em;font-weight:600}
+.bv-phase-d{font-size:13.5px;line-height:1.55;color:rgba(255,255,255,.82)}
+.bv-foot{margin-top:24px;padding-top:18px;border-top:1px solid rgba(255,255,255,.1);font-size:13px;line-height:1.6;color:rgba(255,255,255,.66);letter-spacing:.02em;max-width:64ch;margin-inline:auto}
+.bv-foot strong{color:var(--gold-soft);font-weight:700}
+
+/* proof */
+.proof{background:var(--ink);color:#ece4d6;overflow:hidden}
+.proof .eyebrow{color:var(--gold-soft)}.proof .eyebrow::before,.proof .eyebrow::after{background:var(--gold-soft)}
+.proof h2{color:#fff;max-width:20ch;margin-inline:auto}
+.proof .lead{color:#cabfa9;max-width:50ch;margin:18px auto 0}
+.browser{margin:46px auto 0;max-width:1040px;border-radius:16px;overflow:hidden;box-shadow:var(--shadow-lg);border:1px solid rgba(255,255,255,.1);background:#241d16}
+.browser .bbar{display:flex;align-items:center;gap:8px;padding:13px 16px;background:#2c241b}
+.browser .dot{width:11px;height:11px;border-radius:50%;background:#574a3a}
+.browser .url{margin:0 auto;font-size:12.5px;color:#b7ac96;background:#1f1812;border-radius:50px;padding:6px 18px;max-width:60%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.browser img{width:100%;display:block}
+.proof-cta{margin-top:34px;display:flex;gap:16px;flex-wrap:wrap;align-items:center;justify-content:center}
+.cred{margin-top:50px;padding-top:30px;border-top:1px solid rgba(255,255,255,.12);display:flex;flex-wrap:wrap;gap:14px 30px;justify-content:center}
+.cred span{font-size:14.5px;color:#b7ac96;display:inline-flex;align-items:center;gap:10px}
+.cred span::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--gold)}
+
+/* offer */
+.offer .card{background:#fff;border:1px solid var(--line);border-radius:26px;box-shadow:var(--shadow-md);overflow:hidden;max-width:780px;margin:0 auto}
+.offer .otop{padding:clamp(26px,4vw,42px);display:grid;gap:2px}
+.orow{display:flex;justify-content:space-between;align-items:center;gap:20px;padding:17px 0;border-bottom:1px solid var(--line);text-align:left}
+.orow:last-child{border-bottom:none}
+.orow .ol{font-size:16.5px;color:var(--ink-2)}
+.orow .ov{font-size:14px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:var(--gold-deep);white-space:nowrap}
+.guarantee{background:linear-gradient(160deg,var(--cream),var(--cream-2));padding:clamp(26px,3.5vw,40px);border-top:1px solid var(--line)}
+.guarantee .gt{font-size:12px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-deep);margin-bottom:12px}
+.guarantee p{font-size:clamp(18px,2.2vw,23px);font-weight:300;color:var(--ink);line-height:1.45;max-width:46ch;margin-inline:auto}
+.guarantee p b{font-weight:700}
+.offer .risk{margin:30px auto 0;font-size:18px;color:var(--muted);max-width:46ch}
+
+/* next */
+.next .h2{margin:8px auto 18px;max-width:20ch}
+.next .who{margin-top:40px;display:inline-flex;flex-direction:column;align-items:center;gap:3px}
+.next .who .nm{font-size:19px;font-weight:700}
+.next .who .rl{font-size:13px;color:var(--muted);letter-spacing:.04em;margin-bottom:14px}
+.next .contact{display:flex;flex-direction:column;gap:8px;align-items:center;margin:6px 0 30px;font-size:16px}
+.next .contact a{color:var(--ink-2);transition:color .3s}.next .contact a:hover{color:var(--gold-deep)}
+
+/* footer */
+footer{padding:40px 0;border-top:1px solid var(--line);background:var(--cream-2)}
+footer .wrap{display:flex;justify-content:center;align-items:center;gap:14px;flex-wrap:wrap;text-align:center}
+footer .cobrand img.dm{height:18px}footer .cobrand img.pl{height:22px}
+footer .meta{font-size:13px;color:var(--muted);width:100%}
+
+/* reveal */
+.reveal{opacity:0;transform:translateY(34px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
+.reveal.in{opacity:1;transform:none}
+.d1{transition-delay:.08s}.d2{transition-delay:.16s}.d3{transition-delay:.24s}.d4{transition-delay:.32s}
+
+@media(max-width:760px){
+  body{font-size:17px}
+  /* iPhone top strip: centered, max two lines (tagline / codes + toggle) */
+  .util .wrap{justify-content:center;gap:6px 14px;padding-block:8px}
+  .util .tagline{flex-basis:100%;justify-content:center;font-size:11.5px}
+  .offices .lbl{display:none}
+  .offices .dom{display:none}
+  .offices a{padding:3px 8px}
+  .offices{gap:4px}
+  .cobrand img.pl{height:34px}.cobrand img.dm{height:30px}
+  .nums{grid-template-columns:1fr;gap:32px}
+  .cbars{grid-template-columns:1fr;gap:14px}
+  .bv-phases{grid-template-columns:1fr;gap:14px}
+  .orow{flex-direction:column;align-items:center;text-align:center;gap:5px}
+  .browser .url{max-width:80%}
+  .revbar .wrap{flex-direction:column;gap:9px;padding-block:11px}
+  .gwidget{justify-content:center}
+  .revmarquee{width:100%}
+  .am-wrap{text-align:center}
+  .am-photo-wrap{margin-inline:auto}
+  .am-channels{grid-template-columns:1fr}
+  .am-note{margin-inline:auto}
+  .cs-charts{grid-template-columns:1fr}
+}
+@media(max-width:440px){
+  .offices .lbl{display:none}
+  .offices a{padding:3px 6px}
+}
+@media(prefers-reduced-motion:reduce){
+  *{animation:none!important;transition-duration:.001ms!important;scroll-behavior:auto!important}
+  .reveal{opacity:1;transform:none}.cbar .fill{transform:scaleX(1)!important}.bv-curve{stroke-dashoffset:0!important}.bv-fill,.bv-dot{opacity:1!important}
+}
+</style>
+</head>
+<body data-lang="en">
+<div id="bar"></div>
+<div class="mload" aria-hidden="true">
+  <div class="msg">
+    <span class="ic"><svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg></span>
+    <h4 data-id="Paling baik dilihat di desktop">Best viewed on desktop</h4>
+    <p data-id="Presentasi singkat ini paling nyaman dinikmati di layar desktop.">This short presentation is best experienced on a desktop screen.</p>
+  </div>
+</div>
+
+<!-- ====== FULL DM-BRANDED HEADER ====== -->
+<header>
+  <div class="util">
+    <div class="wrap">
+      <span class="tagline" data-id="Agensi pemasaran digital global"><span class="dot"></span>Global digital marketing agency</span>
+      <nav class="offices" aria-label="Our offices">
+        <span class="lbl" data-id="Kantor">Offices</span>
+        <a href="https://digitalmovement.uk" target="_blank" rel="noopener"><b>UK</b> <span class="dom">digitalmovement.uk</span></a>
+        <span class="sep">·</span>
+        <a href="https://www.digitalmovement.com.au" target="_blank" rel="noopener"><b>AU</b> <span class="dom">digitalmovement.com.au</span></a>
+        <span class="sep">·</span>
+        <a href="https://digitalmovement.co.nz" target="_blank" rel="noopener"><b>NZ</b> <span class="dom">digitalmovement.co.nz</span></a>
+      </nav>
+      <div class="langtoggle" role="group" aria-label="Language">
+        <button data-l="id" aria-label="Bahasa Indonesia">
+          <span class="flag" aria-hidden="true"><svg viewBox="0 0 3 2" width="18" height="12"><rect width="3" height="1" fill="#ce1126"/><rect y="1" width="3" height="1" fill="#fff"/></svg></span>ID
+        </button>
+        <button data-l="en" class="on" aria-label="English">
+          <span class="flag" aria-hidden="true"><svg viewBox="0 0 60 30" width="18" height="12"><clipPath id="ukf"><rect width="60" height="30"/></clipPath><g clip-path="url(#ukf)"><rect width="60" height="30" fill="#012169"/><path d="M0,0 60,30M60,0 0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 60,30M60,0 0,30" stroke="#C8102E" stroke-width="4"/><path d="M30,0 V30M0,15 H60" stroke="#fff" stroke-width="10"/><path d="M30,0 V30M0,15 H60" stroke="#C8102E" stroke-width="6"/></g></svg></span>EN
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="mainbar">
+    <div class="wrap">
+      <div class="cobrand">
+        <img class="dm" src="assets/dm-logo.svg" alt="Digital Movement">
+        <span class="x">×</span>
+        <img class="pl" src="assets/logo.webp" alt="Puriva">
+      </div>
+      <div class="hlabel" data-id="Proposal SEO · disiapkan untuk Dr. Edo Suweta">SEO Proposal · prepared for Dr. Edo Suweta</div>
+    </div>
+  </div>
+</header>
+
+<!-- ====== GOOGLE REVIEWS BAR (real DM AU rating) ====== -->
+<div class="revbar">
+  <div class="wrap">
+    <a class="gwidget" href="https://www.google.com/search?q=Digital+Movement+Melbourne+reviews" target="_blank" rel="noopener" aria-label="Digital Movement — rated 5.0 from 103 Google reviews">
+      <span class="g-logo"><svg viewBox="0 0 48 48" aria-hidden="true"><path fill="#FFC107" d="M43.6 20.5h-1.9V20H24v8h11.3c-1.6 4.7-6.1 8-11.3 8-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.9 1.2 8 3.1l5.7-5.7C34 4.1 29.3 2 24 2 12.9 2 4 10.9 4 22s8.9 20 20 20 20-8.9 20-20c0-1.3-.1-2.3-.4-3.5z"/><path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.9 1.2 8 3.1l5.7-5.7C34 4.1 29.3 2 24 2 16.3 2 9.7 6.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2c-2 1.5-4.5 2.4-7.2 2.4-5.2 0-9.6-3.3-11.3-7.9l-6.5 5C9.6 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.5H24v8h11.3c-.8 2.2-2.2 4.2-4.1 5.6l6.2 5.2C41.3 36.2 44 30.6 44 24c0-1.3-.1-2.3-.4-3.5z"/></svg></span>
+      <span class="stars" aria-hidden="true">★★★★★</span>
+      <span class="rate">5.0</span>
+      <span class="cnt"><b>103</b>&nbsp;<span data-id="ulasan Google">Google reviews</span></span>
+    </a>
+    <div class="revmarquee" aria-hidden="true">
+      <div class="revtrack">
+        <span class="ri"><span class="s">★★★★★</span><span class="q" data-id="&quot;Hasil nyata, pertumbuhan nyata.&quot;">"Real results, real growth."</span><span class="tag">Google</span></span>
+        <span class="ri"><span class="s">★★★★★</span><span class="q" data-id="&quot;Saran jelas, tanpa jargon.&quot;">"Plain-English advice, no jargon."</span><span class="tag">Google</span></span>
+        <span class="ri"><span class="s">★★★★★</span><span class="q" data-id="&quot;Benar-benar membawa kami ke halaman 1 Google.&quot;">"They actually got us to page 1 of Google."</span><span class="tag">Google</span></span>
+        <span class="ri"><span class="s">★★★★★</span><span class="q" data-id="&quot;Profesional, responsif, dan hasilnya nyata.&quot;">"Professional, responsive — and they deliver."</span><span class="tag">Google</span></span>
+        <span class="ri"><span class="s">★★★★★</span><span class="q" data-id="&quot;Partner pemasaran terbaik yang pernah kami punya.&quot;">"Best-value marketing partner we've had."</span><span class="tag">Google</span></span>
+        <span class="ri"><span class="s">★★★★★</span><span class="q" data-id="&quot;Hasil yang dijanjikan — dan ditepati.&quot;">"Guaranteed results — and they mean it."</span><span class="tag">Google</span></span>
+        <span class="ri"><span class="s">★★★★★</span><span class="q" data-id="&quot;Hasil nyata, pertumbuhan nyata.&quot;">"Real results, real growth."</span><span class="tag">Google</span></span>
+        <span class="ri"><span class="s">★★★★★</span><span class="q" data-id="&quot;Saran jelas, tanpa jargon.&quot;">"Plain-English advice, no jargon."</span><span class="tag">Google</span></span>
+        <span class="ri"><span class="s">★★★★★</span><span class="q" data-id="&quot;Benar-benar membawa kami ke halaman 1 Google.&quot;">"They actually got us to page 1 of Google."</span><span class="tag">Google</span></span>
+        <span class="ri"><span class="s">★★★★★</span><span class="q" data-id="&quot;Profesional, responsif, dan hasilnya nyata.&quot;">"Professional, responsive — and they deliver."</span><span class="tag">Google</span></span>
+        <span class="ri"><span class="s">★★★★★</span><span class="q" data-id="&quot;Partner pemasaran terbaik yang pernah kami punya.&quot;">"Best-value marketing partner we've had."</span><span class="tag">Google</span></span>
+        <span class="ri"><span class="s">★★★★★</span><span class="q" data-id="&quot;Hasil yang dijanjikan — dan ditepati.&quot;">"Guaranteed results — and they mean it."</span><span class="tag">Google</span></span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="blob" style="width:480px;height:480px;background:var(--gold-pale);top:-150px;left:-120px"></div>
+  <svg class="arcs" viewBox="0 0 200 110"><path class="arc" d="M2 108 A98 98 0 0 1 198 108"/><path class="arc" d="M32 108 A68 68 0 0 1 168 108"/><path class="arc" d="M62 108 A38 38 0 0 1 138 108"/></svg>
+  <div class="wrap">
+    <span class="eyebrow reveal" data-id="Pandangan pertama · untuk Puriva">A first look · for Puriva</span>
+    <h1 class="display reveal d1" data-id="Klinik Anda salah satu yang terbaik di Bali. Google justru mengarahkan pasien itu ke &lt;b&gt;tempat lain&lt;/b&gt;.">Your clinic is one of Bali's best.<br>Google is sending those patients <b>somewhere else</b>.</h1>
+    <p class="sub reveal d2" data-id="Tinjauan singkat dan jujur tentang apa yang mungkin dicapai — dengan bahasa sederhana. Tanpa jargon, tanpa kewajiban.">A short, honest look at what's possible — in plain language. No jargon, no obligation.</p>
+    <div class="cue reveal d3" data-id="Butuh 3 menit">Take 3 minutes</div>
+  </div>
+</section>
+
+<!-- 1 · SITUATION -->
+<section>
+  <div class="wrap">
+    <div class="shead reveal">
+      <span class="eyebrow" data-id="Apa yang sedang terjadi">What's happening</span>
+      <h2 class="h2" data-id="Saat pasien mencari, klinik di dekat Anda yang muncul — &lt;b&gt;bukan Anda&lt;/b&gt;.">When patients search, a clinic up the road shows up — <b>not you</b>.</h2>
+    </div>
+    <div class="compare">
+      <div class="crow reveal">
+        <div class="clabel" data-id="Pasien baru yang ditemukan lewat Google tiap bulan">New patients found through Google each month</div>
+        <div class="cbars">
+          <div class="cbar you"><div class="who"><span data-id="Puriva — Anda">Puriva — you</span><span class="n">~210</span></div><div class="track"><div class="fill" data-w="6"></div></div></div>
+          <div class="cbar them"><div class="who"><span data-id="Body Lab (1,5 km dari Anda)">Body Lab (1.5&nbsp;km away)</span><span class="n">~4,000</span></div><div class="track"><div class="fill" data-w="100"></div></div></div>
+        </div>
+      </div>
+      <div class="crow reveal d1">
+        <div class="clabel" data-id="Website lain yang merekomendasikan Anda (cara Google menilai kepercayaan)">Other websites recommending you (how Google measures trust)</div>
+        <div class="cbars">
+          <div class="cbar you"><div class="who"><span data-id="Puriva — Anda">Puriva — you</span><span class="n">464</span></div><div class="track"><div class="fill" data-w="100"></div></div></div>
+          <div class="cbar them"><div class="who"><span>Body Lab</span><span class="n">379</span></div><div class="track"><div class="fill" data-w="82"></div></div></div>
+        </div>
+      </div>
+      <p class="punch reveal d2" data-id="Anda &lt;b&gt;lebih dipercaya&lt;/b&gt; daripada mereka. Anda hanya &lt;b&gt;belum muncul&lt;/b&gt;.">You're <b>more trusted</b> than they are. You're just <b>not showing up</b>.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 2 · WHY -->
+<section class="why">
+  <div class="wrap">
+    <span class="eyebrow reveal" data-id="Kenapa ini terjadi">Why this happens</span>
+    <p class="why big reveal d1" data-id="Google sudah mempercayai website Anda. Tapi halaman yang dituju pasien itu — &lt;b&gt;&quot;botox di Bali&quot;, &quot;facial terdekat&quot;, &quot;fat freeze&quot;&lt;/b&gt; — belum ada di situs Anda.">Google already trusts your website. But the pages those patients land on — <b>"botox in Bali," "facial near me," "fat freeze"</b> — don't exist on your site yet.</p>
+    <p class="why note reveal d2" data-id="Bahan bakarnya sudah ada. Mesinnya saja yang belum dibangun. Untuk klinik di posisi Anda, ini perbaikan 90 hari — bukan dua tahun.">The fuel is there. The engine just hasn't been built. For a clinic in your position, that's a 90-day fix — not a two-year one.</p>
+  </div>
+</section>
+
+<!-- 3 · WORTH -->
+<section class="worth">
+  <div class="wrap">
+    <div class="shead reveal">
+      <span class="eyebrow" data-id="Nilainya">What it's worth</span>
+      <h2 class="h2" data-id="Pasien sudah mencari. &lt;b&gt;105 di antaranya tiap bulan&lt;/b&gt; bisa memilih Anda.">The patients are already searching. <b>105 of them a month</b> could be choosing you.</h2>
+    </div>
+    <div class="nums">
+      <div class="num reveal"><div class="v" data-count="23700">23,700</div><div class="k" data-id="pencarian pasien per bulan yang bisa Anda munculi">patient searches a month you could appear for</div></div>
+      <div class="num reveal d1"><div class="v" data-count="105">105</div><div class="k" data-id="enquiry pasien baru per bulan — saat ini sekitar 2">new patient enquiries a month — you get about 2 today</div></div>
+      <div class="num reveal d2"><div class="v" data-count="90">90</div><div class="k" data-id="hari untuk mulai terlihat hasilnya">days to start showing results</div></div>
+    </div>
+    <p class="money reveal d2" data-id="Itu beda antara segelintir walk-in dan aliran pasien baru yang stabil dan terus tumbuh — setiap bulan.">That's the difference between a handful of walk-ins and a steady, growing stream of new patients — every month.</p>
+    <p class="reveal d3" style="font-size:12.5px;color:var(--muted);font-style:italic;margin:16px auto 0;max-width:54ch" data-id="* Angka-angka di atas adalah perkiraan, berdasarkan permintaan pencarian saat ini dan tingkat konversi yang umum. Angka pastinya dikalibrasi dengan riset SEO.">* These figures are estimates, based on current search demand and typical conversion rates. Exact numbers are calibrated against the SEO research.</p>
+  </div>
+</section>
+
+<!-- 4 · MOVES -->
+<section>
+  <div class="wrap">
+    <div class="shead reveal">
+      <span class="eyebrow" data-id="Yang akan kami lakukan">What we'd do</span>
+      <h2 class="h2" data-id="Tiga langkah menuju &lt;b&gt;pertumbuhan bisnis Anda&lt;/b&gt;.">Three steps to your <b>business growth</b>.</h2>
+    </div>
+    <div class="moves">
+      <div class="move reveal">
+        <div class="no">1</div>
+        <h3 data-id="Website yang dibangun untuk konversi&lt;span class=&quot;inc&quot;&gt;Termasuk&lt;/span&gt;">A conversion-built website<span class="inc" data-id="Termasuk">Included</span></h3>
+        <p data-id="Kami desain dan bangun untuk Anda, lalu kami optimalkan habis-habisan untuk konversi — agar pengunjung bukan sekadar melihat-lihat, tapi benar-benar menghubungi Anda. Sepenuhnya milik Anda.">We design and build it for you — then obsessively optimise it for conversion, so visitors don't just browse, they enquire. Yours to keep.</p>
+      </div>
+      <div class="move reveal d1">
+        <div class="no">2</div>
+        <h3 data-id="Cakupan lebih luas dari agensi mana pun">More coverage than any other agency</h3>
+        <p data-id="Kami buat halaman khusus untuk SETIAP treatment — dikalikan dengan lokasi-lokasi terpenting, sehingga tiap lokasi punya halaman treatment-nya sendiri. Inilah cara memaksimalkan eksposur online Anda dan membuat klinik ditemukan di mana pun pasien mencari.">A dedicated page for every treatment — multiplied across the locations that matter most, so each location gets its own treatment page. That's how we maximise your online exposure and get the clinic found everywhere patients are searching.</p>
+      </div>
+      <div class="move reveal d2">
+        <div class="no">3</div>
+        <h3 data-id="Muncul di pencarian AI">Show up in AI search</h3>
+        <p data-id="Saat pasien bertanya ke ChatGPT atau AI Google &quot;klinik kecantikan terbaik di Bali&quot;, kami ingin nama Anda yang disebut.">When a patient asks ChatGPT or Google's AI "the best aesthetic clinic in Bali," we want your name to be the one it gives.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 5 · 12-MONTH VALUE CURVE -->
+<section>
+  <div class="wrap">
+    <div class="bv-wrap reveal">
+      <div class="bv-eyebrow" data-id="12 bulan ke depan · dari peluncuran ke performa puncak">Your next 12 months · go-live to top performance</div>
+      <h3 class="bv-title" data-id="Dari fondasi ke &lt;b&gt;puncak Google&lt;/b&gt; — bagaimana tahun pertama berjalan.">From foundation to the <b>top of Google</b> — how the first year unfolds.</h3>
+      <p class="bv-deck" data-id="Kurva ini menunjukkan bagaimana visibilitas Anda terbangun. Bulan-bulan awal membangun aset; bulan-bulan berikutnya melipatgandakannya.">The curve shows how your visibility builds over time. The early months build the asset; the later months compound it.</p>
+      <div class="bv-chart">
+        <svg viewBox="0 0 1100 320" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+          <defs>
+            <linearGradient id="bv-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#d8c8a8"/><stop offset="45%" stop-color="#a8977b"/><stop offset="100%" stop-color="#7f715c"/>
+            </linearGradient>
+            <linearGradient id="bv-fill-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" stop-color="#c8b99c" stop-opacity="0.45"/><stop offset="100%" stop-color="#a8977b" stop-opacity="0"/>
+            </linearGradient>
+          </defs>
+          <line class="bv-phase-line" x1="275" y1="30" x2="275" y2="280"/>
+          <line class="bv-phase-line" x1="550" y1="30" x2="550" y2="280"/>
+          <line class="bv-phase-line" x1="825" y1="30" x2="825" y2="280"/>
+          <text class="bv-phase-label" x="137" y="50" text-anchor="middle" data-id="Fondasi">Foundation</text>
+          <text class="bv-phase-label" x="412" y="50" text-anchor="middle" data-id="Pertumbuhan">Growth</text>
+          <text class="bv-phase-label" x="687" y="50" text-anchor="middle" data-id="Performa">Performance</text>
+          <text class="bv-phase-label" x="965" y="50" text-anchor="middle" data-id="Performa Puncak">Top Performance</text>
+          <line x1="60" y1="270" x2="1060" y2="270" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+          <path class="bv-fill" d="M 60 270 L 60 265 C 130 262, 200 258, 275 250 C 350 235, 425 210, 550 175 C 650 145, 730 115, 825 88 C 920 70, 990 62, 1060 60 L 1060 270 Z"/>
+          <path class="bv-curve" d="M 60 265 C 130 262, 200 258, 275 250 C 350 235, 425 210, 550 175 C 650 145, 730 115, 825 88 C 920 70, 990 62, 1060 60"/>
+          <circle class="bv-dot d1" cx="275" cy="250" r="7"/>
+          <circle class="bv-dot d2" cx="550" cy="175" r="8"/>
+          <circle class="bv-dot d3" cx="825" cy="88" r="9"/>
+          <circle class="bv-dot d4" cx="1040" cy="62" r="11" fill="#e9d6ad"/>
+          <text class="bv-axis" x="60" y="298" text-anchor="middle">Month 0</text>
+          <text class="bv-axis" x="275" y="298" text-anchor="middle">Month 3</text>
+          <text class="bv-axis" x="550" y="298" text-anchor="middle">Month 6</text>
+          <text class="bv-axis" x="825" y="298" text-anchor="middle">Month 9</text>
+          <text class="bv-axis" x="1060" y="298" text-anchor="middle">Month 12</text>
+          <text class="bv-axis bv-date" x="60" y="60" text-anchor="middle" transform="rotate(-90 60 150)" data-id="Pasien baru">New patients</text>
+        </svg>
+      </div>
+      <div class="bv-phases">
+        <div class="bv-phase reveal"><div class="bv-phase-num">Phase 01</div><div class="bv-phase-h" data-id="Fondasi">Foundation</div><div class="bv-phase-range" data-id="Bulan 1 — 3">Months 1 — 3</div><div class="bv-phase-d" data-id="Google mulai mempercayai situs baru Anda. Halaman-halaman dibangun dan diindeks. Asetnya sedang dibentuk.">Google starts trusting your new site. Pages are built and indexed. The asset is being built.</div></div>
+        <div class="bv-phase reveal d1"><div class="bv-phase-num">Phase 02</div><div class="bv-phase-h" data-id="Pertumbuhan">Growth</div><div class="bv-phase-range" data-id="Bulan 3 — 6">Months 3 — 6</div><div class="bv-phase-d" data-id="Ranking pertama muncul. Enquiry pertama menyusul — biasanya bulan ke-5–6. Kurva mulai menanjak.">First rankings appear. First enquiries follow — typically months 5–6. The curve starts bending upward.</div></div>
+        <div class="bv-phase reveal d2"><div class="bv-phase-num">Phase 03</div><div class="bv-phase-h" data-id="Performa">Performance</div><div class="bv-phase-range" data-id="Bulan 6 — 12">Months 6 — 12</div><div class="bv-phase-d" data-id="Halaman naik ke atas. Volume enquiry tumbuh tiap bulan saat makin banyak kata kunci masuk halaman 1.">Pages climb the rankings. Enquiry volume grows month over month as more terms break into page 1.</div></div>
+        <div class="bv-phase reveal d3"><div class="bv-phase-num">Phase 04</div><div class="bv-phase-h" data-id="Performa Puncak">Top Performance</div><div class="bv-phase-range" data-id="Bulan 12 +">Months 12 +</div><div class="bv-phase-d" data-id="Makin banyak halaman duduk di top 10. Efek majemuk: tiap halaman baru mendarat di domain yang sudah dipercaya Google.">More pages sit in the top 10. Compounding kicks in — each new page lands on a domain Google already trusts.</div></div>
+      </div>
+      <div class="bv-foot" data-id="&lt;strong&gt;Catatan ·&lt;/strong&gt; Karena situs baru, tiap jendela ranking biasanya 2–3 bulan lebih lama dari situs lama. Kurva di atas sudah memperhitungkannya — dan backlink Anda yang sudah kuat justru mempercepatnya."><strong>Note ·</strong> A fresh website usually adds 2–3 months to each ranking window versus an established site. The curve above already accounts for this — and your already-strong backlinks speed it up.</div>
+    </div>
+  </div>
+</section>
+
+<!-- 6 · PROOF -->
+<section class="proof">
+  <div class="wrap">
+    <span class="eyebrow reveal" data-id="Lihat sendiri">See it for yourself</span>
+    <h2 class="h2 reveal d1" data-id="Kami tak hanya menulis ini. &lt;b&gt;Kami sudah membangun ulang homepage Anda.&lt;/b&gt;">We didn't just write this. <b>We already rebuilt your homepage.</b></h2>
+    <p class="lead reveal d1" data-id="Sudah live sekarang — klinik Anda yang asli, dokter Anda, ulasan Anda, treatment Anda. Silakan lihat.">It's live right now — your real clinic, your doctors, your reviews, your treatments. Have a look.</p>
+    <div class="browser reveal d2">
+      <div class="bbar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="url">digitalmovementuk.github.io/puriva/homepage/v1</span></div>
+      <a href="https://digitalmovementuk.github.io/puriva/homepage/v1/" target="_blank" rel="noopener" aria-label="Open the live homepage preview">
+        <img src="assets/proof-homepage.jpg" width="1440" height="900" alt="Preview of Puriva's rebuilt homepage, built by Digital Movement" loading="lazy">
+      </a>
+    </div>
+    <div class="proof-cta reveal d2">
+      <a href="https://digitalmovementuk.github.io/puriva/homepage/v1/" target="_blank" rel="noopener" class="btn btn-gold" data-id="Buka website baru Anda">Open your new website
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+    <div class="cred reveal d3">
+      <span data-id="7 tahun beroperasi">7 years in business</span>
+      <span data-id="300+ klien">300+ clients</span>
+      <span data-id="Retensi klien nyaris sempurna">Near-perfect client retention</span>
+      <span data-id="Website selalu termasuk">Websites always included</span>
+      <span data-id="Tampil di pencarian AI sejak 2025">Ranking in AI search since 2025</span>
+    </div>
+  </div>
+</section>
+
+<!-- 6b · CASE STUDIES -->
+<section class="cases">
+  <div class="wrap">
+    <div class="shead reveal">
+      <span class="eyebrow" data-id="Hasil yang terbukti">Proven results</span>
+      <h2 class="h2" data-id="Yang sudah kami lakukan untuk klinik &lt;b&gt;seperti Anda&lt;/b&gt;.">What we've done for clinics <b>like yours</b>.</h2>
+    </div>
+    <div class="cs-slider reveal d1">
+      <button class="cs-nav prev" aria-label="Previous case study"><svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg></button>
+      <div class="cs-viewport">
+        <div class="cs-track">
+          <div class="cs-slide">
+            <article class="cs-card">
+              <div class="cs-cover">
+                <img src="assets/cs-pb-alt.jpg" alt="Inside the Purity Bridge clinic, Tunbridge Wells, Kent" loading="lazy">
+                <span class="cap" data-id="Studi kasus">Case study</span>
+              </div>
+              <div class="cs-industry" data-id="Klinik estetika &amp; regeneratif · Kent, Inggris">Aesthetic &amp; regenerative clinic · Kent, UK</div>
+              <h3 class="cs-name">Purity <b>Bridge</b></h3>
+              <p class="cs-p" data-id="Klinik estetika butik yang nyaris tak terlihat di Google. Kami bangun ulang situsnya dan buat halaman khusus untuk tiap treatment dan lokasi — dalam enam bulan klinik ini tampil di halaman 1 untuk pencarian yang mendatangkan pasien baru.">A boutique aesthetic &amp; regenerative clinic that was barely visible on Google. We rebuilt the site and gave every treatment and location its own page — within six months they were ranking on page 1 for the searches that bring new patients.</p>
+              <div class="cs-charts">
+                <div class="cs-chart">
+                  <div class="cs-clabel"><span data-id="Halaman di Google hal. 1">Pages on Google page 1</span><span class="cs-grow" data-id="8,5×">8.5×</span></div>
+                  <div class="cs-bar"><span class="cs-bl" data-id="Sebelum">Before</span><div class="cs-track2"><div class="cs-fill before" data-w="11"></div></div><span class="cs-bv">4</span></div>
+                  <div class="cs-bar"><span class="cs-bl" data-id="Sesudah">After</span><div class="cs-track2"><div class="cs-fill after" data-w="79"></div></div><span class="cs-bv">38</span></div>
+                </div>
+                <div class="cs-chart">
+                  <div class="cs-clabel"><span data-id="Enquiry / bulan">Enquiries / month</span><span class="cs-grow" data-id="5,5×">5.5×</span></div>
+                  <div class="cs-bar"><span class="cs-bl" data-id="Sebelum">Before</span><div class="cs-track2"><div class="cs-fill before" data-w="15"></div></div><span class="cs-bv">8</span></div>
+                  <div class="cs-bar"><span class="cs-bl" data-id="Sesudah">After</span><div class="cs-track2"><div class="cs-fill after" data-w="100"></div></div><span class="cs-bv">52</span></div>
+                </div>
+              </div>
+            </article>
+          </div>
+          <div class="cs-slide">
+            <article class="cs-card">
+              <div class="cs-cover">
+                <img src="assets/cs-apex-banner.png" alt="A facial treatment at Apex Aesthetics, Australia" loading="lazy">
+                <span class="cap" data-id="Studi kasus">Case study</span>
+              </div>
+              <div class="cs-industry" data-id="Klinik kecantikan · Australia">Aesthetic clinic · Australia</div>
+              <h3 class="cs-name">Apex <b>Aesthetics</b></h3>
+              <p class="cs-p" data-id="Klinik kecantikan yang bersaing di pasar kota yang padat. Kami beri tiap treatment halaman yang menargetkan lokasi, plus website yang dibangun untuk konversi — ranking halaman 1 dan enquiry bulanan naik dari kuartal ke kuartal.">An aesthetic clinic fighting for attention in a crowded city market. We gave every treatment a location-targeted page and a conversion-built website — page-1 rankings and monthly enquiries climbed quarter on quarter.</p>
+              <div class="cs-charts">
+                <div class="cs-chart">
+                  <div class="cs-clabel"><span data-id="Halaman di Google hal. 1">Pages on Google page 1</span><span class="cs-grow" data-id="5,3×">5.3×</span></div>
+                  <div class="cs-bar"><span class="cs-bl" data-id="Sebelum">Before</span><div class="cs-track2"><div class="cs-fill before" data-w="14"></div></div><span class="cs-bv">7</span></div>
+                  <div class="cs-bar"><span class="cs-bl" data-id="Sesudah">After</span><div class="cs-track2"><div class="cs-fill after" data-w="82"></div></div><span class="cs-bv">44</span></div>
+                </div>
+                <div class="cs-chart">
+                  <div class="cs-clabel"><span data-id="Enquiry / bulan">Enquiries / month</span><span class="cs-grow" data-id="4,7×">4.7×</span></div>
+                  <div class="cs-bar"><span class="cs-bl" data-id="Sebelum">Before</span><div class="cs-track2"><div class="cs-fill before" data-w="18"></div></div><span class="cs-bv">12</span></div>
+                  <div class="cs-bar"><span class="cs-bl" data-id="Sesudah">After</span><div class="cs-track2"><div class="cs-fill after" data-w="100"></div></div><span class="cs-bv">68</span></div>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+      <button class="cs-nav next" aria-label="Next case study"><svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg></button>
+      <div class="cs-dots" role="tablist" aria-label="Choose case study"></div>
+    </div>
+    <p class="reveal d2" style="font-size:12px;color:var(--muted);font-style:italic;margin:22px auto 0;max-width:50ch" data-id="Angka diilustrasikan untuk menunjukkan pola pertumbuhan yang umum kami capai.">Figures illustrate the kind of growth pattern we typically deliver.</p>
+  </div>
+</section>
+
+<!-- 7 · OFFER -->
+<section class="offer">
+  <div class="wrap">
+    <div class="shead reveal">
+      <span class="eyebrow" data-id="Cara kerjanya — risikonya di kami">How it works — the risk is ours</span>
+      <h2 class="h2" data-id="Semua kami yang kerjakan. &lt;b&gt;Anda hanya menang kalau ini berhasil.&lt;/b&gt;">Everything's done for you. <b>You only win if it works.</b></h2>
+    </div>
+    <div class="card reveal d1">
+      <div class="otop">
+        <div class="orow"><span class="ol" data-id="Website baru + redesign menyeluruh">A brand-new website + full redesign</span><span class="ov" data-id="Termasuk">Included</span></div>
+        <div class="orow"><span class="ol" data-id="20 halaman treatment yang dibangun untuk Google">20 treatment pages built for Google</span><span class="ov" data-id="Termasuk">Included</span></div>
+        <div class="orow"><span class="ol" data-id="Visibilitas di Google &amp; pencarian AI">Visibility in Google &amp; AI search</span><span class="ov" data-id="Termasuk">Included</span></div>
+        <div class="orow"><span class="ol" data-id="Laporan bulanan yang jelas">Clear monthly reporting</span><span class="ov" data-id="Termasuk">Included</span></div>
+      </div>
+      <div class="guarantee">
+        <div class="gt" data-id="Garansi kami">Our guarantee</div>
+        <p data-id="Top 3 di Google untuk minimal &lt;b&gt;8 dari 20 halaman pada bulan ke-6&lt;/b&gt; — atau kami terus bekerja, &lt;b&gt;atas biaya kami&lt;/b&gt;, sampai tercapai.">Top 3 on Google for at least <b>8 of your 20 pages by month 6</b> — or we keep working, <b>on us</b>, until you're there.</p>
+      </div>
+    </div>
+    <p class="risk reveal d2" data-id="Kami jelaskan persyaratan komersialnya yang sederhana saat kita bicara — dan kami hanya berhasil kalau Anda mendapatkan pasien baru.">We'll walk you through the simple commercial terms when we talk — and we only succeed when you're getting new patients.</p>
+  </div>
+</section>
+
+<!-- 8 · NEXT -->
+<section class="next">
+  <div class="wrap">
+    <span class="eyebrow" data-id="Tanpa rayuan, tanpa tekanan">No pitch, no pressure</span>
+    <h2 class="h2 reveal" data-id="Kalau ada yang menarik, &lt;b&gt;mari bicara kapan pun Anda sempat&lt;/b&gt;.">If any of this is interesting, <b>let's talk whenever suits you</b>.</h2>
+    <p class="lead reveal d1" style="color:var(--ink-2)" data-id="Lihat dulu situs live-nya. Kalau cocok, saya hanya satu pesan jauhnya.">Take a look at the live site first. If it's a fit, I'm one message away.</p>
+    <div class="am-wrap reveal d2">
+      <div class="am-photo-wrap"><div class="am-photo"><img src="assets/founder.png" width="480" height="600" alt="Alex Müller, Founder of Digital Movement" loading="lazy"></div></div>
+      <div class="am-body">
+        <div class="am-eyebrow" data-id="Kontak langsung Anda">Your direct contact</div>
+        <div class="am-name">Alex Müller</div>
+        <div class="am-role" data-id="Founder · Digital Movement — UK · AU · NZ">Founder · Digital Movement — UK · AU · NZ</div>
+        <div class="am-channels">
+          <a class="am-ch" href="mailto:alex@digitalmovement.uk"><span class="am-ch-label">Email</span><span class="am-ch-val">alex@digitalmovement.uk</span></a>
+          <a class="am-ch" href="https://wa.me/4917682360647" target="_blank" rel="noopener"><span class="am-ch-label">WhatsApp</span><span class="am-ch-val">+49 176 82360647</span></a>
+        </div>
+        <p class="am-note" data-id="Tanpa rayuan, tanpa tekanan — lihat dulu situs live-nya, dan kalau cocok, saya hanya satu pesan jauhnya. Anda akan berurusan langsung dengan saya.">No pitch, no pressure — take a look at the live site first, and if it's a fit, I'm one message away. You'll deal with me directly.</p>
+        <a href="https://wa.me/4917682360647?text=Hi%20Alex%2C%20I%20saw%20the%20Puriva%20homepage%20you%20built%20%E2%80%94%20let's%20talk." target="_blank" rel="noopener" class="btn btn-wa" data-id="Hubungi Alex via WhatsApp">
+          <svg viewBox="0 0 24 24"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2z"/></svg>
+          Message Alex on WhatsApp</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="cobrand">
+      <img class="dm" src="assets/dm-logo.svg" alt="Digital Movement">
+      <span class="x" style="color:var(--gold)">×</span>
+      <img class="pl" src="assets/logo.webp" alt="Puriva">
+    </div>
+    <span class="meta" data-id="Pandangan pertama untuk Puriva Aesthetic &amp; Lifestyle Clinic · Digital Movement — UK · AU · NZ · Mei 2026">A first look for Puriva Aesthetic &amp; Lifestyle Clinic · Digital Movement — UK · AU · NZ · May 2026</span>
+  </div>
+</footer>
+
+<script>
+/* remove the mobile notice after it fades out */
+setTimeout(()=>{const m=document.querySelector('.mload');if(m)m.remove();},2600);
+
+/* progress bar */
+const bar=document.getElementById('bar');
+addEventListener('scroll',()=>{const h=document.documentElement,m=h.scrollHeight-h.clientHeight;bar.style.width=(m>0?h.scrollTop/m*100:0)+'%';},{passive:true});
+
+/* reveal */
+const io=new IntersectionObserver((es)=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}}),{threshold:.14,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+/* compare bars */
+const bo=new IntersectionObserver((es)=>es.forEach(e=>{if(e.isIntersecting){e.target.querySelectorAll('.fill').forEach(f=>f.style.transform='scaleX('+(f.dataset.w/100)+')');bo.unobserve(e.target);}}),{threshold:.4});
+document.querySelectorAll('.crow').forEach(el=>bo.observe(el));
+/* value curve draw */
+const cvo=new IntersectionObserver((es)=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');cvo.unobserve(e.target);}}),{threshold:.3});
+document.querySelectorAll('.bv-chart').forEach(el=>cvo.observe(el));
+/* count up */
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+const cu=(el)=>{const t=parseFloat(el.dataset.count);let st=null;const dur=1500;
+  const tick=(n)=>{st=st||n;const p=Math.min((n-st)/dur,1),e=1-Math.pow(1-p,3),v=Math.round(t*e);
+    el.textContent=v.toLocaleString('en-US');if(p<1)requestAnimationFrame(tick);else el.textContent=t.toLocaleString('en-US');};requestAnimationFrame(tick);};
+const co=new IntersectionObserver((es)=>es.forEach(e=>{if(e.isIntersecting){if(!reduce)cu(e.target);co.unobserve(e.target);}}),{threshold:.6});
+document.querySelectorAll('[data-count]').forEach(el=>co.observe(el));
+
+/* case-studies slider */
+(function(){
+  const s=document.querySelector('.cs-slider'); if(!s)return;
+  const track=s.querySelector('.cs-track'), slides=[...s.querySelectorAll('.cs-slide')], dots=s.querySelector('.cs-dots');
+  let idx=0,timer=null,inview=false;
+  slides.forEach((_,i)=>{const d=document.createElement('button');d.className='cs-dot'+(i?'':' active');d.setAttribute('aria-label','Case study '+(i+1));d.addEventListener('click',()=>{go(i);rst();});dots.appendChild(d);});
+  const dd=[...dots.children];
+  function go(i){idx=(i+slides.length)%slides.length;track.style.transform='translateX('+(-idx*100)+'%)';dd.forEach((d,j)=>d.classList.toggle('active',j===idx));}
+  function start(){if(!inview||timer)return;timer=setInterval(()=>go(idx+1),6500);}
+  function stop(){if(timer){clearInterval(timer);timer=null;}}
+  function rst(){stop();start();}
+  s.querySelector('.cs-nav.prev').addEventListener('click',()=>{go(idx-1);rst();});
+  s.querySelector('.cs-nav.next').addEventListener('click',()=>{go(idx+1);rst();});
+  s.addEventListener('mouseenter',stop); s.addEventListener('mouseleave',start);
+  let x0=null;const vp=s.querySelector('.cs-viewport');
+  vp.addEventListener('touchstart',e=>{x0=e.touches[0].clientX;stop();},{passive:true});
+  vp.addEventListener('touchend',e=>{if(x0===null)return;const dx=e.changedTouches[0].clientX-x0;if(Math.abs(dx)>40)go(dx<0?idx+1:idx-1);x0=null;start();},{passive:true});
+  new IntersectionObserver((en)=>en.forEach(e=>{inview=e.isIntersecting; if(inview){s.querySelectorAll('.cs-fill').forEach(f=>f.style.transform='scaleX('+(f.dataset.w/100)+')');start();} else stop();}),{threshold:.25}).observe(s);
+})();
+
+/* ===== language toggle (EN default, ID alternate) ===== */
+const setLang=(l)=>{
+  document.documentElement.lang=l; document.body.dataset.lang=l;
+  document.querySelectorAll('[data-id]').forEach(el=>{
+    if(el._en===undefined) el._en=el.innerHTML;
+    el.innerHTML = (l==='id') ? el.dataset.id : el._en;
+  });
+  document.querySelectorAll('.langtoggle button').forEach(b=>b.classList.toggle('on', b.dataset.l===l));
+  try{localStorage.setItem('puriva_prop_lang',l);}catch(e){}
+};
+document.querySelectorAll('.langtoggle button').forEach(b=>b.addEventListener('click',()=>setLang(b.dataset.l)));
+let saved='en'; try{const s=localStorage.getItem('puriva_prop_lang'); if(s==='id'||s==='en') saved=s;}catch(e){}
+setLang(saved);
+</script>
+</body>
+</html>

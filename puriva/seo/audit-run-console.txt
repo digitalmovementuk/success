@@ -1,0 +1,24 @@
+Audit: https://puriva.id/
+  [OK  ] HTTPS                            Final URL: https://puriva.id/
+  [warn] Title tag                        Puriva Aesthetic Clinic in Bali | Advanced Face & Body TreatmentsWhatsApp (73 ch
+  [OK  ] Meta description                 Puriva Aesthetic Clinic in Bali offers wide range of skin treatments with natura
+  [OK  ] Single H1                        1 H1 tag(s)
+  [OK  ] Canonical                        https://puriva.id/
+  [OK  ] Indexable (robots meta)          robots: follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:l
+  [OK  ] Mobile viewport                  width=device-width, initial-scale=1, maximum-scale=5, viewport-fit=cover
+  [OK  ] html lang                        en-US
+  [OK  ] Open Graph                       13 og: tags (og:locale, og:type, og:title, og:description, og:url)
+  [OK  ] Schema (JSON-LD)                 1 block(s); types: Article, ContactPoint, GeoCoordinates, ImageObject, Organizat
+  [OK  ] Image alt coverage               15/16 images have alt (94%)
+  [OK  ] Internal links                   119 internal (unique 44)
+  [OK  ] External links                   8 external
+  [OK  ] Word count                       1218 words (guide floor 450)
+  [OK  ] No mixed content                 0 http:// resources on https page
+  [OK  ] Analytics present                GA/GTM snippet found
+  [warn] Search Console verification      google-site-verification meta not found (may verify via DNS)
+  [OK  ] robots.txt                       status 200; 1 Sitemap line(s)
+  [OK  ] Sitemap declared in robots.txt   https://puriva.id/sitemap_index.xml
+  [OK  ] Sitemap reachable                https://puriva.id/sitemap_index.xml -> status 200
+  [OK  ] Broken internal links (sampled 15) none in sample
+
+19 pass / 2 review / 0 fail  ->  audit-report.html  (+ audit-report.json)

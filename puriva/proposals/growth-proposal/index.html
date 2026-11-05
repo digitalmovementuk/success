@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta name="robots" content="noindex, nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Puriva × Digital Movement — Growth Proposal</title>
+<style>
+:root{--ink:#2b2622;--gold:#a8977b;--gold-d:#8c7b60;--cream:#faf7f2;--soft:#f3ede2;--bd:#e8e0d2;--muted:#857c6e;--ok:#1f9d55}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;color:var(--ink);background:var(--cream);font:16px/1.65 -apple-system,BlinkMacSystemFont,'Helvetica Neue',Arial,sans-serif}
+.wrap{max-width:1060px;margin:0 auto;padding:0 22px}
+h1,h2,h3{line-height:1.18;font-weight:600;letter-spacing:-.01em;margin:0}
+a{color:var(--gold-d)}
+/* top bar */
+.topbar{position:sticky;top:0;z-index:50;background:rgba(250,247,242,.94);backdrop-filter:blur(9px);border-bottom:1px solid var(--bd)}
+.bar{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:12px 22px}
+.bar-actions{display:flex;align-items:center;gap:10px;flex-wrap:wrap;justify-content:flex-end}
+.brand{display:flex;align-items:center;gap:12px}.brand img{height:38px}
+.brand .by{font-size:11.5px;color:var(--muted);border-left:1px solid var(--bd);padding-left:12px;line-height:1.3}
+.brand .by b{color:var(--ink);display:block;font-weight:600}
+/* tabs (radio pattern) */
+input[name=tab]{position:absolute;opacity:0;pointer-events:none}
+.tabnav{display:flex;gap:8px;padding:0 22px 12px;flex-wrap:wrap}
+.tabnav label{cursor:pointer;font-size:13.5px;font-weight:600;color:var(--ink);background:#fff;border:1px solid var(--bd);border-radius:999px;padding:8px 16px}
+.tabnav label:hover{border-color:var(--gold)}
+#t1:checked~.topbar label[for=t1],#t2:checked~.topbar label[for=t2]{background:var(--gold);color:#fff;border-color:var(--gold)}
+.panel{display:none;padding:26px 0 70px}
+#t1:checked~.panels .p1{display:block}#t2:checked~.panels .p2{display:block}
+/* cover */
+.cover{background:linear-gradient(135deg,#fff,var(--soft));border:1px solid var(--bd);border-radius:22px;padding:34px 34px;margin-bottom:22px}
+.cover .ey{font-size:12.5px;font-weight:700;text-transform:uppercase;letter-spacing:.14em;color:var(--gold-d)}
+.cover h1{font-size:clamp(26px,4vw,40px);margin:10px 0 12px}
+.cover p{font-size:clamp(16px,1.7vw,19px);color:#52493f;max-width:60ch;margin:0}
+.cover .meta{margin-top:18px;display:flex;gap:10px;flex-wrap:wrap}
+.cover .pill{background:#fff;border:1px solid var(--bd);border-radius:999px;padding:7px 14px;font-size:13px;color:var(--ink)}
+.cover .pill b{color:var(--gold-d)}
+.guide{font-size:13.5px;color:var(--muted);margin:0 0 14px}
+/* accordion */
+.acc{background:#fff;border:1px solid var(--bd);border-radius:16px;margin-bottom:12px;overflow:hidden}
+.acc>summary{cursor:pointer;list-style:none;display:flex;align-items:center;gap:14px;padding:18px 20px;font-weight:600;font-size:17px}
+.acc>summary::-webkit-details-marker{display:none}
+.acc>summary::after{content:"+";margin-left:auto;color:var(--gold-d);font-size:22px;font-weight:400}
+.acc[open]>summary::after{content:"–"}
+.acc[open]>summary{border-bottom:1px solid var(--bd)}
+.num{flex:0 0 34px;height:34px;border-radius:50%;background:var(--soft);color:var(--gold-d);font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center}
+.acc .body{padding:18px 20px 22px}
+.acc .body p{color:#463d33;margin:0 0 14px;max-width:72ch}
+.acc .body p:last-child{margin-bottom:0}
+.acc .body ul{margin:0 0 14px;padding-left:20px;color:#463d33;max-width:72ch}.acc .body li{margin:6px 0}
+.say{background:var(--cream);border-left:3px solid var(--gold);border-radius:10px;padding:12px 16px;color:#3c352b;font-style:italic;margin:6px 0 14px;max-width:72ch}
+.btns{display:flex;gap:10px;flex-wrap:wrap;margin-top:6px}
+.open{display:inline-flex;align-items:center;gap:8px;background:var(--gold);color:#fff;text-decoration:none;border-radius:999px;padding:11px 18px;font-weight:600;font-size:14.5px}
+.open:hover{background:var(--gold-d)}.open.ghost{background:#fff;color:var(--gold-d);border:1px solid var(--bd)}
+/* table + cards */
+table{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--bd);border-radius:12px;overflow:hidden;margin:8px 0 14px;font-size:14px}
+th,td{padding:11px 13px;text-align:left;border-bottom:1px solid var(--bd)}th{background:var(--soft);font-size:11.5px;text-transform:uppercase;letter-spacing:.03em;color:var(--muted)}tr:last-child td{border-bottom:0}
+td b{color:var(--gold-d)}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:8px 0 14px}
+.card{background:var(--cream);border:1px solid var(--bd);border-radius:14px;padding:16px}
+.card .v{font-size:22px;font-weight:700;color:var(--gold-d)}.card .l{font-size:13px;color:var(--muted)}
+.note{font-size:12.5px;color:var(--muted);margin-top:6px}
+/* files index */
+.file{display:flex;align-items:center;gap:16px;background:#fff;border:1px solid var(--bd);border-radius:14px;padding:16px 18px;margin-bottom:10px;text-decoration:none;color:var(--ink)}
+.file:hover{border-color:var(--gold)}
+.file .ic{flex:0 0 40px;height:40px;border-radius:10px;background:var(--soft);display:flex;align-items:center;justify-content:center;color:var(--gold-d);font-weight:700}
+.file .t b{display:block;font-size:15.5px}.file .t span{font-size:13px;color:var(--muted)}
+.file .go{margin-left:auto;color:var(--gold-d);font-weight:600;font-size:13.5px;white-space:nowrap}
+footer{border-top:1px solid var(--bd);padding:22px 0;color:var(--muted);font-size:13px}
+@media (max-width:760px){
+  .cards{grid-template-columns:1fr}.cover{padding:24px}.brand .by{display:none}
+  .bar{align-items:flex-start}.bar-actions{max-width:210px}.bar-actions .open{padding:9px 13px;font-size:13px}
+  .acc>summary{font-size:15.5px;padding:15px 16px}.file{flex-wrap:wrap}.file .go{margin-left:0}
+}
+</style>
+<style id="grid-coherence">
+/* Card-grid coherence: a grid with EXACTLY 4 cards renders 2×2 (never 3+1 orphan / negative space). 3- and 6-card grids unaffected. */
+@media(min-width:600px){
+  .cards:has(> :last-child:nth-child(4)),
+  .problem-grid:has(> :last-child:nth-child(4)),
+  .services-grid:has(> :last-child:nth-child(4)),
+  .diff-list:has(> :last-child:nth-child(4)),
+  .uses-grid:has(> :last-child:nth-child(4)),
+  .industries:has(> :last-child:nth-child(4)),
+  .compliance-block:has(> :last-child:nth-child(4)){grid-template-columns:repeat(2,1fr)!important}
+}
+</style>
+</head>
+<body>
+
+<input type="radio" name="tab" id="t1" checked>
+<input type="radio" name="tab" id="t2">
+
+<header class="topbar">
+  <div class="bar">
+    <div class="brand">
+      <img src="data:image/webp;base64,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" alt="Puriva Aesthetic Clinic">
+      <span class="by">Growth Proposal<b>prepared by Digital Movement</b></span>
+    </div>
+    <div class="bar-actions">
+      <a class="open" href="https://digitalmovementuk.github.io/puriva/homepage/v1/" target="_blank" rel="noopener">Homepage preview ↗</a>
+      <a class="open ghost" href="https://puriva.id/" target="_blank" rel="noopener">puriva.id ↗</a>
+    </div>
+  </div>
+  <nav class="tabnav">
+    <label for="t1">01 · First Growth Opportunity Audit</label>
+    <label for="t2">02 · All Files &amp; Evidence</label>
+  </nav>
+</header>
+
+<div class="panels"><div class="wrap">
+
+<!-- ===================== TAB 1: GROWTH OPPORTUNITY AUDIT ===================== -->
+<section class="panel p1">
+  <div class="cover">
+    <div class="ey">Puriva × Digital Movement</div>
+    <h1>Your first growth opportunity audit</h1>
+    <p>You're already one of Bali's trusted aesthetic clinics. The opportunity is simple: most people who'd love you can't find you yet — and the ones who do aren't being told clearly enough why you're the safe choice. Here's how we fix both, and what it's worth.</p>
+    <div class="meta">
+      <span class="pill"><b>40 → 400</b> pages</span>
+      <span class="pill"><b>+35–70</b> enquiries/mo target by month 12</span>
+      <span class="pill"><b>€1,500</b>/month — website redesign included</span>
+      <span class="pill"><b>Prepared</b> June 4, 2026</span>
+    </div>
+  </div>
+  <p class="guide">Walk down the sections in order — open each one, and use the buttons to show the live page on screen.</p>
+
+  <details class="acc" open>
+    <summary><span class="num">01</span> Where you stand on Google today</summary>
+    <div class="body">
+      <p>The good news first: your website is healthy. We ran a full technical audit of your homepage and key service pages — it passed clean, with zero failures. And you already rank for the big searches: <b>botox Bali, facial Bali, aesthetic clinic Bali, anti-aging Bali</b>, even <b>aesthetic Uluwatu</b>. This is a strong base to build on, not a rescue.</p>
+      <p>The opportunity: <b>“botox Bali” alone is searched ~740 times a month</b> (around 480 locally and 260 from Australia). Across your ~32 treatments there are <b>thousands of searches every month</b> — and right now you're capturing a slice of them, while competitors like Cocoon and Dermaster take the rest.</p>
+      <div class="say">“You've built real authority. You're just leaving the easiest bookings on the table.”</div>
+      <div class="btns"><a class="open" href="../../seo/audit-report.html" target="_blank" rel="noopener">Open your live-site audit →</a></div>
+    </div>
+  </details>
+
+  <details class="acc">
+    <summary><span class="num">02</span> The gap: 40 pages → 400</summary>
+    <div class="body">
+      <p>You have pages for your <em>treatments</em>, but almost none for the <em>places your clients actually live</em>. There's no “botox Seminyak”, “fillers Canggu”, or “skin clinic Ubud”. Those are exactly the searches people make when they're ready to book — and right now they don't find you.</p>
+      <p>We build a page for every service in every relevant area — your <b>32 treatments × the ~12 areas</b> that matter most (Seminyak, Canggu, Umalas, Berawa, Ubud, Sanur and more). That's the move from <b>40 pages today to a ~400-page footprint</b>: every door a customer might knock on, open.</p>
+      <div class="btns"><a class="open" href="../../seo/exposure-plan.html" target="_blank" rel="noopener">Open your 400-page growth plan →</a></div>
+    </div>
+  </details>
+
+  <details class="acc">
+    <summary><span class="num">03</span> Your biggest strength is what buyers are most afraid of</summary>
+    <div class="body">
+      <p>People searching for aesthetics in Bali are genuinely nervous — fake or watered-down product, and treatments done by someone who isn't a doctor. It's the number-one worry, and you can see it in what people ask online.</p>
+      <p>You are <b>doctor-led, with genuine product</b> — which is precisely what they want. But your current pages don't say it loudly enough. We make <b>every page lead with it</b>: genuine product shown to you, a certified doctor, transparent per-unit pricing. We turn your real advantage into the reason they book you instead of the cheap place down the road.</p>
+      <div class="say">“This is the difference between getting found and getting booked.”</div>
+    </div>
+  </details>
+
+  <details class="acc">
+    <summary><span class="num">04</span> See your actual page — not a mockup</summary>
+    <div class="body">
+      <p>We've already built two of your pages, to the exact standard the 400 will hit — your brand, your logo, your photos. They lead with genuine + doctor-led, answer the real questions your patients ask, and put the booking form right in front of them.</p>
+      <ul>
+        <li><b>The hub</b> — “Botox in Bali”, with every area linked from one place.</li>
+        <li><b>An area page</b> — “Botox in Seminyak”, written for that community.</li>
+      </ul>
+      <div class="say">“This is your page. Now imagine it for 400 of your services and areas.”</div>
+      <div class="btns">
+        <a class="open" href="https://digitalmovementuk.github.io/puriva/homepage/v1/" target="_blank" rel="noopener">Open your homepage preview →</a>
+        <a class="open" href="../../seo/green/botox-in-bali/" target="_blank" rel="noopener">Open your Botox hub page →</a>
+        <a class="open ghost" href="../../seo/green/botox-seminyak/" target="_blank" rel="noopener">Open your Seminyak page →</a>
+      </div>
+    </div>
+  </details>
+
+  <details class="acc">
+    <summary><span class="num">05</span> Found — and recommended — by AI search</summary>
+    <div class="body">
+      <p>More and more people now ask ChatGPT and Gemini “best botox clinic in Bali” instead of scrolling Google. We've been optimising clients to be the <b>recommended answer</b> since 2025 — most clinics aren't even thinking about it yet. That's a head start you can own while it's still early.</p>
+    </div>
+  </details>
+
+  <details class="acc">
+    <summary><span class="num">06</span> What you can expect — enquiries &amp; timeline</summary>
+    <div class="body">
+      <p>There are two engines, and one is fast. The <b>website redesign + conversion optimisation</b> lifts bookings from the traffic you <em>already</em> get — you can feel that within the first month or two. The <b>400-page SEO + AI engine</b> compounds over the following months and keeps paying long after.</p>
+      <table>
+        <thead><tr><th>Phase</th><th>What's live</th><th>Extra enquiries / month</th></tr></thead>
+        <tbody>
+          <tr><td>Months 1–2</td><td>New site + conversion optimisation + first cluster</td><td><b>+5 to +15</b></td></tr>
+          <tr><td>Months 3–4</td><td>~100–150 pages indexed &amp; ranking on long-tail</td><td><b>+12 to +25</b></td></tr>
+          <tr><td>Months 5–6</td><td>~Half the 400 live + reviews &amp; AI search building</td><td><b>+20 to +40</b></td></tr>
+          <tr><td>Months 7–12</td><td>Full 400-page footprint mature + AI citations</td><td><b>+35 to +70+</b></td></tr>
+        </tbody>
+      </table>
+      <p>So you should <b>feel it clearly by month 6</b>, and by <b>month 12 you're looking at roughly 35–70+ extra qualified enquiries a month</b> — and still climbing, because it compounds.</p>
+      <p class="note">These are projections modelled from real Bali search volumes and typical aesthetic-clinic conversion rates — not a guarantee; actual numbers depend on execution and competition. Give us read-access to your Google Search Console and analytics and we'll replace the model with your exact figures.</p>
+    </div>
+  </details>
+
+  <details class="acc">
+    <summary><span class="num">07</span> Your investment — €1,500/month, all in</summary>
+    <div class="body">
+      <p>This isn't “SEO”. It's three things in one fee:</p>
+      <div class="cards">
+        <div class="card"><div class="v">400 pages</div><div class="l">found for every treatment, in every area</div></div>
+        <div class="card"><div class="v">Full website redesign</div><div class="l">+ conversion optimisation on every page (a €4,500–8,000 job, included)</div></div>
+        <div class="card"><div class="v">AI search</div><div class="l">recommended by ChatGPT &amp; Gemini</div></div>
+      </div>
+      <p><b>The maths:</b> a happy aesthetic client is worth well over €1,000 a year — Botox repeats, fillers and packages add up, and they refer. Take the conservative path: <b>+20 enquiries/month</b> by month six, about a third book = <b>~7 new clients a month</b>. At even €800–1,500 first-year value each, that's <b>€5,600–10,500 in new revenue every month</b> — against €1,500.</p>
+      <div class="say">“You need a handful of extra clients a month for this to be the best money you spend — and you own the asset.”</div>
+    </div>
+  </details>
+
+  <details class="acc">
+    <summary><span class="num">08</span> Why Digital Movement</summary>
+    <div class="body">
+      <ul>
+        <li><b>7 years</b> in business, <b>300+ clients</b> across the UK, Germany, Australia and New Zealand.</li>
+        <li><b>Near-perfect client retention</b> — clients stay year after year because it works.</li>
+        <li><b>5.0 from 103 reviews</b>, and AI-search optimisation since 2025 — a 12-month head start over most agencies.</li>
+        <li>Unlike a typical agency (10–30 pages, no website, no AI search), or an in-house hire (€3–5k/month to manage) — you get the whole engine for €1,500.</li>
+      </ul>
+    </div>
+  </details>
+
+  <details class="acc">
+    <summary><span class="num">09</span> Your next step</summary>
+    <div class="body">
+      <p>The lowest-risk way to find out is to start. We begin with the <b>Botox cluster</b> — your highest-intent treatment — so you see real pages and real enquiries before you've spent much at all. From there we roll out treatment by treatment until the full 400-page footprint is live and your new website is converting.</p>
+      <div class="say">“Shall we start with Botox?”</div>
+      <div class="btns"><a class="open" href="../../seo/exposure-plan.html" target="_blank" rel="noopener">Open the growth plan →</a><a class="open ghost" href="../../seo/green/botox-in-bali/" target="_blank" rel="noopener">Open a sample page →</a></div>
+    </div>
+  </details>
+</section>
+
+<!-- ===================== TAB 2: ALL FILES ===================== -->
+<section class="panel p2">
+  <div class="cover" style="margin-bottom:18px">
+    <div class="ey">Single source of truth</div>
+    <h1>All files &amp; evidence</h1>
+    <p>Everything behind this proposal, in one place — open any of them on screen during the conversation.</p>
+  </div>
+
+  <a class="file" href="../../seo/audit-report.html" target="_blank" rel="noopener"><span class="ic">01</span><span class="t"><b>Your live-site audit</b><span>Homepage + 8 key service pages, tab per page — 161 pass / 19 review / 0 fail</span></span><span class="go">Open ↗</span></a>
+  <a class="file" href="../../seo/exposure-plan.html" target="_blank" rel="noopener"><span class="ic">02</span><span class="t"><b>Your 400-page growth plan</b><span>32 services × 12 areas → ~400 pages, phased build &amp; reach</span></span><span class="go">Open ↗</span></a>
+  <a class="file" href="../../seo/green/botox-in-bali/" target="_blank" rel="noopener"><span class="ic">03</span><span class="t"><b>Botox hub — page preview</b><span>Your brand, your logo, ready-to-publish</span></span><span class="go">Open ↗</span></a>
+  <a class="file" href="../../seo/green/botox-seminyak/" target="_blank" rel="noopener"><span class="ic">04</span><span class="t"><b>Botox in Seminyak — page preview</b><span>An area page, written for that community</span></span><span class="go">Open ↗</span></a>
+  <a class="file" href="../../seo/research/botox-bali.research.md" target="_blank" rel="noopener"><span class="ic">05</span><span class="t"><b>What your customers actually ask</b><span>Real questions &amp; concerns we write every page around</span></span><span class="go">Open ↗</span></a>
+  <a class="file" href="../../seo/master-worksheet.csv" target="_blank" rel="noopener"><span class="ic">06</span><span class="t"><b>Page-by-page re-optimisation worksheet</b><span>Your existing 40 pages, with what we'd improve</span></span><span class="go">Open ↗</span></a>
+  <a class="file" href="../../seo/retainer/retainer-calendar.md" target="_blank" rel="noopener"><span class="ic">07</span><span class="t"><b>Your 12-month care plan</b><span>What we do for you every month</span></span><span class="go">Open ↗</span></a>
+  <a class="file" href="https://digitalmovementuk.github.io/puriva/homepage/v1/" target="_blank" rel="noopener"><span class="ic">08</span><span class="t"><b>New homepage preview</b><span>GitHub Pages link to the full Puriva homepage prototype</span></span><span class="go">Open ↗</span></a>
+
+  <footer class="wrap" style="padding-left:0;padding-right:0">Prepared for Puriva Aesthetic &amp; Lifestyle Clinic by Digital Movement · June 4, 2026 · office@digitalmovement.uk · digitalmovement.uk</footer>
+</section>
+
+</div></div>
+
+</body>
+</html>

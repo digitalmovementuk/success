@@ -1,0 +1,4390 @@
+{
+  "pages/botox-berawa.html": [
+    {
+      "check_id": "A",
+      "name": "Bigram uniqueness ≥50% vs hub + nearest sibling",
+      "passed": false,
+      "severity": "BLOCKER",
+      "reason": "6.4% unique vs sibling (worst of 2)",
+      "evidence": {
+        "hub_unique_pct": 6.9,
+        "sibling_unique_pct": 6.4,
+        "nearest_sibling": "pages/botox-canggu.html",
+        "worst": 6.4
+      }
+    },
+    {
+      "check_id": "B",
+      "name": "Not a doorway page (≥3 sections ≥150w each)",
+      "passed": false,
+      "severity": "BLOCKER",
+      "reason": "2 substantive sections (of 11)",
+      "evidence": {
+        "section_word_counts": [
+          42,
+          202,
+          149,
+          132,
+          53,
+          107,
+          98,
+          387,
+          19,
+          39,
+          58
+        ]
+      }
+    },
+    {
+      "check_id": "C",
+      "name": "Title globally unique + 30–70 chars",
+      "passed": true,
+      "severity": "BLOCKER",
+      "reason": "ok",
+      "evidence": {
+        "length": 38,
+        "duplicates": []
+      }
+    },
+    {
+      "check_id": "D",
+      "name": "Meta description unique + 120–175 chars",
+      "passed": false,
+      "severity": "BLOCKER",
+      "reason": "length 98 (target 120–175)",
+      "evidence": {
+        "length": 98,
+        "duplicates": []
+      }
+    },
+    {
+      "check_id": "E",
+      "name": "Exactly one <h1> + globally unique",
+      "passed": true,
+      "severity": "BLOCKER",
+      "reason": "ok",
+      "evidence": {
+        "duplicates": []
+      }
+    },
+    {
+      "check_id": "F",
+      "name": "Geo-page local relevance (≥2 of 4)",
+      "passed": true,
+      "severity": "INFO",
+      "reason": "not a geo page",
+      "evidence": {}
+    },
+    {
+      "check_id": "G",
+      "name": "Sector-page sector relevance (≥2 of 4)",
+      "passed": true,
+      "severity": "INFO",
+      "reason": "not a sector page",
+      "evidence": {}
+    },
+    {
+      "check_id": "H",
+      "name": "E-E-A-T ≥2 of (author byline / trust / expertise)",
+      "passed": false,
+      "severity": "BLOCKER",
+      "reason": "1/3 signals — author byline",
+      "evidence": {
+        "signals": 1
+      }
+    },
+    {
+      "check_id": "I",
+      "name": "Internal-link: ≥3 inbound, ≥4 outbound",
+      "passed": false,
+      "severity": "BLOCKER",
+      "reason": "0 inbound, 8 outbound",
+      "evidence": {
+        "in": 0,
+        "out": 8
+      }
+    },
+    {
+      "check_id": "J",
+      "name": "Indexability: canonical set + in sitemap + not noindex'd + not robots-blocked",
+      "passed": true,
+      "severity": "BLOCKER",
+      "reason": "ok",
+      "evidence": {
+        "issues": []
+      }
+    },
+    {
+      "check_id": "K",
+      "name": "Schema accuracy (matches visible content)",
+      "passed": true,
+      "severity": "BLOCKER",
+      "reason": "ok",
+      "evidence": {
+        "issues": []
+      }
+    },
+    {
+      "check_id": "L",
+      "name": "Every <img> has non-placeholder alt text",
+      "passed": true,
+      "severity": "BLOCKER",
+      "reason": "0 missing alt, 0 placeholder; 0 content images total",
+      "evidence": {
+        "missing": 0,
+        "placeholder": 0
+      }
+    },
+    {
+      "check_id": "M",
+      "name": "Core Web Vitals (LCP<2.5s, INP<200ms, CLS<0.1)",
+      "passed": true,
+      "severity": "WARN",
+      "reason": "Lighthouse not run — check skipped",
+      "evidence": {}
+    },
+    {
+      "check_id": "N",
+      "name": "HTTPS + canonical hygiene",
+      "passed": true,
+      "severity": "BLOCKER",
+      "reason": "ok",
+      "evidence": {
+        "issues": []
+      }
+    },
+    {
+      "check_id": "O",
+      "name": "No keyword stuffing (sub-page density < 2× hub)",
+      "passed": true,
+      "severity": "BLOCKER",
+      "reason": "sub 8.12% vs hub 4.23% — ratio 1.92×",
+      "evidence": {
+        "sub_density": 8.123569794050344,
+        "hub_density": 4.233409610983982,
+        "ratio": 1.918918918918919
+      }
+    },
+    {
+      "check_id": "P",
+      "name": "Contact form in hero AND bottom + DSGVO-konform",
+      "passed": true,
+      "severity": "BLOCKER",
+      "reason": "hero + bottom forms present (non-DE page; DSGVO check skipped)",
+      "evidence": {
+        "dsgvo_checked": false,
+        "forms_found": 2
+      }
+    },
+    {
+      "check_id": "V",
+      "name": "Mobile H1 overflow-safe (long German compound words)",
+      "passed": true,
+      "severity": "INFO",
+      "reason": "non-DE page",
+      "evidence": {}
+    },
+    {
+      "check_id": "R1",
+      "name": "Topical depth ≥1,500 content words",
+      "passed": false,
+      "severity": "BLOCKER",
+      "reason": "874 content words",
+      "evidence": {
+        "word_count": 874
+      }
+    },
+    {
+      "check_id": "R2",
+      "name": "Intent-format match (service)",
+      "passed": false,
+      "severity": "BLOCKER",
+      "reason": "format='service' mismatch",
+      "evidence": {
+        "intent": "service"
+      }
+    },
+    {
+      "check_id": "R3",
+      "name": "Entity coverage ≥70%",
+      "passed": true,
+      "severity": "BLOCKER",
+      "reason": "8/8 entities (100%)",
+      "evidence": {
+        "present": [
+          "berawa",
+          "nearby",
+          "clinic",
+          "product",
+          "seminyak",
+          "genuine",
+          "doctor",
+          "fillers"
+        ],
+        "missing": []
+      }
+    },
+    {
+      "check_id": "R4",
+      "name": "PAA coverage ≥4 (of 6 questions)",
+      "passed": true,
+      "severity": "BLOCKER",
+      "reason": "5 answered",
+      "evidence": {
+        "answered": [
+          "Can I get genuine Botox near Berawa without travelling far?",
+          "How much does Botox cost near Berawa?",
+          "How much is Botox in Bali?",
+          "Is Botox in Bali safe?",
+          "Is the Botox used in Bali genuine?"
+        ],
+        "missing": [
+          "Where is the best Botox clinic near Berawa, Bali?"
+        ]
+      }
+    },
+    {
+      "check_id": "R5",
+      "name": "Featured-snippet structure (top 2 FAQs 40–80 words)",
+      "passed": true,
+      "severity": "WARN",
+      "reason": "ok",
+      "evidence": {
+        "issues": []
+      }
+    },
+    {
+      "check_id": "R6",
+      "name": "≥3 inbound + linked from hub",
+      "passed": false,
+      "severity": "BLOCKER",
+      "reason": "0 inbound; hub-link=no",
+      "evidence": {
+        "inbound": 0,
+        "from_hub": false
+      }
+    },
+    {
+      "check_id": "R7",
+      "name": "Ranking-grade CWV (LCP<1.5s, INP<100ms, CLS<0.05)",
+      "passed": true,
+      "severity": "WARN",
+      "reason": "Lighthouse not run — skipped",
+      "evidence": {}
+    },
+    {
+      "check_id": "R8",
+      "name": "Schema enrichment (Service + FAQPage)",
+      "passed": true,
+      "severity": "BLOCKER",
+      "reason": "present: Service,FAQPage",
+      "evidence": {
+        "present": [
+          "Service",
+          "FAQPage"
+        ]
+      }
+    },
+    {
+      "check_id": "R9",
+      "name": "Multimodal: ≥1 content image + (table OR svg)",
+      "passed": false,
+      "severity": "BLOCKER",
+      "reason": "img=0 tables=0 svgs=no",
+      "evidence": {
+        "content_imgs": 0,
+        "tables": 0,
+        "svg": false
+      }
+    },
+    {
+      "check_id": "R10",
+      "name": "Author E-E-A-T (byline OR Person schema)",
+      "passed": true,
+      "severity": "BLOCKER",
+      "reason": "ok",
+      "evidence": {
+        "byline": true,
+        "schema": false
+      }
+    },
+    {
+      "check_id": "R11",
+      "name": "Comparison content (for comparative queries)",
+      "passed": true,
+      "severity": "INFO",
+      "reason": "not a comparative query",
+      "evidence": {}
+    },
+    {
+      "check_id": "R12",
+      "name": "Original data / methodology / proprietary stat",
+      "passed": false,
+      "severity": "WARN",
+      "reason": "0 original-signal match(es)",
+      "evidence": {
+        "matches": 0
+      }
+    },
+    {
+      "check_id": "R13",
+      "name": "Geo ranking-grade relevance (≥3 of 5)",
+      "passed": true,
+      "severity": "INFO",
+      "reason": "not a geo page",
+      "evidence": {}
+    },
+    {
+      "check_id": "R14",
+      "name": "Sector ranking-grade relevance (≥4 of 6)",
+      "passed": true,
+      "severity": "INFO",
+      "reason": "not a sector page",
+      "evidence": {}
+    },
+    {
+      "check_id": "R15",
+      "name": "Buying-intent CTA above-fold + social proof",
+      "passed": false,
+      "severity": "BLOCKER",
+      "reason": "CTA-above-fold=False · social_proof=False · trust_chip=False",
+      "evidence": {
+        "signals": 0
+      }
+    },
+    {
+      "check_id": "R16",
+      "name": "Research-grounded copy (Reddit/PAA)",
+      "passed": true,
+      "severity": "BLOCKER",
+      "reason": "grounded: terms 100%, questions 100%, 7 sources",
+      "evidence": {
+        "missing_terms": [],
+        "missing_questions": [],
+        "sources": 7
+      }
+    }
+  ],
+  "pages/botox-canggu.html": [
+    {
+      "check_id": "A",
+      "name": "Bigram uniqueness ≥50% vs hub + nearest sibling",
+      "passed": false,
+      "severity": "BLOCKER",
+      "reason": "6.4% unique vs sibling (worst of 2)",
+      "evidence": {
+        "hub_unique_pct": 6.9,
+        "sibling_unique_pct": 6.4,
+        "nearest_sibling": "pages/botox-berawa.html",
+        "worst": 6.4
+      }
+    },
+    {
+      "check_id": "B",
+      "name": "Not a doorway page (≥3 sections ≥150w each)",
+      "passed": false,
+      "severity": "BLOCKER",
+      "reason": "2 substantive sections (of 11)",
+      "evidence": {
+        "section_word_counts": [
+          42,
+          202,
+          149,
+          132,
+          53,
+          107,
+          98,
+          387,
+          19,
+          39,
+          58
+        ]
+      }
+    },
+    {
+      "check_id": "C",
+      "name": "Title globally unique + 30–70 chars",
+      "passed": true,
+      "severity": "BLOCKER",
+      "reason": "ok",
+      "evidence": {
+        "length": 38,
+        "duplicates": []
+      }
+    },
+    {
+      "check_id": "D",
+      "name": "Meta description unique + 120–175 chars",
+      "passed": false,
+      "severity": "BLOCKER",
+      "reason": "length 98 (target 120–175)",
+      "evidence": {
+        "length": 98,
+        "duplicates": []
+      }
+    },
+    {
+      "check_id": "E",
+      "name": "Exactly one <h1> + globally unique",
+      "passed": true,
+      "severity": "BLOCKER",
+      "reason": "ok",
+      "evidence": {
+        "duplicates": []
+      }
+    },
+    {
+      "check_id": "F",
+      "name": "Geo-page local relevance (≥2 of 4)",
+      "passed": true,
+      "severity": "INFO",
+      "reason": "not a geo page",
+      "evidence": {}
+    },
+    {
+      "check_id": "G",
+      "name": "Sector-page sector relevance (≥2 of 4)",
+      "passed": true,
+      "severity": "INFO",
+      "reason": "not a sector page",
+      "evidence": {}
+    },
+    {
+      "check_id": "H",
+      "name": "E-E-A-T ≥2 of (author byline / trust / expertise)",
+      "passed": false,
+      "severity": "BLOCKER",
+      "reason": "1/3 signals — author byline",
+      "evidence": {
+        "signals": 1
+      }
+    },
+    {
+      "check_id": "I",
+      "name": "Internal-link: ≥3 inbound, ≥4 outbound",
+      "passed": false,
+      "severity": "BLOCKER",
+      "reason": "0 inbound, 8 outbound",
+      "evidence": {
+        "in": 0,
+        "out": 8
+      }
+    },
+    {
+      "check_id": "J",
+      "name": "Indexability: canonical set + in sitemap + not noindex'd + not robots-blocked",
+      "passed": true,
+      "severity": "BLOCKER",
+      "reason": "ok",
+      "evidence": {
+        "issues": []
+      }
+    },
+    {
+      "check_id": "K",
+      "name": "Schema accuracy (matches visible content)",
+      "passed": true,
+      "severity": "BLOCKER",
+      "reason": "ok",
+      "evidence": {
+        "issues": []
+      }
+    },
+    {
+      "check_id": "L",
+      "name": "Every <img> has non-placeholder alt text",
+      "passed": true,
+      "severity": "BLOCKER",
+      "reason": "0 missing alt, 0 placeholder; 0 content images total",
+      "evidence": {
+        "missing": 0,
+        "placeholder": 0
+      }
+    },
+    {
+      "check_id": "M",
+      "name": "Core Web Vitals (LCP<2.5s, INP<200ms, CLS<0.1)",
+      "passed": true,
+      "severity": "WARN",
+      "reason": "Lighthouse not run — check skipped",
+      "evidence": {}
+    },
+    {
+      "check_id": "N",
+      "name": "HTTPS + canonical hygiene",
+      "passed": true,
+      "severity": "BLOCKER",
+      "reason": "ok",
+      "evidence": {
+        "issues": []
+      }
+    },
+    {
+      "check_id": "O",
+      "name": "No keyword stuffing (sub-page density < 2× hub)",
+      "passed": true,
+      "severity": "BLOCKER",
+      "reason": "sub 8.12% vs hub 4.23% — ratio 1.92×",
+      "evidence": {
+        "sub_density": 8.123569794050344,
+        "hub_density": 4.233409610983982,
+        "ratio": 1.918918918918919
+      }
+    },
+    {
+      "check_id": "P",
+      "name": "Contact form in hero AND bottom + DSGVO-konform",
+      "passed": true,
+      "severity": "BLOCKER",
+      "reason": "hero + bottom forms present (non-DE page; DSGVO check skipped)",
+      "evidence": {
+        "dsgvo_checked": false,
+        "forms_found": 2
+      }
+    },
+    {
+      "check_id": "V",
+      "name": "Mobile H1 overflow-safe (long German compound words)",
+      "passed": true,
+      "severity": "INFO",
+      "reason": "non-DE page",
+      "evidence": {}
+    },
+    {
+      "check_id": "R1",
+      "name": "Topical depth ≥1,500 content words",
+      "passed": false,
+      "severity": "BLOCKER",
+      "reason": "874 content words",
+      "evidence": {
+        "word_count": 874
+      }
+    },
+    {
+      "check_id": "R2",
+      "name": "Intent-format match (service)",
+      "passed": false,
+      "severity": "BLOCKER",
+      "reason": "format='service' mismatch",
+      "evidence": {
+        "intent": "service"
+      }
+    },
+    {
+      "check_id": "R3",
+      "name": "Entity coverage ≥70%",
+      "passed": true,
+      "severity": "BLOCKER",
+      "reason": "8/8 entities (100%)",
+      "evidence": {
+        "present": [
+          "canggu",
+          "nearby",
+          "clinic",
+          "product",
+          "seminyak",
+          "genuine",
+          "doctor",
+          "fillers"
+        ],
+        "missing": []
+      }
+    },
+    {
+      "check_id": "R4",
+      "name": "PAA coverage ≥4 (of 6 questions)",
+      "passed": true,
+      "severity": "BLOCKER",
+      "reason": "5 answered",
+      "evidence": {
+        "answered": [
+          "Can I get genuine Botox near Canggu without travelling far?",
+          "How much does Botox cost near Canggu?",
+          "How much is Botox in Bali?",
+          "Is Botox in Bali safe?",
+          "Is the Botox used in Bali genuine?"
+        ],
+        "missing": [
+          "Where is the best Botox clinic near Canggu, Bali?"
+        ]
+      }
+    },
+    {
+      "check_id": "R5",
+      "name": "Featured-snippet structure (top 2 FAQs 40–80 words)",
+      "passed": true,
+      "severity": "WARN",
+      "reason": "ok",
+      "evidence": {
+        "issues": []
+      }
+    },
+    {
+      "check_id": "R6",
+      "name": "≥3 inbound + linked from hub",
+      "passed": false,
+      "severity": "BLOCKER",
+      "reason": "0 inbound; hub-link=no",
+      "evidence": {
+        "inbound": 0,
+        "from_hub": false
+      }
+    },
+    {
+      "check_id": "R7",
+      "name": "Ranking-grade CWV (LCP<1.5s, INP<100ms, CLS<0.05)",
+      "passed": true,
+      "severity": "WARN",
+      "reason": "Lighthouse not run — skipped",
+      "evidence": {}
+    },
+    {
+      "check_id": "R8",
+      "name": "Schema enrichment (Service + FAQPage)",
+      "passed": true,
+      "severity": "BLOCKER",
+      "reason": "present: Service,FAQPage",
+      "evidence": {
+        "present": [
+          "Service",
+          "FAQPage"
+        ]
+      }
+    },
+    {
+      "check_id": "R9",
+      "name": "Multimodal: ≥1 content image + (table OR svg)",
+      "passed": false,
+      "severity": "BLOCKER",
+      "reason": "img=0 tables=0 svgs=no",
+      "evidence": {
+        "content_imgs": 0,
+        "tables": 0,
+        "svg": false
+      }
+    },
+    {
+      "check_id": "R10",
+      "name": "Author E-E-A-T (byline OR Person schema)",
+      "passed": true,
+      "severity": "BLOCKER",
+      "reason": "ok",
+      "evidence": {
+        "byline": true,
+        "schema": false
+      }
+    },
+    {
+      "check_id": "R11",
+      "name": "Comparison content (for comparative queries)",
+      "passed": true,
+      "severity": "INFO",
+      "reason": "not a comparative query",
+      "evidence": {}
+    },
+    {
+      "check_id": "R12",
+      "name": "Original data / methodology / proprietary stat",
+      "passed": false,
+      "severity": "WARN",
+      "reason": "0 original-signal match(es)",
+      "evidence": {
+        "matches": 0
+      }
+    },
+    {
+      "check_id": "R13",
+      "name": "Geo ranking-grade relevance (≥3 of 5)",
+      "passed": true,
+      "severity": "INFO",
+      "reason": "not a geo page",
+      "evidence": {}
+    },
+    {
+      "check_id": "R14",
+      "name": "Sector ranking-grade relevance (≥4 of 6)",
+      "passed": true,
+      "severity": "INFO",
+      "reason": "not a sector page",
+      "evidence": {}
+    },
+    {
+      "check_id": "R15",
+      "name": "Buying-intent CTA above-fold + social proof",
+      "passed": false,
+      "severity": "BLOCKER",
+      "reason": "CTA-above-fold=False · social_proof=False · trust_chip=False",
+      "evidence": {
+        "signals": 0
+      }
+    },
+    {
+      "check_id": "R16",
+      "name": "Research-grounded copy (Reddit/PAA)",
+      "passed": true,
+      "severity": "BLOCKER",
+      "reason": "grounded: terms 100%, questions 100%, 7 sources",
+      "evidence": {
+        "missing_terms": [],
+        "missing_questions": [],
+        "sources": 7
+      }
+    }
+  ],
+  "pages/botox-denpasar.html": [
+    {
+      "check_id": "A",
+      "name": "Bigram uniqueness ≥50% vs hub + nearest sibling",
+      "passed": false,
+      "severity": "BLOCKER",
+      "reason": "6.4% unique vs sibling (worst of 2)",
+      "evidence": {
+        "hub_unique_pct": 6.9,
+        "sibling_unique_pct": 6.4,
+        "nearest_sibling": "pages/botox-berawa.html",
+        "worst": 6.4
+      }
+    },
+    {
+      "check_id": "B",
+      "name": "Not a doorway page (≥3 sections ≥150w each)",
+      "passed": false,
+      "severity": "BLOCKER",
+      "reason": "2 substantive sections (of 11)",
+      "evidence": {
+        "section_word_counts": [
+          42,
+          202,
+          149,
+          132,
+          53,
+          107,
+          98,
+          387,
+          19,
+          39,
+          58
+        ]
+      }
+    },
+    {
+      "check_id": "C",
+      "name": "Title globally unique + 30–70 chars",
+      "passed": true,
+      "severity": "BLOCKER",
+      "reason": "ok",
+      "evidence": {
+        "length": 40,
+        "duplicates": []
+      }
+    },
+    {
+      "check_id": "D",
+      "name": "Meta description unique + 120–175 chars",
+      "passed": false,
+      "severity": "BLOCKER",
+      "reason": "length 100 (target 120–175)",
+      "evidence": {
+        "length": 100,
+        "duplicates": []
+      }
+    },
+    {
+      "check_id": "E",
+      "name": "Exactly one <h1> + globally unique",
+      "passed": true,
+      "severity": "BLOCKER",
+      "reason": "ok",
+      "evidence": {
+        "duplicates": []
+      }
+    },
+    {
+      "check_id": "F",
+      "name": "Geo-page local relevance (≥2 of 4)",
+      "passed": true,
+      "severity": "INFO",
+      "reason": "not a geo page",
+      "evidence": {}
+    },
+    {
+      "check_id": "G",
+      "name": "Sector-page sector relevance (≥2 of 4)",
+      "passed": true,
+      "severity": "INFO",
+      "reason": "not a sector page",
+      "evidence": {}
+    },
+    {
+      "check_id": "H",
+      "name": "E-E-A-T ≥2 of (author byline / trust / expertise)",
+      "passed": false,
+      "severity": "BLOCKER",
+      "reason": "1/3 signals — author byline",
+      "evidence": {
+        "signals": 1
+      }
+    },
+    {
+      "check_id": "I",
+      "name": "Internal-link: ≥3 inbound, ≥4 outbound",
+      "passed": false,
+      "severity": "BLOCKER",
+      "reason": "0 inbound, 8 outbound",
+      "evidence": {
+        "in": 0,
+        "out": 8
+      }
+    },
+    {
+      "check_id": "J",
+      "name": "Indexability: canonical set + in sitemap + not noindex'd + not robots-blocked",
+      "passed": true,
+      "severity": "BLOCKER",
+      "reason": "ok",
+      "evidence": {
+        "issues": []
+      }
+    },
+    {
+      "check_id": "K",
+      "name": "Schema accuracy (matches visible content)",
+      "passed": true,
+      "severity": "BLOCKER",
+      "reason": "ok",
+      "evidence": {
+        "issues": []
+      }
+    },
+    {
+      "check_id": "L",
+      "name": "Every <img> has non-placeholder alt text",
+      "passed": true,
+      "severity": "BLOCKER",
+      "reason": "0 missing alt, 0 placeholder; 0 content images total",
+      "evidence": {
+        "missing": 0,
+        "placeholder": 0
+      }
+    },
+    {
+      "check_id": "M",
+      "name": "Core Web Vitals (LCP<2.5s, INP<200ms, CLS<0.1)",
+      "passed": true,
+      "severity": "WARN",
+      "reason": "Lighthouse not run — check skipped",
+      "evidence": {}
+    },
+    {
+      "check_id": "N",
+      "name": "HTTPS + canonical hygiene",
+      "passed": true,
+      "severity": "BLOCKER",
+      "reason": "ok",
+      "evidence": {
+        "issues": []
+      }
+    },
+    {
+      "check_id": "O",
+      "name": "No keyword stuffing (sub-page density < 2× hub)",
+      "passed": true,
+      "severity": "BLOCKER",
+      "reason": "sub 8.12% vs hub 4.23% — ratio 1.92×",
+      "evidence": {
+        "sub_density": 8.123569794050344,
+        "hub_density": 4.233409610983982,
+        "ratio": 1.918918918918919
+      }
+    },
+    {
+      "check_id": "P",
+      "name": "Contact form in hero AND bottom + DSGVO-konform",
+      "passed": true,
+      "severity": "BLOCKER",
+      "reason": "hero + bottom forms present (non-DE page; DSGVO check skipped)",
+      "evidence": {
+        "dsgvo_checked": false,
+        "forms_found": 2
+      }
+    },
+    {
+      "check_id": "V",
+      "name": "Mobile H1 overflow-safe (long German compound words)",
+      "passed": true,
+      "severity": "INFO",
+      "reason": "non-DE page",
+      "evidence": {}
+    },
+    {
+      "check_id": "R1",
+      "name": "Topical depth ≥1,500 content words",
+      "passed": false,
+      "severity": "BLOCKER",
+      "reason": "874 content words",
+      "evidence": {
+        "word_count": 874
+      }
+    },
+    {
+      "check_id": "R2",
+      "name": "Intent-format match (service)",
+      "passed": false,
+      "severity": "BLOCKER",
+      "reason": "format='service' mismatch",
+      "evidence": {
+        "intent": "service"
+      }
+    },
+    {
+      "check_id": "R3",
+      "name": "Entity coverage ≥70%",
+      "passed": true,
+      "severity": "BLOCKER",
+      "reason": "8/8 entities (100%)",
+      "evidence": {
+        "present": [
+          "denpasar",
+          "nearby",
+          "clinic",
+          "product",
+          "seminyak",
+          "genuine",
+          "doctor",
+          "fillers"
+        ],
+        "missing": []
+      }
+    },
+    {
+      "check_id": "R4",
+      "name": "PAA coverage ≥4 (of 6 questions)",
+      "passed": true,
+      "severity": "BLOCKER",
+      "reason": "5 answered",
+      "evidence": {
+        "answered": [
+          "Can I get genuine Botox near Denpasar without travelling far?",
+          "How much does Botox cost near Denpasar?",
+          "How much is Botox in Bali?",
+          "Is Botox in Bali safe?",
+          "Is the Botox used in Bali genuine?"
+        ],
+        "missing": [
+          "Where is the best Botox clinic near Denpasar, Bali?"
+        ]
+      }
+    },
+    {
+      "check_id": "R5",
+      "name": "Featured-snippet structure (top 2 FAQs 40–80 words)",
+      "passed": true,
+      "severity": "WARN",
+      "reason": "ok",
+      "evidence": {
+        "issues": []
+      }
+    },
+    {
+      "check_id": "R6",
+      "name": "≥3 inbound + linked from hub",
+      "passed": false,
+      "severity": "BLOCKER",
+      "reason": "0 inbound; hub-link=no",
+      "evidence": {
+        "inbound": 0,
+        "from_hub": false
+      }
+    },
+    {
+      "check_id": "R7",
+      "name": "Ranking-grade CWV (LCP<1.5s, INP<100ms, CLS<0.05)",
+      "passed": true,
+      "severity": "WARN",
+      "reason": "Lighthouse not run — skipped",
+      "evidence": {}
+    },
+    {
+      "check_id": "R8",
+      "name": "Schema enrichment (Service + FAQPage)",
+      "passed": true,
+      "severity": "BLOCKER",
+      "reason": "present: Service,FAQPage",
+      "evidence": {
+        "present": [
+          "Service",
+          "FAQPage"
+        ]
+      }
+    },
+    {
+      "check_id": "R9",
+      "name": "Multimodal: ≥1 content image + (table OR svg)",
+      "passed": false,
+      "severity": "BLOCKER",
+      "reason": "img=0 tables=0 svgs=no",
+      "evidence": {
+        "content_imgs": 0,
+        "tables": 0,
+        "svg": false
+      }
+    },
+    {
+      "check_id": "R10",
+      "name": "Author E-E-A-T (byline OR Person schema)",
+      "passed": true,
+      "severity": "BLOCKER",
+      "reason": "ok",
+      "evidence": {
+        "byline": true,
+        "schema": false
+      }
+    },
+    {
+      "check_id": "R11",
+      "name": "Comparison content (for comparative queries)",
+      "passed": true,
+      "severity": "INFO",
+      "reason": "not a comparative query",
+      "evidence": {}
+    },
+    {
+      "check_id": "R12",
+      "name": "Original data / methodology / proprietary stat",
+      "passed": false,
+      "severity": "WARN",
+      "reason": "0 original-signal match(es)",
+      "evidence": {
+        "matches": 0
+      }
+    },
+    {
+      "check_id": "R13",
+      "name": "Geo ranking-grade relevance (≥3 of 5)",
+      "passed": true,
+      "severity": "INFO",
+      "reason": "not a geo page",
+      "evidence": {}
+    },
+    {
+      "check_id": "R14",
+      "name": "Sector ranking-grade relevance (≥4 of 6)",
+      "passed": true,
+      "severity": "INFO",
+      "reason": "not a sector page",
+      "evidence": {}
+    },
+    {
+      "check_id": "R15",
+      "name": "Buying-intent CTA above-fold + social proof",
+      "passed": false,
+      "severity": "BLOCKER",
+      "reason": "CTA-above-fold=False · social_proof=False · trust_chip=False",
+      "evidence": {
+        "signals": 0
+      }
+    },
+    {
+      "check_id": "R16",
+      "name": "Research-grounded copy (Reddit/PAA)",
+      "passed": true,
+      "severity": "BLOCKER",
+      "reason": "grounded: terms 100%, questions 100%, 7 sources",
+      "evidence": {
+        "missing_terms": [],
+        "missing_questions": [],
+        "sources": 7
+      }
+    }
+  ],
+  "pages/botox-jimbaran.html": [
+    {
+      "check_id": "A",
+      "name": "Bigram uniqueness ≥50% vs hub + nearest sibling",
+      "passed": false,
+      "severity": "BLOCKER",
+      "reason": "6.4% unique vs sibling (worst of 2)",
+      "evidence": {
+        "hub_unique_pct": 6.9,
+        "sibling_unique_pct": 6.4,
+        "nearest_sibling": "pages/botox-berawa.html",
+        "worst": 6.4
+      }
+    },
+    {
+      "check_id": "B",
+      "name": "Not a doorway page (≥3 sections ≥150w each)",
+      "passed": false,
+      "severity": "BLOCKER",
+      "reason": "2 substantive sections (of 11)",
+      "evidence": {
+        "section_word_counts": [
+          42,
+          202,
+          149,
+          132,
+          53,
+          107,
+          98,
+          387,
+          19,
+          39,
+          58
+        ]
+      }
+    },
+    {
+      "check_id": "C",
+      "name": "Title globally unique + 30–70 chars",
+      "passed": true,
+      "severity": "BLOCKER",
+      "reason": "ok",
+      "evidence": {
+        "length": 40,
+        "duplicates": []
+      }
+    },
+    {
+      "check_id": "D",
+      "name": "Meta description unique + 120–175 chars",
+      "passed": false,
+      "severity": "BLOCKER",
+      "reason": "length 100 (target 120–175)",
+      "evidence": {
+        "length": 100,
+        "duplicates": []
+      }
+    },
+    {
+      "check_id": "E",
+      "name": "Exactly one <h1> + globally unique",
+      "passed": true,
+      "severity": "BLOCKER",
+      "reason": "ok",
+      "evidence": {
+        "duplicates": []
+      }
+    },
+    {
+      "check_id": "F",
+      "name": "Geo-page local relevance (≥2 of 4)",
+      "passed": true,
+      "severity": "INFO",
+      "reason": "not a geo page",
+      "evidence": {}
+    },
+    {
+      "check_id": "G",
+      "name": "Sector-page sector relevance (≥2 of 4)",
+      "passed": true,
+      "severity": "INFO",
+      "reason": "not a sector page",
+      "evidence": {}
+    },
+    {
+      "check_id": "H",
+      "name": "E-E-A-T ≥2 of (author byline / trust / expertise)",
+      "passed": false,
+      "severity": "BLOCKER",
+      "reason": "1/3 signals — author byline",
+      "evidence": {
+        "signals": 1
+      }
+    },
+    {
+      "check_id": "I",
+      "name": "Internal-link: ≥3 inbound, ≥4 outbound",
+      "passed": false,
+      "severity": "BLOCKER",
+      "reason": "0 inbound, 8 outbound",
+      "evidence": {
+        "in": 0,
+        "out": 8
+      }
+    },
+    {
+      "check_id": "J",
+      "name": "Indexability: canonical set + in sitemap + not noindex'd + not robots-blocked",
+      "passed": true,
+      "severity": "BLOCKER",
+      "reason": "ok",
+      "evidence": {
+        "issues": []
+      }
+    },
+    {
+      "check_id": "K",
+      "name": "Schema accuracy (matches visible content)",
+      "passed": true,
+      "severity": "BLOCKER",
+      "reason": "ok",
+      "evidence": {
+        "issues": []
+      }
+    },
+    {
+      "check_id": "L",
+      "name": "Every <img> has non-placeholder alt text",
+      "passed": true,
+      "severity": "BLOCKER",
+      "reason": "0 missing alt, 0 placeholder; 0 content images total",
+      "evidence": {
+        "missing": 0,
+        "placeholder": 0
+      }
+    },
+    {
+      "check_id": "M",
+      "name": "Core Web Vitals (LCP<2.5s, INP<200ms, CLS<0.1)",
+      "passed": true,
+      "severity": "WARN",
+      "reason": "Lighthouse not run — check skipped",
+      "evidence": {}
+    },
+    {
+      "check_id": "N",
+      "name": "HTTPS + canonical hygiene",
+      "passed": true,
+      "severity": "BLOCKER",
+      "reason": "ok",
+      "evidence": {
+        "issues": []
+      }
+    },
+    {
+      "check_id": "O",
+      "name": "No keyword stuffing (sub-page density < 2× hub)",
+      "passed": true,
+      "severity": "BLOCKER",
+      "reason": "sub 8.12% vs hub 4.23% — ratio 1.92×",
+      "evidence": {
+        "sub_density": 8.123569794050344,
+        "hub_density": 4.233409610983982,
+        "ratio": 1.918918918918919
+      }
+    },
+    {
+      "check_id": "P",
+      "name": "Contact form in hero AND bottom + DSGVO-konform",
+      "passed": true,
+      "severity": "BLOCKER",
+      "reason": "hero + bottom forms present (non-DE page; DSGVO check skipped)",
+      "evidence": {
+        "dsgvo_checked": false,
+        "forms_found": 2
+      }
+    },
+    {
+      "check_id": "V",
+      "name": "Mobile H1 overflow-safe (long German compound words)",
+      "passed": true,
+      "severity": "INFO",
+      "reason": "non-DE page",
+      "evidence": {}
+    },
+    {
+      "check_id": "R1",
+      "name": "Topical depth ≥1,500 content words",
+      "passed": false,
+      "severity": "BLOCKER",
+      "reason": "874 content words",
+      "evidence": {
+        "word_count": 874
+      }
+    },
+    {
+      "check_id": "R2",
+      "name": "Intent-format match (service)",
+      "passed": false,
+      "severity": "BLOCKER",
+      "reason": "format='service' mismatch",
+      "evidence": {
+        "intent": "service"
+      }
+    },
+    {
+      "check_id": "R3",
+      "name": "Entity coverage ≥70%",
+      "passed": true,
+      "severity": "BLOCKER",
+      "reason": "8/8 entities (100%)",
+      "evidence": {
+        "present": [
+          "jimbaran",
+          "nearby",
+          "clinic",
+          "product",
+          "seminyak",
+          "genuine",
+          "doctor",
+          "fillers"
+        ],
+        "missing": []
+      }
+    },
+    {
+      "check_id": "R4",
+      "name": "PAA coverage ≥4 (of 6 questions)",
+      "passed": true,
+      "severity": "BLOCKER",
+      "reason": "5 answered",
+      "evidence": {
+        "answered": [
+          "Can I get genuine Botox near Jimbaran without travelling far?",
+          "How much does Botox cost near Jimbaran?",
+          "How much is Botox in Bali?",
+          "Is Botox in Bali safe?",
+          "Is the Botox used in Bali genuine?"
+        ],
+        "missing": [
+          "Where is the best Botox clinic near Jimbaran, Bali?"
+        ]
+      }
+    },
+    {
+      "check_id": "R5",
+      "name": "Featured-snippet structure (top 2 FAQs 40–80 words)",
+      "passed": true,
+      "severity": "WARN",
+      "reason": "ok",
+      "evidence": {
+        "issues": []
+      }
+    },
+    {
+      "check_id": "R6",
+      "name": "≥3 inbound + linked from hub",
+      "passed": false,
+      "severity": "BLOCKER",
+      "reason": "0 inbound; hub-link=no",
+      "evidence": {
+        "inbound": 0,
+        "from_hub": false
+      }
+    },
+    {
+      "check_id": "R7",
+      "name": "Ranking-grade CWV (LCP<1.5s, INP<100ms, CLS<0.05)",
+      "passed": true,
+      "severity": "WARN",
+      "reason": "Lighthouse not run — skipped",
+      "evidence": {}
+    },
+    {
+      "check_id": "R8",
+      "name": "Schema enrichment (Service + FAQPage)",
+      "passed": true,
+      "severity": "BLOCKER",
+      "reason": "present: Service,FAQPage",
+      "evidence": {
+        "present": [
+          "Service",
+          "FAQPage"
+        ]
+      }
+    },
+    {
+      "check_id": "R9",
+      "name": "Multimodal: ≥1 content image + (table OR svg)",
+      "passed": false,
+      "severity": "BLOCKER",
+      "reason": "img=0 tables=0 svgs=no",
+      "evidence": {
+        "content_imgs": 0,
+        "tables": 0,
+        "svg": false
+      }
+    },
+    {
+      "check_id": "R10",
+      "name": "Author E-E-A-T (byline OR Person schema)",
+      "passed": true,
+      "severity": "BLOCKER",
+      "reason": "ok",
+      "evidence": {
+        "byline": true,
+        "schema": false
+      }
+    },
+    {
+      "check_id": "R11",
+      "name": "Comparison content (for comparative queries)",
+      "passed": true,
+      "severity": "INFO",
+      "reason": "not a comparative query",
+      "evidence": {}
+    },
+    {
+      "check_id": "R12",
+      "name": "Original data / methodology / proprietary stat",
+      "passed": false,
+      "severity": "WARN",
+      "reason": "0 original-signal match(es)",
+      "evidence": {
+        "matches": 0
+      }
+    },
+    {
+      "check_id": "R13",
+      "name": "Geo ranking-grade relevance (≥3 of 5)",
+      "passed": true,
+      "severity": "INFO",
+      "reason": "not a geo page",
+      "evidence": {}
+    },
+    {
+      "check_id": "R14",
+      "name": "Sector ranking-grade relevance (≥4 of 6)",
+      "passed": true,
+      "severity": "INFO",
+      "reason": "not a sector page",
+      "evidence": {}
+    },
+    {
+      "check_id": "R15",
+      "name": "Buying-intent CTA above-fold + social proof",
+      "passed": false,
+      "severity": "BLOCKER",
+      "reason": "CTA-above-fold=False · social_proof=False · trust_chip=False",
+      "evidence": {
+        "signals": 0
+      }
+    },
+    {
+      "check_id": "R16",
+      "name": "Research-grounded copy (Reddit/PAA)",
+      "passed": true,
+      "severity": "BLOCKER",
+      "reason": "grounded: terms 100%, questions 100%, 7 sources",
+      "evidence": {
+        "missing_terms": [],
+        "missing_questions": [],
+        "sources": 7
+      }
+    }
+  ],
+  "pages/botox-kerobokan.html": [
+    {
+      "check_id": "A",
+      "name": "Bigram uniqueness ≥50% vs hub + nearest sibling",
+      "passed": false,
+      "severity": "BLOCKER",
+      "reason": "6.4% unique vs sibling (worst of 2)",
+      "evidence": {
+        "hub_unique_pct": 6.9,
+        "sibling_unique_pct": 6.4,
+        "nearest_sibling": "pages/botox-berawa.html",
+        "worst": 6.4
+      }
+    },
+    {
+      "check_id": "B",
+      "name": "Not a doorway page (≥3 sections ≥150w each)",
+      "passed": false,
+      "severity": "BLOCKER",
+      "reason": "2 substantive sections (of 11)",
+      "evidence": {
+        "section_word_counts": [
+          42,
+          202,
+          149,
+          132,
+          53,
+          107,
+          98,
+          387,
+          19,
+          39,
+          58
+        ]
+      }
+    },
+    {
+      "check_id": "C",
+      "name": "Title globally unique + 30–70 chars",
+      "passed": true,
+      "severity": "BLOCKER",
+      "reason": "ok",
+      "evidence": {
+        "length": 41,
+        "duplicates": []
+      }
+    },
+    {
+      "check_id": "D",
+      "name": "Meta description unique + 120–175 chars",
+      "passed": false,
+      "severity": "BLOCKER",
+      "reason": "length 101 (target 120–175)",
+      "evidence": {
+        "length": 101,
+        "duplicates": []
+      }
+    },
+    {
+      "check_id": "E",
+      "name": "Exactly one <h1> + globally unique",
+      "passed": true,
+      "severity": "BLOCKER",
+      "reason": "ok",
+      "evidence": {
+        "duplicates": []
+      }
+    },
+    {
+      "check_id": "F",
+      "name": "Geo-page local relevance (≥2 of 4)",
+      "passed": true,
+      "severity": "INFO",
+      "reason": "not a geo page",
+      "evidence": {}
+    },
+    {
+      "check_id": "G",
+      "name": "Sector-page sector relevance (≥2 of 4)",
+      "passed": true,
+      "severity": "INFO",
+      "reason": "not a sector page",
+      "evidence": {}
+    },
+    {
+      "check_id": "H",
+      "name": "E-E-A-T ≥2 of (author byline / trust / expertise)",
+      "passed": false,
+      "severity": "BLOCKER",
+      "reason": "1/3 signals — author byline",
+      "evidence": {
+        "signals": 1
+      }
+    },
+    {
+      "check_id": "I",
+      "name": "Internal-link: ≥3 inbound, ≥4 outbound",
+      "passed": false,
+      "severity": "BLOCKER",
+      "reason": "0 inbound, 8 outbound",
+      "evidence": {
+        "in": 0,
+        "out": 8
+      }
+    },
+    {
+      "check_id": "J",
+      "name": "Indexability: canonical set + in sitemap + not noindex'd + not robots-blocked",
+      "passed": true,
+      "severity": "BLOCKER",
+      "reason": "ok",
+      "evidence": {
+        "issues": []
+      }
+    },
+    {
+      "check_id": "K",
+      "name": "Schema accuracy (matches visible content)",
+      "passed": true,
+      "severity": "BLOCKER",
+      "reason": "ok",
+      "evidence": {
+        "issues": []
+      }
+    },
+    {
+      "check_id": "L",
+      "name": "Every <img> has non-placeholder alt text",
+      "passed": true,
+      "severity": "BLOCKER",
+      "reason": "0 missing alt, 0 placeholder; 0 content images total",
+      "evidence": {
+        "missing": 0,
+        "placeholder": 0
+      }
+    },
+    {
+      "check_id": "M",
+      "name": "Core Web Vitals (LCP<2.5s, INP<200ms, CLS<0.1)",
+      "passed": true,
+      "severity": "WARN",
+      "reason": "Lighthouse not run — check skipped",
+      "evidence": {}
+    },
+    {
+      "check_id": "N",
+      "name": "HTTPS + canonical hygiene",
+      "passed": true,
+      "severity": "BLOCKER",
+      "reason": "ok",
+      "evidence": {
+        "issues": []
+      }
+    },
+    {
+      "check_id": "O",
+      "name": "No keyword stuffing (sub-page density < 2× hub)",
+      "passed": true,
+      "severity": "BLOCKER",
+      "reason": "sub 8.12% vs hub 4.23% — ratio 1.92×",
+      "evidence": {
+        "sub_density": 8.123569794050344,
+        "hub_density": 4.233409610983982,
+        "ratio": 1.918918918918919
+      }
+    },
+    {
+      "check_id": "P",
+      "name": "Contact form in hero AND bottom + DSGVO-konform",
+      "passed": true,
+      "severity": "BLOCKER",
+      "reason": "hero + bottom forms present (non-DE page; DSGVO check skipped)",
+      "evidence": {
+        "dsgvo_checked": false,
+        "forms_found": 2
+      }
+    },
+    {
+      "check_id": "V",
+      "name": "Mobile H1 overflow-safe (long German compound words)",
+      "passed": true,
+      "severity": "INFO",
+      "reason": "non-DE page",
+      "evidence": {}
+    },
+    {
+      "check_id": "R1",
+      "name": "Topical depth ≥1,500 content words",
+      "passed": false,
+      "severity": "BLOCKER",
+      "reason": "874 content words",
+      "evidence": {
+        "word_count": 874
+      }
+    },
+    {
+      "check_id": "R2",
+      "name": "Intent-format match (service)",
+      "passed": false,
+      "severity": "BLOCKER",
+      "reason": "format='service' mismatch",
+      "evidence": {
+        "intent": "service"
+      }
+    },
+    {
+      "check_id": "R3",
+      "name": "Entity coverage ≥70%",
+      "passed": true,
+      "severity": "BLOCKER",
+      "reason": "8/8 entities (100%)",
+      "evidence": {
+        "present": [
+          "kerobokan",
+          "nearby",
+          "clinic",
+          "product",
+          "seminyak",
+          "genuine",
+          "doctor",
+          "fillers"
+        ],
+        "missing": []
+      }
+    },
+    {
+      "check_id": "R4",
+      "name": "PAA coverage ≥4 (of 6 questions)",
+      "passed": true,
+      "severity": "BLOCKER",
+      "reason": "5 answered",
+      "evidence": {
+        "answered": [
+          "Can I get genuine Botox near Kerobokan without travelling far?",
+          "How much does Botox cost near Kerobokan?",
+          "How much is Botox in Bali?",
+          "Is Botox in Bali safe?",
+          "Is the Botox used in Bali genuine?"
+        ],
+        "missing": [
+          "Where is the best Botox clinic near Kerobokan, Bali?"
+        ]
+      }
+    },
+    {
+      "check_id": "R5",
+      "name": "Featured-snippet structure (top 2 FAQs 40–80 words)",
+      "passed": true,
+      "severity": "WARN",
+      "reason": "ok",
+      "evidence": {
+        "issues": []
+      }
+    },
+    {
+      "check_id": "R6",
+      "name": "≥3 inbound + linked from hub",
+      "passed": false,
+      "severity": "BLOCKER",
+      "reason": "0 inbound; hub-link=no",
+      "evidence": {
+        "inbound": 0,
+        "from_hub": false
+      }
+    },
+    {
+      "check_id": "R7",
+      "name": "Ranking-grade CWV (LCP<1.5s, INP<100ms, CLS<0.05)",
+      "passed": true,
+      "severity": "WARN",
+      "reason": "Lighthouse not run — skipped",
+      "evidence": {}
+    },
+    {
+      "check_id": "R8",
+      "name": "Schema enrichment (Service + FAQPage)",
+      "passed": true,
+      "severity": "BLOCKER",
+      "reason": "present: Service,FAQPage",
+      "evidence": {
+        "present": [
+          "Service",
+          "FAQPage"
+        ]
+      }
+    },
+    {
+      "check_id": "R9",
+      "name": "Multimodal: ≥1 content image + (table OR svg)",
+      "passed": false,
+      "severity": "BLOCKER",
+      "reason": "img=0 tables=0 svgs=no",
+      "evidence": {
+        "content_imgs": 0,
+        "tables": 0,
+        "svg": false
+      }
+    },
+    {
+      "check_id": "R10",
+      "name": "Author E-E-A-T (byline OR Person schema)",
+      "passed": true,
+      "severity": "BLOCKER",
+      "reason": "ok",
+      "evidence": {
+        "byline": true,
+        "schema": false
+      }
+    },
+    {
+      "check_id": "R11",
+      "name": "Comparison content (for comparative queries)",
+      "passed": true,
+      "severity": "INFO",
+      "reason": "not a comparative query",
+      "evidence": {}
+    },
+    {
+      "check_id": "R12",
+      "name": "Original data / methodology / proprietary stat",
+      "passed": false,
+      "severity": "WARN",
+      "reason": "0 original-signal match(es)",
+      "evidence": {
+        "matches": 0
+      }
+    },
+    {
+      "check_id": "R13",
+      "name": "Geo ranking-grade relevance (≥3 of 5)",
+      "passed": true,
+      "severity": "INFO",
+      "reason": "not a geo page",
+      "evidence": {}
+    },
+    {
+      "check_id": "R14",
+      "name": "Sector ranking-grade relevance (≥4 of 6)",
+      "passed": true,
+      "severity": "INFO",
+      "reason": "not a sector page",
+      "evidence": {}
+    },
+    {
+      "check_id": "R15",
+      "name": "Buying-intent CTA above-fold + social proof",
+      "passed": false,
+      "severity": "BLOCKER",
+      "reason": "CTA-above-fold=False · social_proof=False · trust_chip=False",
+      "evidence": {
+        "signals": 0
+      }
+    },
+    {
+      "check_id": "R16",
+      "name": "Research-grounded copy (Reddit/PAA)",
+      "passed": true,
+      "severity": "BLOCKER",
+      "reason": "grounded: terms 100%, questions 100%, 7 sources",
+      "evidence": {
+        "missing_terms": [],
+        "missing_questions": [],
+        "sources": 7
+      }
+    }
+  ],
+  "pages/botox-kuta.html": [
+    {
+      "check_id": "A",
+      "name": "Bigram uniqueness ≥50% vs hub + nearest sibling",
+      "passed": false,
+      "severity": "BLOCKER",
+      "reason": "6.3% unique vs sibling (worst of 2)",
+      "evidence": {
+        "hub_unique_pct": 6.8,
+        "sibling_unique_pct": 6.3,
+        "nearest_sibling": "pages/botox-berawa.html",
+        "worst": 6.3
+      }
+    },
+    {
+      "check_id": "B",
+      "name": "Not a doorway page (≥3 sections ≥150w each)",
+      "passed": false,
+      "severity": "BLOCKER",
+      "reason": "2 substantive sections (of 11)",
+      "evidence": {
+        "section_word_counts": [
+          42,
+          202,
+          149,
+          132,
+          53,
+          107,
+          98,
+          387,
+          19,
+          39,
+          58
+        ]
+      }
+    },
+    {
+      "check_id": "C",
+      "name": "Title globally unique + 30–70 chars",
+      "passed": true,
+      "severity": "BLOCKER",
+      "reason": "ok",
+      "evidence": {
+        "length": 36,
+        "duplicates": []
+      }
+    },
+    {
+      "check_id": "D",
+      "name": "Meta description unique + 120–175 chars",
+      "passed": false,
+      "severity": "BLOCKER",
+      "reason": "length 96 (target 120–175)",
+      "evidence": {
+        "length": 96,
+        "duplicates": []
+      }
+    },
+    {
+      "check_id": "E",
+      "name": "Exactly one <h1> + globally unique",
+      "passed": true,
+      "severity": "BLOCKER",
+      "reason": "ok",
+      "evidence": {
+        "duplicates": []
+      }
+    },
+    {
+      "check_id": "F",
+      "name": "Geo-page local relevance (≥2 of 4)",
+      "passed": true,
+      "severity": "INFO",
+      "reason": "not a geo page",
+      "evidence": {}
+    },
+    {
+      "check_id": "G",
+      "name": "Sector-page sector relevance (≥2 of 4)",
+      "passed": true,
+      "severity": "INFO",
+      "reason": "not a sector page",
+      "evidence": {}
+    },
+    {
+      "check_id": "H",
+      "name": "E-E-A-T ≥2 of (author byline / trust / expertise)",
+      "passed": false,
+      "severity": "BLOCKER",
+      "reason": "1/3 signals — author byline",
+      "evidence": {
+        "signals": 1
+      }
+    },
+    {
+      "check_id": "I",
+      "name": "Internal-link: ≥3 inbound, ≥4 outbound",
+      "passed": false,
+      "severity": "BLOCKER",
+      "reason": "0 inbound, 8 outbound",
+      "evidence": {
+        "in": 0,
+        "out": 8
+      }
+    },
+    {
+      "check_id": "J",
+      "name": "Indexability: canonical set + in sitemap + not noindex'd + not robots-blocked",
+      "passed": true,
+      "severity": "BLOCKER",
+      "reason": "ok",
+      "evidence": {
+        "issues": []
+      }
+    },
+    {
+      "check_id": "K",
+      "name": "Schema accuracy (matches visible content)",
+      "passed": true,
+      "severity": "BLOCKER",
+      "reason": "ok",
+      "evidence": {
+        "issues": []
+      }
+    },
+    {
+      "check_id": "L",
+      "name": "Every <img> has non-placeholder alt text",
+      "passed": true,
+      "severity": "BLOCKER",
+      "reason": "0 missing alt, 0 placeholder; 0 content images total",
+      "evidence": {
+        "missing": 0,
+        "placeholder": 0
+      }
+    },
+    {
+      "check_id": "M",
+      "name": "Core Web Vitals (LCP<2.5s, INP<200ms, CLS<0.1)",
+      "passed": true,
+      "severity": "WARN",
+      "reason": "Lighthouse not run — check skipped",
+      "evidence": {}
+    },
+    {
+      "check_id": "N",
+      "name": "HTTPS + canonical hygiene",
+      "passed": true,
+      "severity": "BLOCKER",
+      "reason": "ok",
+      "evidence": {
+        "issues": []
+      }
+    },
+    {
+      "check_id": "O",
+      "name": "No keyword stuffing (sub-page density < 2× hub)",
+      "passed": true,
+      "severity": "BLOCKER",
+      "reason": "sub 8.47% vs hub 4.58% — ratio 1.85×",
+      "evidence": {
+        "sub_density": 8.466819221967963,
+        "hub_density": 4.576659038901602,
+        "ratio": 1.8499999999999999
+      }
+    },
+    {
+      "check_id": "P",
+      "name": "Contact form in hero AND bottom + DSGVO-konform",
+      "passed": true,
+      "severity": "BLOCKER",
+      "reason": "hero + bottom forms present (non-DE page; DSGVO check skipped)",
+      "evidence": {
+        "dsgvo_checked": false,
+        "forms_found": 2
+      }
+    },
+    {
+      "check_id": "V",
+      "name": "Mobile H1 overflow-safe (long German compound words)",
+      "passed": true,
+      "severity": "INFO",
+      "reason": "non-DE page",
+      "evidence": {}
+    },
+    {
+      "check_id": "R1",
+      "name": "Topical depth ≥1,500 content words",
+      "passed": false,
+      "severity": "BLOCKER",
+      "reason": "874 content words",
+      "evidence": {
+        "word_count": 874
+      }
+    },
+    {
+      "check_id": "R2",
+      "name": "Intent-format match (service)",
+      "passed": false,
+      "severity": "BLOCKER",
+      "reason": "format='service' mismatch",
+      "evidence": {
+        "intent": "service"
+      }
+    },
+    {
+      "check_id": "R3",
+      "name": "Entity coverage ≥70%",
+      "passed": true,
+      "severity": "BLOCKER",
+      "reason": "8/8 entities (100%)",
+      "evidence": {
+        "present": [
+          "kuta",
+          "nearby",
+          "clinic",
+          "product",
+          "seminyak",
+          "genuine",
+          "doctor",
+          "fillers"
+        ],
+        "missing": []
+      }
+    },
+    {
+      "check_id": "R4",
+      "name": "PAA coverage ≥4 (of 6 questions)",
+      "passed": true,
+      "severity": "BLOCKER",
+      "reason": "5 answered",
+      "evidence": {
+        "answered": [
+          "Can I get genuine Botox near Kuta without travelling far?",
+          "How much does Botox cost near Kuta?",
+          "How much is Botox in Bali?",
+          "Is Botox in Bali safe?",
+          "Is the Botox used in Bali genuine?"
+        ],
+        "missing": [
+          "Where is the best Botox clinic near Kuta, Bali?"
+        ]
+      }
+    },
+    {
+      "check_id": "R5",
+      "name": "Featured-snippet structure (top 2 FAQs 40–80 words)",
+      "passed": true,
+      "severity": "WARN",
+      "reason": "ok",
+      "evidence": {
+        "issues": []
+      }
+    },
+    {
+      "check_id": "R6",
+      "name": "≥3 inbound + linked from hub",
+      "passed": false,
+      "severity": "BLOCKER",
+      "reason": "0 inbound; hub-link=no",
+      "evidence": {
+        "inbound": 0,
+        "from_hub": false
+      }
+    },
+    {
+      "check_id": "R7",
+      "name": "Ranking-grade CWV (LCP<1.5s, INP<100ms, CLS<0.05)",
+      "passed": true,
+      "severity": "WARN",
+      "reason": "Lighthouse not run — skipped",
+      "evidence": {}
+    },
+    {
+      "check_id": "R8",
+      "name": "Schema enrichment (Service + FAQPage)",
+      "passed": true,
+      "severity": "BLOCKER",
+      "reason": "present: Service,FAQPage",
+      "evidence": {
+        "present": [
+          "Service",
+          "FAQPage"
+        ]
+      }
+    },
+    {
+      "check_id": "R9",
+      "name": "Multimodal: ≥1 content image + (table OR svg)",
+      "passed": false,
+      "severity": "BLOCKER",
+      "reason": "img=0 tables=0 svgs=no",
+      "evidence": {
+        "content_imgs": 0,
+        "tables": 0,
+        "svg": false
+      }
+    },
+    {
+      "check_id": "R10",
+      "name": "Author E-E-A-T (byline OR Person schema)",
+      "passed": true,
+      "severity": "BLOCKER",
+      "reason": "ok",
+      "evidence": {
+        "byline": true,
+        "schema": false
+      }
+    },
+    {
+      "check_id": "R11",
+      "name": "Comparison content (for comparative queries)",
+      "passed": true,
+      "severity": "INFO",
+      "reason": "not a comparative query",
+      "evidence": {}
+    },
+    {
+      "check_id": "R12",
+      "name": "Original data / methodology / proprietary stat",
+      "passed": false,
+      "severity": "WARN",
+      "reason": "0 original-signal match(es)",
+      "evidence": {
+        "matches": 0
+      }
+    },
+    {
+      "check_id": "R13",
+      "name": "Geo ranking-grade relevance (≥3 of 5)",
+      "passed": true,
+      "severity": "INFO",
+      "reason": "not a geo page",
+      "evidence": {}
+    },
+    {
+      "check_id": "R14",
+      "name": "Sector ranking-grade relevance (≥4 of 6)",
+      "passed": true,
+      "severity": "INFO",
+      "reason": "not a sector page",
+      "evidence": {}
+    },
+    {
+      "check_id": "R15",
+      "name": "Buying-intent CTA above-fold + social proof",
+      "passed": false,
+      "severity": "BLOCKER",
+      "reason": "CTA-above-fold=False · social_proof=False · trust_chip=False",
+      "evidence": {
+        "signals": 0
+      }
+    },
+    {
+      "check_id": "R16",
+      "name": "Research-grounded copy (Reddit/PAA)",
+      "passed": true,
+      "severity": "BLOCKER",
+      "reason": "grounded: terms 100%, questions 100%, 7 sources",
+      "evidence": {
+        "missing_terms": [],
+        "missing_questions": [],
+        "sources": 7
+      }
+    }
+  ],
+  "pages/botox-nusa-dua.html": [
+    {
+      "check_id": "A",
+      "name": "Bigram uniqueness ≥50% vs hub + nearest sibling",
+      "passed": false,
+      "severity": "BLOCKER",
+      "reason": "6.6% unique vs sibling (worst of 2)",
+      "evidence": {
+        "hub_unique_pct": 7.0,
+        "sibling_unique_pct": 6.6,
+        "nearest_sibling": "pages/botox-berawa.html",
+        "worst": 6.6
+      }
+    },
+    {
+      "check_id": "B",
+      "name": "Not a doorway page (≥3 sections ≥150w each)",
+      "passed": true,
+      "severity": "BLOCKER",
+      "reason": "3 substantive sections (of 11)",
+      "evidence": {
+        "section_word_counts": [
+          43,
+          209,
+          153,
+          133,
+          56,
+          108,
+          100,
+          398,
+          20,
+          41,
+          61
+        ]
+      }
+    },
+    {
+      "check_id": "C",
+      "name": "Title globally unique + 30–70 chars",
+      "passed": true,
+      "severity": "BLOCKER",
+      "reason": "ok",
+      "evidence": {
+        "length": 40,
+        "duplicates": []
+      }
+    },
+    {
+      "check_id": "D",
+      "name": "Meta description unique + 120–175 chars",
+      "passed": false,
+      "severity": "BLOCKER",
+      "reason": "length 100 (target 120–175)",
+      "evidence": {
+        "length": 100,
+        "duplicates": []
+      }
+    },
+    {
+      "check_id": "E",
+      "name": "Exactly one <h1> + globally unique",
+      "passed": true,
+      "severity": "BLOCKER",
+      "reason": "ok",
+      "evidence": {
+        "duplicates": []
+      }
+    },
+    {
+      "check_id": "F",
+      "name": "Geo-page local relevance (≥2 of 4)",
+      "passed": true,
+      "severity": "INFO",
+      "reason": "not a geo page",
+      "evidence": {}
+    },
+    {
+      "check_id": "G",
+      "name": "Sector-page sector relevance (≥2 of 4)",
+      "passed": true,
+      "severity": "INFO",
+      "reason": "not a sector page",
+      "evidence": {}
+    },
+    {
+      "check_id": "H",
+      "name": "E-E-A-T ≥2 of (author byline / trust / expertise)",
+      "passed": false,
+      "severity": "BLOCKER",
+      "reason": "1/3 signals — author byline",
+      "evidence": {
+        "signals": 1
+      }
+    },
+    {
+      "check_id": "I",
+      "name": "Internal-link: ≥3 inbound, ≥4 outbound",
+      "passed": false,
+      "severity": "BLOCKER",
+      "reason": "0 inbound, 8 outbound",
+      "evidence": {
+        "in": 0,
+        "out": 8
+      }
+    },
+    {
+      "check_id": "J",
+      "name": "Indexability: canonical set + in sitemap + not noindex'd + not robots-blocked",
+      "passed": true,
+      "severity": "BLOCKER",
+      "reason": "ok",
+      "evidence": {
+        "issues": []
+      }
+    },
+    {
+      "check_id": "K",
+      "name": "Schema accuracy (matches visible content)",
+      "passed": true,
+      "severity": "BLOCKER",
+      "reason": "ok",
+      "evidence": {
+        "issues": []
+      }
+    },
+    {
+      "check_id": "L",
+      "name": "Every <img> has non-placeholder alt text",
+      "passed": true,
+      "severity": "BLOCKER",
+      "reason": "0 missing alt, 0 placeholder; 0 content images total",
+      "evidence": {
+        "missing": 0,
+        "placeholder": 0
+      }
+    },
+    {
+      "check_id": "M",
+      "name": "Core Web Vitals (LCP<2.5s, INP<200ms, CLS<0.1)",
+      "passed": true,
+      "severity": "WARN",
+      "reason": "Lighthouse not run — check skipped",
+      "evidence": {}
+    },
+    {
+      "check_id": "N",
+      "name": "HTTPS + canonical hygiene",
+      "passed": true,
+      "severity": "BLOCKER",
+      "reason": "ok",
+      "evidence": {
+        "issues": []
+      }
+    },
+    {
+      "check_id": "O",
+      "name": "No keyword stuffing (sub-page density < 2× hub)",
+      "passed": true,
+      "severity": "BLOCKER",
+      "reason": "sub 7.82% vs hub 4.23% — ratio 1.85×",
+      "evidence": {
+        "sub_density": 7.819383259911894,
+        "hub_density": 4.233409610983982,
+        "ratio": 1.8470651268008096
+      }
+    },
+    {
+      "check_id": "P",
+      "name": "Contact form in hero AND bottom + DSGVO-konform",
+      "passed": true,
+      "severity": "BLOCKER",
+      "reason": "hero + bottom forms present (non-DE page; DSGVO check skipped)",
+      "evidence": {
+        "dsgvo_checked": false,
+        "forms_found": 2
+      }
+    },
+    {
+      "check_id": "V",
+      "name": "Mobile H1 overflow-safe (long German compound words)",
+      "passed": true,
+      "severity": "INFO",
+      "reason": "non-DE page",
+      "evidence": {}
+    },
+    {
+      "check_id": "R1",
+      "name": "Topical depth ≥1,500 content words",
+      "passed": false,
+      "severity": "BLOCKER",
+      "reason": "908 content words",
+      "evidence": {
+        "word_count": 908
+      }
+    },
+    {
+      "check_id": "R2",
+      "name": "Intent-format match (service)",
+      "passed": false,
+      "severity": "BLOCKER",
+      "reason": "format='service' mismatch",
+      "evidence": {
+        "intent": "service"
+      }
+    },
+    {
+      "check_id": "R3",
+      "name": "Entity coverage ≥70%",
+      "passed": true,
+      "severity": "BLOCKER",
+      "reason": "8/8 entities (100%)",
+      "evidence": {
+        "present": [
+          "nusa dua",
+          "nearby",
+          "clinic",
+          "product",
+          "seminyak",
+          "genuine",
+          "doctor",
+          "fillers"
+        ],
+        "missing": []
+      }
+    },
+    {
+      "check_id": "R4",
+      "name": "PAA coverage ≥4 (of 6 questions)",
+      "passed": true,
+      "severity": "BLOCKER",
+      "reason": "5 answered",
+      "evidence": {
+        "answered": [
+          "Can I get genuine Botox near Nusa Dua without travelling far?",
+          "How much does Botox cost near Nusa Dua?",
+          "How much is Botox in Bali?",
+          "Is Botox in Bali safe?",
+          "Is the Botox used in Bali genuine?"
+        ],
+        "missing": [
+          "Where is the best Botox clinic near Nusa Dua, Bali?"
+        ]
+      }
+    },
+    {
+      "check_id": "R5",
+      "name": "Featured-snippet structure (top 2 FAQs 40–80 words)",
+      "passed": true,
+      "severity": "WARN",
+      "reason": "ok",
+      "evidence": {
+        "issues": []
+      }
+    },
+    {
+      "check_id": "R6",
+      "name": "≥3 inbound + linked from hub",
+      "passed": false,
+      "severity": "BLOCKER",
+      "reason": "0 inbound; hub-link=no",
+      "evidence": {
+        "inbound": 0,
+        "from_hub": false
+      }
+    },
+    {
+      "check_id": "R7",
+      "name": "Ranking-grade CWV (LCP<1.5s, INP<100ms, CLS<0.05)",
+      "passed": true,
+      "severity": "WARN",
+      "reason": "Lighthouse not run — skipped",
+      "evidence": {}
+    },
+    {
+      "check_id": "R8",
+      "name": "Schema enrichment (Service + FAQPage)",
+      "passed": true,
+      "severity": "BLOCKER",
+      "reason": "present: Service,FAQPage",
+      "evidence": {
+        "present": [
+          "Service",
+          "FAQPage"
+        ]
+      }
+    },
+    {
+      "check_id": "R9",
+      "name": "Multimodal: ≥1 content image + (table OR svg)",
+      "passed": false,
+      "severity": "BLOCKER",
+      "reason": "img=0 tables=0 svgs=no",
+      "evidence": {
+        "content_imgs": 0,
+        "tables": 0,
+        "svg": false
+      }
+    },
+    {
+      "check_id": "R10",
+      "name": "Author E-E-A-T (byline OR Person schema)",
+      "passed": true,
+      "severity": "BLOCKER",
+      "reason": "ok",
+      "evidence": {
+        "byline": true,
+        "schema": false
+      }
+    },
+    {
+      "check_id": "R11",
+      "name": "Comparison content (for comparative queries)",
+      "passed": true,
+      "severity": "INFO",
+      "reason": "not a comparative query",
+      "evidence": {}
+    },
+    {
+      "check_id": "R12",
+      "name": "Original data / methodology / proprietary stat",
+      "passed": false,
+      "severity": "WARN",
+      "reason": "0 original-signal match(es)",
+      "evidence": {
+        "matches": 0
+      }
+    },
+    {
+      "check_id": "R13",
+      "name": "Geo ranking-grade relevance (≥3 of 5)",
+      "passed": true,
+      "severity": "INFO",
+      "reason": "not a geo page",
+      "evidence": {}
+    },
+    {
+      "check_id": "R14",
+      "name": "Sector ranking-grade relevance (≥4 of 6)",
+      "passed": true,
+      "severity": "INFO",
+      "reason": "not a sector page",
+      "evidence": {}
+    },
+    {
+      "check_id": "R15",
+      "name": "Buying-intent CTA above-fold + social proof",
+      "passed": false,
+      "severity": "BLOCKER",
+      "reason": "CTA-above-fold=False · social_proof=False · trust_chip=False",
+      "evidence": {
+        "signals": 0
+      }
+    },
+    {
+      "check_id": "R16",
+      "name": "Research-grounded copy (Reddit/PAA)",
+      "passed": true,
+      "severity": "BLOCKER",
+      "reason": "grounded: terms 100%, questions 100%, 7 sources",
+      "evidence": {
+        "missing_terms": [],
+        "missing_questions": [],
+        "sources": 7
+      }
+    }
+  ],
+  "pages/botox-pererenan.html": [
+    {
+      "check_id": "A",
+      "name": "Bigram uniqueness ≥50% vs hub + nearest sibling",
+      "passed": false,
+      "severity": "BLOCKER",
+      "reason": "6.4% unique vs sibling (worst of 2)",
+      "evidence": {
+        "hub_unique_pct": 6.9,
+        "sibling_unique_pct": 6.4,
+        "nearest_sibling": "pages/botox-berawa.html",
+        "worst": 6.4
+      }
+    },
+    {
+      "check_id": "B",
+      "name": "Not a doorway page (≥3 sections ≥150w each)",
+      "passed": false,
+      "severity": "BLOCKER",
+      "reason": "2 substantive sections (of 11)",
+      "evidence": {
+        "section_word_counts": [
+          42,
+          202,
+          149,
+          132,
+          53,
+          107,
+          98,
+          387,
+          19,
+          39,
+          58
+        ]
+      }
+    },
+    {
+      "check_id": "C",
+      "name": "Title globally unique + 30–70 chars",
+      "passed": true,
+      "severity": "BLOCKER",
+      "reason": "ok",
+      "evidence": {
+        "length": 41,
+        "duplicates": []
+      }
+    },
+    {
+      "check_id": "D",
+      "name": "Meta description unique + 120–175 chars",
+      "passed": false,
+      "severity": "BLOCKER",
+      "reason": "length 101 (target 120–175)",
+      "evidence": {
+        "length": 101,
+        "duplicates": []
+      }
+    },
+    {
+      "check_id": "E",
+      "name": "Exactly one <h1> + globally unique",
+      "passed": true,
+      "severity": "BLOCKER",
+      "reason": "ok",
+      "evidence": {
+        "duplicates": []
+      }
+    },
+    {
+      "check_id": "F",
+      "name": "Geo-page local relevance (≥2 of 4)",
+      "passed": true,
+      "severity": "INFO",
+      "reason": "not a geo page",
+      "evidence": {}
+    },
+    {
+      "check_id": "G",
+      "name": "Sector-page sector relevance (≥2 of 4)",
+      "passed": true,
+      "severity": "INFO",
+      "reason": "not a sector page",
+      "evidence": {}
+    },
+    {
+      "check_id": "H",
+      "name": "E-E-A-T ≥2 of (author byline / trust / expertise)",
+      "passed": false,
+      "severity": "BLOCKER",
+      "reason": "1/3 signals — author byline",
+      "evidence": {
+        "signals": 1
+      }
+    },
+    {
+      "check_id": "I",
+      "name": "Internal-link: ≥3 inbound, ≥4 outbound",
+      "passed": false,
+      "severity": "BLOCKER",
+      "reason": "0 inbound, 8 outbound",
+      "evidence": {
+        "in": 0,
+        "out": 8
+      }
+    },
+    {
+      "check_id": "J",
+      "name": "Indexability: canonical set + in sitemap + not noindex'd + not robots-blocked",
+      "passed": true,
+      "severity": "BLOCKER",
+      "reason": "ok",
+      "evidence": {
+        "issues": []
+      }
+    },
+    {
+      "check_id": "K",
+      "name": "Schema accuracy (matches visible content)",
+      "passed": true,
+      "severity": "BLOCKER",
+      "reason": "ok",
+      "evidence": {
+        "issues": []
+      }
+    },
+    {
+      "check_id": "L",
+      "name": "Every <img> has non-placeholder alt text",
+      "passed": true,
+      "severity": "BLOCKER",
+      "reason": "0 missing alt, 0 placeholder; 0 content images total",
+      "evidence": {
+        "missing": 0,
+        "placeholder": 0
+      }
+    },
+    {
+      "check_id": "M",
+      "name": "Core Web Vitals (LCP<2.5s, INP<200ms, CLS<0.1)",
+      "passed": true,
+      "severity": "WARN",
+      "reason": "Lighthouse not run — check skipped",
+      "evidence": {}
+    },
+    {
+      "check_id": "N",
+      "name": "HTTPS + canonical hygiene",
+      "passed": true,
+      "severity": "BLOCKER",
+      "reason": "ok",
+      "evidence": {
+        "issues": []
+      }
+    },
+    {
+      "check_id": "O",
+      "name": "No keyword stuffing (sub-page density < 2× hub)",
+      "passed": true,
+      "severity": "BLOCKER",
+      "reason": "sub 8.12% vs hub 4.23% — ratio 1.92×",
+      "evidence": {
+        "sub_density": 8.123569794050344,
+        "hub_density": 4.233409610983982,
+        "ratio": 1.918918918918919
+      }
+    },
+    {
+      "check_id": "P",
+      "name": "Contact form in hero AND bottom + DSGVO-konform",
+      "passed": true,
+      "severity": "BLOCKER",
+      "reason": "hero + bottom forms present (non-DE page; DSGVO check skipped)",
+      "evidence": {
+        "dsgvo_checked": false,
+        "forms_found": 2
+      }
+    },
+    {
+      "check_id": "V",
+      "name": "Mobile H1 overflow-safe (long German compound words)",
+      "passed": true,
+      "severity": "INFO",
+      "reason": "non-DE page",
+      "evidence": {}
+    },
+    {
+      "check_id": "R1",
+      "name": "Topical depth ≥1,500 content words",
+      "passed": false,
+      "severity": "BLOCKER",
+      "reason": "874 content words",
+      "evidence": {
+        "word_count": 874
+      }
+    },
+    {
+      "check_id": "R2",
+      "name": "Intent-format match (service)",
+      "passed": false,
+      "severity": "BLOCKER",
+      "reason": "format='service' mismatch",
+      "evidence": {
+        "intent": "service"
+      }
+    },
+    {
+      "check_id": "R3",
+      "name": "Entity coverage ≥70%",
+      "passed": true,
+      "severity": "BLOCKER",
+      "reason": "8/8 entities (100%)",
+      "evidence": {
+        "present": [
+          "pererenan",
+          "nearby",
+          "clinic",
+          "product",
+          "seminyak",
+          "genuine",
+          "doctor",
+          "fillers"
+        ],
+        "missing": []
+      }
+    },
+    {
+      "check_id": "R4",
+      "name": "PAA coverage ≥4 (of 6 questions)",
+      "passed": true,
+      "severity": "BLOCKER",
+      "reason": "5 answered",
+      "evidence": {
+        "answered": [
+          "Can I get genuine Botox near Pererenan without travelling far?",
+          "How much does Botox cost near Pererenan?",
+          "How much is Botox in Bali?",
+          "Is Botox in Bali safe?",
+          "Is the Botox used in Bali genuine?"
+        ],
+        "missing": [
+          "Where is the best Botox clinic near Pererenan, Bali?"
+        ]
+      }
+    },
+    {
+      "check_id": "R5",
+      "name": "Featured-snippet structure (top 2 FAQs 40–80 words)",
+      "passed": true,
+      "severity": "WARN",
+      "reason": "ok",
+      "evidence": {
+        "issues": []
+      }
+    },
+    {
+      "check_id": "R6",
+      "name": "≥3 inbound + linked from hub",
+      "passed": false,
+      "severity": "BLOCKER",
+      "reason": "0 inbound; hub-link=no",
+      "evidence": {
+        "inbound": 0,
+        "from_hub": false
+      }
+    },
+    {
+      "check_id": "R7",
+      "name": "Ranking-grade CWV (LCP<1.5s, INP<100ms, CLS<0.05)",
+      "passed": true,
+      "severity": "WARN",
+      "reason": "Lighthouse not run — skipped",
+      "evidence": {}
+    },
+    {
+      "check_id": "R8",
+      "name": "Schema enrichment (Service + FAQPage)",
+      "passed": true,
+      "severity": "BLOCKER",
+      "reason": "present: Service,FAQPage",
+      "evidence": {
+        "present": [
+          "Service",
+          "FAQPage"
+        ]
+      }
+    },
+    {
+      "check_id": "R9",
+      "name": "Multimodal: ≥1 content image + (table OR svg)",
+      "passed": false,
+      "severity": "BLOCKER",
+      "reason": "img=0 tables=0 svgs=no",
+      "evidence": {
+        "content_imgs": 0,
+        "tables": 0,
+        "svg": false
+      }
+    },
+    {
+      "check_id": "R10",
+      "name": "Author E-E-A-T (byline OR Person schema)",
+      "passed": true,
+      "severity": "BLOCKER",
+      "reason": "ok",
+      "evidence": {
+        "byline": true,
+        "schema": false
+      }
+    },
+    {
+      "check_id": "R11",
+      "name": "Comparison content (for comparative queries)",
+      "passed": true,
+      "severity": "INFO",
+      "reason": "not a comparative query",
+      "evidence": {}
+    },
+    {
+      "check_id": "R12",
+      "name": "Original data / methodology / proprietary stat",
+      "passed": false,
+      "severity": "WARN",
+      "reason": "0 original-signal match(es)",
+      "evidence": {
+        "matches": 0
+      }
+    },
+    {
+      "check_id": "R13",
+      "name": "Geo ranking-grade relevance (≥3 of 5)",
+      "passed": true,
+      "severity": "INFO",
+      "reason": "not a geo page",
+      "evidence": {}
+    },
+    {
+      "check_id": "R14",
+      "name": "Sector ranking-grade relevance (≥4 of 6)",
+      "passed": true,
+      "severity": "INFO",
+      "reason": "not a sector page",
+      "evidence": {}
+    },
+    {
+      "check_id": "R15",
+      "name": "Buying-intent CTA above-fold + social proof",
+      "passed": false,
+      "severity": "BLOCKER",
+      "reason": "CTA-above-fold=False · social_proof=False · trust_chip=False",
+      "evidence": {
+        "signals": 0
+      }
+    },
+    {
+      "check_id": "R16",
+      "name": "Research-grounded copy (Reddit/PAA)",
+      "passed": true,
+      "severity": "BLOCKER",
+      "reason": "grounded: terms 100%, questions 100%, 7 sources",
+      "evidence": {
+        "missing_terms": [],
+        "missing_questions": [],
+        "sources": 7
+      }
+    }
+  ],
+  "pages/botox-sanur.html": [
+    {
+      "check_id": "A",
+      "name": "Bigram uniqueness ≥50% vs hub + nearest sibling",
+      "passed": false,
+      "severity": "BLOCKER",
+      "reason": "6.4% unique vs sibling (worst of 2)",
+      "evidence": {
+        "hub_unique_pct": 6.9,
+        "sibling_unique_pct": 6.4,
+        "nearest_sibling": "pages/botox-berawa.html",
+        "worst": 6.4
+      }
+    },
+    {
+      "check_id": "B",
+      "name": "Not a doorway page (≥3 sections ≥150w each)",
+      "passed": false,
+      "severity": "BLOCKER",
+      "reason": "2 substantive sections (of 11)",
+      "evidence": {
+        "section_word_counts": [
+          42,
+          202,
+          149,
+          132,
+          53,
+          107,
+          98,
+          387,
+          19,
+          39,
+          58
+        ]
+      }
+    },
+    {
+      "check_id": "C",
+      "name": "Title globally unique + 30–70 chars",
+      "passed": true,
+      "severity": "BLOCKER",
+      "reason": "ok",
+      "evidence": {
+        "length": 37,
+        "duplicates": []
+      }
+    },
+    {
+      "check_id": "D",
+      "name": "Meta description unique + 120–175 chars",
+      "passed": false,
+      "severity": "BLOCKER",
+      "reason": "length 97 (target 120–175)",
+      "evidence": {
+        "length": 97,
+        "duplicates": []
+      }
+    },
+    {
+      "check_id": "E",
+      "name": "Exactly one <h1> + globally unique",
+      "passed": true,
+      "severity": "BLOCKER",
+      "reason": "ok",
+      "evidence": {
+        "duplicates": []
+      }
+    },
+    {
+      "check_id": "F",
+      "name": "Geo-page local relevance (≥2 of 4)",
+      "passed": true,
+      "severity": "INFO",
+      "reason": "not a geo page",
+      "evidence": {}
+    },
+    {
+      "check_id": "G",
+      "name": "Sector-page sector relevance (≥2 of 4)",
+      "passed": true,
+      "severity": "INFO",
+      "reason": "not a sector page",
+      "evidence": {}
+    },
+    {
+      "check_id": "H",
+      "name": "E-E-A-T ≥2 of (author byline / trust / expertise)",
+      "passed": false,
+      "severity": "BLOCKER",
+      "reason": "1/3 signals — author byline",
+      "evidence": {
+        "signals": 1
+      }
+    },
+    {
+      "check_id": "I",
+      "name": "Internal-link: ≥3 inbound, ≥4 outbound",
+      "passed": false,
+      "severity": "BLOCKER",
+      "reason": "0 inbound, 8 outbound",
+      "evidence": {
+        "in": 0,
+        "out": 8
+      }
+    },
+    {
+      "check_id": "J",
+      "name": "Indexability: canonical set + in sitemap + not noindex'd + not robots-blocked",
+      "passed": true,
+      "severity": "BLOCKER",
+      "reason": "ok",
+      "evidence": {
+        "issues": []
+      }
+    },
+    {
+      "check_id": "K",
+      "name": "Schema accuracy (matches visible content)",
+      "passed": true,
+      "severity": "BLOCKER",
+      "reason": "ok",
+      "evidence": {
+        "issues": []
+      }
+    },
+    {
+      "check_id": "L",
+      "name": "Every <img> has non-placeholder alt text",
+      "passed": true,
+      "severity": "BLOCKER",
+      "reason": "0 missing alt, 0 placeholder; 0 content images total",
+      "evidence": {
+        "missing": 0,
+        "placeholder": 0
+      }
+    },
+    {
+      "check_id": "M",
+      "name": "Core Web Vitals (LCP<2.5s, INP<200ms, CLS<0.1)",
+      "passed": true,
+      "severity": "WARN",
+      "reason": "Lighthouse not run — check skipped",
+      "evidence": {}
+    },
+    {
+      "check_id": "N",
+      "name": "HTTPS + canonical hygiene",
+      "passed": true,
+      "severity": "BLOCKER",
+      "reason": "ok",
+      "evidence": {
+        "issues": []
+      }
+    },
+    {
+      "check_id": "O",
+      "name": "No keyword stuffing (sub-page density < 2× hub)",
+      "passed": true,
+      "severity": "BLOCKER",
+      "reason": "sub 8.12% vs hub 4.23% — ratio 1.92×",
+      "evidence": {
+        "sub_density": 8.123569794050344,
+        "hub_density": 4.233409610983982,
+        "ratio": 1.918918918918919
+      }
+    },
+    {
+      "check_id": "P",
+      "name": "Contact form in hero AND bottom + DSGVO-konform",
+      "passed": true,
+      "severity": "BLOCKER",
+      "reason": "hero + bottom forms present (non-DE page; DSGVO check skipped)",
+      "evidence": {
+        "dsgvo_checked": false,
+        "forms_found": 2
+      }
+    },
+    {
+      "check_id": "V",
+      "name": "Mobile H1 overflow-safe (long German compound words)",
+      "passed": true,
+      "severity": "INFO",
+      "reason": "non-DE page",
+      "evidence": {}
+    },
+    {
+      "check_id": "R1",
+      "name": "Topical depth ≥1,500 content words",
+      "passed": false,
+      "severity": "BLOCKER",
+      "reason": "874 content words",
+      "evidence": {
+        "word_count": 874
+      }
+    },
+    {
+      "check_id": "R2",
+      "name": "Intent-format match (service)",
+      "passed": false,
+      "severity": "BLOCKER",
+      "reason": "format='service' mismatch",
+      "evidence": {
+        "intent": "service"
+      }
+    },
+    {
+      "check_id": "R3",
+      "name": "Entity coverage ≥70%",
+      "passed": true,
+      "severity": "BLOCKER",
+      "reason": "8/8 entities (100%)",
+      "evidence": {
+        "present": [
+          "sanur",
+          "nearby",
+          "clinic",
+          "product",
+          "seminyak",
+          "genuine",
+          "doctor",
+          "fillers"
+        ],
+        "missing": []
+      }
+    },
+    {
+      "check_id": "R4",
+      "name": "PAA coverage ≥4 (of 6 questions)",
+      "passed": true,
+      "severity": "BLOCKER",
+      "reason": "5 answered",
+      "evidence": {
+        "answered": [
+          "Can I get genuine Botox near Sanur without travelling far?",
+          "How much does Botox cost near Sanur?",
+          "How much is Botox in Bali?",
+          "Is Botox in Bali safe?",
+          "Is the Botox used in Bali genuine?"
+        ],
+        "missing": [
+          "Where is the best Botox clinic near Sanur, Bali?"
+        ]
+      }
+    },
+    {
+      "check_id": "R5",
+      "name": "Featured-snippet structure (top 2 FAQs 40–80 words)",
+      "passed": true,
+      "severity": "WARN",
+      "reason": "ok",
+      "evidence": {
+        "issues": []
+      }
+    },
+    {
+      "check_id": "R6",
+      "name": "≥3 inbound + linked from hub",
+      "passed": false,
+      "severity": "BLOCKER",
+      "reason": "0 inbound; hub-link=no",
+      "evidence": {
+        "inbound": 0,
+        "from_hub": false
+      }
+    },
+    {
+      "check_id": "R7",
+      "name": "Ranking-grade CWV (LCP<1.5s, INP<100ms, CLS<0.05)",
+      "passed": true,
+      "severity": "WARN",
+      "reason": "Lighthouse not run — skipped",
+      "evidence": {}
+    },
+    {
+      "check_id": "R8",
+      "name": "Schema enrichment (Service + FAQPage)",
+      "passed": true,
+      "severity": "BLOCKER",
+      "reason": "present: Service,FAQPage",
+      "evidence": {
+        "present": [
+          "Service",
+          "FAQPage"
+        ]
+      }
+    },
+    {
+      "check_id": "R9",
+      "name": "Multimodal: ≥1 content image + (table OR svg)",
+      "passed": false,
+      "severity": "BLOCKER",
+      "reason": "img=0 tables=0 svgs=no",
+      "evidence": {
+        "content_imgs": 0,
+        "tables": 0,
+        "svg": false
+      }
+    },
+    {
+      "check_id": "R10",
+      "name": "Author E-E-A-T (byline OR Person schema)",
+      "passed": true,
+      "severity": "BLOCKER",
+      "reason": "ok",
+      "evidence": {
+        "byline": true,
+        "schema": false
+      }
+    },
+    {
+      "check_id": "R11",
+      "name": "Comparison content (for comparative queries)",
+      "passed": true,
+      "severity": "INFO",
+      "reason": "not a comparative query",
+      "evidence": {}
+    },
+    {
+      "check_id": "R12",
+      "name": "Original data / methodology / proprietary stat",
+      "passed": false,
+      "severity": "WARN",
+      "reason": "0 original-signal match(es)",
+      "evidence": {
+        "matches": 0
+      }
+    },
+    {
+      "check_id": "R13",
+      "name": "Geo ranking-grade relevance (≥3 of 5)",
+      "passed": true,
+      "severity": "INFO",
+      "reason": "not a geo page",
+      "evidence": {}
+    },
+    {
+      "check_id": "R14",
+      "name": "Sector ranking-grade relevance (≥4 of 6)",
+      "passed": true,
+      "severity": "INFO",
+      "reason": "not a sector page",
+      "evidence": {}
+    },
+    {
+      "check_id": "R15",
+      "name": "Buying-intent CTA above-fold + social proof",
+      "passed": false,
+      "severity": "BLOCKER",
+      "reason": "CTA-above-fold=False · social_proof=False · trust_chip=False",
+      "evidence": {
+        "signals": 0
+      }
+    },
+    {
+      "check_id": "R16",
+      "name": "Research-grounded copy (Reddit/PAA)",
+      "passed": true,
+      "severity": "BLOCKER",
+      "reason": "grounded: terms 100%, questions 100%, 7 sources",
+      "evidence": {
+        "missing_terms": [],
+        "missing_questions": [],
+        "sources": 7
+      }
+    }
+  ],
+  "pages/botox-seminyak.html": [
+    {
+      "check_id": "A",
+      "name": "Bigram uniqueness ≥50% vs hub + nearest sibling",
+      "passed": false,
+      "severity": "BLOCKER",
+      "reason": "6.9% unique vs sibling (worst of 1)",
+      "evidence": {
+        "sibling_unique_pct": 6.9,
+        "nearest_sibling": "pages/botox-berawa.html",
+        "worst": 6.9
+      }
+    },
+    {
+      "check_id": "B",
+      "name": "Not a doorway page (≥3 sections ≥150w each)",
+      "passed": false,
+      "severity": "BLOCKER",
+      "reason": "2 substantive sections (of 11)",
+      "evidence": {
+        "section_word_counts": [
+          42,
+          202,
+          149,
+          132,
+          53,
+          107,
+          98,
+          387,
+          19,
+          39,
+          58
+        ]
+      }
+    },
+    {
+      "check_id": "C",
+      "name": "Title globally unique + 30–70 chars",
+      "passed": true,
+      "severity": "BLOCKER",
+      "reason": "ok",
+      "evidence": {
+        "length": 40,
+        "duplicates": []
+      }
+    },
+    {
+      "check_id": "D",
+      "name": "Meta description unique + 120–175 chars",
+      "passed": false,
+      "severity": "BLOCKER",
+      "reason": "length 100 (target 120–175)",
+      "evidence": {
+        "length": 100,
+        "duplicates": []
+      }
+    },
+    {
+      "check_id": "E",
+      "name": "Exactly one <h1> + globally unique",
+      "passed": true,
+      "severity": "BLOCKER",
+      "reason": "ok",
+      "evidence": {
+        "duplicates": []
+      }
+    },
+    {
+      "check_id": "F",
+      "name": "Geo-page local relevance (≥2 of 4)",
+      "passed": true,
+      "severity": "INFO",
+      "reason": "not a geo page",
+      "evidence": {}
+    },
+    {
+      "check_id": "G",
+      "name": "Sector-page sector relevance (≥2 of 4)",
+      "passed": true,
+      "severity": "INFO",
+      "reason": "not a sector page",
+      "evidence": {}
+    },
+    {
+      "check_id": "H",
+      "name": "E-E-A-T ≥2 of (author byline / trust / expertise)",
+      "passed": false,
+      "severity": "BLOCKER",
+      "reason": "1/3 signals — author byline",
+      "evidence": {
+        "signals": 1
+      }
+    },
+    {
+      "check_id": "I",
+      "name": "Internal-link: ≥3 inbound, ≥4 outbound",
+      "passed": false,
+      "severity": "BLOCKER",
+      "reason": "0 inbound, 8 outbound",
+      "evidence": {
+        "in": 0,
+        "out": 8
+      }
+    },
+    {
+      "check_id": "J",
+      "name": "Indexability: canonical set + in sitemap + not noindex'd + not robots-blocked",
+      "passed": true,
+      "severity": "BLOCKER",
+      "reason": "ok",
+      "evidence": {
+        "issues": []
+      }
+    },
+    {
+      "check_id": "K",
+      "name": "Schema accuracy (matches visible content)",
+      "passed": true,
+      "severity": "BLOCKER",
+      "reason": "ok",
+      "evidence": {
+        "issues": []
+      }
+    },
+    {
+      "check_id": "L",
+      "name": "Every <img> has non-placeholder alt text",
+      "passed": true,
+      "severity": "BLOCKER",
+      "reason": "0 missing alt, 0 placeholder; 0 content images total",
+      "evidence": {
+        "missing": 0,
+        "placeholder": 0
+      }
+    },
+    {
+      "check_id": "M",
+      "name": "Core Web Vitals (LCP<2.5s, INP<200ms, CLS<0.1)",
+      "passed": true,
+      "severity": "WARN",
+      "reason": "Lighthouse not run — check skipped",
+      "evidence": {}
+    },
+    {
+      "check_id": "N",
+      "name": "HTTPS + canonical hygiene",
+      "passed": true,
+      "severity": "BLOCKER",
+      "reason": "ok",
+      "evidence": {
+        "issues": []
+      }
+    },
+    {
+      "check_id": "O",
+      "name": "No keyword stuffing (sub-page density < 2× hub)",
+      "passed": true,
+      "severity": "BLOCKER",
+      "reason": "sub 8.12% vs hub 8.12% — ratio 1.00×",
+      "evidence": {
+        "sub_density": 8.123569794050344,
+        "hub_density": 8.123569794050344,
+        "ratio": 1.0
+      }
+    },
+    {
+      "check_id": "P",
+      "name": "Contact form in hero AND bottom + DSGVO-konform",
+      "passed": true,
+      "severity": "BLOCKER",
+      "reason": "hero + bottom forms present (non-DE page; DSGVO check skipped)",
+      "evidence": {
+        "dsgvo_checked": false,
+        "forms_found": 2
+      }
+    },
+    {
+      "check_id": "V",
+      "name": "Mobile H1 overflow-safe (long German compound words)",
+      "passed": true,
+      "severity": "INFO",
+      "reason": "non-DE page",
+      "evidence": {}
+    },
+    {
+      "check_id": "R1",
+      "name": "Topical depth ≥1,500 content words",
+      "passed": false,
+      "severity": "BLOCKER",
+      "reason": "874 content words",
+      "evidence": {
+        "word_count": 874
+      }
+    },
+    {
+      "check_id": "R2",
+      "name": "Intent-format match (service)",
+      "passed": false,
+      "severity": "BLOCKER",
+      "reason": "format='service' mismatch",
+      "evidence": {
+        "intent": "service"
+      }
+    },
+    {
+      "check_id": "R3",
+      "name": "Entity coverage ≥70%",
+      "passed": true,
+      "severity": "BLOCKER",
+      "reason": "8/8 entities (100%)",
+      "evidence": {
+        "present": [
+          "seminyak",
+          "nearby",
+          "clinic",
+          "product",
+          "genuine",
+          "doctor",
+          "fillers",
+          "getting"
+        ],
+        "missing": []
+      }
+    },
+    {
+      "check_id": "R4",
+      "name": "PAA coverage ≥4 (of 6 questions)",
+      "passed": true,
+      "severity": "BLOCKER",
+      "reason": "5 answered",
+      "evidence": {
+        "answered": [
+          "Can I get genuine Botox near Seminyak without travelling far?",
+          "How much does Botox cost near Seminyak?",
+          "How much is Botox in Bali?",
+          "Is Botox in Bali safe?",
+          "Is the Botox used in Bali genuine?"
+        ],
+        "missing": [
+          "Where is the best Botox clinic near Seminyak, Bali?"
+        ]
+      }
+    },
+    {
+      "check_id": "R5",
+      "name": "Featured-snippet structure (top 2 FAQs 40–80 words)",
+      "passed": true,
+      "severity": "WARN",
+      "reason": "ok",
+      "evidence": {
+        "issues": []
+      }
+    },
+    {
+      "check_id": "R6",
+      "name": "Inbound links incl. ≥1 from hub",
+      "passed": true,
+      "severity": "INFO",
+      "reason": "page is the hub",
+      "evidence": {}
+    },
+    {
+      "check_id": "R7",
+      "name": "Ranking-grade CWV (LCP<1.5s, INP<100ms, CLS<0.05)",
+      "passed": true,
+      "severity": "WARN",
+      "reason": "Lighthouse not run — skipped",
+      "evidence": {}
+    },
+    {
+      "check_id": "R8",
+      "name": "Schema enrichment (Service + FAQPage)",
+      "passed": true,
+      "severity": "BLOCKER",
+      "reason": "present: Service,FAQPage",
+      "evidence": {
+        "present": [
+          "Service",
+          "FAQPage"
+        ]
+      }
+    },
+    {
+      "check_id": "R9",
+      "name": "Multimodal: ≥1 content image + (table OR svg)",
+      "passed": false,
+      "severity": "BLOCKER",
+      "reason": "img=0 tables=0 svgs=no",
+      "evidence": {
+        "content_imgs": 0,
+        "tables": 0,
+        "svg": false
+      }
+    },
+    {
+      "check_id": "R10",
+      "name": "Author E-E-A-T (byline OR Person schema)",
+      "passed": true,
+      "severity": "BLOCKER",
+      "reason": "ok",
+      "evidence": {
+        "byline": true,
+        "schema": false
+      }
+    },
+    {
+      "check_id": "R11",
+      "name": "Comparison content (for comparative queries)",
+      "passed": true,
+      "severity": "INFO",
+      "reason": "not a comparative query",
+      "evidence": {}
+    },
+    {
+      "check_id": "R12",
+      "name": "Original data / methodology / proprietary stat",
+      "passed": false,
+      "severity": "WARN",
+      "reason": "0 original-signal match(es)",
+      "evidence": {
+        "matches": 0
+      }
+    },
+    {
+      "check_id": "R13",
+      "name": "Geo ranking-grade relevance (≥3 of 5)",
+      "passed": true,
+      "severity": "INFO",
+      "reason": "not a geo page",
+      "evidence": {}
+    },
+    {
+      "check_id": "R14",
+      "name": "Sector ranking-grade relevance (≥4 of 6)",
+      "passed": true,
+      "severity": "INFO",
+      "reason": "not a sector page",
+      "evidence": {}
+    },
+    {
+      "check_id": "R15",
+      "name": "Buying-intent CTA above-fold + social proof",
+      "passed": false,
+      "severity": "BLOCKER",
+      "reason": "CTA-above-fold=False · social_proof=False · trust_chip=False",
+      "evidence": {
+        "signals": 0
+      }
+    },
+    {
+      "check_id": "R16",
+      "name": "Research-grounded copy (Reddit/PAA)",
+      "passed": true,
+      "severity": "BLOCKER",
+      "reason": "grounded: terms 100%, questions 100%, 7 sources",
+      "evidence": {
+        "missing_terms": [],
+        "missing_questions": [],
+        "sources": 7
+      }
+    }
+  ],
+  "pages/botox-ubud.html": [
+    {
+      "check_id": "A",
+      "name": "Bigram uniqueness ≥50% vs hub + nearest sibling",
+      "passed": false,
+      "severity": "BLOCKER",
+      "reason": "6.4% unique vs sibling (worst of 2)",
+      "evidence": {
+        "hub_unique_pct": 6.9,
+        "sibling_unique_pct": 6.4,
+        "nearest_sibling": "pages/botox-berawa.html",
+        "worst": 6.4
+      }
+    },
+    {
+      "check_id": "B",
+      "name": "Not a doorway page (≥3 sections ≥150w each)",
+      "passed": false,
+      "severity": "BLOCKER",
+      "reason": "2 substantive sections (of 11)",
+      "evidence": {
+        "section_word_counts": [
+          42,
+          202,
+          149,
+          132,
+          53,
+          107,
+          98,
+          387,
+          19,
+          39,
+          58
+        ]
+      }
+    },
+    {
+      "check_id": "C",
+      "name": "Title globally unique + 30–70 chars",
+      "passed": true,
+      "severity": "BLOCKER",
+      "reason": "ok",
+      "evidence": {
+        "length": 36,
+        "duplicates": []
+      }
+    },
+    {
+      "check_id": "D",
+      "name": "Meta description unique + 120–175 chars",
+      "passed": false,
+      "severity": "BLOCKER",
+      "reason": "length 96 (target 120–175)",
+      "evidence": {
+        "length": 96,
+        "duplicates": []
+      }
+    },
+    {
+      "check_id": "E",
+      "name": "Exactly one <h1> + globally unique",
+      "passed": true,
+      "severity": "BLOCKER",
+      "reason": "ok",
+      "evidence": {
+        "duplicates": []
+      }
+    },
+    {
+      "check_id": "F",
+      "name": "Geo-page local relevance (≥2 of 4)",
+      "passed": true,
+      "severity": "INFO",
+      "reason": "not a geo page",
+      "evidence": {}
+    },
+    {
+      "check_id": "G",
+      "name": "Sector-page sector relevance (≥2 of 4)",
+      "passed": true,
+      "severity": "INFO",
+      "reason": "not a sector page",
+      "evidence": {}
+    },
+    {
+      "check_id": "H",
+      "name": "E-E-A-T ≥2 of (author byline / trust / expertise)",
+      "passed": false,
+      "severity": "BLOCKER",
+      "reason": "1/3 signals — author byline",
+      "evidence": {
+        "signals": 1
+      }
+    },
+    {
+      "check_id": "I",
+      "name": "Internal-link: ≥3 inbound, ≥4 outbound",
+      "passed": false,
+      "severity": "BLOCKER",
+      "reason": "0 inbound, 8 outbound",
+      "evidence": {
+        "in": 0,
+        "out": 8
+      }
+    },
+    {
+      "check_id": "J",
+      "name": "Indexability: canonical set + in sitemap + not noindex'd + not robots-blocked",
+      "passed": true,
+      "severity": "BLOCKER",
+      "reason": "ok",
+      "evidence": {
+        "issues": []
+      }
+    },
+    {
+      "check_id": "K",
+      "name": "Schema accuracy (matches visible content)",
+      "passed": true,
+      "severity": "BLOCKER",
+      "reason": "ok",
+      "evidence": {
+        "issues": []
+      }
+    },
+    {
+      "check_id": "L",
+      "name": "Every <img> has non-placeholder alt text",
+      "passed": true,
+      "severity": "BLOCKER",
+      "reason": "0 missing alt, 0 placeholder; 0 content images total",
+      "evidence": {
+        "missing": 0,
+        "placeholder": 0
+      }
+    },
+    {
+      "check_id": "M",
+      "name": "Core Web Vitals (LCP<2.5s, INP<200ms, CLS<0.1)",
+      "passed": true,
+      "severity": "WARN",
+      "reason": "Lighthouse not run — check skipped",
+      "evidence": {}
+    },
+    {
+      "check_id": "N",
+      "name": "HTTPS + canonical hygiene",
+      "passed": true,
+      "severity": "BLOCKER",
+      "reason": "ok",
+      "evidence": {
+        "issues": []
+      }
+    },
+    {
+      "check_id": "O",
+      "name": "No keyword stuffing (sub-page density < 2× hub)",
+      "passed": true,
+      "severity": "BLOCKER",
+      "reason": "sub 8.12% vs hub 4.23% — ratio 1.92×",
+      "evidence": {
+        "sub_density": 8.123569794050344,
+        "hub_density": 4.233409610983982,
+        "ratio": 1.918918918918919
+      }
+    },
+    {
+      "check_id": "P",
+      "name": "Contact form in hero AND bottom + DSGVO-konform",
+      "passed": true,
+      "severity": "BLOCKER",
+      "reason": "hero + bottom forms present (non-DE page; DSGVO check skipped)",
+      "evidence": {
+        "dsgvo_checked": false,
+        "forms_found": 2
+      }
+    },
+    {
+      "check_id": "V",
+      "name": "Mobile H1 overflow-safe (long German compound words)",
+      "passed": true,
+      "severity": "INFO",
+      "reason": "non-DE page",
+      "evidence": {}
+    },
+    {
+      "check_id": "R1",
+      "name": "Topical depth ≥1,500 content words",
+      "passed": false,
+      "severity": "BLOCKER",
+      "reason": "874 content words",
+      "evidence": {
+        "word_count": 874
+      }
+    },
+    {
+      "check_id": "R2",
+      "name": "Intent-format match (service)",
+      "passed": false,
+      "severity": "BLOCKER",
+      "reason": "format='service' mismatch",
+      "evidence": {
+        "intent": "service"
+      }
+    },
+    {
+      "check_id": "R3",
+      "name": "Entity coverage ≥70%",
+      "passed": true,
+      "severity": "BLOCKER",
+      "reason": "8/8 entities (100%)",
+      "evidence": {
+        "present": [
+          "ubud",
+          "nearby",
+          "clinic",
+          "product",
+          "seminyak",
+          "genuine",
+          "doctor",
+          "fillers"
+        ],
+        "missing": []
+      }
+    },
+    {
+      "check_id": "R4",
+      "name": "PAA coverage ≥4 (of 6 questions)",
+      "passed": true,
+      "severity": "BLOCKER",
+      "reason": "5 answered",
+      "evidence": {
+        "answered": [
+          "Can I get genuine Botox near Ubud without travelling far?",
+          "How much does Botox cost near Ubud?",
+          "How much is Botox in Bali?",
+          "Is Botox in Bali safe?",
+          "Is the Botox used in Bali genuine?"
+        ],
+        "missing": [
+          "Where is the best Botox clinic near Ubud, Bali?"
+        ]
+      }
+    },
+    {
+      "check_id": "R5",
+      "name": "Featured-snippet structure (top 2 FAQs 40–80 words)",
+      "passed": true,
+      "severity": "WARN",
+      "reason": "ok",
+      "evidence": {
+        "issues": []
+      }
+    },
+    {
+      "check_id": "R6",
+      "name": "≥3 inbound + linked from hub",
+      "passed": false,
+      "severity": "BLOCKER",
+      "reason": "0 inbound; hub-link=no",
+      "evidence": {
+        "inbound": 0,
+        "from_hub": false
+      }
+    },
+    {
+      "check_id": "R7",
+      "name": "Ranking-grade CWV (LCP<1.5s, INP<100ms, CLS<0.05)",
+      "passed": true,
+      "severity": "WARN",
+      "reason": "Lighthouse not run — skipped",
+      "evidence": {}
+    },
+    {
+      "check_id": "R8",
+      "name": "Schema enrichment (Service + FAQPage)",
+      "passed": true,
+      "severity": "BLOCKER",
+      "reason": "present: Service,FAQPage",
+      "evidence": {
+        "present": [
+          "Service",
+          "FAQPage"
+        ]
+      }
+    },
+    {
+      "check_id": "R9",
+      "name": "Multimodal: ≥1 content image + (table OR svg)",
+      "passed": false,
+      "severity": "BLOCKER",
+      "reason": "img=0 tables=0 svgs=no",
+      "evidence": {
+        "content_imgs": 0,
+        "tables": 0,
+        "svg": false
+      }
+    },
+    {
+      "check_id": "R10",
+      "name": "Author E-E-A-T (byline OR Person schema)",
+      "passed": true,
+      "severity": "BLOCKER",
+      "reason": "ok",
+      "evidence": {
+        "byline": true,
+        "schema": false
+      }
+    },
+    {
+      "check_id": "R11",
+      "name": "Comparison content (for comparative queries)",
+      "passed": true,
+      "severity": "INFO",
+      "reason": "not a comparative query",
+      "evidence": {}
+    },
+    {
+      "check_id": "R12",
+      "name": "Original data / methodology / proprietary stat",
+      "passed": false,
+      "severity": "WARN",
+      "reason": "0 original-signal match(es)",
+      "evidence": {
+        "matches": 0
+      }
+    },
+    {
+      "check_id": "R13",
+      "name": "Geo ranking-grade relevance (≥3 of 5)",
+      "passed": true,
+      "severity": "INFO",
+      "reason": "not a geo page",
+      "evidence": {}
+    },
+    {
+      "check_id": "R14",
+      "name": "Sector ranking-grade relevance (≥4 of 6)",
+      "passed": true,
+      "severity": "INFO",
+      "reason": "not a sector page",
+      "evidence": {}
+    },
+    {
+      "check_id": "R15",
+      "name": "Buying-intent CTA above-fold + social proof",
+      "passed": false,
+      "severity": "BLOCKER",
+      "reason": "CTA-above-fold=False · social_proof=False · trust_chip=False",
+      "evidence": {
+        "signals": 0
+      }
+    },
+    {
+      "check_id": "R16",
+      "name": "Research-grounded copy (Reddit/PAA)",
+      "passed": true,
+      "severity": "BLOCKER",
+      "reason": "grounded: terms 100%, questions 100%, 7 sources",
+      "evidence": {
+        "missing_terms": [],
+        "missing_questions": [],
+        "sources": 7
+      }
+    }
+  ],
+  "pages/botox-umalas.html": [
+    {
+      "check_id": "A",
+      "name": "Bigram uniqueness ≥50% vs hub + nearest sibling",
+      "passed": false,
+      "severity": "BLOCKER",
+      "reason": "6.4% unique vs sibling (worst of 2)",
+      "evidence": {
+        "hub_unique_pct": 6.9,
+        "sibling_unique_pct": 6.4,
+        "nearest_sibling": "pages/botox-berawa.html",
+        "worst": 6.4
+      }
+    },
+    {
+      "check_id": "B",
+      "name": "Not a doorway page (≥3 sections ≥150w each)",
+      "passed": false,
+      "severity": "BLOCKER",
+      "reason": "2 substantive sections (of 11)",
+      "evidence": {
+        "section_word_counts": [
+          42,
+          202,
+          149,
+          132,
+          53,
+          107,
+          98,
+          387,
+          19,
+          39,
+          58
+        ]
+      }
+    },
+    {
+      "check_id": "C",
+      "name": "Title globally unique + 30–70 chars",
+      "passed": true,
+      "severity": "BLOCKER",
+      "reason": "ok",
+      "evidence": {
+        "length": 38,
+        "duplicates": []
+      }
+    },
+    {
+      "check_id": "D",
+      "name": "Meta description unique + 120–175 chars",
+      "passed": false,
+      "severity": "BLOCKER",
+      "reason": "length 98 (target 120–175)",
+      "evidence": {
+        "length": 98,
+        "duplicates": []
+      }
+    },
+    {
+      "check_id": "E",
+      "name": "Exactly one <h1> + globally unique",
+      "passed": true,
+      "severity": "BLOCKER",
+      "reason": "ok",
+      "evidence": {
+        "duplicates": []
+      }
+    },
+    {
+      "check_id": "F",
+      "name": "Geo-page local relevance (≥2 of 4)",
+      "passed": true,
+      "severity": "INFO",
+      "reason": "not a geo page",
+      "evidence": {}
+    },
+    {
+      "check_id": "G",
+      "name": "Sector-page sector relevance (≥2 of 4)",
+      "passed": true,
+      "severity": "INFO",
+      "reason": "not a sector page",
+      "evidence": {}
+    },
+    {
+      "check_id": "H",
+      "name": "E-E-A-T ≥2 of (author byline / trust / expertise)",
+      "passed": false,
+      "severity": "BLOCKER",
+      "reason": "1/3 signals — author byline",
+      "evidence": {
+        "signals": 1
+      }
+    },
+    {
+      "check_id": "I",
+      "name": "Internal-link: ≥3 inbound, ≥4 outbound",
+      "passed": false,
+      "severity": "BLOCKER",
+      "reason": "0 inbound, 8 outbound",
+      "evidence": {
+        "in": 0,
+        "out": 8
+      }
+    },
+    {
+      "check_id": "J",
+      "name": "Indexability: canonical set + in sitemap + not noindex'd + not robots-blocked",
+      "passed": true,
+      "severity": "BLOCKER",
+      "reason": "ok",
+      "evidence": {
+        "issues": []
+      }
+    },
+    {
+      "check_id": "K",
+      "name": "Schema accuracy (matches visible content)",
+      "passed": true,
+      "severity": "BLOCKER",
+      "reason": "ok",
+      "evidence": {
+        "issues": []
+      }
+    },
+    {
+      "check_id": "L",
+      "name": "Every <img> has non-placeholder alt text",
+      "passed": true,
+      "severity": "BLOCKER",
+      "reason": "0 missing alt, 0 placeholder; 0 content images total",
+      "evidence": {
+        "missing": 0,
+        "placeholder": 0
+      }
+    },
+    {
+      "check_id": "M",
+      "name": "Core Web Vitals (LCP<2.5s, INP<200ms, CLS<0.1)",
+      "passed": true,
+      "severity": "WARN",
+      "reason": "Lighthouse not run — check skipped",
+      "evidence": {}
+    },
+    {
+      "check_id": "N",
+      "name": "HTTPS + canonical hygiene",
+      "passed": true,
+      "severity": "BLOCKER",
+      "reason": "ok",
+      "evidence": {
+        "issues": []
+      }
+    },
+    {
+      "check_id": "O",
+      "name": "No keyword stuffing (sub-page density < 2× hub)",
+      "passed": true,
+      "severity": "BLOCKER",
+      "reason": "sub 8.12% vs hub 4.23% — ratio 1.92×",
+      "evidence": {
+        "sub_density": 8.123569794050344,
+        "hub_density": 4.233409610983982,
+        "ratio": 1.918918918918919
+      }
+    },
+    {
+      "check_id": "P",
+      "name": "Contact form in hero AND bottom + DSGVO-konform",
+      "passed": true,
+      "severity": "BLOCKER",
+      "reason": "hero + bottom forms present (non-DE page; DSGVO check skipped)",
+      "evidence": {
+        "dsgvo_checked": false,
+        "forms_found": 2
+      }
+    },
+    {
+      "check_id": "V",
+      "name": "Mobile H1 overflow-safe (long German compound words)",
+      "passed": true,
+      "severity": "INFO",
+      "reason": "non-DE page",
+      "evidence": {}
+    },
+    {
+      "check_id": "R1",
+      "name": "Topical depth ≥1,500 content words",
+      "passed": false,
+      "severity": "BLOCKER",
+      "reason": "874 content words",
+      "evidence": {
+        "word_count": 874
+      }
+    },
+    {
+      "check_id": "R2",
+      "name": "Intent-format match (service)",
+      "passed": false,
+      "severity": "BLOCKER",
+      "reason": "format='service' mismatch",
+      "evidence": {
+        "intent": "service"
+      }
+    },
+    {
+      "check_id": "R3",
+      "name": "Entity coverage ≥70%",
+      "passed": true,
+      "severity": "BLOCKER",
+      "reason": "8/8 entities (100%)",
+      "evidence": {
+        "present": [
+          "umalas",
+          "nearby",
+          "clinic",
+          "product",
+          "seminyak",
+          "genuine",
+          "doctor",
+          "fillers"
+        ],
+        "missing": []
+      }
+    },
+    {
+      "check_id": "R4",
+      "name": "PAA coverage ≥4 (of 6 questions)",
+      "passed": true,
+      "severity": "BLOCKER",
+      "reason": "5 answered",
+      "evidence": {
+        "answered": [
+          "Can I get genuine Botox near Umalas without travelling far?",
+          "How much does Botox cost near Umalas?",
+          "How much is Botox in Bali?",
+          "Is Botox in Bali safe?",
+          "Is the Botox used in Bali genuine?"
+        ],
+        "missing": [
+          "Where is the best Botox clinic near Umalas, Bali?"
+        ]
+      }
+    },
+    {
+      "check_id": "R5",
+      "name": "Featured-snippet structure (top 2 FAQs 40–80 words)",
+      "passed": true,
+      "severity": "WARN",
+      "reason": "ok",
+      "evidence": {
+        "issues": []
+      }
+    },
+    {
+      "check_id": "R6",
+      "name": "≥3 inbound + linked from hub",
+      "passed": false,
+      "severity": "BLOCKER",
+      "reason": "0 inbound; hub-link=no",
+      "evidence": {
+        "inbound": 0,
+        "from_hub": false
+      }
+    },
+    {
+      "check_id": "R7",
+      "name": "Ranking-grade CWV (LCP<1.5s, INP<100ms, CLS<0.05)",
+      "passed": true,
+      "severity": "WARN",
+      "reason": "Lighthouse not run — skipped",
+      "evidence": {}
+    },
+    {
+      "check_id": "R8",
+      "name": "Schema enrichment (Service + FAQPage)",
+      "passed": true,
+      "severity": "BLOCKER",
+      "reason": "present: Service,FAQPage",
+      "evidence": {
+        "present": [
+          "Service",
+          "FAQPage"
+        ]
+      }
+    },
+    {
+      "check_id": "R9",
+      "name": "Multimodal: ≥1 content image + (table OR svg)",
+      "passed": false,
+      "severity": "BLOCKER",
+      "reason": "img=0 tables=0 svgs=no",
+      "evidence": {
+        "content_imgs": 0,
+        "tables": 0,
+        "svg": false
+      }
+    },
+    {
+      "check_id": "R10",
+      "name": "Author E-E-A-T (byline OR Person schema)",
+      "passed": true,
+      "severity": "BLOCKER",
+      "reason": "ok",
+      "evidence": {
+        "byline": true,
+        "schema": false
+      }
+    },
+    {
+      "check_id": "R11",
+      "name": "Comparison content (for comparative queries)",
+      "passed": true,
+      "severity": "INFO",
+      "reason": "not a comparative query",
+      "evidence": {}
+    },
+    {
+      "check_id": "R12",
+      "name": "Original data / methodology / proprietary stat",
+      "passed": false,
+      "severity": "WARN",
+      "reason": "0 original-signal match(es)",
+      "evidence": {
+        "matches": 0
+      }
+    },
+    {
+      "check_id": "R13",
+      "name": "Geo ranking-grade relevance (≥3 of 5)",
+      "passed": true,
+      "severity": "INFO",
+      "reason": "not a geo page",
+      "evidence": {}
+    },
+    {
+      "check_id": "R14",
+      "name": "Sector ranking-grade relevance (≥4 of 6)",
+      "passed": true,
+      "severity": "INFO",
+      "reason": "not a sector page",
+      "evidence": {}
+    },
+    {
+      "check_id": "R15",
+      "name": "Buying-intent CTA above-fold + social proof",
+      "passed": false,
+      "severity": "BLOCKER",
+      "reason": "CTA-above-fold=False · social_proof=False · trust_chip=False",
+      "evidence": {
+        "signals": 0
+      }
+    },
+    {
+      "check_id": "R16",
+      "name": "Research-grounded copy (Reddit/PAA)",
+      "passed": true,
+      "severity": "BLOCKER",
+      "reason": "grounded: terms 100%, questions 100%, 7 sources",
+      "evidence": {
+        "missing_terms": [],
+        "missing_questions": [],
+        "sources": 7
+      }
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+Auditing 9 page(s) on puriva.id …
+  [warn] Homepage                            18 pass / 2 review / 0 fail
+  [warn] Botox                               17 pass / 3 review / 0 fail
+  [warn] Gouri                               18 pass / 2 review / 0 fail
+  [warn] Novuma                              18 pass / 2 review / 0 fail
+  [warn] Facial                              18 pass / 2 review / 0 fail
+  [warn] Profhilo                            18 pass / 2 review / 0 fail
+  [warn] Mesostem                            18 pass / 2 review / 0 fail
+  [warn] Radiesse                            18 pass / 2 review / 0 fail
+  [warn] Sylfirm X                           18 pass / 2 review / 0 fail
+
+9 pages · 161 pass / 19 review / 0 fail  →  audit-report.html  (+ audit-report.json)
